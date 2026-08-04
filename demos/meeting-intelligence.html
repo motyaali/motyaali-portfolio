@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Interactive public MVP for Motya Ali's governed meeting-intelligence workflow.">
+  <meta name="theme-color" content="#17324d">
+  <link rel="canonical" href="https://www.motyaali.com/demos/meeting-intelligence.html">
+  <title>Meeting Intelligence MVP | Motya Ali</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+  <link rel="stylesheet" href="../assets/proof.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../index.html" aria-label="Motya Ali home">MOTYA ALI</a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+      <a href="../index.html">Home</a>
+      <a href="../work.html">Work</a>
+      <a href="../services.html">Services</a>
+      <a href="../projects/ai-workflow-enablement.html">MVP Case Study</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+<main id="main" class="demo-shell">
+  <p class="eyebrow">Working public MVP</p>
+  <h1>Meeting Intelligence Review Queue</h1>
+  <p class="demo-notice"><strong>Evidence boundary:</strong> This demonstration uses a fictional meeting and deterministic pre-generated proposals. It proves the review, correction, publication, and audit workflow. It does not claim production model accuracy or connect to external systems.</p>
+
+  <div class="demo-grid">
+    <section class="demo-panel" aria-labelledby="source-heading">
+      <h2 id="source-heading">1. Synthetic source meeting</h2>
+      <p>The source remains visible so reviewers can verify every proposal.</p>
+      <div id="source-text" class="demo-source" tabindex="0"></div>
+    </section>
+
+    <section class="demo-panel" aria-labelledby="review-heading">
+      <h2 id="review-heading">2. Review proposed records</h2>
+      <div class="demo-toolbar">
+        <button class="primary" id="load-proposals" type="button">Load Proposed Records</button>
+        <button id="approve-all" type="button">Approve All Pending</button>
+        <button id="reset-demo" type="button">Reset</button>
+      </div>
+      <div id="proposal-list" class="proposal-list" aria-live="polite"></div>
+      <p id="review-status" class="demo-status">No proposals loaded.</p>
+    </section>
+  </div>
+
+  <section class="demo-panel review-output" aria-labelledby="output-heading">
+    <h2 id="output-heading">3. Publish reviewed operating record</h2>
+    <p>Only approved records are published. Rejected items and edits remain in the review history included in the export.</p>
+    <div class="demo-toolbar">
+      <button class="primary" id="generate-output" type="button">Generate Reviewed Record</button>
+      <button id="download-json" type="button" disabled>Download JSON Evidence</button>
+      <button id="download-markdown" type="button" disabled>Download Markdown Record</button>
+    </div>
+    <pre id="review-output" tabindex="0">The reviewed record will appear here.</pre>
+  </section>
+
+  <section class="demo-panel review-output" aria-labelledby="limitations-heading">
+    <h2 id="limitations-heading">What this MVP proves and does not prove</h2>
+    <div class="two-column">
+      <article>
+        <h3>Proves</h3>
+        <ul>
+          <li>Source-preserving review workflow</li>
+          <li>Structured proposal schema</li>
+          <li>Approve, edit, and reject controls</li>
+          <li>Human-only publication step</li>
+          <li>Review history and exportable evidence</li>
+        </ul>
+      </article>
+      <article>
+        <h3>Does not prove</h3>
+        <ul>
+          <li>Production AI extraction accuracy</li>
+          <li>Identity, task, calendar, or records integration</li>
+          <li>Compliance with a specific organization's policies</li>
+          <li>Measured time savings or adoption</li>
+          <li>Autonomous authority to assign or publish work</li>
+        </ul>
+      </article>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>© <span id="year"></span> Motya “Ali” Ali.</div>
+    <div><a href="../evidence-standard.html">Evidence, privacy, and maturity standard</a></div>
+  </div>
+</footer>
+<script src="../assets/site.js"></script>
+<script src="../assets/meeting-intelligence.js"></script>
+</body>
+</html>
