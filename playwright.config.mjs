@@ -28,6 +28,10 @@ export default defineConfig({
       use: { ...devices['Desktop Safari'] }
     },
     {
+      name: 'tablet-webkit',
+      use: { ...devices['iPad Pro 11'] }
+    },
+    {
       name: 'mobile-webkit',
       use: { ...devices['iPhone 13'] }
     }
