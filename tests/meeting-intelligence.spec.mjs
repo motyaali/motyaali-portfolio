@@ -27,7 +27,9 @@ test('publishes only reviewed records and preserves evidence history', async ({ 
   await expect(cards.nth(2).getByLabel('Due date')).toHaveValue('');
   await expect(cards.nth(6).getByLabel('Owner')).toHaveValue('');
   await expect(cards.nth(8).getByLabel('Owner')).toHaveValue('');
-  await expect(cards.nth(9)).toContainText('Final publication and permanent record status require human approval.');
+  await expect(cards.nth(9).getByLabel('Proposed record')).toHaveValue(
+    'Final publication and permanent record status require human approval.'
+  );
 
   await cards.nth(0).getByRole('button', { name: 'Approve', exact: true }).click();
   await cards.nth(1).getByRole('button', { name: 'Reject', exact: true }).click();
