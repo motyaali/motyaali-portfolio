@@ -12,6 +12,7 @@ permissions:
 jobs:
   validate:
     runs-on: ubuntu-latest
+    timeout-minutes: 30
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -26,12 +27,38 @@ jobs:
         continue-on-error: true
         run: python scripts/validate_site.py
 
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+
+      - name: Install browser-test dependencies
+        run: npm install --no-audit --no-fund
+
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps chromium webkit
+
+      - name: Run Meeting Intelligence browser acceptance tests
+        id: browser_validation
+        continue-on-error: true
+        run: npm run test:browser
+
+      - name: Upload Playwright report
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v5
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 14
+
       - name: Publish validation commit status
         if: always() && github.event_name == 'push'
         uses: actions/github-script@v7
         with:
           script: |
-            const passed = '${{ steps.site_validation.outcome }}' === 'success';
+            const staticPassed = '${{ steps.site_validation.outcome }}' === 'success';
+            const browserPassed = '${{ steps.browser_validation.outcome }}' === 'success';
+            const passed = staticPassed && browserPassed;
             await github.rest.repos.createCommitStatus({
               owner: context.repo.owner,
               repo: context.repo.repo,
@@ -39,10 +66,10 @@ jobs:
               state: passed ? 'success' : 'failure',
               context: 'portfolio/validation',
               description: passed
-                ? 'HTML structure and local links passed'
-                : 'HTML structure or local-link validation failed'
+                ? 'Static and browser acceptance tests passed'
+                : 'Portfolio validation failed; inspect the Actions report'
             });
 
       - name: Fail workflow when validation fails
-        if: steps.site_validation.outcome != 'success'
+        if: steps.site_validation.outcome != 'success' || steps.browser_validation.outcome != 'success'
         run: exit 1
