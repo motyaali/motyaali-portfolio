@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Interactive public MVP for Motya Ali's governed meeting-intelligence workflow.">
+  <meta name="description" content="Supporting proposal-review and audit-control prototype for AI Workflow Enablement by Motya Ali.">
   <meta name="theme-color" content="#17324d">
   <link rel="canonical" href="https://www.motyaali.com/demos/meeting-intelligence.html">
-  <title>Meeting Intelligence MVP | Motya Ali</title>
+  <title>Proposal Review and Audit Control Prototype | Motya Ali</title>
   <link rel="stylesheet" href="../assets/styles.css">
   <link rel="stylesheet" href="../assets/proof.css">
 </head>
@@ -20,28 +20,29 @@
       <a href="../index.html">Home</a>
       <a href="../work.html">Work</a>
       <a href="../services.html">Services</a>
-      <a href="../projects/ai-workflow-enablement.html">MVP Case Study</a>
+      <a href="document-intake.html">Customer Value Demo</a>
       <a href="../contact.html">Contact</a>
     </nav>
   </div>
 </header>
 <main id="main" class="demo-shell">
-  <p class="eyebrow">Working public MVP</p>
-  <h1>Meeting Intelligence Review Queue</h1>
-  <p class="demo-notice"><strong>Evidence boundary:</strong> This demonstration uses a fictional meeting and deterministic pre-generated proposals. It proves the review, correction, publication, and audit workflow. It does not claim production model accuracy or connect to external systems.</p>
+  <p class="eyebrow">Supporting technical evidence</p>
+  <h1>Proposal Review and Audit Control Prototype</h1>
+  <p class="demo-lead">This prototype isolates one reusable governance component: how proposed records can be checked, corrected, rejected, approved, and retained with a visible decision history.</p>
+  <p class="demo-notice"><strong>Correct role:</strong> This is not the customer-facing MVP for AI Workflow Enablement. It is supporting technical evidence for workflows where proposed records require human review. The primary value demonstration is the <a href="document-intake.html">Document Intake and Routing demonstration</a>.</p>
 
   <div class="demo-grid">
     <section class="demo-panel" aria-labelledby="source-heading">
       <h2 id="source-heading">1. Synthetic source meeting</h2>
-      <p>The source remains visible so reviewers can verify every proposal.</p>
+      <p>The source remains visible so a reviewer can verify each proposed record.</p>
       <div id="source-text" class="demo-source" tabindex="0"></div>
     </section>
 
     <section class="demo-panel" aria-labelledby="review-heading">
-      <h2 id="review-heading">2. Review proposed records</h2>
+      <h2 id="review-heading">2. Inspect proposed records</h2>
+      <p>This deliberately detailed view is appropriate for uncertain or high-impact records, not routine low-risk processing.</p>
       <div class="demo-toolbar">
         <button class="primary" id="load-proposals" type="button">Load Proposed Records</button>
-        <button id="approve-all" type="button">Approve All Pending</button>
         <button id="reset-demo" type="button">Reset</button>
       </div>
       <div id="proposal-list" class="proposal-list" aria-live="polite"></div>
@@ -50,8 +51,8 @@
   </div>
 
   <section class="demo-panel review-output" aria-labelledby="output-heading">
-    <h2 id="output-heading">3. Publish reviewed operating record</h2>
-    <p>Only approved records are published. Rejected items and edits remain in the review history included in the export.</p>
+    <h2 id="output-heading">3. Generate the reviewed evidence record</h2>
+    <p>Only approved records appear in the published output. Rejected items and edits remain in the exported review history.</p>
     <div class="demo-toolbar">
       <button class="primary" id="generate-output" type="button">Generate Reviewed Record</button>
       <button id="download-json" type="button" disabled>Download JSON Evidence</button>
@@ -61,29 +62,30 @@
   </section>
 
   <section class="demo-panel review-output" aria-labelledby="limitations-heading">
-    <h2 id="limitations-heading">What this MVP proves and does not prove</h2>
+    <h2 id="limitations-heading">Where this control pattern belongs</h2>
     <div class="two-column">
       <article>
-        <h3>Proves</h3>
+        <h3>Use detailed review for</h3>
         <ul>
-          <li>Source-preserving review workflow</li>
-          <li>Structured proposal schema</li>
-          <li>Approve, edit, and reject controls</li>
-          <li>Human-only publication step</li>
-          <li>Review history and exportable evidence</li>
+          <li>Ambiguous or incomplete records</li>
+          <li>High-impact proposed actions</li>
+          <li>Records that will become authoritative</li>
+          <li>Exceptions that require accountable judgment</li>
+          <li>Quality sampling and model evaluation</li>
         </ul>
       </article>
       <article>
-        <h3>Does not prove</h3>
+        <h3>Do not require it for</h3>
         <ul>
-          <li>Production AI extraction accuracy</li>
-          <li>Identity, task, calendar, or records integration</li>
-          <li>Compliance with a specific organization's policies</li>
-          <li>Measured time savings or adoption</li>
-          <li>Autonomous authority to assign or publish work</li>
+          <li>Every low-risk routine record</li>
+          <li>Fields already established by deterministic rules</li>
+          <li>Duplicate mechanical checks</li>
+          <li>Repeated ceremonial approvals</li>
+          <li>Work where the review costs more than the risk</li>
         </ul>
       </article>
     </div>
+    <div class="actions"><a class="button button-primary" href="document-intake.html">See Exception-Focused Review in Context</a></div>
   </section>
 </main>
 <footer class="site-footer">
