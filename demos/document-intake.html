@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Guided document intake and routing demonstration for AI Workflow Enablement by Motya Ali.">
+  <meta name="theme-color" content="#17324d">
+  <link rel="canonical" href="https://www.motyaali.com/demos/document-intake.html">
+  <title>Document Intake Demonstration | Motya Ali</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+  <link rel="stylesheet" href="../assets/proof.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../index.html" aria-label="Motya Ali home">MOTYA ALI</a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+      <a href="../index.html">Home</a>
+      <a href="../work.html">Work</a>
+      <a href="../services.html">Services</a>
+      <a href="../ai-workflow-enablement/">AI Workflow Enablement</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+<main id="main" class="demo-shell intake-demo">
+  <p class="eyebrow">Guided value demonstration</p>
+  <h1>Intelligent Document Intake and Routing</h1>
+  <p class="demo-lead">See how a shared inbox can become a controlled intake process that prepares routine documents for batch confirmation and directs staff attention to the records that actually need judgment.</p>
+  <p class="demo-notice"><strong>Demonstration boundary:</strong> This uses six fictional documents and preconfigured processing results. It demonstrates the intended operating experience and value logic. It does not claim production model accuracy, live Microsoft 365 integration, or measured client savings.</p>
+
+  <section class="demo-panel value-panel" aria-labelledby="before-after-heading">
+    <div class="section-heading compact-heading">
+      <div><p class="eyebrow">Before and after</p><h2 id="before-after-heading">Move staff from processing every document to resolving the exceptions.</h2></div>
+    </div>
+    <div class="before-after-grid">
+      <article class="before-card">
+        <span class="state-label">Typical current state</span>
+        <h3>Every document receives a full manual intake sequence.</h3>
+        <ol>
+          <li>Open the attachment</li>
+          <li>Identify the document type</li>
+          <li>Find the project or matter</li>
+          <li>Check for duplicates</li>
+          <li>Rename the file</li>
+          <li>Enter required metadata</li>
+          <li>Find the destination</li>
+          <li>Record what happened</li>
+        </ol>
+      </article>
+      <article class="after-card">
+        <span class="state-label">Designed future state</span>
+        <h3>Routine records are prepared together. Exceptions receive focused review.</h3>
+        <ol>
+          <li>Preserve the original submission</li>
+          <li>Prepare proposed metadata and routing</li>
+          <li>Batch-confirm low-risk routine records</li>
+          <li>Surface duplicates, missing data, and uncertainty</li>
+          <li>Route approved records and retain the audit trail</li>
+        </ol>
+      </article>
+    </div>
+  </section>
+
+  <section class="demo-panel" aria-labelledby="inbox-heading">
+    <div class="demo-step-heading">
+      <div><span class="step-number">1</span><div><p class="eyebrow">Incoming work</p><h2 id="inbox-heading">A fictional project mailbox receives six documents.</h2></div></div>
+      <button class="primary" id="process-batch" type="button">Process Intake Batch</button>
+    </div>
+    <div id="incoming-grid" class="incoming-grid" aria-live="polite"></div>
+  </section>
+
+  <section class="demo-panel" id="processing-section" aria-labelledby="processing-heading" hidden>
+    <div class="demo-step-heading">
+      <div><span class="step-number">2</span><div><p class="eyebrow">Prepared work</p><h2 id="processing-heading">The workflow separates routine records from exceptions.</h2></div></div>
+      <button id="reset-intake" type="button">Reset</button>
+    </div>
+    <div class="intake-summary" id="intake-summary"></div>
+
+    <div class="intake-workspace">
+      <section aria-labelledby="routine-heading">
+        <div class="workspace-heading">
+          <div><h3 id="routine-heading">Routine records ready for confirmation</h3><p>Review the proposed destination and evidence at a glance, then confirm the group once.</p></div>
+          <button class="primary" id="confirm-routine" type="button">Confirm Routine Routing</button>
+        </div>
+        <div id="routine-list" class="routine-list"></div>
+      </section>
+
+      <section aria-labelledby="exception-heading">
+        <div class="workspace-heading">
+          <div><h3 id="exception-heading">Exceptions requiring attention</h3><p>Only the uncertain, incomplete, or potentially unsafe items require an individual decision.</p></div>
+        </div>
+        <div id="exception-list" class="exception-list"></div>
+      </section>
+    </div>
+  </section>
+
+  <section class="demo-panel" id="routing-section" aria-labelledby="routing-heading" hidden>
+    <div class="demo-step-heading">
+      <div><span class="step-number">3</span><div><p class="eyebrow">Controlled outcome</p><h2 id="routing-heading">Complete the approved routing.</h2></div></div>
+      <button class="primary" id="complete-routing" type="button" disabled>Complete Routing</button>
+    </div>
+    <p id="routing-guidance">Confirm the routine group and resolve each exception before completing the routing.</p>
+    <div id="routing-result" aria-live="polite"></div>
+  </section>
+
+  <section class="demo-panel" id="impact-section" aria-labelledby="impact-heading" hidden>
+    <div class="demo-step-heading">
+      <div><span class="step-number">4</span><div><p class="eyebrow">Value made visible</p><h2 id="impact-heading">The batch finishes with fewer review points and clearer outcomes.</h2></div></div>
+    </div>
+    <div id="impact-summary" class="impact-grid"></div>
+    <div class="two-column impact-notes">
+      <article>
+        <h3>What changed in this demonstration</h3>
+        <ul>
+          <li>Routine records were reviewed as a group instead of one form at a time.</li>
+          <li>A likely duplicate was prevented from entering the controlled library.</li>
+          <li>A missing identifier became a specific information request instead of a guessing exercise.</li>
+          <li>An uncertain classification was surfaced for one targeted decision.</li>
+          <li>The original submissions, proposed values, exceptions, and outcomes remained traceable.</li>
+        </ul>
+      </article>
+      <article>
+        <h3>What a live pilot would measure</h3>
+        <ul>
+          <li>Average intake cycle time</li>
+          <li>Manual touches per document</li>
+          <li>Classification and metadata correction rate</li>
+          <li>Duplicate and routing-failure rate</li>
+          <li>Exception resolution time and backlog</li>
+          <li>User acceptance and administrator effort</li>
+        </ul>
+      </article>
+    </div>
+    <div class="actions">
+      <a class="button button-primary" href="../services.html#pilot">View the Controlled Pilot</a>
+      <a class="button button-secondary" href="../demos/meeting-intelligence.html">Inspect the Supporting Review-Control Prototype</a>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>© <span id="year"></span> Motya “Ali” Ali.</div>
+    <div><a href="../evidence-standard.html">Evidence, privacy, and maturity standard</a></div>
+  </div>
+</footer>
+<script src="../assets/site.js"></script>
+<script src="../assets/document-intake.js"></script>
+</body>
+</html>
