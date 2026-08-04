@@ -27,7 +27,7 @@
 
 ## Validation result
 
-The release commit `de789d5d73b458473c2086040246ad0eaa599792` passed all published checks:
+Release candidate commit `de789d5d73b458473c2086040246ad0eaa599792` passed all published checks:
 
 - `portfolio/static`: success
 - `portfolio/browser`: success
