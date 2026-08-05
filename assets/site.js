@@ -62,7 +62,9 @@ function normalizeProjectCoordinationEvidence() {
 
   if (!isInterviewGuide) {
     document.querySelectorAll('a[href$="interview-walkthrough.html"]').forEach((link) => {
-      link.closest('.actions, .proof-card')?.remove();
+      const card = link.closest('.proof-card');
+      if (card) card.remove();
+      else link.remove();
     });
   }
 
