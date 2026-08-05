@@ -2,7 +2,7 @@
 
 ## Portfolio build plan
 
-**Status:** Second inspectable evidence release complete on the draft branch. Not yet merged or published.
+**Status:** Third inspectable evidence release complete. Draft branch remains unmerged and unpublished.
 
 ## Placement
 
@@ -37,185 +37,84 @@ The case study draws conceptually from:
 - A group presentation explaining change orders and responsibility flow
 - Current professional understanding of document control, permissions, workflow guidance, issue tracking, and cross-functional coordination
 
-Original class submissions are research inputs, not the final public artifacts.
+Original class submissions are research inputs, not the final public artifacts. Conflicting source language is disclosed and controlled by the synthetic project baseline.
 
-## Source-handling rule
+## Completed evidence set
 
-The academic drafts include useful content and some internal inconsistencies. The public reconstruction must:
+### Project foundation and dashboard
 
-- preserve supported terminology and workflow logic
-- distinguish coursework-derived concepts from synthetic case-study facts
-- disclose conflicting draft language instead of silently presenting it as settled
-- use the synthetic project baseline as the controlling public scenario
-- avoid publishing original class-team names, branding, or source documents
+- [x] Synthetic project identity, scope, exclusions, stakeholders, authority, milestones, and operating rules
+- [x] Weekly project coordination dashboard
+- [x] Time, money, safety, and quality control lenses
 
-## Artifact set
+### Procurement and commitment controls
 
-### 1. Weekly Project Coordination Dashboard
+- [x] Reconstructed RFP and bid package
+- [x] Bid submission completeness checklist
+- [x] Tender register
+- [x] Award and Notice to Proceed linkage
 
-Tracks:
+### Meeting and decision controls
 
-- Current phase and milestone status
-- Pending commitments and quotations
-- Open changes and review status
-- Meeting actions and overdue items
-- Invoice and pay application status
-- Major risks and blockers
-- Owner, next action, and due date
+- [x] Weekly agenda and minutes pack
+- [x] Controlled decision log
+- [x] Action and escalation register
+- [x] Minutes correction and decision read-back controls
 
-### 2. RFP and Tender Controls
+### Change controls
 
-Includes and tracks:
+- [x] Change management log
+- [x] Browser-viewable change package completeness control
+- [x] Detailed change package checklist
+- [x] Technical, commercial, schedule, safety, funding, authority, and post-approval routing gates
 
-- Reconstructed invitation and bid instructions
-- Scope of work and exclusions
-- Procurement and work milestones
-- Bid form and requested unit prices
-- Invitation and bidder list
-- Site walk attendance
-- Questions and RFIs
-- Addenda and acknowledgements
-- Required submission documents
-- Quote receipt and completeness
-- Evaluation status
-- Award and regret communications
+### Invoice and financial controls
 
-### 3. Change Management Log
+- [x] Invoice and pay application tracker
+- [x] Browser-viewable invoice routing completeness control
+- [x] Detailed invoice routing checklist
+- [x] Commitment, approved-change, prior-billing, retainage, missing-document, and approval-sequence checks
 
-Tracks:
+### Closeout and lifecycle controls
 
-- Change identifier and source
-- Description and related project records
-- Quote request and receipt dates
-- Proposed cost and schedule impact
-- Review owner and approval status
-- Next action and due date
-- Final disposition
-- Revised commitment reference
+- [x] Turnover and reconciliation checklist
+- [x] Connected lifecycle process map
+- [x] Responsibility lanes and handoff controls
+- [x] System-of-record update discipline
 
-### 4. Meeting and Communication Pack
+### Interview version
 
-Includes:
-
-- Meeting purpose and decision needs
-- Pre-read list
-- Time-boxed agenda
-- Attendance and represented authority
-- Minutes
-- Decision log
-- Action tracker
-- Correction window
-- Escalation path
-
-### 5. Invoice and Pay Application Tracker
-
-Tracks:
-
-- Original commitment
-- Approved changes
-- Revised commitment
-- Prior billing
-- Current request
-- Retainage
-- Total billed and remaining balance
-- Required documentation
-- Discrepancies
-- Approval and routing status
-
-### 6. Turnover and Reconciliation Checklist
-
-Tracks:
-
-- Final changes
-- Final invoice
-- Financial reconciliation
-- Punch-list status
-- Warranties
-- Operations and maintenance information
-- As-built records
-- Acceptance documents
-- Unresolved items
-- Final archive location
-
-## Four control lenses
-
-Every artifact should show how administrative controls support:
-
-- **Time:** milestones, dependencies, due dates, and delay visibility
-- **Money:** commitments, changes, invoices, balances, and reconciliation
-- **Safety:** required plans, approvals, records, and escalation
-- **Quality:** revision control, complete attachments, source references, and closeout readiness
+- [x] Three-minute walkthrough
+- [x] Permission request before sharing
+- [x] Three-screen sequence
+- [x] Concise role-boundary explanations
+- [x] Likely interviewer questions and responses
+- [x] Thirty-second no-screen version
 
 ## Embedded controls
 
 The project demonstrates small improvements that fit within established procedures:
 
-- Required owner, status, next action, and due date
-- Consistent status definitions
-- Missing-document flags
-- Overdue-item flags
-- Links between related project records
-- Approval, authority, and revision history
-- Formula checks
-- Completeness checks before routing
-- Explicit decision limitations
-- Transparent reconstruction assumptions
+- Required owner, status, next action, due date, and escalation trigger
+- Consistent identifiers, status definitions, and revision references
+- Missing-document and routing-gate flags
+- Links between procurement, decisions, changes, commitments, invoices, schedules, and closeout records
+- Approval and revision history
+- Formula and completeness checks before routing
+- Clear separation of administrative verification from technical, contractual, financial, and owner authority
+- System-of-record updates only after authorized action
 
-## Build sequence
+## Validation requirements
 
-### Phase 1: Case-study architecture
-
-- [x] Define portfolio placement
-- [x] Draft project page
-- [x] Define evidence boundary
-- [x] Define role and approval boundary
-- [x] Define artifact set
-- [x] Add the Applied Practice card and section to `work.html`
-
-### Phase 2: Synthetic project data
-
-- [x] Define fictional project identity
-- [x] Create vendor and stakeholder list
-- [x] Create milestone dates
-- [x] Create commitments and budget assumptions
-- [x] Create sample changes
-- [x] Create sample invoices
-- [x] Create closeout requirements
-
-### Phase 3: Core artifacts
-
-- [x] Build weekly dashboard
-- [x] Build reconstructed RFP and bid form
-- [x] Build tender register and bid submission completeness checklist
-- [x] Build change management log
-- [x] Build meeting agenda, minutes, decision log, and action controls
-- [x] Build invoice and pay application tracker
-- [x] Build turnover and reconciliation checklist
-
-### Phase 4: Public evidence package
-
-- [x] Add downloadable or browser-viewable artifacts
-- [ ] Add annotated screenshots
-- [ ] Add a process map
-- [x] Add limitations and assumptions
-- [x] Add acceptance and quality checks to the RFP and meeting artifacts
-- [x] Validate structural accessibility and local links
-- [ ] Complete final visual review across desktop and mobile
-
-### Phase 5: Connected control checks
-
-- [ ] Build change package completeness checklist
-- [ ] Build invoice routing checklist
-- [ ] Connect procurement, decisions, changes, invoices, and closeout in a process map
-- [ ] Add cross-record examples that show one issue moving through the control system
-
-### Phase 6: Interview version
-
-- [ ] Select three artifacts for a three-minute walkthrough
-- [ ] Prepare a one-sentence permission request before presenting
-- [ ] Prepare concise explanations of role boundaries
-- [ ] Prepare likely interviewer questions and responses
-- [ ] Prepare a compact PDF or print view only after the web evidence is final
+- [x] Browser-viewable artifacts added
+- [x] Downloadable source registers added
+- [x] Evidence limitations and assumptions disclosed
+- [x] Role and approval boundaries repeated where needed
+- [x] Local-link and HTML structure validation passed for prior releases
+- [x] Browser acceptance tests added for the case study, RFP, meeting pack, process map, change control, invoice control, and interview walkthrough
+- [ ] Run final third-release validation
+- [ ] Complete visual and content review
+- [ ] Confirm whether the draft is ready to merge and publish
 
 ## Interview framing
 
@@ -223,11 +122,4 @@ The project demonstrates small improvements that fit within established procedur
 
 ## Release rule
 
-Do not publish the case study as complete until:
-
-- at least three connected artifacts are available for inspection
-- all data is confirmed synthetic or nonconfidential
-- source inconsistencies are disclosed
-- local-link and HTML validation pass
-- the visual and content review is complete
-- the user explicitly approves merging the draft pull request
+Do not merge or publish until the third-release validation passes and the visual and content review is complete.
