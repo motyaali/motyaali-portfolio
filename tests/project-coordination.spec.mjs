@@ -8,11 +8,12 @@ async function expectNoHorizontalOverflow(page) {
   expect(dimensions.documentWidth).toBeLessThanOrEqual(dimensions.viewportWidth + 1);
 }
 
-test('case study exposes the third evidence release', async ({ page }) => {
+test('case study exposes employer-neutral inspectable evidence', async ({ page }) => {
   await page.goto('/projects/project-coordination-controls.html');
 
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Construction Project Coordination Controls');
-  await expect(page.getByRole('heading', { name: 'What the evidence releases prove' })).toBeVisible();
+  await expect(page.getByText('Independent Applied Case Study | Synthetic Project Data')).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'What the evidence demonstrates' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'View the connected process' })).toHaveAttribute(
     'href',
     '../proof/project-coordination-controls/process-map.html'
@@ -25,25 +26,24 @@ test('case study exposes the third evidence release', async ({ page }) => {
     'href',
     '../proof/project-coordination-controls/invoice-routing-control.html'
   );
-  await expect(page.getByRole('link', { name: 'Open the interview walkthrough' }).first()).toHaveAttribute(
-    'href',
-    '../proof/project-coordination-controls/interview-walkthrough.html'
-  );
-  await expect(page.getByText('Third inspectable evidence release complete.')).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Open the interview walkthrough' })).toHaveCount(0);
+  await expect(page.getByText('construction administration coursework')).toHaveCount(0);
   await expectNoHorizontalOverflow(page);
 });
 
-test('RFP package presents scope, exclusions, criteria, bid form, and reconstruction limits', async ({ page }) => {
+test('RFP package presents scope, exclusions, criteria, bid form, and clean limitations', async ({ page }) => {
   await page.goto('/proof/project-coordination-controls/rfp-bid-package.html');
 
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Request for Proposal and Bid Package');
-  await expect(page.getByText('Source reconstruction note:')).toBeVisible();
+  await expect(page.getByText('Independent demonstration using fictional project data.')).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Description of scope of work' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Items not in scope' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Selection criteria' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Bid form' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Case-study limitations' })).toBeVisible();
   await expect(page.getByText('40%')).toBeVisible();
-  await expect(page.getByText('Conflicting draft language was not copied into the final scope.')).toBeVisible();
+  await expect(page.getByText('coursework')).toHaveCount(0);
+  await expect(page.getByText('conflicting draft')).toHaveCount(0);
   await expect(page.getByRole('link', { name: 'Download submission checklist' })).toHaveAttribute(
     'href',
     'bid-submission-checklist.csv'
@@ -55,6 +55,7 @@ test('meeting pack separates agenda, minutes, decisions, actions, and authority'
   await page.goto('/proof/project-coordination-controls/weekly-meeting-pack.html');
 
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Weekly Coordination Meeting Pack');
+  await expect(page.getByText('Synthetic case study:')).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Time-boxed discussion plan' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Discussion and outcome record' })).toBeVisible();
   await expect(page.getByText('Decision D-014:')).toBeVisible();
@@ -70,11 +71,13 @@ test('process map links the lifecycle while preserving responsibility boundaries
   await page.goto('/proof/project-coordination-controls/process-map.html');
 
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Connected Project Coordination Process Map');
+  await expect(page.getByText('Synthetic case study:')).toBeVisible();
   await expect(page.getByRole('heading', { name: 'How the records connect' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Who prepares, verifies, reviews, and decides' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'What prevents work from being lost between stages' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Change package control' })).toHaveAttribute('href', 'change-package-control.html');
   await expect(page.getByRole('link', { name: 'Invoice routing control' })).toHaveAttribute('href', 'invoice-routing-control.html');
+  await expect(page.getByRole('link', { name: 'Open interview walkthrough' })).toHaveCount(0);
   await expect(page.getByText('One process, connected records, clear authority.')).toBeVisible();
   await expectNoHorizontalOverflow(page);
 });
@@ -83,6 +86,7 @@ test('change package control distinguishes completeness from approval', async ({
   await page.goto('/proof/project-coordination-controls/change-package-control.html');
 
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Change Package Completeness Control');
+  await expect(page.getByText('Synthetic case study:')).toBeVisible();
   await expect(page.getByText('PCN-002, concealed corrosion at support seats.')).toBeVisible();
   await expect(page.getByRole('heading', { name: 'What must be checked before review' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Package evidence and next actions' })).toBeVisible();
@@ -97,6 +101,7 @@ test('invoice routing control holds incomplete support before approval routing',
   await page.goto('/proof/project-coordination-controls/invoice-routing-control.html');
 
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Invoice Routing Completeness Control');
+  await expect(page.getByText('Synthetic case study:')).toBeVisible();
   await expect(page.getByText('Pay Application 002.')).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Request-to-commitment check' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'What controls the next step' })).toBeVisible();
@@ -108,13 +113,15 @@ test('invoice routing control holds incomplete support before approval routing',
   await expectNoHorizontalOverflow(page);
 });
 
-test('interview walkthrough is permission-based, timed, and restrained', async ({ page }) => {
+test('unlisted interview walkthrough is permission-based, timed, and employer-neutral', async ({ page }) => {
   await page.goto('/proof/project-coordination-controls/interview-walkthrough.html');
 
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Project Coordination Walkthrough');
   await expect(page.getByRole('heading', { name: 'Permission request' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'The three-minute walkthrough' })).toBeVisible();
   await expect(page.getByText('Ask permission, show three controls, stop on time.')).toBeVisible();
+  await expect(page.getByText('independent case study using synthetic project data', { exact: false })).toBeVisible();
+  await expect(page.getByText('reconstructed academic case')).toHaveCount(0);
   await expect(page.getByText('0:00 to 0:25')).toBeVisible();
   await expect(page.getByText('2:35 to 3:00')).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Questions the walkthrough may invite' })).toBeVisible();
