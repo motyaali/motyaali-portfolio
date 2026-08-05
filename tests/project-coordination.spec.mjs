@@ -100,8 +100,8 @@ test('invoice routing control holds incomplete support before approval routing',
   await expect(page.getByText('Pay Application 002.')).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Request-to-commitment check' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'What controls the next step' })).toBeVisible();
-  await expect(page.getByText('Certified payroll', { exact: true })).toBeVisible();
-  await expect(page.getByText('Conditional lien release', { exact: true })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Certified payroll' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Conditional lien release' })).toBeVisible();
   await expect(page.getByText('Hold, two required records missing')).toBeVisible();
   await expect(page.getByText('$135,375')).toBeVisible();
   await expect(page.getByRole('link', { name: 'Download checklist' })).toHaveAttribute('href', 'invoice-routing-checklist.csv');
