@@ -2,98 +2,51 @@
 
 ## Portfolio build plan
 
-**Status:** Third inspectable evidence release complete and technically validated. Draft branch remains unmerged and unpublished.
+**Status:** Employer-neutral editorial pass complete. Final validation and visual review pending.
 
 ## Placement
 
-This work belongs inside the existing portfolio as:
+The project belongs inside the existing portfolio as:
 
-1. A new **Applied Practice** section on `work.html`
+1. An **Applied Practice** entry on `work.html`
 2. A dedicated project page at `projects/project-coordination-controls.html`
-3. A controlled evidence folder for synthetic, reconstructed, and nonconfidential artifacts
+3. A controlled evidence folder containing synthetic, nonconfidential artifacts
 
-It is not a separate website, service, or claim of professional project authority.
+It is not a separate website, employer-specific application page, or claim of professional approval authority.
 
 ## Public positioning
 
-**Maturity label:** Applied Case Study | Portfolio Reconstruction
+**Maturity label:** Independent Applied Case Study | Synthetic Project Data
 
-**Purpose:** Demonstrate current understanding of project coordination and construction administration by rebuilding and expanding academic source work into a coherent, inspectable coordination system.
+**Purpose:** Demonstrate current project-coordination and construction-administration capability through a coherent, inspectable project-controls system.
 
 **Boundary:** Learn and follow established procedures first. Prepare, verify, route, track, document, and escalate. Do not independently approve contracts, technical changes, payments, or final project decisions.
 
 ## Scenario
 
-A fictional urban transit station grating rehabilitation project adapted from construction administration coursework. All final names, vendors, dates, costs, schedules, and project records are synthetic or reconstructed.
+A fictional urban transit station grating rehabilitation project. All names, vendors, dates, costs, schedules, and project records are synthetic.
 
-## Source foundations
+## Completed public evidence set
 
-The case study draws conceptually from:
-
-- Construction administration coursework involving plan and specification review
-- An academic RFP and bid coordination exercise
-- A milestone schedule for procurement and demolition activities
-- A presentation on balancing time, money, safety, and quality
-- A group presentation explaining change orders and responsibility flow
-- Current professional understanding of document control, permissions, workflow guidance, issue tracking, and cross-functional coordination
-
-Original class submissions are research inputs, not the final public artifacts. Conflicting source language is disclosed and controlled by the synthetic project baseline.
-
-## Completed evidence set
-
-### Project foundation and dashboard
-
-- [x] Synthetic project identity, scope, exclusions, stakeholders, authority, milestones, and operating rules
+- [x] Project identity, scope, exclusions, stakeholders, authority, milestones, and operating rules
 - [x] Weekly project coordination dashboard
+- [x] Connected lifecycle process map and responsibility lanes
+- [x] RFP and bid package
+- [x] Bid submission completeness checklist and tender register
+- [x] Weekly agenda and minutes pack
+- [x] Decision and action registers
+- [x] Change management log and change-package completeness control
+- [x] Invoice tracker and invoice-routing completeness control
+- [x] Turnover and reconciliation checklist
 - [x] Time, money, safety, and quality control lenses
 
-### Procurement and commitment controls
+## Private preparation artifact
 
-- [x] Reconstructed RFP and bid package
-- [x] Bid submission completeness checklist
-- [x] Tender register
-- [x] Award and Notice to Proceed linkage
-
-### Meeting and decision controls
-
-- [x] Weekly agenda and minutes pack
-- [x] Controlled decision log
-- [x] Action and escalation register
-- [x] Minutes correction and decision read-back controls
-
-### Change controls
-
-- [x] Change management log
-- [x] Browser-viewable change package completeness control
-- [x] Detailed change package checklist
-- [x] Technical, commercial, schedule, safety, funding, authority, and post-approval routing gates
-
-### Invoice and financial controls
-
-- [x] Invoice and pay application tracker
-- [x] Browser-viewable invoice routing completeness control
-- [x] Detailed invoice routing checklist
-- [x] Commitment, approved-change, prior-billing, retainage, missing-document, and approval-sequence checks
-
-### Closeout and lifecycle controls
-
-- [x] Turnover and reconciliation checklist
-- [x] Connected lifecycle process map
-- [x] Responsibility lanes and handoff controls
-- [x] System-of-record update discipline
-
-### Interview version
-
-- [x] Three-minute walkthrough
-- [x] Permission request before sharing
-- [x] Three-screen sequence
-- [x] Concise role-boundary explanations
-- [x] Likely interviewer questions and responses
-- [x] Thirty-second no-screen version
+- [x] Three-minute interview walkthrough retained as an unlisted preparation guide
+- [x] Removed from the main case-study page and public sitemap
+- [x] Employer-neutral language used throughout the visible guide
 
 ## Embedded controls
-
-The project demonstrates small improvements that fit within established procedures:
 
 - Required owner, status, next action, due date, and escalation trigger
 - Consistent identifiers, status definitions, and revision references
@@ -101,25 +54,22 @@ The project demonstrates small improvements that fit within established procedur
 - Links between procurement, decisions, changes, commitments, invoices, schedules, and closeout records
 - Approval and revision history
 - Formula and completeness checks before routing
-- Clear separation of administrative verification from technical, contractual, financial, and owner authority
+- Separation of administrative verification from technical, contractual, financial, and owner authority
 - System-of-record updates only after authorized action
 
 ## Validation requirements
 
 - [x] Browser-viewable artifacts added
 - [x] Downloadable source registers added
-- [x] Evidence limitations and assumptions disclosed
-- [x] Role and approval boundaries repeated where needed
-- [x] Local-link and HTML structure validation passed for 27 HTML pages
-- [x] Browser acceptance tests added for the case study, RFP, meeting pack, process map, change control, invoice control, and interview walkthrough
-- [x] Full 40-test browser suite passed across desktop Chromium, desktop WebKit, tablet WebKit, and mobile WebKit
-- [ ] Complete visual and content review
-- [ ] Confirm whether the draft is ready to merge and publish
-
-## Interview framing
-
-> I rebuilt an academic construction administration scenario to demonstrate how I currently approach scope, project records, commitments, changes, invoices, and closeout. These are sample structures, not assumptions about your internal process. My first priority would be learning your procedures, systems, and approval structure, then applying the same discipline within those standards.
+- [x] Concise synthetic-data disclosure added
+- [x] Employer-specific names excluded
+- [x] Academic-repair framing removed from public positioning
+- [x] Interview preparation guide removed from public navigation and sitemap
+- [ ] Final HTML and local-link validation
+- [ ] Final browser acceptance suite
+- [ ] Visual content review
+- [ ] Confirm readiness to merge and publish
 
 ## Release rule
 
-Do not merge or publish until the visual and content review is complete.
+Do not merge or publish until final validation and visual review are complete.
