@@ -2,7 +2,7 @@
 
 ## Portfolio build plan
 
-**Status:** Case-study architecture drafted. Supporting artifacts not yet published.
+**Status:** Second inspectable evidence release complete on the draft branch. Not yet merged or published.
 
 ## Placement
 
@@ -24,7 +24,7 @@ It is not a separate website, service, or claim of professional project authorit
 
 ## Scenario
 
-A fictional urban transit station grating rehabilitation project adapted from construction administration coursework. All final names, vendors, dates, costs, schedules, and project records will be synthetic or reconstructed.
+A fictional urban transit station grating rehabilitation project adapted from construction administration coursework. All final names, vendors, dates, costs, schedules, and project records are synthetic or reconstructed.
 
 ## Source foundations
 
@@ -38,6 +38,16 @@ The case study draws conceptually from:
 - Current professional understanding of document control, permissions, workflow guidance, issue tracking, and cross-functional coordination
 
 Original class submissions are research inputs, not the final public artifacts.
+
+## Source-handling rule
+
+The academic drafts include useful content and some internal inconsistencies. The public reconstruction must:
+
+- preserve supported terminology and workflow logic
+- distinguish coursework-derived concepts from synthetic case-study facts
+- disclose conflicting draft language instead of silently presenting it as settled
+- use the synthetic project baseline as the controlling public scenario
+- avoid publishing original class-team names, branding, or source documents
 
 ## Artifact set
 
@@ -53,10 +63,14 @@ Tracks:
 - Major risks and blockers
 - Owner, next action, and due date
 
-### 2. RFP and Tender Register
+### 2. RFP and Tender Controls
 
-Tracks:
+Includes and tracks:
 
+- Reconstructed invitation and bid instructions
+- Scope of work and exclusions
+- Procurement and work milestones
+- Bid form and requested unit prices
 - Invitation and bidder list
 - Site walk attendance
 - Questions and RFIs
@@ -83,12 +97,14 @@ Tracks:
 
 Includes:
 
-- Agenda
-- Attendance
+- Meeting purpose and decision needs
+- Pre-read list
+- Time-boxed agenda
+- Attendance and represented authority
 - Minutes
 - Decision log
 - Action tracker
-- Communication matrix
+- Correction window
 - Escalation path
 
 ### 5. Invoice and Pay Application Tracker
@@ -132,16 +148,18 @@ Every artifact should show how administrative controls support:
 
 ## Embedded controls
 
-The project will demonstrate small improvements that fit within established procedures:
+The project demonstrates small improvements that fit within established procedures:
 
 - Required owner, status, next action, and due date
 - Consistent status definitions
 - Missing-document flags
 - Overdue-item flags
 - Links between related project records
-- Approval and revision history
+- Approval, authority, and revision history
 - Formula checks
 - Completeness checks before routing
+- Explicit decision limitations
+- Transparent reconstruction assumptions
 
 ## Build sequence
 
@@ -152,42 +170,52 @@ The project will demonstrate small improvements that fit within established proc
 - [x] Define evidence boundary
 - [x] Define role and approval boundary
 - [x] Define artifact set
-- [ ] Add the Applied Practice card and section to `work.html`
+- [x] Add the Applied Practice card and section to `work.html`
 
 ### Phase 2: Synthetic project data
 
-- [ ] Define fictional project identity
-- [ ] Create vendor and stakeholder list
-- [ ] Create milestone dates
-- [ ] Create commitments and budget assumptions
-- [ ] Create sample changes
-- [ ] Create sample invoices
-- [ ] Create closeout requirements
+- [x] Define fictional project identity
+- [x] Create vendor and stakeholder list
+- [x] Create milestone dates
+- [x] Create commitments and budget assumptions
+- [x] Create sample changes
+- [x] Create sample invoices
+- [x] Create closeout requirements
 
 ### Phase 3: Core artifacts
 
-- [ ] Build weekly dashboard
-- [ ] Build RFP and tender register
-- [ ] Build change management log
-- [ ] Build meeting and communication pack
-- [ ] Build invoice and pay application tracker
-- [ ] Build turnover and reconciliation checklist
+- [x] Build weekly dashboard
+- [x] Build reconstructed RFP and bid form
+- [x] Build tender register and bid submission completeness checklist
+- [x] Build change management log
+- [x] Build meeting agenda, minutes, decision log, and action controls
+- [x] Build invoice and pay application tracker
+- [x] Build turnover and reconciliation checklist
 
 ### Phase 4: Public evidence package
 
-- [ ] Add downloadable or browser-viewable artifacts
+- [x] Add downloadable or browser-viewable artifacts
 - [ ] Add annotated screenshots
 - [ ] Add a process map
-- [ ] Add limitations and assumptions
-- [ ] Add acceptance and quality checks
-- [ ] Validate accessibility and mobile layout
+- [x] Add limitations and assumptions
+- [x] Add acceptance and quality checks to the RFP and meeting artifacts
+- [x] Validate structural accessibility and local links
+- [ ] Complete final visual review across desktop and mobile
 
-### Phase 5: Interview version
+### Phase 5: Connected control checks
+
+- [ ] Build change package completeness checklist
+- [ ] Build invoice routing checklist
+- [ ] Connect procurement, decisions, changes, invoices, and closeout in a process map
+- [ ] Add cross-record examples that show one issue moving through the control system
+
+### Phase 6: Interview version
 
 - [ ] Select three artifacts for a three-minute walkthrough
 - [ ] Prepare a one-sentence permission request before presenting
 - [ ] Prepare concise explanations of role boundaries
 - [ ] Prepare likely interviewer questions and responses
+- [ ] Prepare a compact PDF or print view only after the web evidence is final
 
 ## Interview framing
 
@@ -195,4 +223,11 @@ The project will demonstrate small improvements that fit within established proc
 
 ## Release rule
 
-Do not publish the case study as complete until at least three connected artifacts are available for inspection and all data has been confirmed synthetic or nonconfidential.
+Do not publish the case study as complete until:
+
+- at least three connected artifacts are available for inspection
+- all data is confirmed synthetic or nonconfidential
+- source inconsistencies are disclosed
+- local-link and HTML validation pass
+- the visual and content review is complete
+- the user explicitly approves merging the draft pull request
