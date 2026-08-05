@@ -10,13 +10,19 @@ This folder contains the inspectable records behind the Construction Project Coo
 
 1. [`dashboard.html`](dashboard.html) presents the decision-ready weekly coordination view.
 2. [`project-baseline.md`](project-baseline.md) defines the scenario, scope, authority, milestones, and operating rules.
-3. The CSV registers provide the source records behind the dashboard.
+3. [`rfp-bid-package.html`](rfp-bid-package.html) reconstructs the solicitation and pricing package.
+4. [`weekly-meeting-pack.html`](weekly-meeting-pack.html) shows agenda design, minutes, decisions, and action follow-through.
+5. The CSV registers provide the source records behind the visible pages.
 
 ## Evidence files
 
 | File | Control demonstrated |
 |---|---|
+| [`rfp-bid-package.html`](rfp-bid-package.html) | Scope definition, exclusions, procurement schedule, bid instructions, evaluation criteria, and bid form |
+| [`bid-submission-checklist.csv`](bid-submission-checklist.csv) | Bid receipt and administrative completeness without transferring award authority |
 | [`tender-register.csv`](tender-register.csv) | Solicitation, bidder communication, completeness review, evaluation, and award records |
+| [`weekly-meeting-pack.html`](weekly-meeting-pack.html) | Agenda, pre-read, attendance, minutes, decision read-back, and action ownership |
+| [`decision-log.csv`](decision-log.csv) | Decision authority, effective date, related records, boundaries, and follow-up |
 | [`change-log.csv`](change-log.csv) | Potential changes, source records, quotation, cost, time, review, status, and commitment linkage |
 | [`action-log.csv`](action-log.csv) | Meeting follow-through, ownership, due dates, related records, and escalation triggers |
 | [`invoice-tracker.csv`](invoice-tracker.csv) | Commitment, billing, retainage, missing support, approval status, and next action |
@@ -48,14 +54,27 @@ The Project Coordinator does not independently approve:
 - The records demonstrate controls and judgment, not prior employment authority.
 - No employer, agency, client, contractor, or class-team source document is published here.
 - Improvements are framed as practical controls within an established process, not as replacement systems.
+- Source inconsistencies are disclosed rather than silently presented as settled project facts.
 
 ## Current release
 
-The first evidence release includes the baseline, dashboard, tender register, change log, action log, invoice tracker, and closeout checklist.
+The second evidence release includes:
+
+- synthetic project baseline
+- weekly coordination dashboard
+- reconstructed RFP and bid package
+- bid submission completeness checklist
+- tender register
+- weekly meeting agenda and minutes pack
+- controlled decision log
+- change management log
+- action log
+- invoice tracker
+- closeout checklist
 
 Planned next artifacts:
 
-- reconstructed RFP and bid form
-- meeting agenda, minutes, and decision log
 - change package completeness checklist
 - invoice routing checklist
+- process map linking procurement, changes, invoices, meetings, and closeout
+- interview walkthrough guide
