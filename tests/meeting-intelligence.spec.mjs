@@ -13,7 +13,7 @@ test.beforeEach(async ({ page }) => {
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Proposal Review and Audit Control Prototype');
 });
 
-test('publishes only reviewed records and preserves evidence history', async ({ page }, testInfo) => {
+test('publishes only individually reviewed records and preserves evidence history', async ({ page }, testInfo) => {
   await expect(page.locator('#source-text')).toContainText('Operations Weekly Review');
   await expect(page.locator('#source-text')).toContainText('Final publication and permanent record status must remain human approvals.');
 
@@ -37,7 +37,9 @@ test('publishes only reviewed records and preserves evidence history', async ({ 
   await cards.nth(2).getByLabel('Owner').fill('Program Operations Lead');
   await cards.nth(2).getByRole('button', { name: 'Approve', exact: true }).click();
 
-  await page.getByRole('button', { name: 'Approve All Pending' }).click();
+  for (const index of [3, 4, 5, 6, 7, 8, 9]) {
+    await page.locator('.proposal-card').nth(index).getByRole('button', { name: 'Approve', exact: true }).click();
+  }
   await page.locator('.proposal-card').nth(9).getByRole('button', { name: 'Return to Pending' }).click();
   await expect(page.locator('#review-status')).toHaveText('1 pending, 8 approved, 1 rejected.');
 
