@@ -2,9 +2,9 @@
 
 ## Evidence classification
 
-**Applied case study | Portfolio reconstruction | Synthetic data**
+**Independent applied case study | Synthetic project data**
 
-This project is a nonconfidential demonstration developed from construction administration coursework and rebuilt to reflect current project-coordination practice. Names, dates, organizations, costs, vendors, and records are fictional. The case does not represent a project performed for an employer or client.
+This nonconfidential demonstration uses fictional names, dates, organizations, costs, vendors, and records to show a complete project-coordination approach. It does not represent confidential client work or independent approval authority.
 
 ## Project identity
 
