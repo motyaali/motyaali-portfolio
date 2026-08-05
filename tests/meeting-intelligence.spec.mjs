@@ -10,10 +10,10 @@ async function loadProposals(page) {
 
 test.beforeEach(async ({ page }) => {
   await page.goto(demoPath);
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Meeting Intelligence Review Queue');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Proposal Review and Audit Control Prototype');
 });
 
-test('publishes only reviewed records and preserves evidence history', async ({ page }, testInfo) => {
+test('publishes only individually reviewed records and preserves evidence history', async ({ page }, testInfo) => {
   await expect(page.locator('#source-text')).toContainText('Operations Weekly Review');
   await expect(page.locator('#source-text')).toContainText('Final publication and permanent record status must remain human approvals.');
 
@@ -37,7 +37,9 @@ test('publishes only reviewed records and preserves evidence history', async ({ 
   await cards.nth(2).getByLabel('Owner').fill('Program Operations Lead');
   await cards.nth(2).getByRole('button', { name: 'Approve', exact: true }).click();
 
-  await page.getByRole('button', { name: 'Approve All Pending' }).click();
+  for (const index of [3, 4, 5, 6, 7, 8, 9]) {
+    await page.locator('.proposal-card').nth(index).getByRole('button', { name: 'Approve', exact: true }).click();
+  }
   await page.locator('.proposal-card').nth(9).getByRole('button', { name: 'Return to Pending' }).click();
   await expect(page.locator('#review-status')).toHaveText('1 pending, 8 approved, 1 rejected.');
 
@@ -95,12 +97,13 @@ test('publishes only reviewed records and preserves evidence history', async ({ 
   await expect(page.getByRole('button', { name: 'Download Markdown Record' })).toBeDisabled();
 });
 
-test('states the public evidence and production-claim boundaries', async ({ page }) => {
-  await expect(page.getByText('This demonstration uses a fictional meeting and deterministic pre-generated proposals.')).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'What this MVP proves and does not prove' })).toBeVisible();
-  await expect(page.getByText('Production AI extraction accuracy')).toBeVisible();
-  await expect(page.getByText('Measured time savings or adoption')).toBeVisible();
-  await expect(page.getByText('Autonomous authority to assign or publish work')).toBeVisible();
+test('states the supporting-evidence and review-cost boundaries', async ({ page }) => {
+  await expect(page.getByText('This is not the customer-facing MVP for AI Workflow Enablement.', { exact: false })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Where this control pattern belongs' })).toBeVisible();
+  await expect(page.getByText('Records that will become authoritative')).toBeVisible();
+  await expect(page.getByText('Exceptions that require accountable judgment')).toBeVisible();
+  await expect(page.getByText('Every low-risk routine record')).toBeVisible();
+  await expect(page.getByText('Work where the review costs more than the risk')).toBeVisible();
 });
 
 test('fits the configured viewport and exposes accessible mobile navigation', async ({ page }) => {

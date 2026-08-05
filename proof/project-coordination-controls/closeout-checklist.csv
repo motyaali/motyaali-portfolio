@@ -1,0 +1,11 @@
+Closeout ID,Requirement,Responsible Party,Required By,Status,Source or Reference,Open Issue,Next Action,Due Date,Archive Location
+CL-001,Closeout register established,Project Coordinator,2026-09-18,Complete,Project administration procedure,None,Maintain through final completion,2027-01-29,Project Controls / Closeout
+CL-002,Document naming and revision convention,Project Coordinator,2026-09-18,Complete,Document control plan,None,Verify use during monthly audit,2026-10-30,Project Controls / Standards
+CL-003,Warranty requirements matrix,General Contractor,2026-10-09,Complete,Specification warranty sections,None,Link warranty requirements to procurement packages,2026-10-09,Project Controls / Closeout
+CL-004,Operations and maintenance requirements,General Contractor,2026-11-06,In progress,Technical specifications,Product data list incomplete,Submit preliminary O&M index,2026-11-06,Project Controls / Closeout / O&M
+CL-005,As-built drawing tracking,General Contractor,2026-10-30,In progress,Field change records,Two field sketches awaiting engineer confirmation,Update as-built log after RFI-027 disposition,2026-10-16,Project Controls / Closeout / As-Builts
+CL-006,Punch-list template and ownership,Construction Manager,2026-11-13,In progress,Quality plan,Area ownership not finalized,Confirm inspection areas and responsible reviewers,2026-10-23,Project Controls / Quality
+CL-007,Final change reconciliation,Project Manager,2027-01-15,Not started,Change log,Open PCN items remain,Review monthly beginning November,2026-11-06,Project Controls / Commercial
+CL-008,Final invoice and retainage release,Finance Analyst,2027-01-22,Not started,Contract payment requirements,Not yet due,Verify prerequisite documents before final routing,2027-01-15,Project Controls / Financial
+CL-009,Training and acceptance records,Owner Program Manager,2027-01-15,Not started,Turnover requirements,Not yet due,Schedule turnover review during December,2026-12-04,Project Controls / Closeout / Acceptance
+CL-010,Final archive and index,Project Coordinator,2027-01-29,Not started,Records retention procedure,Not yet due,Prepare draft archive index before substantial completion,2027-01-08,Project Controls / Archive

@@ -55,4 +55,49 @@ if (requestedSubject) {
   if (context) context.textContent = `Email topic: ${safeSubject}`;
 }
 
+function normalizeProjectCoordinationEvidence() {
+  if (!window.location.pathname.includes('/project-coordination-controls/')) return;
+
+  const isInterviewGuide = window.location.pathname.endsWith('/interview-walkthrough.html');
+
+  if (!isInterviewGuide) {
+    document.querySelectorAll('a[href$="interview-walkthrough.html"]').forEach((link) => {
+      const card = link.closest('.proof-card');
+      if (card) card.remove();
+      else link.remove();
+    });
+  }
+
+  const disclosureByPage = {
+    'dashboard.html': 'All organizations, vendors, dates, costs, and records are fictional. This dashboard demonstrates project-coordination controls and judgment using synthetic project data.',
+    'process-map.html': 'This independent case study uses synthetic project data. The process map is platform-neutral and does not represent any employer\'s exact approval matrix or internal procedure.',
+    'change-package-control.html': 'PCN-002, its values, organizations, dates, and supporting records are fictional. This artifact demonstrates administrative completeness and routing judgment.',
+    'invoice-routing-control.html': 'PA-002, its values, dates, parties, and supporting records are fictional. This artifact demonstrates administrative review and exception handling.',
+    'weekly-meeting-pack.html': 'This fictional meeting record demonstrates agenda, decision, action, and follow-through controls using synthetic project data.'
+  };
+
+  const fileName = window.location.pathname.split('/').pop();
+  const notice = document.querySelector('.demo-notice.coordination-notice');
+  if (notice && disclosureByPage[fileName]) {
+    notice.innerHTML = `<strong>Synthetic case study:</strong> ${disclosureByPage[fileName]}`;
+  }
+
+  if (isInterviewGuide) {
+    const replacements = new Map([
+      ['This is a reconstructed academic case using synthetic data.', 'This is an independent case study using synthetic project data.'],
+      ['The case is a portfolio reconstruction based on construction administration coursework and my current document-control and workflow experience. All project data is synthetic. I built it to demonstrate how I now connect the processes.', 'This is an independent portfolio case study using synthetic project data. I built it to demonstrate how I connect project coordination controls across the full lifecycle.'],
+      ['State that the case is reconstructed and synthetic.', 'State that the case uses synthetic project data.']
+    ]);
+
+    document.querySelectorAll('p, blockquote, li').forEach((element) => {
+      let text = element.textContent;
+      replacements.forEach((replacement, original) => {
+        text = text.replace(original, replacement);
+      });
+      if (text !== element.textContent) element.textContent = text;
+    });
+  }
+}
+
+normalizeProjectCoordinationEvidence();
 document.getElementById('year')?.append(String(new Date().getFullYear()));
