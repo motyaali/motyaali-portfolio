@@ -2,7 +2,7 @@
 
 ## Portfolio build plan
 
-**Status:** Third inspectable evidence release complete. Draft branch remains unmerged and unpublished.
+**Status:** Third inspectable evidence release complete and technically validated. Draft branch remains unmerged and unpublished.
 
 ## Placement
 
@@ -110,9 +110,9 @@ The project demonstrates small improvements that fit within established procedur
 - [x] Downloadable source registers added
 - [x] Evidence limitations and assumptions disclosed
 - [x] Role and approval boundaries repeated where needed
-- [x] Local-link and HTML structure validation passed for prior releases
+- [x] Local-link and HTML structure validation passed for 27 HTML pages
 - [x] Browser acceptance tests added for the case study, RFP, meeting pack, process map, change control, invoice control, and interview walkthrough
-- [ ] Run final third-release validation
+- [x] Full 40-test browser suite passed across desktop Chromium, desktop WebKit, tablet WebKit, and mobile WebKit
 - [ ] Complete visual and content review
 - [ ] Confirm whether the draft is ready to merge and publish
 
@@ -122,4 +122,4 @@ The project demonstrates small improvements that fit within established procedur
 
 ## Release rule
 
-Do not merge or publish until the third-release validation passes and the visual and content review is complete.
+Do not merge or publish until the visual and content review is complete.
