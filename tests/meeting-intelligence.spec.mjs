@@ -10,7 +10,7 @@ async function loadProposals(page) {
 
 test.beforeEach(async ({ page }) => {
   await page.goto(demoPath);
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Proposal Review and Audit Control Prototype');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Meeting Intelligence Review Prototype');
 });
 
 test('publishes only individually reviewed records and preserves evidence history', async ({ page }, testInfo) => {
@@ -60,6 +60,7 @@ test('publishes only individually reviewed records and preserves evidence histor
 
   expect(evidence.dataClassification).toBe('Synthetic public demonstration');
   expect(evidence.proposalMethod).toContain('Deterministic');
+  expect(evidence.workflow).toBe('AI Workflow Enablement — Meeting Intelligence Review Prototype');
   expect(evidence.sourceMeeting).toContain('Please leave that as an open question');
   expect(evidence.records).toHaveLength(10);
   expect(evidence.records.filter((record) => record.status === 'approved')).toHaveLength(8);
@@ -90,6 +91,7 @@ test('publishes only individually reviewed records and preserves evidence histor
   expect(markdown).toContain('Program Operations Lead');
   expect(markdown).toContain('ACT-001 | rejected');
   expect(markdown).toContain('CTL-001 | pending');
+  expect(markdown).toContain('The public prototype uses synthetic data and deterministic proposals.');
 
   await page.getByRole('button', { name: 'Reset' }).click();
   await expect(page.locator('#review-status')).toHaveText('No proposals loaded.');
@@ -97,13 +99,15 @@ test('publishes only individually reviewed records and preserves evidence histor
   await expect(page.getByRole('button', { name: 'Download Markdown Record' })).toBeDisabled();
 });
 
-test('states the supporting-evidence and review-cost boundaries', async ({ page }) => {
-  await expect(page.getByText('This is not the customer-facing MVP for AI Workflow Enablement.', { exact: false })).toBeVisible();
+test('states the prototype and proportional-review boundaries', async ({ page }) => {
+  await expect(page.getByText('This browser-local demonstration uses a fictional meeting and deterministic pre-generated proposals.', { exact: false })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Where this control pattern belongs' })).toBeVisible();
-  await expect(page.getByText('Records that will become authoritative')).toBeVisible();
-  await expect(page.getByText('Exceptions that require accountable judgment')).toBeVisible();
-  await expect(page.getByText('Every low-risk routine record')).toBeVisible();
-  await expect(page.getByText('Work where the review costs more than the risk')).toBeVisible();
+  await expect(page.getByText('Records that may become authoritative')).toBeVisible();
+  await expect(page.getByText('Exceptions requiring accountable judgment')).toBeVisible();
+  await expect(page.getByText('Low-risk routine records')).toBeVisible();
+  await expect(page.getByText('Work where detailed review would cost more than the risk it controls')).toBeVisible();
+  await expect(page.getByText('This is not the customer-facing MVP', { exact: false })).toHaveCount(0);
+  await expect(page.getByText('Correct role:', { exact: false })).toHaveCount(0);
 });
 
 test('fits the configured viewport and exposes accessible mobile navigation', async ({ page }) => {
