@@ -1,6 +1,6 @@
 # Reference Reviewed Meeting Operating Record
 
-**Workflow:** AI Workflow Enablement, Meeting Intelligence MVP  
+**Workflow:** AI Workflow Enablement, Meeting Intelligence Review Prototype  
 **Source:** Synthetic Operations Weekly Review, August 1, 2026  
 **Publication authority:** Human reviewer  
 **Reference status:** Expected example after review
