@@ -1,6 +1,6 @@
 # Synthetic Operations Weekly Review
 
-**Purpose:** Public test input for the AI Workflow Enablement Meeting Intelligence MVP  
+**Purpose:** Public test input for the AI Workflow Enablement Meeting Intelligence Review Prototype  
 **Data classification:** Fully synthetic  
 **Meeting date:** August 1, 2026  
 **Attendees:** Jordan Lee, Priya Shah, Marco Ruiz, Dana Brooks
