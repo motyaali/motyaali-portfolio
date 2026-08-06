@@ -1,0 +1,36 @@
+.project-cover {
+  align-content: center;
+  padding: 1.2rem;
+}
+.project-cover-label {
+  position: absolute;
+  z-index: 2;
+  left: 1rem;
+  right: 1rem;
+  bottom: .9rem;
+  display: flex;
+  justify-content: space-between;
+  gap: .75rem;
+  color: rgba(255,255,255,.94);
+  font-size: .72rem;
+  font-weight: 850;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+.project-cover-label::before {
+  content: "";
+  flex: 1;
+  align-self: center;
+  height: 1px;
+  background: rgba(255,255,255,.4);
+}
+.project-cover-label span { order: -1; }
+.project-cover .project-symbol {
+  transform: translateY(-.35rem);
+}
+.project-card:hover .project-cover .project-symbol {
+  transform: translateY(-.5rem) scale(1.02);
+}
+.project-cover .project-symbol {
+  transition: transform .18s ease;
+}
