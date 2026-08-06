@@ -1,359 +1,325 @@
 (() => {
   'use strict';
 
-  const sourceMeeting = `Operations Weekly Review — Synthetic Demonstration
-Date: August 1, 2026
-Attendees: Jordan Lee, Priya Shah, Marco Ruiz, Dana Brooks
-
-Jordan: The July status report took nearly six hours to assemble because the source files used different project names. We agreed that the project register should become the naming source before the next report.
-
-Priya: I will clean the project register and send the proposed naming list to Dana by August 6. Dana will review it, but we did not agree on when her review must be complete.
-
-Marco: The document intake mailbox received four duplicate submissions last week. I can add a duplicate check to the pilot, but I need the approved document ID rules first.
-
-Dana: Use the existing project code plus document type as the temporary document ID rule for the pilot. Do not make that the permanent records rule until Records Management reviews it.
-
-Jordan: Decision: the pilot will cover one mailbox and one project team. We are not expanding to all departments during the pilot.
-
-Priya: There is a risk that the August status report will still use inconsistent names if the register cleanup is not approved by August 9.
-
-Marco: I will configure the test environment after Dana approves the naming list and the temporary ID rule is documented. Target date is August 12.
-
-Jordan: We still need someone to own the user acceptance test script. Please leave that as an open question rather than assigning it automatically.
-
-Dana: Final publication and permanent record status must remain human approvals.`;
-
-  const proposalSeed = [
+  const contributors = [
     {
-      id: 'DEC-001',
-      type: 'Decision',
-      statement: 'Use the project register as the naming source for the next status report.',
-      owner: 'Jordan Lee',
-      dueDate: '',
-      source: 'Paragraph 2',
-      confidence: 'High',
-      notes: 'Decision is explicit, but implementation depends on register cleanup and review.',
-      status: 'pending'
+      id: 'UPD-001',
+      name: 'Jordan Lee',
+      role: 'Project Lead',
+      channel: 'Meeting notes',
+      received: '10:05 AM',
+      status: 'received',
+      summary: 'Client requested a consolidated update by 3:00 PM covering schedule, design, site access, cost, vendor delivery, and compliance.'
     },
     {
-      id: 'ACT-001',
-      type: 'Action',
-      statement: 'Clean the project register and send the proposed naming list to Dana.',
-      owner: 'Priya Shah',
-      dueDate: '2026-08-06',
-      source: 'Paragraph 3',
-      confidence: 'High',
-      notes: 'Explicit owner and date.',
-      status: 'pending'
+      id: 'UPD-002',
+      name: 'Priya Shah',
+      role: 'Design Lead',
+      channel: 'Email',
+      received: '10:42 AM',
+      status: 'received',
+      summary: 'Design package is 90% complete. Release remains targeted for August 12 if the redline decision is completed by August 8.'
     },
     {
-      id: 'ACT-002',
-      type: 'Action',
-      statement: 'Review the proposed naming list.',
-      owner: 'Dana Brooks',
-      dueDate: '',
-      source: 'Paragraph 3',
-      confidence: 'Medium',
-      notes: 'Owner is explicit. Due date is missing and should remain blank until confirmed.',
-      status: 'pending'
+      id: 'UPD-003',
+      name: 'Marco Ruiz',
+      role: 'Site Coordinator',
+      channel: 'Team chat',
+      received: '11:18 AM',
+      status: 'received',
+      summary: 'Field survey is complete. Site B access remains unresolved, and no owner was identified for the follow-up.'
     },
     {
-      id: 'ACT-003',
-      type: 'Action',
-      statement: 'Add a duplicate-submission check to the document intake pilot.',
-      owner: 'Marco Ruiz',
-      dueDate: '',
-      source: 'Paragraph 4',
-      confidence: 'Medium',
-      notes: 'Blocked until approved document ID rules are available.',
-      status: 'pending'
+      id: 'UPD-004',
+      name: 'Dana Brooks',
+      role: 'Cost Analyst',
+      channel: 'Status tracker',
+      received: '11:47 AM',
+      status: 'received',
+      summary: 'Cost log is current with no approved budget change. One vendor quote remains pending and is expected by August 9.'
     },
     {
-      id: 'DEC-002',
-      type: 'Decision',
-      statement: 'Use project code plus document type as the temporary pilot document ID rule.',
-      owner: 'Dana Brooks',
-      dueDate: '',
-      source: 'Paragraph 5',
-      confidence: 'High',
-      notes: 'Temporary only. Permanent records rule requires Records Management review.',
-      status: 'pending'
+      id: 'UPD-005',
+      name: 'Lena Ortiz',
+      role: 'Vendor Coordinator',
+      channel: 'Email',
+      received: '12:16 PM',
+      status: 'received',
+      summary: 'Vendor email lists equipment delivery for August 14, while the project schedule still lists August 12.'
     },
     {
-      id: 'DEC-003',
-      type: 'Decision',
-      statement: 'Limit the pilot to one mailbox and one project team.',
-      owner: 'Jordan Lee',
-      dueDate: '',
-      source: 'Paragraph 6',
-      confidence: 'High',
-      notes: 'Explicit scope decision.',
-      status: 'pending'
-    },
-    {
-      id: 'RSK-001',
-      type: 'Risk',
-      statement: 'The August status report may still use inconsistent project names.',
-      owner: '',
-      dueDate: '2026-08-09',
-      source: 'Paragraph 7',
-      confidence: 'High',
-      notes: 'Trigger: register cleanup is not approved by August 9. Risk owner was not assigned.',
-      status: 'pending'
-    },
-    {
-      id: 'ACT-004',
-      type: 'Action',
-      statement: 'Configure the test environment after naming-list approval and documentation of the temporary ID rule.',
-      owner: 'Marco Ruiz',
-      dueDate: '2026-08-12',
-      source: 'Paragraph 8',
-      confidence: 'High',
-      notes: 'Dependencies are explicit.',
-      status: 'pending'
-    },
-    {
-      id: 'QST-001',
-      type: 'Open Question',
-      statement: 'Who will own the user acceptance test script?',
-      owner: '',
-      dueDate: '',
-      source: 'Paragraph 9',
-      confidence: 'High',
-      notes: 'The meeting explicitly instructs the workflow not to assign an owner automatically.',
-      status: 'pending'
-    },
-    {
-      id: 'CTL-001',
-      type: 'Control',
-      statement: 'Final publication and permanent record status require human approval.',
-      owner: 'Authorized reviewer',
-      dueDate: '',
-      source: 'Paragraph 10',
-      confidence: 'High',
-      notes: 'Governance boundary, not an action item.',
-      status: 'pending'
+      id: 'UPD-006',
+      name: 'Amir Patel',
+      role: 'Compliance Lead',
+      channel: 'Requested update',
+      received: 'Not received',
+      status: 'missing',
+      summary: 'No compliance update has been received. The workflow must request the missing input rather than assume status.'
     }
   ];
 
-  let records = [];
-  let outputPayload = null;
+  const state = {
+    assembled: false,
+    missingResolved: false,
+    dateResolved: false,
+    ownerResolved: false,
+    deliveryDate: '',
+    accessOwner: '',
+    finalized: false
+  };
 
-  const sourceElement = document.getElementById('source-text');
-  const proposalList = document.getElementById('proposal-list');
-  const reviewStatus = document.getElementById('review-status');
-  const outputElement = document.getElementById('review-output');
-  const downloadJsonButton = document.getElementById('download-json');
-  const downloadMarkdownButton = document.getElementById('download-markdown');
+  const contributorGrid = document.getElementById('contributor-grid');
+  const coordinationSection = document.getElementById('coordination-section');
+  const coordinationSummary = document.getElementById('coordination-summary');
+  const draftBrief = document.getElementById('draft-brief');
+  const exceptionList = document.getElementById('coordination-exceptions');
+  const registerBody = document.getElementById('action-register-body');
+  const finalizeButton = document.getElementById('finalize-package');
+  const finalizeGuidance = document.getElementById('finalize-guidance');
+  const packageSection = document.getElementById('package-section');
+  const packageImpact = document.getElementById('package-impact');
+  const finalPackage = document.getElementById('final-package');
 
-  if (!sourceElement || !proposalList || !reviewStatus || !outputElement) {
-    return;
+  if (!contributorGrid || !coordinationSection || !draftBrief || !exceptionList || !registerBody) return;
+
+  function contributorCard(item) {
+    const article = document.createElement('article');
+    article.className = `contributor-card ${item.status}`;
+    article.innerHTML = `
+      <div class="contributor-heading">
+        <div><span class="response-status">${item.status === 'received' ? 'Received' : 'Missing'}</span><h3>${item.name}</h3><p>${item.role}</p></div>
+        <span class="source-channel">${item.channel}</span>
+      </div>
+      <p>${item.summary}</p>
+      <small>${item.received}</small>`;
+    return article;
   }
 
-  sourceElement.textContent = sourceMeeting;
-
-  function cloneSeed() {
-    return proposalSeed.map((item) => ({ ...item, history: [] }));
+  function renderContributors() {
+    contributorGrid.replaceChildren(...contributors.map(contributorCard));
   }
 
-  function updateStatusMessage() {
-    if (records.length === 0) {
-      reviewStatus.textContent = 'No proposals loaded.';
-      return;
-    }
-    const counts = records.reduce(
-      (accumulator, item) => {
-        accumulator[item.status] += 1;
-        return accumulator;
-      },
-      { pending: 0, approved: 0, rejected: 0 }
-    );
-    reviewStatus.textContent = `${counts.pending} pending, ${counts.approved} approved, ${counts.rejected} rejected.`;
+  function summaryCards() {
+    coordinationSummary.innerHTML = `
+      <article><strong>5</strong><span>updates prepared</span></article>
+      <article><strong>1</strong><span>missing response found</span></article>
+      <article><strong>2</strong><span>conflicts or gaps found</span></article>
+      <article><strong>3</strong><span>review decisions required</span></article>`;
   }
 
-  function createLabeledField(labelText, value, elementType, onChange) {
-    const label = document.createElement('label');
-    label.textContent = labelText;
+  function briefMarkup() {
+    const delivery = state.dateResolved ? state.deliveryDate : '<mark>Delivery date conflict: August 12 or August 14</mark>';
+    const access = state.ownerResolved ? state.accessOwner : '<mark>Site B access owner not established</mark>';
+    const compliance = state.missingResolved ? 'Targeted follow-up prepared; response remains pending.' : '<mark>Compliance update not received</mark>';
 
-    const field = document.createElement(elementType === 'textarea' ? 'textarea' : 'input');
-    if (elementType !== 'textarea') {
-      field.type = elementType;
-    }
-    field.value = value || '';
-    field.addEventListener('input', (event) => onChange(event.target.value));
-    label.appendChild(field);
-    return label;
+    return `
+      <div class="brief-header"><span class="state-label">Draft for accountable review</span><strong>Overall status: AMBER</strong></div>
+      <h4>Client Coordination Update</h4>
+      <p><strong>Summary:</strong> Field survey work is complete, the design package is 90% complete, and the cost log shows no approved budget change. Three coordination items require attention before the update is released.</p>
+      <h5>Progress</h5>
+      <ul>
+        <li>Field survey completed.</li>
+        <li>Design package at 90%; release targeted after the August 8 redline decision.</li>
+        <li>Cost log current; vendor quote expected August 9.</li>
+      </ul>
+      <h5>Attention required</h5>
+      <ul>
+        <li>Equipment delivery: ${delivery}</li>
+        <li>Site B access follow-up owner: ${access}</li>
+        <li>Compliance: ${compliance}</li>
+      </ul>
+      <h5>Next coordination point</h5>
+      <p>Confirm the three exceptions, issue the client update, and retain the action register for follow-through.</p>`;
   }
 
-  function addHistory(record, action, details) {
-    record.history.push({
-      action,
-      details,
-      timestamp: new Date().toISOString()
-    });
+  function exceptionCard(type, title, explanation, controls) {
+    return `
+      <article class="exception-card ${state[`${type}Resolved`] ? 'resolved' : ''}" data-exception="${type}">
+        <div class="exception-header"><div><span class="exception-label">${state[`${type}Resolved`] ? 'Resolved' : 'Review required'}</span><h4>${title}</h4></div></div>
+        <p>${explanation}</p>
+        <div class="exception-actions">${controls}</div>
+        <p class="resolution-status">${resolutionMessage(type)}</p>
+      </article>`;
   }
 
-  function renderRecords() {
-    proposalList.replaceChildren();
-
-    if (records.length === 0) {
-      const empty = document.createElement('p');
-      empty.textContent = 'Select “Load Proposed Records” to begin the human review step.';
-      proposalList.appendChild(empty);
-      updateStatusMessage();
-      return;
-    }
-
-    records.forEach((record) => {
-      const card = document.createElement('article');
-      card.className = 'proposal-card';
-      card.dataset.status = record.status;
-
-      const meta = document.createElement('div');
-      meta.className = 'proposal-meta';
-      [record.id, record.type, record.confidence, record.source, record.status].forEach((value) => {
-        const pill = document.createElement('span');
-        pill.textContent = value;
-        meta.appendChild(pill);
-      });
-      card.appendChild(meta);
-
-      card.appendChild(
-        createLabeledField('Proposed record', record.statement, 'textarea', (value) => {
-          if (value !== record.statement) {
-            addHistory(record, 'edited', `Statement changed from “${record.statement}” to “${value}”.`);
-            record.statement = value;
-          }
-        })
-      );
-
-      card.appendChild(
-        createLabeledField('Owner', record.owner, 'text', (value) => {
-          if (value !== record.owner) {
-            addHistory(record, 'edited', `Owner changed from “${record.owner || 'blank'}” to “${value || 'blank'}”.`);
-            record.owner = value;
-          }
-        })
-      );
-
-      card.appendChild(
-        createLabeledField('Due date', record.dueDate, 'date', (value) => {
-          if (value !== record.dueDate) {
-            addHistory(record, 'edited', `Due date changed from “${record.dueDate || 'blank'}” to “${value || 'blank'}”.`);
-            record.dueDate = value;
-          }
-        })
-      );
-
-      card.appendChild(
-        createLabeledField('Review notes', record.notes, 'textarea', (value) => {
-          record.notes = value;
-        })
-      );
-
-      const actions = document.createElement('div');
-      actions.className = 'proposal-actions';
-
-      const approve = document.createElement('button');
-      approve.type = 'button';
-      approve.dataset.action = 'approve';
-      approve.textContent = 'Approve';
-      approve.addEventListener('click', () => {
-        record.status = 'approved';
-        addHistory(record, 'approved', 'Reviewer approved this record for publication.');
-        renderRecords();
-      });
-
-      const reject = document.createElement('button');
-      reject.type = 'button';
-      reject.dataset.action = 'reject';
-      reject.textContent = 'Reject';
-      reject.addEventListener('click', () => {
-        record.status = 'rejected';
-        addHistory(record, 'rejected', 'Reviewer rejected this record.');
-        renderRecords();
-      });
-
-      const returnToPending = document.createElement('button');
-      returnToPending.type = 'button';
-      returnToPending.textContent = 'Return to Pending';
-      returnToPending.addEventListener('click', () => {
-        record.status = 'pending';
-        addHistory(record, 'returned_to_pending', 'Reviewer returned this record to pending.');
-        renderRecords();
-      });
-
-      actions.append(approve, reject, returnToPending);
-      card.appendChild(actions);
-      proposalList.appendChild(card);
-    });
-
-    updateStatusMessage();
+  function resolutionMessage(type) {
+    if (type === 'missing') return state.missingResolved ? 'A focused request is prepared for the compliance lead. No status was invented.' : 'The contributor has not responded.';
+    if (type === 'date') return state.dateResolved ? `${state.deliveryDate} selected as the working delivery date for this brief.` : 'Two sources contain different delivery dates.';
+    return state.ownerResolved ? `${state.accessOwner} assigned to coordinate the Site B access follow-up.` : 'The issue is known, but ownership is missing.';
   }
 
-  function reviewedRecordMarkdown(payload) {
-    const approved = payload.records.filter((record) => record.status === 'approved');
-    const rejected = payload.records.filter((record) => record.status === 'rejected');
-    const pending = payload.records.filter((record) => record.status === 'pending');
+  function renderExceptions() {
+    exceptionList.innerHTML = [
+      exceptionCard(
+        'missing',
+        'Compliance update is missing',
+        'The workflow identified the missing contributor before the client brief was released.',
+        `<button type="button" data-resolve="missing" ${state.missingResolved ? 'disabled' : ''}>Prepare Targeted Follow-up</button>`
+      ),
+      exceptionCard(
+        'date',
+        'Equipment delivery dates conflict',
+        'The vendor email says August 14, while the project schedule says August 12. A person must select the working date or escalate the conflict.',
+        `<label>Working date
+          <select id="delivery-date" ${state.dateResolved ? 'disabled' : ''}>
+            <option value="">Select one</option>
+            <option value="August 12" ${state.deliveryDate === 'August 12' ? 'selected' : ''}>August 12 - project schedule</option>
+            <option value="August 14" ${state.deliveryDate === 'August 14' ? 'selected' : ''}>August 14 - vendor confirmation</option>
+          </select>
+        </label><button type="button" data-resolve="date" ${state.dateResolved ? 'disabled' : ''}>Confirm Working Date</button>`
+      ),
+      exceptionCard(
+        'owner',
+        'Site B access has no assigned owner',
+        'The field issue is visible, but the source did not establish who should coordinate the next step.',
+        `<label>Assign coordination owner
+          <select id="access-owner" ${state.ownerResolved ? 'disabled' : ''}>
+            <option value="">Select one</option>
+            <option value="Jordan Lee, Project Lead" ${state.accessOwner === 'Jordan Lee, Project Lead' ? 'selected' : ''}>Jordan Lee, Project Lead</option>
+            <option value="Marco Ruiz, Site Coordinator" ${state.accessOwner === 'Marco Ruiz, Site Coordinator' ? 'selected' : ''}>Marco Ruiz, Site Coordinator</option>
+            <option value="Client access representative" ${state.accessOwner === 'Client access representative' ? 'selected' : ''}>Client access representative</option>
+          </select>
+        </label><button type="button" data-resolve="owner" ${state.ownerResolved ? 'disabled' : ''}>Confirm Owner</button>`
+      )
+    ].join('');
+  }
 
-    const lines = [
-      '# Reviewed Meeting Operating Record',
-      '',
-      `Generated: ${payload.generatedAt}`,
-      '',
-      '## Publication status',
-      '',
-      `- Approved records: ${approved.length}`,
-      `- Rejected proposals: ${rejected.length}`,
-      `- Pending proposals: ${pending.length}`,
-      '',
-      '## Approved records',
-      ''
+  function renderRegister() {
+    const rows = [
+      ['Issue consolidated client update', 'Jordan Lee', 'Today, 3:00 PM', state.finalized ? 'Ready to issue' : 'Draft prepared'],
+      ['Complete design redline decision', 'Priya Shah', 'August 8', 'In progress'],
+      ['Obtain pending vendor quote', 'Dana Brooks', 'August 9', 'In progress'],
+      ['Confirm equipment delivery date', state.dateResolved ? 'Lena Ortiz' : 'Review required', state.dateResolved ? state.deliveryDate : 'Conflicting dates', state.dateResolved ? 'Confirmed for brief' : 'Exception'],
+      ['Coordinate Site B access follow-up', state.ownerResolved ? state.accessOwner : 'Unassigned', 'Next business day', state.ownerResolved ? 'Owner confirmed' : 'Exception'],
+      ['Provide compliance status', 'Amir Patel', 'Before release if available', state.missingResolved ? 'Follow-up prepared' : 'Missing response']
     ];
 
-    approved.forEach((record) => {
-      lines.push(`### ${record.id} — ${record.type}`);
-      lines.push('');
-      lines.push(`- Record: ${record.statement}`);
-      lines.push(`- Owner: ${record.owner || 'Unassigned'}`);
-      lines.push(`- Due date: ${record.dueDate || 'Not established'}`);
-      lines.push(`- Source: ${record.source}`);
-      lines.push(`- Review notes: ${record.notes || 'None'}`);
-      lines.push('');
-    });
-
-    lines.push('## Rejected and pending proposals');
-    lines.push('');
-    [...rejected, ...pending].forEach((record) => {
-      lines.push(`- ${record.id} | ${record.status} | ${record.statement}`);
-    });
-
-    lines.push('');
-    lines.push('## Governance note');
-    lines.push('');
-    lines.push('This record was produced only after human review. The public prototype uses synthetic data and deterministic proposals.');
-
-    return lines.join('\n');
+    registerBody.innerHTML = rows.map((row) => `<tr><td>${row[0]}</td><td>${row[1]}</td><td>${row[2]}</td><td>${row[3]}</td></tr>`).join('');
   }
 
-  function generateOutput() {
-    if (records.length === 0) {
-      outputElement.textContent = 'Load and review the proposed records before generating an output.';
-      return;
+  function updateReadiness() {
+    const ready = state.missingResolved && state.dateResolved && state.ownerResolved;
+    finalizeButton.disabled = !ready;
+    finalizeGuidance.textContent = ready
+      ? 'All exceptions have an accountable next step. The coordination package is ready to finalize.'
+      : `Resolve ${[state.missingResolved, state.dateResolved, state.ownerResolved].filter((value) => !value).length} remaining exception${[state.missingResolved, state.dateResolved, state.ownerResolved].filter((value) => !value).length === 1 ? '' : 's'} before finalizing.`;
+  }
+
+  function refreshWorkspace() {
+    draftBrief.innerHTML = briefMarkup();
+    renderExceptions();
+    renderRegister();
+    updateReadiness();
+  }
+
+  function assembleUpdate() {
+    state.assembled = true;
+    coordinationSection.hidden = false;
+    packageSection.hidden = true;
+    summaryCards();
+    refreshWorkspace();
+    coordinationSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  function resolveException(event) {
+    const button = event.target.closest('[data-resolve]');
+    if (!button) return;
+    const type = button.dataset.resolve;
+
+    if (type === 'missing') state.missingResolved = true;
+    if (type === 'date') {
+      const select = document.getElementById('delivery-date');
+      if (!select?.value) {
+        select?.focus();
+        return;
+      }
+      state.deliveryDate = select.value;
+      state.dateResolved = true;
+    }
+    if (type === 'owner') {
+      const select = document.getElementById('access-owner');
+      if (!select?.value) {
+        select?.focus();
+        return;
+      }
+      state.accessOwner = select.value;
+      state.ownerResolved = true;
     }
 
-    outputPayload = {
-      workflow: 'AI Workflow Enablement — Meeting Intelligence Review Prototype',
-      dataClassification: 'Synthetic public demonstration',
-      proposalMethod: 'Deterministic pre-generated proposals for governance demonstration',
-      generatedAt: new Date().toISOString(),
-      sourceMeeting,
-      records: records.map((record) => ({ ...record, history: [...record.history] }))
-    };
+    refreshWorkspace();
+  }
 
-    outputElement.textContent = reviewedRecordMarkdown(outputPayload);
-    downloadJsonButton.disabled = false;
-    downloadMarkdownButton.disabled = false;
+  function briefText() {
+    return `# Client Coordination Brief
+
+Generated: ${new Date().toISOString()}
+Data classification: Synthetic public demonstration
+
+## Overall status
+AMBER
+
+## Executive summary
+Field survey work is complete, the design package is 90% complete, and the cost log shows no approved budget change. Equipment delivery is being managed to ${state.deliveryDate}. ${state.accessOwner} owns the Site B access follow-up. A targeted request has been prepared for the missing compliance update.
+
+## Progress
+- Field survey completed.
+- Design package at 90%; redline decision due August 8.
+- Cost log current; vendor quote expected August 9.
+
+## Action register
+- Issue consolidated client update | Jordan Lee | Today, 3:00 PM
+- Complete design redline decision | Priya Shah | August 8
+- Obtain pending vendor quote | Dana Brooks | August 9
+- Confirm equipment delivery | Lena Ortiz | ${state.deliveryDate}
+- Coordinate Site B access | ${state.accessOwner} | Next business day
+- Provide compliance status | Amir Patel | Follow-up prepared
+
+## Follow-up request
+Amir, please provide the current compliance status, any open requirements, and any dates that could affect the client update. The brief will retain the item as pending until a confirmed response is received.
+
+## Evidence boundary
+This package was produced from fictional inputs. Routine facts were prepared together, while missing, conflicting, and unassigned items required explicit review.`;
+  }
+
+  function evidencePayload() {
+    return {
+      workflow: 'AI Workflow Enablement - Meeting Intelligence Coordination Demonstration',
+      dataClassification: 'Synthetic public demonstration',
+      generatedAt: new Date().toISOString(),
+      inputs: contributors,
+      reviewSummary: {
+        contributorsTracked: 6,
+        updatesReceived: 5,
+        routineFactsPrepared: 7,
+        exceptionsReviewed: 3
+      },
+      decisions: {
+        deliveryDate: state.deliveryDate,
+        siteAccessOwner: state.accessOwner,
+        complianceFollowUpPrepared: state.missingResolved
+      },
+      outputs: ['Client coordination brief', 'Action and exception register', 'Targeted follow-up request']
+    };
+  }
+
+  function finalizePackage() {
+    if (!(state.missingResolved && state.dateResolved && state.ownerResolved)) return;
+    state.finalized = true;
+    renderRegister();
+
+    packageImpact.innerHTML = `
+      <article><strong>6</strong><span>inputs tracked</span></article>
+      <article><strong>7</strong><span>routine facts prepared</span></article>
+      <article><strong>3</strong><span>exceptions reviewed</span></article>
+      <article><strong>3</strong><span>usable outputs produced</span></article>`;
+
+    finalPackage.innerHTML = `
+      <article class="package-card"><span class="state-label">Output 1</span><h3>Client-ready status brief</h3><p>One concise narrative combining progress, current status, attention items, and next steps.</p><div class="package-preview">Overall status: AMBER<br>Design: 90% complete<br>Delivery: ${state.deliveryDate}<br>Site B access owner: ${state.accessOwner}<br>Compliance: follow-up pending</div></article>
+      <article class="package-card"><span class="state-label">Output 2</span><h3>Action and exception register</h3><p>A single follow-through record with owners, dates, current status, and the three reviewed exceptions.</p><div class="package-preview">6 tracked actions<br>0 unassigned coordination items<br>1 targeted response still pending</div></article>
+      <article class="package-card"><span class="state-label">Output 3</span><h3>Targeted follow-up request</h3><p>A specific request to the missing contributor instead of another broad status-chasing message.</p><div class="package-preview">Request: compliance status, open requirements, and dates affecting the client update.</div></article>`;
+
+    packageSection.hidden = false;
+    packageSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
   function downloadFile(filename, content, mimeType) {
@@ -368,35 +334,28 @@ Dana: Final publication and permanent record status must remain human approvals.
     URL.revokeObjectURL(url);
   }
 
-  document.getElementById('load-proposals')?.addEventListener('click', () => {
-    records = cloneSeed();
-    outputPayload = null;
-    outputElement.textContent = 'Review the records, then generate the approved operating record.';
-    downloadJsonButton.disabled = true;
-    downloadMarkdownButton.disabled = true;
-    renderRecords();
-  });
+  function resetDemo() {
+    Object.assign(state, {
+      assembled: false,
+      missingResolved: false,
+      dateResolved: false,
+      ownerResolved: false,
+      deliveryDate: '',
+      accessOwner: '',
+      finalized: false
+    });
+    coordinationSection.hidden = true;
+    packageSection.hidden = true;
+    finalizeButton.disabled = true;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
 
-  document.getElementById('reset-demo')?.addEventListener('click', () => {
-    records = [];
-    outputPayload = null;
-    outputElement.textContent = 'The reviewed record will appear here.';
-    downloadJsonButton.disabled = true;
-    downloadMarkdownButton.disabled = true;
-    renderRecords();
-  });
+  document.getElementById('assemble-update')?.addEventListener('click', assembleUpdate);
+  document.getElementById('reset-coordination')?.addEventListener('click', resetDemo);
+  exceptionList.addEventListener('click', resolveException);
+  finalizeButton?.addEventListener('click', finalizePackage);
+  document.getElementById('download-brief')?.addEventListener('click', () => downloadFile('client-coordination-brief.md', briefText(), 'text/markdown'));
+  document.getElementById('download-evidence')?.addEventListener('click', () => downloadFile('meeting-intelligence-evidence.json', JSON.stringify(evidencePayload(), null, 2), 'application/json'));
 
-  document.getElementById('generate-output')?.addEventListener('click', generateOutput);
-
-  downloadJsonButton?.addEventListener('click', () => {
-    if (!outputPayload) return;
-    downloadFile('meeting-intelligence-review-evidence.json', JSON.stringify(outputPayload, null, 2), 'application/json');
-  });
-
-  downloadMarkdownButton?.addEventListener('click', () => {
-    if (!outputPayload) return;
-    downloadFile('reviewed-meeting-operating-record.md', reviewedRecordMarkdown(outputPayload), 'text/markdown');
-  });
-
-  renderRecords();
+  renderContributors();
 })();
