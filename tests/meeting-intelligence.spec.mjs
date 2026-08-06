@@ -3,109 +3,78 @@ import { readFile } from 'node:fs/promises';
 
 const demoPath = '/demos/meeting-intelligence.html';
 
-async function loadProposals(page) {
-  await page.getByRole('button', { name: 'Load Proposed Records' }).click();
-  await expect(page.locator('.proposal-card')).toHaveCount(10);
-}
-
 test.beforeEach(async ({ page }) => {
   await page.goto(demoPath);
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Meeting Intelligence Review Prototype');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('From scattered team updates to one client-ready brief.');
 });
 
-test('publishes only individually reviewed records and preserves evidence history', async ({ page }, testInfo) => {
-  await expect(page.locator('#source-text')).toContainText('Operations Weekly Review');
-  await expect(page.locator('#source-text')).toContainText('Final publication and permanent record status must remain human approvals.');
+test('assembles distributed updates, isolates exceptions, and produces three usable outputs', async ({ page }, testInfo) => {
+  await expect(page.locator('.contributor-card')).toHaveCount(6);
+  await expect(page.locator('.contributor-card.received')).toHaveCount(5);
+  await expect(page.locator('.contributor-card.missing')).toHaveCount(1);
+  await expect(page.getByText('No compliance update has been received.', { exact: false })).toBeVisible();
 
-  await loadProposals(page);
-  await expect(page.locator('#review-status')).toHaveText('10 pending, 0 approved, 0 rejected.');
+  await page.getByRole('button', { name: 'Assemble Team Update' }).click();
+  await expect(page.getByRole('heading', { name: 'Routine information is assembled. Three exceptions need attention.' })).toBeVisible();
+  await expect(page.locator('#coordination-exceptions .exception-card')).toHaveCount(3);
+  await expect(page.getByText('Delivery date conflict: August 12 or August 14')).toBeVisible();
+  await expect(page.getByText('Site B access owner not established')).toBeVisible();
+  await expect(page.getByText('Compliance update not received')).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Finalize Coordination Package' })).toBeDisabled();
 
-  const cards = page.locator('.proposal-card');
-  await expect(cards.nth(0)).toContainText('DEC-001');
-  await expect(cards.nth(0)).toContainText('Paragraph 2');
-  await expect(cards.nth(1).getByLabel('Due date')).toHaveValue('2026-08-06');
-  await expect(cards.nth(2).getByLabel('Due date')).toHaveValue('');
-  await expect(cards.nth(6).getByLabel('Owner')).toHaveValue('');
-  await expect(cards.nth(8).getByLabel('Owner')).toHaveValue('');
-  await expect(cards.nth(9).getByLabel('Proposed record')).toHaveValue(
-    'Final publication and permanent record status require human approval.'
-  );
+  await page.getByRole('button', { name: 'Prepare Targeted Follow-up' }).click();
+  await page.getByLabel('Working date').selectOption('August 14');
+  await page.getByRole('button', { name: 'Confirm Working Date' }).click();
+  await page.getByLabel('Assign coordination owner').selectOption('Marco Ruiz, Site Coordinator');
+  await page.getByRole('button', { name: 'Confirm Owner' }).click();
 
-  await cards.nth(0).getByRole('button', { name: 'Approve', exact: true }).click();
-  await cards.nth(1).getByRole('button', { name: 'Reject', exact: true }).click();
+  await expect(page.getByText('August 14 selected as the working delivery date')).toBeVisible();
+  await expect(page.getByText('Marco Ruiz, Site Coordinator assigned to coordinate')).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Finalize Coordination Package' })).toBeEnabled();
 
-  await cards.nth(2).getByLabel('Owner').fill('Program Operations Lead');
-  await cards.nth(2).getByRole('button', { name: 'Approve', exact: true }).click();
+  await page.getByRole('button', { name: 'Finalize Coordination Package' }).click();
+  await expect(page.getByRole('heading', { name: 'One review produces three usable outputs.' })).toBeVisible();
+  await expect(page.locator('.package-card')).toHaveCount(3);
+  await expect(page.getByRole('heading', { name: 'Client-ready status brief' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Action and exception register' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Targeted follow-up request' })).toBeVisible();
 
-  for (const index of [3, 4, 5, 6, 7, 8, 9]) {
-    await page.locator('.proposal-card').nth(index).getByRole('button', { name: 'Approve', exact: true }).click();
-  }
-  await page.locator('.proposal-card').nth(9).getByRole('button', { name: 'Return to Pending' }).click();
-  await expect(page.locator('#review-status')).toHaveText('1 pending, 8 approved, 1 rejected.');
-
-  await page.getByRole('button', { name: 'Generate Reviewed Record' }).click();
-  const output = page.locator('#review-output');
-  await expect(output).toContainText('Approved records: 8');
-  await expect(output).toContainText('Rejected proposals: 1');
-  await expect(output).toContainText('Pending proposals: 1');
-  await expect(output).toContainText('Program Operations Lead');
+  const markdownDownloadPromise = page.waitForEvent('download');
+  await page.getByRole('button', { name: 'Download Coordination Brief' }).click();
+  const markdownDownload = await markdownDownloadPromise;
+  expect(markdownDownload.suggestedFilename()).toBe('client-coordination-brief.md');
+  const markdownPath = testInfo.outputPath('client-coordination-brief.md');
+  await markdownDownload.saveAs(markdownPath);
+  const markdown = await readFile(markdownPath, 'utf8');
+  expect(markdown).toContain('# Client Coordination Brief');
+  expect(markdown).toContain('Equipment delivery is being managed to August 14');
+  expect(markdown).toContain('Marco Ruiz, Site Coordinator owns the Site B access follow-up');
+  expect(markdown).toContain('targeted request has been prepared for the missing compliance update');
 
   const jsonDownloadPromise = page.waitForEvent('download');
   await page.getByRole('button', { name: 'Download JSON Evidence' }).click();
   const jsonDownload = await jsonDownloadPromise;
-  expect(jsonDownload.suggestedFilename()).toBe('meeting-intelligence-review-evidence.json');
-  const jsonPath = testInfo.outputPath('meeting-intelligence-review-evidence.json');
+  expect(jsonDownload.suggestedFilename()).toBe('meeting-intelligence-evidence.json');
+  const jsonPath = testInfo.outputPath('meeting-intelligence-evidence.json');
   await jsonDownload.saveAs(jsonPath);
   const evidence = JSON.parse(await readFile(jsonPath, 'utf8'));
-
+  expect(evidence.workflow).toBe('AI Workflow Enablement - Meeting Intelligence Coordination Demonstration');
   expect(evidence.dataClassification).toBe('Synthetic public demonstration');
-  expect(evidence.proposalMethod).toContain('Deterministic');
-  expect(evidence.workflow).toBe('AI Workflow Enablement — Meeting Intelligence Review Prototype');
-  expect(evidence.sourceMeeting).toContain('Please leave that as an open question');
-  expect(evidence.records).toHaveLength(10);
-  expect(evidence.records.filter((record) => record.status === 'approved')).toHaveLength(8);
-  expect(evidence.records.filter((record) => record.status === 'rejected')).toHaveLength(1);
-  expect(evidence.records.filter((record) => record.status === 'pending')).toHaveLength(1);
-
-  const editedRecord = evidence.records.find((record) => record.id === 'ACT-002');
-  expect(editedRecord.owner).toBe('Program Operations Lead');
-  expect(editedRecord.history.some((event) => event.action === 'edited')).toBe(true);
-  expect(editedRecord.history.some((event) => event.action === 'approved')).toBe(true);
-
-  const rejectedRecord = evidence.records.find((record) => record.id === 'ACT-001');
-  expect(rejectedRecord.status).toBe('rejected');
-  expect(rejectedRecord.history.some((event) => event.action === 'rejected')).toBe(true);
-
-  const markdownDownloadPromise = page.waitForEvent('download');
-  await page.getByRole('button', { name: 'Download Markdown Record' }).click();
-  const markdownDownload = await markdownDownloadPromise;
-  expect(markdownDownload.suggestedFilename()).toBe('reviewed-meeting-operating-record.md');
-  const markdownPath = testInfo.outputPath('reviewed-meeting-operating-record.md');
-  await markdownDownload.saveAs(markdownPath);
-  const markdown = await readFile(markdownPath, 'utf8');
-
-  expect(markdown).toContain('# Reviewed Meeting Operating Record');
-  expect(markdown).toContain('- Approved records: 8');
-  expect(markdown).toContain('- Rejected proposals: 1');
-  expect(markdown).toContain('- Pending proposals: 1');
-  expect(markdown).toContain('Program Operations Lead');
-  expect(markdown).toContain('ACT-001 | rejected');
-  expect(markdown).toContain('CTL-001 | pending');
-  expect(markdown).toContain('The public prototype uses synthetic data and deterministic proposals.');
-
-  await page.getByRole('button', { name: 'Reset' }).click();
-  await expect(page.locator('#review-status')).toHaveText('No proposals loaded.');
-  await expect(page.getByRole('button', { name: 'Download JSON Evidence' })).toBeDisabled();
-  await expect(page.getByRole('button', { name: 'Download Markdown Record' })).toBeDisabled();
+  expect(evidence.inputs).toHaveLength(6);
+  expect(evidence.reviewSummary.updatesReceived).toBe(5);
+  expect(evidence.reviewSummary.exceptionsReviewed).toBe(3);
+  expect(evidence.decisions.deliveryDate).toBe('August 14');
+  expect(evidence.decisions.siteAccessOwner).toBe('Marco Ruiz, Site Coordinator');
+  expect(evidence.outputs).toHaveLength(3);
 });
 
-test('states the prototype and proportional-review boundaries', async ({ page }) => {
-  await expect(page.getByText('This browser-local demonstration uses a fictional meeting and deterministic pre-generated proposals.', { exact: false })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Where this control pattern belongs' })).toBeVisible();
-  await expect(page.getByText('Records that may become authoritative')).toBeVisible();
-  await expect(page.getByText('Exceptions requiring accountable judgment')).toBeVisible();
-  await expect(page.getByText('Low-risk routine records')).toBeVisible();
-  await expect(page.getByText('Work where detailed review would cost more than the risk it controls')).toBeVisible();
+test('makes the before-and-after value proposition visible before the controls', async ({ page }) => {
+  await expect(page.getByRole('heading', { name: 'Review the exceptions, not every line of every update.' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'The coordinator rebuilds the picture manually.' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'The workflow assembles the package and isolates judgment.' })).toBeVisible();
+  await expect(page.getByText('Search email, chat, notes, and trackers for six contributor updates')).toBeVisible();
+  await expect(page.getByText('Draft the client brief and action register together')).toBeVisible();
+  await expect(page.getByText('These are demonstration counts, not measured organizational savings.')).toBeVisible();
   await expect(page.getByText('This is not the customer-facing MVP', { exact: false })).toHaveCount(0);
   await expect(page.getByText('Correct role:', { exact: false })).toHaveCount(0);
 });
