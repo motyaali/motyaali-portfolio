@@ -3,10 +3,10 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Supporting proposal-review and audit-control prototype for AI Workflow Enablement by Motya Ali.">
+  <meta name="description" content="Meeting Intelligence proposal-review and audit-control prototype for AI Workflow Enablement by Motya Ali.">
   <meta name="theme-color" content="#17324d">
   <link rel="canonical" href="https://www.motyaali.com/demos/meeting-intelligence.html">
-  <title>Proposal Review and Audit Control Prototype | Motya Ali</title>
+  <title>Meeting Intelligence Review Prototype | Motya Ali</title>
   <link rel="stylesheet" href="../assets/styles.css">
   <link rel="stylesheet" href="../assets/proof.css">
 </head>
@@ -20,27 +20,27 @@
       <a href="../index.html">Home</a>
       <a href="../work.html">Work</a>
       <a href="../services.html">Services</a>
-      <a href="document-intake.html">Customer Value Demo</a>
+      <a href="../ai-workflow-enablement/" aria-current="page">AI Workflow Enablement</a>
       <a href="../contact.html">Contact</a>
     </nav>
   </div>
 </header>
 <main id="main" class="demo-shell">
-  <p class="eyebrow">Supporting technical evidence</p>
-  <h1>Proposal Review and Audit Control Prototype</h1>
-  <p class="demo-lead">This prototype isolates one reusable governance component: how proposed records can be checked, corrected, rejected, approved, and retained with a visible decision history.</p>
-  <p class="demo-notice"><strong>Correct role:</strong> This is not the customer-facing MVP for AI Workflow Enablement. It is supporting technical evidence for workflows where proposed records require human review. The primary value demonstration is the <a href="document-intake.html">Document Intake and Routing demonstration</a>.</p>
+  <p class="eyebrow">Working prototype | Synthetic data</p>
+  <h1>Meeting Intelligence Review Prototype</h1>
+  <p class="demo-lead">Turn meeting material into proposed decisions, actions, owners, dates, risks, dependencies, questions, and controls, then require accountable review before an operating record is generated.</p>
+  <p class="demo-notice"><strong>Prototype boundary:</strong> This browser-local demonstration uses a fictional meeting and deterministic pre-generated proposals. It demonstrates source-preserving review, correction, approval, rejection, and evidence export. It does not claim production AI accuracy, live system integration, or autonomous authority.</p>
 
   <div class="demo-grid">
     <section class="demo-panel" aria-labelledby="source-heading">
-      <h2 id="source-heading">1. Synthetic source meeting</h2>
-      <p>The source remains visible so a reviewer can verify each proposed record.</p>
+      <h2 id="source-heading">1. Review the synthetic source meeting</h2>
+      <p>The source remains visible so each proposed record can be verified against what was actually said.</p>
       <div id="source-text" class="demo-source" tabindex="0"></div>
     </section>
 
     <section class="demo-panel" aria-labelledby="review-heading">
-      <h2 id="review-heading">2. Inspect proposed records</h2>
-      <p>This deliberately detailed view is appropriate for uncertain or high-impact records, not routine low-risk processing.</p>
+      <h2 id="review-heading">2. Inspect and correct proposed records</h2>
+      <p>Use detailed review for ambiguity, missing information, high-impact items, and records that may become authoritative.</p>
       <div class="demo-toolbar">
         <button class="primary" id="load-proposals" type="button">Load Proposed Records</button>
         <button id="reset-demo" type="button">Reset</button>
@@ -51,8 +51,8 @@
   </div>
 
   <section class="demo-panel review-output" aria-labelledby="output-heading">
-    <h2 id="output-heading">3. Generate the reviewed evidence record</h2>
-    <p>Only approved records appear in the published output. Rejected items and edits remain in the exported review history.</p>
+    <h2 id="output-heading">3. Generate the reviewed operating record</h2>
+    <p>Only approved records appear in the approved section. Edits, rejected items, and pending proposals remain visible in the evidence history.</p>
     <div class="demo-toolbar">
       <button class="primary" id="generate-output" type="button">Generate Reviewed Record</button>
       <button id="download-json" type="button" disabled>Download JSON Evidence</button>
@@ -69,23 +69,26 @@
         <ul>
           <li>Ambiguous or incomplete records</li>
           <li>High-impact proposed actions</li>
-          <li>Records that will become authoritative</li>
-          <li>Exceptions that require accountable judgment</li>
+          <li>Records that may become authoritative</li>
+          <li>Exceptions requiring accountable judgment</li>
           <li>Quality sampling and model evaluation</li>
         </ul>
       </article>
       <article>
-        <h3>Do not require it for</h3>
+        <h3>Use lighter controls for</h3>
         <ul>
-          <li>Every low-risk routine record</li>
-          <li>Fields already established by deterministic rules</li>
+          <li>Low-risk routine records</li>
+          <li>Fields established by deterministic rules</li>
           <li>Duplicate mechanical checks</li>
-          <li>Repeated ceremonial approvals</li>
-          <li>Work where the review costs more than the risk</li>
+          <li>Reversible preparation work</li>
+          <li>Work where detailed review would cost more than the risk it controls</li>
         </ul>
       </article>
     </div>
-    <div class="actions"><a class="button button-primary" href="document-intake.html">See Exception-Focused Review in Context</a></div>
+    <div class="actions">
+      <a class="button button-primary" href="../ai-workflow-enablement/">Return to AI Workflow Enablement</a>
+      <a class="button button-secondary" href="document-intake.html">Run the Document Intake Demonstration</a>
+    </div>
   </section>
 </main>
 <footer class="site-footer">
