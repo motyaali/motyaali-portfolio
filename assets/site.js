@@ -1,6 +1,36 @@
 const menuButton = document.querySelector('.menu-button');
 const navigation = document.querySelector('.site-nav');
 
+function standardizeNavigation() {
+  if (!navigation) return;
+
+  const desiredOrder = ['Home', 'Work', 'About', 'Résumé', 'Services', 'Contact'];
+  const linksByLabel = new Map();
+
+  navigation.querySelectorAll('a').forEach((link) => {
+    const label = link.textContent.trim().replace('Resume', 'Résumé');
+    linksByLabel.set(label, link);
+  });
+
+  const homeLink = linksByLabel.get('Home');
+  const homeHref = homeLink?.getAttribute('href') || 'index.html';
+  const rootPrefix = homeHref.endsWith('index.html') ? homeHref.slice(0, -'index.html'.length) : '';
+
+  if (!linksByLabel.has('Services')) {
+    const servicesLink = document.createElement('a');
+    servicesLink.href = `${rootPrefix}services.html`;
+    servicesLink.textContent = 'Services';
+    linksByLabel.set('Services', servicesLink);
+  }
+
+  desiredOrder.forEach((label) => {
+    const link = linksByLabel.get(label);
+    if (link) navigation.appendChild(link);
+  });
+}
+
+standardizeNavigation();
+
 function closeNavigation() {
   if (!menuButton || !navigation) return;
   navigation.classList.remove('open');
