@@ -1,39 +1,63 @@
-# Synthetic Operations Weekly Review
+# Synthetic Distributed Coordination Inputs
 
-**Purpose:** Public test input for the AI Workflow Enablement Meeting Intelligence Review Prototype  
+**Purpose:** Public reference input for the AI Workflow Enablement Meeting Intelligence Coordination Demonstration  
 **Data classification:** Fully synthetic  
-**Meeting date:** August 1, 2026  
-**Attendees:** Jordan Lee, Priya Shah, Marco Ruiz, Dana Brooks
+**Update deadline:** August 6, 2026 at 3:00 PM  
+**Requested contributors:** Six
 
-## Notes
+## Coordination request
 
-**Jordan:** The July status report took nearly six hours to assemble because the source files used different project names. We agreed that the project register should become the naming source before the next report.
+A project lead needs one consolidated client update covering schedule, design, site access, cost, vendor delivery, and compliance. The contributing team works across several channels and locations.
 
-**Priya:** I will clean the project register and send the proposed naming list to Dana by August 6. Dana will review it, but we did not agree on when her review must be complete.
+## Received inputs
 
-**Marco:** The document intake mailbox received four duplicate submissions last week. I can add a duplicate check to the pilot, but I need the approved document ID rules first.
+### Jordan Lee, Project Lead
 
-**Dana:** Use the existing project code plus document type as the temporary document ID rule for the pilot. Do not make that the permanent records rule until Records Management reviews it.
+- **Source:** Meeting notes
+- **Received:** 10:05 AM
+- **Update:** The client requested a consolidated update by 3:00 PM covering schedule, design, site access, cost, vendor delivery, and compliance.
 
-**Jordan:** Decision: the pilot will cover one mailbox and one project team. We are not expanding to all departments during the pilot.
+### Priya Shah, Design Lead
 
-**Priya:** There is a risk that the August status report will still use inconsistent names if the register cleanup is not approved by August 9.
+- **Source:** Email
+- **Received:** 10:42 AM
+- **Update:** The design package is 90% complete. Release remains targeted for August 12 if the redline decision is completed by August 8.
 
-**Marco:** I will configure the test environment after Dana approves the naming list and the temporary ID rule is documented. Target date is August 12.
+### Marco Ruiz, Site Coordinator
 
-**Jordan:** We still need someone to own the user acceptance test script. Please leave that as an open question rather than assigning it automatically.
+- **Source:** Team chat
+- **Received:** 11:18 AM
+- **Update:** The field survey is complete. Site B access remains unresolved, and no owner was identified for the follow-up.
 
-**Dana:** Final publication and permanent record status must remain human approvals.
+### Dana Brooks, Cost Analyst
+
+- **Source:** Status tracker
+- **Received:** 11:47 AM
+- **Update:** The cost log is current with no approved budget change. One vendor quote remains pending and is expected by August 9.
+
+### Lena Ortiz, Vendor Coordinator
+
+- **Source:** Email
+- **Received:** 12:16 PM
+- **Update:** The vendor email lists equipment delivery for August 14, while the project schedule still lists August 12.
+
+## Missing input
+
+### Amir Patel, Compliance Lead
+
+- **Source:** Requested update
+- **Status:** Not received
+- **Required control:** Prepare a specific follow-up request and retain compliance as pending. Do not infer a status.
 
 ## Designed test conditions
 
-This source intentionally contains:
+The scenario intentionally contains:
 
-- explicit decisions
-- actions with owners and dates
-- an action with an owner but no date
-- a dependency
-- a temporary rule that must not be treated as permanent policy
-- a risk trigger with no assigned risk owner
-- an unresolved question that must remain unassigned
-- a human-only approval boundary
+- five received updates across different channels
+- one missing contributor response
+- routine progress facts that can be prepared together
+- one conflict between two delivery dates
+- one known issue with no assigned coordination owner
+- one deadline for a client-facing update
+- a requirement to produce a concise brief and action register
+- a human-review boundary for missing, conflicting, and unassigned information
