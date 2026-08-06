@@ -43,7 +43,7 @@ jobs:
         continue-on-error: true
         run: npx playwright install --with-deps chromium webkit
 
-      - name: Run Meeting Intelligence browser acceptance tests
+      - name: Run portfolio browser acceptance tests
         id: browser_validation
         if: steps.npm_install.outcome == 'success' && steps.browser_install.outcome == 'success'
         continue-on-error: true
@@ -92,7 +92,7 @@ jobs:
               state: browserPassed ? 'success' : 'failure',
               context: 'portfolio/browser',
               description: browserPassed
-                ? 'Desktop and mobile MVP browser tests passed'
+                ? 'Desktop and mobile browser tests passed'
                 : `Browser validation failed: npm=${npmPassed}, browsers=${installPassed}, tests=${testPassed}`
             });
 
