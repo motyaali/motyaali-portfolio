@@ -331,7 +331,7 @@ Dana: Final publication and permanent record status must remain human approvals.
     lines.push('');
     lines.push('## Governance note');
     lines.push('');
-    lines.push('This record was produced only after human review. The public MVP uses synthetic data and deterministic proposals.');
+    lines.push('This record was produced only after human review. The public prototype uses synthetic data and deterministic proposals.');
 
     return lines.join('\n');
   }
@@ -343,7 +343,7 @@ Dana: Final publication and permanent record status must remain human approvals.
     }
 
     outputPayload = {
-      workflow: 'AI Workflow Enablement — Meeting Intelligence MVP',
+      workflow: 'AI Workflow Enablement — Meeting Intelligence Review Prototype',
       dataClassification: 'Synthetic public demonstration',
       proposalMethod: 'Deterministic pre-generated proposals for governance demonstration',
       generatedAt: new Date().toISOString(),
@@ -374,16 +374,6 @@ Dana: Final publication and permanent record status must remain human approvals.
     outputElement.textContent = 'Review the records, then generate the approved operating record.';
     downloadJsonButton.disabled = true;
     downloadMarkdownButton.disabled = true;
-    renderRecords();
-  });
-
-  document.getElementById('approve-all')?.addEventListener('click', () => {
-    records.forEach((record) => {
-      if (record.status === 'pending') {
-        record.status = 'approved';
-        addHistory(record, 'approved', 'Reviewer used Approve All Pending.');
-      }
-    });
     renderRecords();
   });
 
