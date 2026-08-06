@@ -10,11 +10,11 @@ A static, accessible professional portfolio focused on operations, business syst
 
 This repository contains more than positioning copy. It publishes:
 
-- a working AI Workflow Enablement meeting-intelligence MVP
+- working AI Workflow Enablement demonstrations for Meeting Intelligence and Document Intake
 - synthetic source material and reference outputs
 - acceptance tests and governance boundaries
 - project maturity labels and evidence rules
-- professional case studies using sanitized or reconstructed evidence where needed
+- professional and independent applied case studies using sanitized, synthetic, or reconstructed evidence where needed
 - an immediately accessible print-ready résumé
 - the source and deployment history for the public portfolio
 
@@ -24,9 +24,11 @@ This repository contains more than positioning copy. It publishes:
 |---|---|
 | [`index.html`](index.html) | Employer and organization pathways, flagship proof, and professional foundation |
 | [`work.html`](work.html) | Project library organized by evidence strength and maturity |
-| [`services.html`](services.html) | AI Workflow Enablement offer and controlled-pilot boundary |
-| [`projects/ai-workflow-enablement.html`](projects/ai-workflow-enablement.html) | Proof-first MVP case study |
-| [`demos/meeting-intelligence.html`](demos/meeting-intelligence.html) | Interactive review, correction, publication, and export demonstration |
+| [`services.html`](services.html) | AI Workflow Enablement service and controlled-pilot boundary |
+| [`ai-workflow-enablement/index.html`](ai-workflow-enablement/index.html) | Employer-facing applied case study |
+| [`projects/ai-workflow-enablement.html`](projects/ai-workflow-enablement.html) | Full evidence index |
+| [`demos/meeting-intelligence.html`](demos/meeting-intelligence.html) | Source-preserving meeting-record review, correction, approval, rejection, and export |
+| [`demos/document-intake.html`](demos/document-intake.html) | Guided routine-confirmation and exception-routing demonstration |
 | [`proof/ai-workflow-enablement/`](proof/ai-workflow-enablement/) | Synthetic source, reference output, tests, governance, and runbook |
 | [`evidence-standard.html`](evidence-standard.html) | Public maturity, claim, evidence, and privacy standard |
 | [`resume-print.html`](resume-print.html) | Full print-ready résumé with Save as PDF support |
@@ -39,10 +41,10 @@ The site intentionally uses a small static stack:
 - shared CSS in `assets/styles.css`
 - proof and demonstration CSS in `assets/proof.css`
 - shared navigation and contact behavior in `assets/site.js`
-- browser-local MVP logic in `assets/meeting-intelligence.js`
+- browser-local demonstration logic in `assets/meeting-intelligence.js` and `assets/document-intake.js`
 - GitHub Pages deployment with the `www.motyaali.com` custom domain
 
-The public MVP does not require a server, account, database, or external AI request. This makes the governance interaction inspectable and keeps all public demonstration data synthetic.
+The public demonstrations do not require a server, account, database, or external AI request. This makes the governance interaction inspectable and keeps all public demonstration data synthetic.
 
 ## Run locally
 
@@ -90,24 +92,25 @@ GitHub Actions runs the same validation on pushes and pull requests.
 
 See [`evidence-standard.html`](evidence-standard.html) and [`docs/PORTFOLIO_RED_TEAM_RELEASE_PLAN.md`](docs/PORTFOLIO_RED_TEAM_RELEASE_PLAN.md).
 
-## AI Workflow Enablement MVP boundary
+## AI Workflow Enablement public demonstration boundary
 
-The public Meeting Intelligence MVP proves:
+The public demonstrations prove:
 
 - source-preserving review
-- structured proposals
-- approve, edit, and reject controls
-- human-only publication
+- structured proposals and deterministic reference behavior
+- approve, edit, reject, hold, classify, and route controls
+- human-only final authority
 - correction and review history
-- JSON and Markdown evidence export
+- JSON and Markdown evidence export for the Meeting Intelligence prototype
+- routine batch confirmation and targeted exception handling for Document Intake
 
-It does not establish:
+They do not establish:
 
 - production AI extraction accuracy
 - organizational system integration
 - compliance with a client's policies
 - measured time savings or adoption
-- autonomous authority to assign, approve, or publish work
+- autonomous authority to assign, approve, publish, pay, delete, or make consequential decisions
 
 ## Deployment
 
@@ -116,12 +119,12 @@ GitHub Pages publishes from the `main` branch. The [`CNAME`](CNAME) file configu
 Before a release:
 
 1. Run `python scripts/validate_site.py`.
-2. Open the homepage, Work page, Services page, résumé, and MVP on desktop and mobile widths.
-3. Complete the MVP manual tests in `proof/ai-workflow-enablement/acceptance-tests.md`.
-4. Confirm no private or confidential material is present.
+2. Open the homepage, Work page, Services page, résumé, and main demonstrations on desktop and mobile widths.
+3. Complete the documented acceptance tests.
+4. Confirm no private, confidential, internal-chat, or drafting material is present.
 5. Confirm project maturity labels and limitations remain accurate.
 6. Confirm the custom domain and HTTPS deployment are healthy.
 
 ## Status
 
-**Portfolio Red Team evidence release in progress, August 2026.**
+**Portfolio evidence and quality review active, August 2026.**
