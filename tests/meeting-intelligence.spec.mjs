@@ -35,7 +35,7 @@ test('assembles distributed updates, isolates exceptions, and produces three usa
   await page.getByRole('button', { name: 'Finalize Coordination Package' }).click();
   await expect(page.getByRole('heading', { name: 'One review produces three usable outputs.' })).toBeVisible();
   await expect(page.locator('.package-card')).toHaveCount(3);
-  await expect(page.getByRole('heading', { name: 'Client-ready status brief' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Client-ready status brief', exact: true })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Action and exception register' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Targeted follow-up request' })).toBeVisible();
 
