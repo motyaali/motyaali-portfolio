@@ -1,44 +1,48 @@
 # AI Workflow Enablement Acceptance Tests
 
-**Primary control prototype:** Meeting Intelligence Review Prototype  
+**Primary demonstration:** Meeting Intelligence Coordination Demonstration  
 **Data:** Fully synthetic  
-**Execution:** Browser-local demonstration with automated Playwright coverage and a documented manual review procedure
+**Execution:** Browser-local interaction with automated Playwright coverage and a documented manual review procedure
 
 | ID | Scenario | Expected result | Current coverage |
 |---|---|---|---|
-| T01 | Load the public prototype | The fictional meeting is visible and ten proposed records can be loaded in pending status | Automated |
-| T02 | Explicit decision | The naming-source decision is proposed as a decision and cites its source paragraph | Automated |
-| T03 | Action with owner and date | Priya's register-cleanup action includes Priya Shah and August 6, 2026 | Automated |
-| T04 | Missing date | Dana's review action leaves the due date blank rather than inventing one | Automated |
-| T05 | Dependency | Marco's environment-configuration action retains its approval and documentation dependencies | Reference data + manual review |
-| T06 | Temporary rule | The document ID rule is labeled temporary and does not claim permanent records authority | Reference data + manual review |
-| T07 | Missing owner | The risk and UAT-script question remain unassigned until a reviewer provides an owner | Automated |
-| T08 | Human-only boundary | Final publication and permanent-record status appear as a control, not an automated action | Automated |
-| T09 | Approve | Selecting Approve changes one proposal to approved and records the review event | Automated |
-| T10 | Reject | Selecting Reject excludes the proposal from the approved section and retains the event in review history | Automated |
-| T11 | Edit | Changing statement, owner, or due date records an edit event and uses the corrected value in export | Automated |
-| T12 | Pending protection | Pending proposals are not presented as approved records | Automated |
-| T13 | JSON evidence export | Export includes source, proposal method, statuses, corrections, and review history | Automated |
-| T14 | Markdown operating record | Export separates approved records from rejected and pending proposals | Automated |
-| T15 | Reset | Reset removes the loaded review state and disables exports | Automated |
-| T16 | Public data boundary | The page states that the meeting and proposals are synthetic and deterministic | Automated content check |
-| T17 | Production-claim boundary | The page does not claim production AI accuracy, enterprise integration, measured savings, or autonomous authority | Automated content check |
-| T18 | Responsive layout | The prototype fits supported viewports and exposes accessible mobile navigation | Automated |
+| T01 | Open the demonstration | The page leads with the outcome: scattered team updates become one client-ready brief | Automated |
+| T02 | Before-and-after value | The page shows the manual coordination burden and the exception-focused future state before any controls | Automated |
+| T03 | Contributor intake | Six fictional contributors are visible, with five responses received and one missing | Automated |
+| T04 | Assemble update | The workflow prepares received information and identifies exactly three review exceptions | Automated |
+| T05 | Missing response | The compliance status remains missing and a targeted follow-up is prepared instead of inventing an answer | Automated |
+| T06 | Conflicting date | The August 12 and August 14 delivery dates remain unresolved until a reviewer selects a working date | Automated |
+| T07 | Missing owner | Site B access remains unassigned until a reviewer selects an accountable coordination owner | Automated |
+| T08 | Release protection | Finalization remains disabled until all three exceptions have an accountable next step | Automated |
+| T09 | Draft brief | The prepared brief combines progress, attention items, and next steps while visibly marking unresolved exceptions | Automated + manual review |
+| T10 | Action register | Routine actions are prepared together and exception-dependent rows update after review | Automated + manual review |
+| T11 | Final package | One review produces a client-ready brief, action and exception register, and targeted follow-up request | Automated |
+| T12 | Markdown export | The coordination brief retains the selected date, assigned owner, pending compliance request, actions, and synthetic-data boundary | Automated |
+| T13 | JSON evidence export | The evidence records inputs, demonstration counts, exception decisions, and generated outputs | Automated |
+| T14 | Claim boundary | The page labels counts as illustrative and does not claim measured client savings, production AI accuracy, or live integration | Automated content check |
+| T15 | Internal-text boundary | The public page contains no drafting instructions, chat transcript, revision notes, or obsolete MVP language | Automated content check + editorial review |
+| T16 | Reset | Reset clears the assembled and finalized state | Manual review |
+| T17 | Responsive layout | The demonstration fits supported viewports and exposes accessible mobile navigation | Automated |
 
 ## Manual validation procedure
 
 1. Open `demos/meeting-intelligence.html`.
-2. Confirm the synthetic-data and prototype-boundary notice is visible.
-3. Confirm the source meeting is visible before proposals are loaded.
-4. Select **Load Proposed Records** and confirm ten proposal cards appear.
-5. Verify at least one record has a missing date and at least one has a missing owner.
-6. Edit one owner or due date.
-7. Approve one proposal, reject one proposal, and leave one pending.
-8. Generate the reviewed record.
-9. Confirm only approved records appear in the approved section.
-10. Download the JSON and Markdown evidence and verify that edits, rejected items, pending items, source material, and review history are retained.
-11. Reset the prototype and confirm exports are disabled.
-12. Review at desktop and mobile widths and confirm no horizontal overflow.
+2. Confirm the headline states the resulting outcome before the interface begins.
+3. Confirm the Before and After cards explain what work is replaced.
+4. Confirm six contributor cards appear, five as received and one as missing.
+5. Select **Assemble Team Update**.
+6. Confirm the draft brief, action register, and three exception cards appear.
+7. Confirm the package cannot be finalized yet.
+8. Prepare the targeted compliance follow-up.
+9. Select one working equipment-delivery date.
+10. Assign one Site B access coordination owner.
+11. Confirm the draft brief and action register update with the reviewed decisions.
+12. Finalize the coordination package.
+13. Confirm three outputs appear: client brief, action and exception register, and targeted follow-up request.
+14. Download the Markdown brief and JSON evidence.
+15. Confirm the exports contain only fictional source material and the selected review decisions.
+16. Reset and confirm the assembled sections are hidden.
+17. Review at desktop and mobile widths and confirm no horizontal page overflow.
 
 ## Document-intake demonstration checks
 
@@ -53,4 +57,4 @@ The separate `demos/document-intake.html` scenario should also be reviewed for:
 
 ## Limitations of this validation
 
-These checks validate the public interface, deterministic reference data, review behavior, exports, responsive layout, and stated governance boundaries. They do not validate a production language model, live connector, identity provider, records platform, security configuration, organizational policy, client data, or measured operational outcome.
+These checks validate the public interface, deterministic reference data, exception behavior, exports, responsive layout, and stated governance boundaries. They do not validate a production language model, live connector, identity provider, task or records platform, security configuration, organizational policy, client data, adoption, or measured operational savings.
