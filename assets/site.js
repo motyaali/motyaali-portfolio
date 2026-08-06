@@ -1,6 +1,85 @@
 const menuButton = document.querySelector('.menu-button');
 const navigation = document.querySelector('.site-nav');
 
+function getRootPrefix() {
+  const homeLink = navigation?.querySelector('a[href$="index.html"]');
+  const brandLink = document.querySelector('.brand[href$="index.html"]');
+  const homeHref = homeLink?.getAttribute('href') || brandLink?.getAttribute('href') || 'index.html';
+  return homeHref.endsWith('index.html') ? homeHref.slice(0, -'index.html'.length) : '';
+}
+
+function standardizeNavigation() {
+  if (!navigation) return;
+
+  const desiredOrder = ['Home', 'Work', 'About', 'Résumé', 'Services', 'Contact'];
+  const linksByLabel = new Map();
+
+  navigation.querySelectorAll('a').forEach((link) => {
+    const label = link.textContent.trim().replace('Resume', 'Résumé');
+    linksByLabel.set(label, link);
+  });
+
+  if (!linksByLabel.has('Services')) {
+    const servicesLink = document.createElement('a');
+    servicesLink.href = `${getRootPrefix()}services.html`;
+    servicesLink.textContent = 'Services';
+    linksByLabel.set('Services', servicesLink);
+  }
+
+  desiredOrder.forEach((label) => {
+    const link = linksByLabel.get(label);
+    if (link) navigation.appendChild(link);
+  });
+}
+
+function enhanceProjectCovers() {
+  const cards = document.querySelectorAll('.project-card');
+  if (!cards.length) return;
+
+  if (!document.querySelector('link[data-project-thumbnails]')) {
+    const stylesheet = document.createElement('link');
+    stylesheet.rel = 'stylesheet';
+    stylesheet.href = `${getRootPrefix()}assets/project-thumbnails.css`;
+    stylesheet.dataset.projectThumbnails = 'true';
+    document.head.appendChild(stylesheet);
+  }
+
+  const labels = [
+    ['Construction Project Coordination Controls', 'Project controls'],
+    ['Retail Planning & Analytics at Scale', 'Planning at scale'],
+    ['AI Workflow Enablement', 'Governed workflows'],
+    ['SmartGrocer', 'Full-stack product'],
+    ['Enterprise Documentation & Workflow Enablement', 'Document systems'],
+    ['Inventory Truth Ledger', 'Inventory architecture'],
+    ['AliOS / Unseen Lifeline', 'Accessible AI'],
+    ['Unseen Lifeline', 'Accessible AI'],
+    ['Unseen OS', 'Continuity system'],
+    ['Canonical Source Synthesis', 'Knowledge governance'],
+    ['CentaurOS', 'Concept lab'],
+    ['Unseen Sentry', 'Concept lab'],
+    ['Blue Chip Bot', 'Concept lab']
+  ];
+
+  cards.forEach((card) => {
+    const cover = card.querySelector('.project-cover');
+    const heading = card.querySelector('h3')?.textContent.trim();
+    if (!cover || !heading || cover.querySelector('.project-cover-label')) return;
+
+    const match = labels.find(([title]) => heading.includes(title));
+    const labelText = match?.[1] || 'Project evidence';
+    const label = document.createElement('div');
+    label.className = 'project-cover-label';
+    const text = document.createElement('span');
+    text.textContent = labelText;
+    label.appendChild(text);
+    cover.appendChild(label);
+    cover.setAttribute('aria-label', `${heading}: ${labelText}`);
+  });
+}
+
+standardizeNavigation();
+enhanceProjectCovers();
+
 function closeNavigation() {
   if (!menuButton || !navigation) return;
   navigation.classList.remove('open');

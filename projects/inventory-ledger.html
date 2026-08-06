@@ -5,41 +5,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="An enterprise retail architecture for reconciling inventory signals across planning, ERP, warehouse, transportation, purchase-order, receiving, quality, and carrier systems.">
   <meta name="theme-color" content="#17324d">
+  <link rel="canonical" href="https://www.motyaali.com/projects/inventory-ledger.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Inventory Truth Ledger | Motya Ali">
+  <meta property="og:description" content="Inspect the source-state architecture, lineage model, exception queue, and role-based decision views for inventory reconciliation.">
+  <meta property="og:url" content="https://www.motyaali.com/projects/inventory-ledger.html">
   <title>Inventory Truth Ledger | Motya Ali</title>
   <link rel="stylesheet" href="../assets/styles.css">
+  <link rel="stylesheet" href="../assets/evidence-upgrade.css">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header">
-  <div class="header-inner">
-    <a class="brand" href="../index.html" aria-label="Motya Ali home">MOTYA ALI</a>
-    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
-    <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
-      <a href="../index.html">Home</a>
-      <a href="../work.html" aria-current="page">Work</a>
-      <a href="../about.html">About</a>
-      <a href="../resume.html">Résumé</a>
-      <a href="../contact.html">Contact</a>
-    </nav>
-  </div>
-</header>
+<header class="site-header"><div class="header-inner"><a class="brand" href="../index.html" aria-label="Motya Ali home">MOTYA ALI</a><button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav class="site-nav" id="site-nav" aria-label="Primary navigation"><a href="../index.html">Home</a><a href="../work.html" aria-current="page">Work</a><a href="../about.html">About</a><a href="../resume.html">Résumé</a><a href="../services.html">Services</a><a href="../contact.html">Contact</a></nav></div></header>
 <main id="main">
-  <section class="project-detail-hero"><div class="container"><span class="badge">Documented Architecture</span><h1>Inventory Truth Ledger</h1><p>An enterprise retail architecture for reconciling inventory signals across planning, ERP, warehouse, transportation, purchase-order, receiving, quality, and carrier systems.</p></div></section>
-  <section class="section"><div class="container detail-grid"><article class="prose">
-    <h2>Overview</h2><p>The project applies deep retail-planning and inventory experience to a recurring enterprise problem: several systems can each contain a partial or differently timed version of inventory truth.</p>
-    <h2>Challenge</h2><p>Planning, ERP, warehouse, transportation, receiving, quality, and carrier systems may report different quantities or states. Without an explicit reconciliation model, teams debate numbers rather than resolve causes.</p>
-    <h2>My role</h2><p>Problem framing, domain model design, source and state mapping, exception logic, workflow architecture, and documentation of a proposed decision-support system.</p>
-    <h2>What I created</h2><ul><li>Inventory-state and source-system model</li><li>Reconciliation and exception framework</li><li>Lineage and freshness concepts</li><li>Role-specific decision views</li><li>Proposed audit and escalation logic</li><li>Architecture and implementation documentation</li></ul>
-    <h2>Outcome and current maturity</h2><p>A substantial architecture and operating concept exists. A production implementation, live integrations, and validated enterprise results are not claimed.</p>
-    <h2>Evidence treatment</h2><p>This public page uses approved descriptions and, where needed, sanitized or reconstructed evidence. Private archives, employer-confidential material, personal records, credentials, and raw source files are not published.</p>
-  </article><aside class="detail-aside"><div class="info-panel"><h2>Capabilities demonstrated</h2><ul class="tag-list"><li>Inventory Architecture</li><li>Data Lineage</li><li>Exception Management</li><li>Retail Systems</li><li>Decision Support</li><li>Documented Architecture</li></ul><div class="actions"><a class="button button-secondary" href="../work.html">← Back to Work</a></div></div></aside></div></section>
+  <section class="project-detail-hero"><div class="container"><span class="badge">Documented Architecture</span><h1>Inventory Truth Ledger</h1><p>An enterprise decision-support architecture for reconciling partial, delayed, and conflicting inventory signals across planning, ERP, warehouse, transportation, receiving, quality, and carrier systems.</p><div class="actions"><a class="button button-primary" href="#architecture">Inspect the architecture</a><a class="button button-secondary" href="#exceptions">View the exception queue</a></div></div></section>
+
+  <section class="section section-alt" aria-labelledby="summary-heading"><div class="container"><div class="proof-summary" id="summary-heading"><article><span>Problem</span><strong>Several systems contain different versions of inventory truth</strong></article><article><span>Core model</span><strong>Source, state, quantity, time, lineage, confidence</strong></article><article><span>Operating focus</span><strong>Resolve causes instead of debating totals</strong></article><article><span>Current maturity</span><strong>Substantial architecture and implementation specification</strong></article></div></div></section>
+
+  <section class="section" aria-labelledby="problem-heading"><div class="container two-column"><article class="prose"><p class="eyebrow">The enterprise problem</p><h2 id="problem-heading">Inventory is not one number.</h2><p>A purchase order can be approved, released, shipped, in transit, received, held for quality, available, returned, or adjusted. Planning, ERP, warehouse, transportation, receiving, quality, and carrier systems may each report a different quantity or timestamp because they observe different parts of the lifecycle.</p><p>The Inventory Truth Ledger does not force one source to pretend it knows everything. It preserves source-specific facts, normalizes states, evaluates freshness and lineage, and directs mismatches to accountable resolution.</p></article><aside class="info-panel"><h2>My role</h2><ul><li>Problem framing from retail-planning experience</li><li>Source and lifecycle-state mapping</li><li>Canonical identifier and lineage design</li><li>Exception and escalation logic</li><li>Role-specific decision views</li><li>Architecture and implementation documentation</li></ul></aside></div></section>
+
+  <section class="section section-alt" id="architecture" aria-labelledby="architecture-heading"><div class="container"><div class="section-heading"><div><p class="eyebrow">Source-state architecture</p><h2 id="architecture-heading">Keep every source visible while creating one auditable operating view.</h2></div><p>The ledger relates source events to a normalized inventory lifecycle rather than overwriting disagreement.</p></div><div class="architecture-panel"><div class="preview-header"><span>Inventory signal architecture</span><span>Representative system model</span></div><div class="architecture-grid">
+    <div class="architecture-node"><strong>Planning</strong><span>Planned receipts, demand, weeks of supply, inventory targets</span></div>
+    <div class="architecture-node"><strong>ERP / PO</strong><span>Ordered quantity, approved changes, cancellation, financial commitment</span></div>
+    <div class="architecture-node"><strong>Supplier / ASN</strong><span>Shipped quantity, carton detail, expected departure and arrival</span></div>
+    <div class="architecture-node"><strong>Transportation</strong><span>Milestones, carrier events, delay, estimated arrival</span></div>
+    <div class="architecture-node"><strong>Warehouse</strong><span>Appointment, unload, receipt, putaway, available inventory</span></div>
+    <div class="architecture-node"><strong>Quality</strong><span>Hold, inspection, disposition, release, return-to-vendor</span></div>
+    <div class="architecture-node core"><strong>Truth Ledger</strong><span>Normalized identifiers, states, quantities, timestamps, lineage, freshness, and exception status</span></div>
+    <div class="architecture-node core"><strong>Decision views</strong><span>Planner, buyer, logistics, warehouse, finance, and leadership actions</span></div>
+  </div></div></div></section>
+
+  <section class="section" aria-labelledby="state-heading"><div class="container"><div class="section-heading"><div><p class="eyebrow">Normalized lifecycle</p><h2 id="state-heading">A common vocabulary for inventory movement.</h2></div><p>Every quantity remains tied to its source and event history while being mapped to a shared state model.</p></div><div class="flow-grid">
+    <article class="flow-step"><span>01</span><h3>Committed</h3><p>Authorized purchase quantity and financial commitment.</p></article>
+    <article class="flow-step"><span>02</span><h3>Shipped</h3><p>Supplier-confirmed quantity associated with an ASN or shipment.</p></article>
+    <article class="flow-step"><span>03</span><h3>In transit</h3><p>Carrier or transportation milestones and estimated arrival.</p></article>
+    <article class="flow-step"><span>04</span><h3>Received / held</h3><p>Warehouse receipt separated from quality or disposition restrictions.</p></article>
+    <article class="flow-step"><span>05</span><h3>Available</h3><p>Inventory released for allocation, sale, transfer, or other approved use.</p></article>
+  </div></div></section>
+
+  <section class="section section-alt" id="exceptions" aria-labelledby="exceptions-heading"><div class="container"><div class="section-heading"><div><p class="eyebrow">Representative exception queue</p><h2 id="exceptions-heading">Direct attention to the mismatch that affects a decision.</h2></div><p>The queue preserves the conflicting signals, calculates age and consequence, and names the owner and next action.</p></div><div class="evidence-table-wrap"><table class="evidence-table"><thead><tr><th>Exception</th><th>Conflicting evidence</th><th>Decision risk</th><th>Owner and next action</th></tr></thead><tbody>
+    <tr><td>ASN exceeds open PO by 240 units</td><td>Supplier shipment: 2,400; ERP open quantity: 2,160</td><td>Unplanned receipt, invoice mismatch, or unauthorized overshipment</td><td>Buyer verifies approved change; receiving holds excess quantity from automatic availability</td></tr>
+    <tr><td>Carrier delivered, warehouse not received</td><td>Proof of delivery timestamp exists; no receipt event after 18 hours</td><td>Planning may assume unavailable inventory while product is physically onsite</td><td>Warehouse investigates dock status and creates or corrects receipt event</td></tr>
+    <tr><td>Receipt posted, quantity remains on quality hold</td><td>ERP received quantity equals shipment; quality disposition is unresolved</td><td>Inventory could be counted as usable before release</td><td>Quality owner records disposition; planner view excludes held quantity from available supply</td></tr>
+    <tr><td>Late milestone with unchanged ETA</td><td>Expected departure missed; downstream estimated arrival not revised</td><td>Forecast and promotional decisions use stale timing</td><td>Logistics obtains current milestone and refreshes confidence and arrival date</td></tr>
+  </tbody></table></div></div></section>
+
+  <section class="section" aria-labelledby="views-heading"><div class="container"><div class="section-heading"><div><p class="eyebrow">Role-specific decision views</p><h2 id="views-heading">The same ledger supports different accountable actions.</h2></div><p>Users see the evidence and exceptions relevant to their authority rather than one undifferentiated dashboard.</p></div><div class="artifact-grid">
+    <article class="artifact-card"><span class="badge">Planner</span><h3>Supply and forecast risk</h3><p>Available, held, late, and uncertain quantities by need date and demand consequence.</p></article>
+    <article class="artifact-card"><span class="badge">Buyer</span><h3>Commitment and supplier action</h3><p>Open PO, approved changes, overshipments, cancellations, and supplier follow-up.</p></article>
+    <article class="artifact-card"><span class="badge">Logistics</span><h3>Milestone and ETA integrity</h3><p>Shipment freshness, missed events, carrier discrepancies, and updated arrival confidence.</p></article>
+    <article class="artifact-card"><span class="badge">Warehouse</span><h3>Receipt and availability</h3><p>Appointments, delivered-not-received, receipt discrepancies, putaway, and unresolved holds.</p></article>
+    <article class="artifact-card"><span class="badge">Finance</span><h3>Commitment and invoice reconciliation</h3><p>Ordered, received, accepted, invoiced, disputed, and returned quantities with lineage.</p></article>
+    <article class="artifact-card"><span class="badge">Leadership</span><h3>Material risk and accountability</h3><p>Exceptions by value, age, decision deadline, root cause, owner, and expected resolution.</p></article>
+  </div></div></section>
+
+  <section class="section section-alt" aria-labelledby="decisions-heading"><div class="container two-column"><article class="prose"><p class="eyebrow">Selected design decisions</p><h2 id="decisions-heading">Reconciliation should preserve disagreement until it is resolved.</h2><ul><li>Never collapse conflicting source values without retaining lineage.</li><li>Separate physical receipt, quality release, and commercial availability.</li><li>Measure freshness because a technically correct event may be operationally stale.</li><li>Use canonical identifiers while retaining source-specific keys.</li><li>Assign every material exception an owner, next action, and decision deadline.</li><li>Expose confidence and unresolved evidence rather than manufacturing certainty.</li></ul></article><aside class="info-panel"><h2>Capabilities demonstrated</h2><ul class="tag-list"><li>Inventory Architecture</li><li>Data Lineage</li><li>State Modeling</li><li>Exception Management</li><li>ERP</li><li>WMS</li><li>TMS</li><li>Retail Planning</li><li>Decision Support</li><li>Requirements</li><li>Governance</li><li>Documented Architecture</li></ul></aside></div><div class="container"><div class="boundary-note"><h2>Current maturity and boundaries</h2><p>A substantial architecture and operating specification exists. This page does not claim production integrations, enterprise deployment, or validated savings. A real implementation would require source-system profiling, canonical identifier testing, data ownership agreements, access controls, reconciliation acceptance criteria, and phased operational validation.</p></div><div class="actions"><a class="button button-secondary" href="../work.html">← Back to Work</a><a class="button button-primary" href="../contact.html?subject=Inventory%20Truth%20Ledger">Discuss the architecture</a></div></div></section>
 </main>
-<footer class="site-footer">
-  <div class="footer-inner">
-    <div>© <span id="year"></span> Motya “Ali” Ali. Selected work uses sanitized, reconstructed, or representative examples where required.</div>
-    <div><a href="../work.html">Maturity labels</a> distinguish professional work, prototypes, systems, architecture, and concepts.</div>
-  </div>
-</footer>
+<footer class="site-footer"><div class="footer-inner"><div>© <span id="year"></span> Motya “Ali” Ali.</div><div><a href="../evidence-standard.html">Evidence, privacy, and maturity standard</a></div></div></footer>
 <script src="../assets/site.js"></script>
 </body>
 </html>

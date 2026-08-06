@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Public case study for SmartGrocer, an authenticated full-stack household replenishment and grocery-savings prototype built with React, FastAPI, MongoDB, and automated security tests.">
+  <meta name="theme-color" content="#17324d">
+  <link rel="canonical" href="https://www.motyaali.com/projects/smartgrocer.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="SmartGrocer Full-Stack Prototype | Motya Ali">
+  <meta property="og:description" content="Inspect the product flow, architecture, authentication boundary, forecasting logic, testing, and current limitations of SmartGrocer.">
+  <meta property="og:url" content="https://www.motyaali.com/projects/smartgrocer.html">
+  <title>SmartGrocer | Motya Ali</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+  <link rel="stylesheet" href="../assets/proof.css">
+  <link rel="stylesheet" href="../assets/evidence-upgrade.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../index.html" aria-label="Motya Ali home">MOTYA ALI</a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+      <a href="../index.html">Home</a>
+      <a href="../work.html" aria-current="page">Work</a>
+      <a href="../about.html">About</a>
+      <a href="../resume.html">Résumé</a>
+      <a href="../services.html">Services</a>
+      <a href="../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+  <section class="project-detail-hero">
+    <div class="container">
+      <span class="badge">Authenticated Full-Stack Prototype</span>
+      <h1>SmartGrocer</h1>
+      <p>A mobile-first household replenishment and grocery-savings prototype that converts purchase history into explainable forecasts, keeps recommendations under user control, and protects household data through authenticated membership boundaries.</p>
+      <div class="actions">
+        <a class="button button-primary" href="#working-proof">Inspect the working proof</a>
+        <a class="button button-secondary" href="#architecture">Review the architecture</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" aria-labelledby="summary-heading">
+    <div class="container">
+      <div class="proof-summary" id="summary-heading">
+        <article><span>Frontend</span><strong>React 19</strong></article>
+        <article><span>Backend</span><strong>FastAPI</strong></article>
+        <article><span>Data</span><strong>MongoDB</strong></article>
+        <article><span>Current stage</span><strong>Authenticated private-pilot foundation</strong></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="working-proof" aria-labelledby="working-heading">
+    <div class="container two-column">
+      <article class="prose">
+        <p class="eyebrow">Working behavior</p>
+        <h2 id="working-heading">From purchase history to a user-approved shopping plan.</h2>
+        <p>SmartGrocer stores real purchase events, normalizes products into inspectable canonical keys, calculates replenishment dates from observed intervals, explains confidence, and proposes items for review. Users can approve, defer, remove, reset, or adjust recommendations before anything reaches the shopping list.</p>
+        <h3>Implemented now</h3>
+        <ul>
+          <li>Invitation-only registration, household creation, login, and logout</li>
+          <li>Manual purchase entry and pasted receipt-text parsing</li>
+          <li>Deterministic product normalization and explainable replenishment forecasts</li>
+          <li>User-controlled approval, defer, remove, reset, and quantity adjustment</li>
+          <li>Shopping-list grouping by the lower stored retailer price</li>
+          <li>Automated backend, frontend, authentication, and household-isolation checks</li>
+        </ul>
+      </article>
+      <div class="browser-frame" aria-label="Representative SmartGrocer interface preview using synthetic data">
+        <div class="browser-toolbar"><div class="browser-dots"><span></span><span></span><span></span></div><span>Representative interface preview · synthetic data</span></div>
+        <div class="browser-content">
+          <div class="preview-sidebar"><strong>SMARTGROCER</strong><span>Dashboard</span><span class="active">Forecasts</span><span>Import</span><span>Shopping List</span><span>Household</span></div>
+          <div class="preview-main">
+            <p class="eyebrow">Replenishment review</p>
+            <h3>3 items may be needed soon</h3>
+            <div class="preview-row"><div><strong>Whole Milk</strong><br><small>Median interval: 7 days · 5 observations</small></div><div>Due Aug 8</div><span class="preview-status">High confidence</span></div>
+            <div class="preview-row"><div><strong>Greek Yogurt</strong><br><small>Median interval: 10 days · 3 observations</small></div><div>Due Aug 10</div><span class="preview-status warn">Review</span></div>
+            <div class="preview-row"><div><strong>Cold Brew Coffee</strong><br><small>Irregular purchase pattern · 2 observations</small></div><div>Due Aug 12</div><span class="preview-status hold">Low confidence</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" aria-labelledby="flow-heading">
+    <div class="container">
+      <div class="section-heading">
+        <div><p class="eyebrow">Product flow</p><h2 id="flow-heading">A transparent forecasting baseline with human control.</h2></div>
+        <p>The forecasting method is intentionally inspectable. It is a statistical baseline, not an unsupported machine-learning claim.</p>
+      </div>
+      <div class="flow-grid">
+        <article class="flow-step"><span>01</span><h3>Record</h3><p>Capture a manual purchase or parse structured receipt text.</p></article>
+        <article class="flow-step"><span>02</span><h3>Normalize</h3><p>Match the item to a deterministic canonical product key.</p></article>
+        <article class="flow-step"><span>03</span><h3>Forecast</h3><p>Use observed purchase intervals and variation to estimate the next need date.</p></article>
+        <article class="flow-step"><span>04</span><h3>Review</h3><p>Expose evidence and confidence so the user can approve, defer, edit, or remove.</p></article>
+        <article class="flow-step"><span>05</span><h3>Organize</h3><p>Build a shopping list grouped by the lower stored retailer price.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="architecture" aria-labelledby="architecture-heading">
+    <div class="container">
+      <div class="section-heading">
+        <div><p class="eyebrow">Architecture and data boundary</p><h2 id="architecture-heading">The browser cannot choose which household it is allowed to access.</h2></div>
+        <p>Protected requests derive household scope from the authenticated session and confirm that the user still has active household membership.</p>
+      </div>
+      <div class="architecture-panel">
+        <div class="preview-header"><span>Authenticated request path</span><span>Server-derived household scope</span></div>
+        <div class="architecture-grid">
+          <div class="architecture-node"><strong>React browser</strong><span>Credentialed requests and matching CSRF header</span></div>
+          <div class="architecture-node core"><strong>FastAPI auth boundary</strong><span>Signed session validation, issuer, audience, expiration, and revocation</span></div>
+          <div class="architecture-node core"><strong>Membership check</strong><span>Active user-to-household membership confirmed on protected requests</span></div>
+          <div class="architecture-node"><strong>MongoDB query</strong><span>Household scope applied from verified server context</span></div>
+        </div>
+      </div>
+      <div class="case-grid" style="margin-top:1rem">
+        <article class="case-card"><h3>Session protection</h3><p>Short-lived signed tokens are held in HttpOnly cookies and revoked server-side on logout.</p></article>
+        <article class="case-card"><h3>CSRF binding</h3><p>Cookie-authenticated mutations require a readable CSRF cookie, matching request header, and signed-token claim.</p></article>
+        <article class="case-card"><h3>Isolation testing</h3><p>Automated tests cover cross-household access denial and household-specific reset behavior.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" aria-labelledby="evidence-heading">
+    <div class="container">
+      <div class="section-heading">
+        <div><p class="eyebrow">Implementation evidence</p><h2 id="evidence-heading">What exists in the current prototype.</h2></div>
+        <p>The repository is private during pilot hardening, so this public case study exposes the architecture, controls, test scope, and current boundaries without publishing secrets or live household data.</p>
+      </div>
+      <div class="evidence-table-wrap">
+        <table class="evidence-table">
+          <thead><tr><th>Area</th><th>Implemented evidence</th><th>Why it matters</th></tr></thead>
+          <tbody>
+            <tr><td>Authentication</td><td>Invitation-only registration, login, short-lived HttpOnly session, server-side logout revocation</td><td>Establishes a real authenticated pilot boundary rather than a purely visual prototype</td></tr>
+            <tr><td>Authorization</td><td>Household scope derived from verified authentication and active membership</td><td>Prevents the browser from selecting another household identifier</td></tr>
+            <tr><td>Forecasting</td><td>Median purchase interval, sample-size confidence, and pattern-consistency adjustment</td><td>Keeps recommendations understandable and challengeable</td></tr>
+            <tr><td>Input handling</td><td>Manual purchase records and receipt-text parsing with unparsed lines returned for review</td><td>Avoids silently discarding uncertain information</td></tr>
+            <tr><td>Testing</td><td>Backend tests, authenticated household scenarios, isolation checks, and frontend production build in GitHub Actions</td><td>Turns claims into repeatable checks</td></tr>
+            <tr><td>Decision authority</td><td>Approve, defer, remove, reset, and adjust proposed items</td><td>Recommendations remain proposals until the user acts</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="decisions-heading">
+    <div class="container two-column">
+      <article class="prose">
+        <p class="eyebrow">Selected design decisions</p>
+        <h2 id="decisions-heading">Product usefulness and security were developed together.</h2>
+        <ul>
+          <li><strong>Explain before optimizing:</strong> show the observations, interval, confidence, and reason before asking the user to approve.</li>
+          <li><strong>Return uncertain input:</strong> receipt lines that cannot be parsed are surfaced for review rather than dropped.</li>
+          <li><strong>Scope on the server:</strong> household access comes from verified membership, not a client-supplied household ID.</li>
+          <li><strong>Keep actions reversible:</strong> users can defer, remove, reset, and edit proposals without placing an order.</li>
+          <li><strong>Test the boundary:</strong> cross-household access and reset isolation are automated acceptance conditions.</li>
+        </ul>
+      </article>
+      <aside class="info-panel">
+        <h2>Capabilities demonstrated</h2>
+        <ul class="tag-list"><li>Product Requirements</li><li>React</li><li>FastAPI</li><li>MongoDB</li><li>Authentication</li><li>Authorization</li><li>CSRF Controls</li><li>Forecasting</li><li>API Testing</li><li>CI</li><li>Security Boundaries</li><li>Human Review</li></ul>
+      </aside>
+    </div>
+    <div class="container">
+      <div class="boundary-note">
+        <h2>Current maturity and limits</h2>
+        <p>The authenticated boundary supports a small private engineering pilot, not a public production launch. Image and PDF OCR, live retailer pricing, payments, push notifications, shared-household invitations, verified email, password recovery, account export and deletion, production monitoring, rate limiting, secret-rotation procedures, and independent security review remain future work. SmartGrocer does not place orders, and stored price comparisons are not verified realized savings.</p>
+      </div>
+      <div class="actions"><a class="button button-secondary" href="../work.html">← Back to Work</a><a class="button button-primary" href="../contact.html?subject=SmartGrocer%20Case%20Study">Discuss the implementation</a></div>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>© <span id="year"></span> Motya “Ali” Ali.</div>
+    <div><a href="../evidence-standard.html">Evidence, privacy, and maturity standard</a></div>
+  </div>
+</footer>
+<script src="../assets/site.js"></script>
+</body>
+</html>
