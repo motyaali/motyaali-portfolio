@@ -1,0 +1,12 @@
+Normalized State,Primary Evidence,Meaning,Available for Planning?,Control Note
+Committed,"Approved purchase order or authorized commitment","Quantity is financially or operationally committed but not yet shipped",No,"Preserve approved change history and cancellation status"
+Shipped,"Supplier shipment confirmation or ASN","Supplier reports quantity released into transit",No,"Retain supplier event and source-specific shipment identifiers"
+In Transit,"Carrier or transportation milestones","Shipment is moving between origin and destination",No,"Track freshness and ETA confidence"
+Received / Held,"Warehouse receipt plus quality/disposition status","Physical receipt is confirmed but use may still be restricted",Conditional,"Separate physical receipt from quality release"
+Available,"Warehouse/system release for approved use","Quantity is cleared for allocation sale transfer or other approved use",Yes,"Retain lineage back to receipt and source events"
+Returned / Adjusted,"Return disposition count adjustment or approved correction","Quantity was removed or corrected after prior state",No,"Require traceable reason and source event"
+
+Boundary,Value
+Data classification,Synthetic public architecture example
+Design principle,Conflicting source values remain visible until reconciled
+Not represented,Production integrations or validated enterprise savings

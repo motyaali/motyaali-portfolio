@@ -1,0 +1,14 @@
+Benchmark Area,Manual Baseline,Assisted Workflow,Reduction,Definition
+Contributor/status checking,6 source or status checks,1 consolidated contributor view,83.3%,Six contributors are tracked in one assembled view
+Active synthesis items,10 items assembled or reconciled,3 exceptions requiring active resolution,70.0%,Seven routine facts plus three exceptions exist in the fixed scenario
+Output construction,3 separate artifacts drafted,1 coordinated finalization step,66.7%,The workflow prepares a brief register and targeted follow-up together
+Routine facts prepared,0 preassembled,7 prepared facts,n/a,Fixed demonstration count from the browser scenario
+Exceptions requiring judgment,3 manual reconciliations,3 explicit review decisions,0.0%,Judgment is retained rather than automated away
+Usable outputs,3 separately produced,3 prepared from one reviewed package,n/a,Client brief action register and targeted follow-up
+
+Boundary,Value
+Benchmark type,Synthetic task-count workload benchmark
+Dataset,Fixed public Meeting Intelligence demonstration scenario
+What is measured,Handling surfaces and active synthesis workload units
+What is not measured,Elapsed human time production savings accuracy client ROI or production AI performance
+Review requirement,Routine prepared facts remain subject to accountable verification under the organization's controls

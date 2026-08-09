@@ -1,0 +1,11 @@
+Record ID,User,Role,Access Need,Issue,Current Owner,Next Action,Status
+ACC-001,Jordan Lee,Contributor,Submit deliverable package,Secondary account not provisioned,Access Administrator,Verify account mapping and assign contributor role,In progress
+ACC-002,Priya Shah,Reviewer,Review routed package,Reviewer group membership missing,Document Control,Confirm review assignment and request group update,Open
+ACC-003,Marco Ruiz,Contributor,Upload supporting field record,Folder permission inherited incorrectly,Site Support,Correct inherited access and re-test upload,In progress
+ACC-004,Dana Brooks,Approver,Approve completed review,Approval role not visible,Process Owner,Confirm authority and update role assignment,Awaiting owner
+ACC-005,Lena Ortiz,Publisher,Publish approved record,Publication library access verified,None,None,Resolved
+
+Boundary,Value
+Data classification,Synthetic public reconstruction
+Purpose,Demonstrates structured access issue tracking and workflow ownership
+Not represented,Real employee names real accounts real client systems or production permissions
