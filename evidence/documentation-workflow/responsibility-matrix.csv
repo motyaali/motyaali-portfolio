@@ -1,0 +1,10 @@
+Role,Prepare,Submit,Review,Approve,Publish
+Contributor,"Prepare files; confirm naming; enter required metadata","Submit complete package; preserve source files","Respond to review comments","Incorporate approved changes","Confirm final source record"
+Reviewer,"Confirm review assignment","Verify package received","Review against requirements","Confirm review issues resolved","No publication authority"
+Approver,"Not active","Not active","Receive review outcome","Approve reject or return","Authorize publication status"
+Document Control,"Support naming metadata and access","Log and route package","Maintain revision and status history","Record disposition","Publish approved record and preserve history"
+
+Boundary,Value
+Data classification,Synthetic public reconstruction
+Source basis,Professional body of work registered in Motya Ali Portfolio Content Registry
+Not represented,Employer/client systems project names confidential records or exact internal approval matrix
