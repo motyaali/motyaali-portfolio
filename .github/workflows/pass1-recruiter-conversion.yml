@@ -1,0 +1,43 @@
+name: Build Pass 1 Recruiter Conversion
+
+on:
+  push:
+    branches:
+      - agent/pass-1-recruiter-conversion
+    paths:
+      - scripts/pass1_recruiter_conversion.py
+      - .github/workflows/pass1-recruiter-conversion.yml
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out branch
+        uses: actions/checkout@v4
+        with:
+          ref: agent/pass-1-recruiter-conversion
+          fetch-depth: 0
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install image dependency
+        run: python -m pip install --disable-pip-version-check pillow
+      - name: Build role journeys, related evidence, and social cards
+        run: python scripts/pass1_recruiter_conversion.py
+      - name: Remove one-time build automation
+        run: rm -f scripts/pass1_recruiter_conversion.py .github/workflows/pass1-recruiter-conversion.yml
+      - name: Commit generated portfolio changes
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No generated changes to commit."
+            exit 0
+          fi
+          git commit -m "Build recruiter conversion pass"
+          git push origin HEAD:agent/pass-1-recruiter-conversion
