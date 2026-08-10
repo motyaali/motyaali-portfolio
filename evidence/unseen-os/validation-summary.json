@@ -1,0 +1,50 @@
+{
+  "project": "Unseen OS / Unseen Lifeline",
+  "version": "v0.3 working upgrade verification",
+  "source_archive": "Unseen_Lifeline_v0.3_Working_Upgrade_Pass2.zip",
+  "source_sha256": "a2f7c4602e9cfba3c7ac272ee4bdd7718ccb20719b867d4f65246711c74651fb",
+  "validated_environments": [
+    "GitHub-hosted Windows runner, Python 3.12",
+    "GitHub-hosted Linux runner, Python 3.12"
+  ],
+  "automated_tests": 13,
+  "synthetic_core_fixtures": 5,
+  "verified_browser_paths": [
+    "Dashboard",
+    "Inbox processing",
+    "Life Archive",
+    "Document evidence modal",
+    "Continuity Board",
+    "Notice Response",
+    "Manual action creation",
+    "Weekly review export",
+    "Action CSV export",
+    "Document CSV export"
+  ],
+  "verified_http_controls": [
+    "Loopback Host guard",
+    "Local mutation-header guard",
+    "Cache-Control: no-store",
+    "X-Content-Type-Options: nosniff",
+    "X-Frame-Options: DENY",
+    "Referrer-Policy: no-referrer",
+    "Content-Security-Policy frame/connect boundaries"
+  ],
+  "hardening_discovered": [
+    "Dynamic HTML output encoding",
+    "Inbox .gitkeep placeholder exclusion",
+    "UI filter-value contract alignment",
+    "Recovered UI presentation classes"
+  ],
+  "provider_validation": {
+    "gemini": "not run; no provider credential supplied"
+  },
+  "not_claimed": [
+    "Public production deployment",
+    "Multi-user authentication/authorization",
+    "External penetration testing",
+    "Remote backup/disaster recovery",
+    "Production monitoring",
+    "External-user outcome validation"
+  ]
+}
