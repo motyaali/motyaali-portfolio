@@ -30,4 +30,8 @@
   <url><loc>https://www.motyaali.com/projects/canonical-synthesis.html</loc><priority>0.7</priority></url>
   <url><loc>https://www.motyaali.com/evidence/canonical-synthesis/evidence-pack.html</loc><priority>0.7</priority></url>
   <url><loc>https://www.motyaali.com/projects/unseen-os.html</loc><priority>0.6</priority></url>
+  <url><loc>https://www.motyaali.com/roles/project-operations.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.motyaali.com/roles/planning-inventory.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.motyaali.com/roles/business-systems.html</loc><priority>0.8</priority></url>
+  <url><loc>https://www.motyaali.com/roles/human-centered-ai.html</loc><priority>0.8</priority></url>
 </urlset>
