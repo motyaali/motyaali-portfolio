@@ -28,12 +28,10 @@ jobs:
 
       - name: Validate HTML structure and local links
         id: site_validation
-        continue-on-error: true
         run: python scripts/validate_site.py
 
       - name: Validate approved public copy and claims
         id: claims_validation
-        continue-on-error: true
         run: python scripts/validate_public_claims.py
 
       - name: Set up Node.js
@@ -43,19 +41,14 @@ jobs:
 
       - name: Install browser-test dependencies
         id: npm_install
-        continue-on-error: true
         run: npm install --no-audit --no-fund
 
       - name: Install Playwright browsers
         id: browser_install
-        if: steps.npm_install.outcome == 'success'
-        continue-on-error: true
         run: npx playwright install --with-deps chromium webkit
 
       - name: Run portfolio browser acceptance tests
         id: browser_validation
-        if: steps.npm_install.outcome == 'success' && steps.browser_install.outcome == 'success'
-        continue-on-error: true
         run: npm run test:browser
 
       - name: Upload Playwright report
@@ -115,14 +108,3 @@ jobs:
                 ? 'Static, claims, and browser acceptance tests passed'
                 : 'Portfolio validation failed; inspect the Actions run'
             });
-
-      - name: Enforce validation result
-        if: always()
-        shell: bash
-        run: |
-          set -euo pipefail
-          test "${{ steps.site_validation.outcome }}" = "success"
-          test "${{ steps.claims_validation.outcome }}" = "success"
-          test "${{ steps.npm_install.outcome }}" = "success"
-          test "${{ steps.browser_install.outcome }}" = "success"
-          test "${{ steps.browser_validation.outcome }}" = "success"
