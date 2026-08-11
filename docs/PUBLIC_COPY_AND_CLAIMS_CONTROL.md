@@ -31,7 +31,7 @@ The operating rule is simple:
 
 ### About
 
-- `I am an operations, planning, and project administration professional who specializes in making complex work easier to understand and execute.`
+- `I make complex systems easier to understand, operate, and improve.`
 
 ### Services
 
