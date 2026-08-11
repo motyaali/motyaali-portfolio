@@ -1,0 +1,321 @@
+{
+  "schema_version": 1,
+  "control_name": "Motya Ali Portfolio Approved Public Claims",
+  "canonical_public_implementation": "motyaali/motyaali-portfolio@main",
+  "governance_rule": "Public pages may state only claims that match their evidence and maturity boundary. Private source material is not copied into this repository.",
+  "governed_pages": [
+    "index.html",
+    "about.html",
+    "services.html",
+    "contact.html",
+    "resume.html",
+    "resume-print.html",
+    "projects/retail-planning.html",
+    "projects/documentation-workflow.html",
+    "projects/unseen-os.html",
+    "projects/unseen-lifeline.html",
+    "projects/canonical-synthesis.html",
+    "projects/inventory-ledger.html",
+    "projects/smartgrocer.html",
+    "projects/project-coordination-controls.html",
+    "ai-workflow-enablement/index.html",
+    "evidence/unseen-os/verification.html"
+  ],
+  "global_forbidden_html": [
+    "helped generate $10M+ in new revenue",
+    "supported $10M+ in new wholesale revenue",
+    "helped drive $10M+ in new wholesale revenue"
+  ],
+  "claims": [
+    {
+      "id": "BRAND-001",
+      "page": "index.html",
+      "category": "positioning",
+      "approved_text": "Turning complexity into clear systems and useful work.",
+      "maturity": "Public positioning",
+      "evidence_level": "Approved public copy",
+      "source_basis": "Current canonical homepage positioning and controlled master portfolio record",
+      "status": "approved"
+    },
+    {
+      "id": "BRAND-002",
+      "page": "index.html",
+      "category": "positioning",
+      "approved_text": "I design reliable workflows, decision-ready analysis, practical documentation, and governed human-centered tools that help people and organizations move from fragmented information to coordinated action.",
+      "maturity": "Public positioning",
+      "evidence_level": "Approved public copy",
+      "source_basis": "Current canonical homepage positioning and controlled master portfolio record",
+      "status": "approved"
+    },
+    {
+      "id": "ABOUT-001",
+      "page": "about.html",
+      "category": "positioning",
+      "approved_text": "I make complex systems easier to understand, operate, and improve.",
+      "maturity": "Professional profile",
+      "evidence_level": "Approved public copy",
+      "source_basis": "Current canonical About page and professional history",
+      "status": "approved"
+    },
+    {
+      "id": "SERVICE-001",
+      "page": "services.html",
+      "category": "service-positioning",
+      "approved_text": "Practical workflows that reduce routine handling without weakening control.",
+      "maturity": "Service framework",
+      "evidence_level": "Approved public copy",
+      "source_basis": "AI Workflow Enablement operating model",
+      "status": "approved"
+    },
+    {
+      "id": "CONTACT-001",
+      "page": "contact.html",
+      "category": "contact-positioning",
+      "approved_text": "I welcome conversations about professional opportunities, governed workflow implementation, project collaboration, and specific feedback on the evidence in this portfolio.",
+      "maturity": "Public contact copy",
+      "evidence_level": "Approved public copy",
+      "source_basis": "Current contact pathway",
+      "status": "approved"
+    },
+    {
+      "id": "RET-001",
+      "page": "projects/retail-planning.html",
+      "category": "professional-scope",
+      "approved_text": "More than 15 years translating demand, inventory, margin, promotions, lead times, capacity, and system signals into commercial decisions across stores, ecommerce, wholesale, and major category businesses.",
+      "maturity": "Professional Body of Work",
+      "evidence_level": "Professional experience",
+      "source_basis": "Controlled career source library",
+      "status": "approved"
+    },
+    {
+      "id": "RET-002",
+      "page": "projects/retail-planning.html",
+      "category": "metric",
+      "approved_text": "$500M+",
+      "maturity": "Professional Body of Work",
+      "evidence_level": "Verified professional scope",
+      "source_basis": "Sephora planning source records",
+      "status": "approved"
+    },
+    {
+      "id": "RET-003",
+      "page": "projects/retail-planning.html",
+      "category": "metric",
+      "approved_text": "$250M+",
+      "maturity": "Professional Body of Work",
+      "evidence_level": "Verified professional scope",
+      "source_basis": "Old Navy and Burlington planning source records",
+      "status": "approved"
+    },
+    {
+      "id": "RET-004",
+      "page": "projects/retail-planning.html",
+      "category": "metric",
+      "approved_text": "650+ stores",
+      "maturity": "Professional Body of Work",
+      "evidence_level": "Verified professional scope",
+      "source_basis": "Burlington allocation source records",
+      "status": "approved"
+    },
+    {
+      "id": "RET-005",
+      "page": "projects/retail-planning.html",
+      "category": "metric",
+      "approved_text": "40%",
+      "maturity": "Professional Body of Work",
+      "evidence_level": "Documented professional outcome",
+      "source_basis": "Gymboree System Migration Case Study",
+      "status": "approved"
+    },
+    {
+      "id": "RET-006",
+      "page": "projects/retail-planning.html",
+      "category": "metric",
+      "approved_text": "30%",
+      "maturity": "Professional Body of Work",
+      "evidence_level": "Documented professional outcome",
+      "source_basis": "Gymboree System Migration Case Study",
+      "status": "approved"
+    },
+    {
+      "id": "RET-007",
+      "page": "projects/retail-planning.html",
+      "category": "metric",
+      "approved_text": "45+ openings",
+      "maturity": "Professional Body of Work",
+      "evidence_level": "Verified professional scope",
+      "source_basis": "West Elm professional source records",
+      "status": "approved"
+    },
+    {
+      "id": "RET-008",
+      "page": "projects/retail-planning.html",
+      "category": "contribution",
+      "approved_text": "I managed ecommerce inventory flow for Levi's and Dockers, supported online size expansion, and contributed to Amazon wholesale onboarding that helped launch a new digital revenue stream.",
+      "maturity": "Professional Body of Work",
+      "evidence_level": "Professional contribution with conservative metric treatment",
+      "source_basis": "Levi's controlled source records and later claim-risk review",
+      "status": "approved"
+    },
+    {
+      "id": "DOC-001",
+      "page": "projects/documentation-workflow.html",
+      "category": "professional-scope",
+      "approved_text": "5 stages",
+      "maturity": "Professional Body of Work",
+      "evidence_level": "Verified workflow structure",
+      "source_basis": "Controlled role-based workflow guide set",
+      "status": "approved"
+    },
+    {
+      "id": "DOC-002",
+      "page": "projects/documentation-workflow.html",
+      "category": "metric",
+      "approved_text": "250+ users",
+      "maturity": "Professional Body of Work",
+      "evidence_level": "Conservative public expression of verified 268-user scope",
+      "source_basis": "Controlled career achievement bank and permissions record",
+      "status": "approved"
+    },
+    {
+      "id": "DOC-003",
+      "page": "projects/documentation-workflow.html",
+      "category": "privacy-boundary",
+      "approved_text": "This sanitized reconstruction shows how role guidance can connect process steps without publishing employer or client records.",
+      "maturity": "Professional Body of Work",
+      "evidence_level": "Sanitized reconstruction",
+      "source_basis": "Professional work with confidential source records withheld",
+      "status": "approved"
+    },
+    {
+      "id": "UOS-001",
+      "page": "projects/unseen-os.html",
+      "category": "maturity",
+      "approved_text": "Working Local Prototype",
+      "maturity": "Working Prototype",
+      "evidence_level": "Expanded clean-run validation",
+      "source_basis": "Validated v0.3 local prototype and public verification record",
+      "status": "approved"
+    },
+    {
+      "id": "UOS-002",
+      "page": "projects/unseen-os.html",
+      "category": "boundary",
+      "approved_text": "A functioning local prototype exists, but public deployment, external-user validation, production security, backup and recovery, authentication, privacy review, monitoring, and product hardening are not claimed.",
+      "maturity": "Working Prototype",
+      "evidence_level": "Boundary statement",
+      "source_basis": "Final v0.3 verification record",
+      "status": "approved"
+    },
+    {
+      "id": "UOS-003",
+      "page": "evidence/unseen-os/verification.html",
+      "category": "verification",
+      "approved_text": "Two operating systems. Expanded state changes. One gated Release Candidate.",
+      "maturity": "Verified local Release Candidate evidence",
+      "evidence_level": "GitHub-hosted Windows and Linux validation",
+      "source_basis": "Final expanded Pass 2 CI evidence",
+      "status": "approved"
+    },
+    {
+      "id": "UL-001",
+      "page": "projects/unseen-lifeline.html",
+      "category": "maturity",
+      "approved_text": "Evaluated IBM SkillsBuild Capstone & Case Study",
+      "maturity": "Evaluated Demonstration / Case Study",
+      "evidence_level": "Evaluated capstone and public synthetic case",
+      "source_basis": "IBM SkillsBuild project record",
+      "status": "approved"
+    },
+    {
+      "id": "UL-002",
+      "page": "projects/unseen-lifeline.html",
+      "category": "boundary",
+      "approved_text": "It is not a deployed autonomous platform and does not determine eligibility, provide professional advice, or submit information on a person's behalf.",
+      "maturity": "Evaluated Demonstration / Case Study",
+      "evidence_level": "Boundary statement",
+      "source_basis": "Public case-study governance",
+      "status": "approved"
+    },
+    {
+      "id": "CSS-001",
+      "page": "projects/canonical-synthesis.html",
+      "category": "maturity",
+      "approved_text": "Operational System",
+      "maturity": "Operational System",
+      "evidence_level": "Repeatable documented operating method",
+      "source_basis": "Canonical Source Synthesis v2.1 controlled packet",
+      "status": "approved"
+    },
+    {
+      "id": "ITL-001",
+      "page": "projects/inventory-ledger.html",
+      "category": "maturity",
+      "approved_text": "Documented Architecture",
+      "maturity": "Documented Architecture",
+      "evidence_level": "Architecture and implementation specification",
+      "source_basis": "Inventory Truth Ledger architecture documentation",
+      "status": "approved"
+    },
+    {
+      "id": "SG-001",
+      "page": "projects/smartgrocer.html",
+      "category": "maturity",
+      "approved_text": "Authenticated Full-Stack Prototype",
+      "maturity": "Working Prototype",
+      "evidence_level": "Private repository implementation and automated checks",
+      "source_basis": "SmartGrocer private implementation repository",
+      "status": "approved"
+    },
+    {
+      "id": "SG-002",
+      "page": "projects/smartgrocer.html",
+      "category": "boundary",
+      "approved_text": "The authenticated boundary supports a small private engineering pilot, not a public production launch.",
+      "maturity": "Working Prototype",
+      "evidence_level": "Boundary statement",
+      "source_basis": "SmartGrocer implementation and test scope",
+      "status": "approved"
+    },
+    {
+      "id": "PCC-001",
+      "page": "projects/project-coordination-controls.html",
+      "category": "maturity",
+      "approved_text": "Independent Applied Case Study | Synthetic Project Data",
+      "maturity": "Independent Applied Case Study",
+      "evidence_level": "Synthetic evidence pack",
+      "source_basis": "Public proof dashboard, process map, registers, and case artifacts",
+      "status": "approved"
+    },
+    {
+      "id": "PCC-002",
+      "page": "projects/project-coordination-controls.html",
+      "category": "boundary",
+      "approved_text": "All project names, organizations, dates, costs, vendors, and records are fictional.",
+      "maturity": "Independent Applied Case Study",
+      "evidence_level": "Synthetic data boundary",
+      "source_basis": "Public case-study disclosure",
+      "status": "approved"
+    },
+    {
+      "id": "AIWE-001",
+      "page": "ai-workflow-enablement/index.html",
+      "category": "maturity",
+      "approved_text": "Independent applied case study + working demonstrations",
+      "maturity": "Working Demonstrations / Applied Case Study",
+      "evidence_level": "Browser demonstrations with tests and governance artifacts",
+      "source_basis": "Public AI Workflow Enablement evidence pack",
+      "status": "approved"
+    },
+    {
+      "id": "AIWE-002",
+      "page": "ai-workflow-enablement/index.html",
+      "category": "boundary",
+      "approved_text": "Production AI extraction accuracy",
+      "maturity": "Working Demonstrations / Applied Case Study",
+      "evidence_level": "Explicit non-claim",
+      "source_basis": "Public case-study boundary section",
+      "status": "approved"
+    }
+  ]
+}
