@@ -26,8 +26,8 @@ The operating rule is simple:
 
 ### Homepage
 
-- `I turn fragmented information into clear operating systems.`
-- `I combine operations, planning, project administration, documentation, business systems, and human-centered AI workflow design to make complex work easier to understand, execute, and govern.`
+- `Turning complexity into clear systems and useful work.`
+- `I design reliable workflows, decision-ready analysis, practical documentation, and governed human-centered tools that help people and organizations move from fragmented information to coordinated action.`
 
 ### About
 
