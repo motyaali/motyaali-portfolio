@@ -31,6 +31,11 @@ jobs:
         continue-on-error: true
         run: python scripts/validate_site.py
 
+      - name: Validate approved public copy and claims
+        id: claims_validation
+        continue-on-error: true
+        run: python scripts/validate_public_claims.py
+
       - name: Set up Node.js
         uses: actions/setup-node@v6
         with:
@@ -67,7 +72,9 @@ jobs:
         uses: actions/github-script@v7
         with:
           script: |
-            const staticPassed = '${{ steps.site_validation.outcome }}' === 'success';
+            const sitePassed = '${{ steps.site_validation.outcome }}' === 'success';
+            const claimsPassed = '${{ steps.claims_validation.outcome }}' === 'success';
+            const staticPassed = sitePassed && claimsPassed;
             const npmPassed = '${{ steps.npm_install.outcome }}' === 'success';
             const installPassed = '${{ steps.browser_install.outcome }}' === 'success';
             const testPassed = '${{ steps.browser_validation.outcome }}' === 'success';
@@ -87,8 +94,8 @@ jobs:
               state: staticPassed ? 'success' : 'failure',
               context: 'portfolio/static',
               description: staticPassed
-                ? 'HTML structure and local links passed'
-                : 'Static structure or local-link validation failed'
+                ? 'HTML, links, and approved public claims passed'
+                : `Static validation failed: site=${sitePassed}, claims=${claimsPassed}`
             });
 
             await github.rest.repos.createCommitStatus({
@@ -105,10 +112,10 @@ jobs:
               state: passed ? 'success' : 'failure',
               context: 'portfolio/validation',
               description: passed
-                ? 'Static and browser acceptance tests passed'
+                ? 'Static, claims, and browser acceptance tests passed'
                 : 'Portfolio validation failed; inspect the Actions run'
             });
 
       - name: Fail workflow when validation fails
-        if: steps.site_validation.outcome != 'success' || steps.npm_install.outcome != 'success' || steps.browser_install.outcome != 'success' || steps.browser_validation.outcome != 'success'
+        if: steps.site_validation.outcome != 'success' || steps.claims_validation.outcome != 'success' || steps.npm_install.outcome != 'success' || steps.browser_install.outcome != 'success' || steps.browser_validation.outcome != 'success'
         run: exit 1
