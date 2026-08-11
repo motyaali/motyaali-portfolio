@@ -116,6 +116,13 @@ jobs:
                 : 'Portfolio validation failed; inspect the Actions run'
             });
 
-      - name: Fail workflow when validation fails
-        if: steps.site_validation.outcome != 'success' || steps.claims_validation.outcome != 'success' || steps.npm_install.outcome != 'success' || steps.browser_install.outcome != 'success' || steps.browser_validation.outcome != 'success'
-        run: exit 1
+      - name: Enforce validation result
+        if: always()
+        shell: bash
+        run: |
+          set -euo pipefail
+          test "${{ steps.site_validation.outcome }}" = "success"
+          test "${{ steps.claims_validation.outcome }}" = "success"
+          test "${{ steps.npm_install.outcome }}" = "success"
+          test "${{ steps.browser_install.outcome }}" = "success"
+          test "${{ steps.browser_validation.outcome }}" = "success"
