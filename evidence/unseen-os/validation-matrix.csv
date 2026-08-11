@@ -1,21 +1,29 @@
 area,verification,result,boundary
 Source identity,Exact private working archive SHA-256 verified,PASS,Private source archive not published
+Release candidate,Sanitized v0.3 Release Candidate generated after both OS gates,PASS,Release Candidate is a local-first verified demo not a production service
+Release candidate,Release Candidate SHA-256 verified as 1da6b8513d8d8e9234e06c18cefe7d044d643a2f305202180b231a27b60ce91e,PASS,Hash identifies exact gated package
 Environment,GitHub-hosted Windows clean runner using Python 3.12,PASS,Local prototype only
 Environment,GitHub-hosted Linux clean runner using Python 3.12,PASS,Local prototype only
 Installation,Windows PowerShell setup path executed,PASS,Does not establish production deployment readiness
 Installation,Linux fresh virtual environment installed from requirements,PASS,Does not establish production deployment readiness
-Automated tests,13 unit/static-contract tests completed,PASS,Project-defined regression suite
+Automated tests,13 unit/static-contract/UI-contract tests completed,PASS,Project-defined regression suite
 Core pipeline,5 synthetic fixture files processed and persisted,PASS,Deterministic fallback path
 Browser,Dashboard loaded through local Flask UI,PASS,Synthetic data
-Browser,Inbox scan processed a fictional rent notice,PASS,Synthetic data
-Browser,Life Archive rendered persisted record,PASS,Synthetic data
+Browser,Inbox scan processed all 5 synthetic fixture files,PASS,Synthetic data
+Browser,Life Archive rendered all 5 persisted records,PASS,Synthetic data
 Browser,Document evidence modal rendered extracted fields,PASS,Synthetic data
+Browser,Human confirmation changed an extracted-field verification state,PASS,Synthetic data
+Browser,Document reprocessing completed and refreshed the evidence view,PASS,Synthetic data
+Browser,Post-reprocess document modal closed cleanly on Windows and Linux,PASS,Cross-platform browser acceptance
 Browser,Continuity Board rendered linked action state,PASS,Synthetic data
 Browser,Notice Response rendered evidence and response workflow,PASS,Synthetic data
 Browser,Manual fictional follow-up action created,PASS,Synthetic data
+Browser,Manual fictional action changed from New to Done,PASS,Synthetic data
 Export,Weekly review generated,PASS,Synthetic data
 Export,Action summary CSV generated,PASS,Synthetic data
 Export,Document summary CSV generated,PASS,Synthetic data
+Reset,Reset Sample/Test Data removed sample records while preserving non-sample records,PASS,Reset is intentionally sample/test scoped rather than a full user-data wipe
+Backup,Timestamped database backup created before sample/test reset,PASS,Local backup control only; not remote disaster recovery
 HTTP security,Non-loopback Host rejected,PASS,Loopback local application model
 HTTP security,Mutation request without local mutation header rejected,PASS,Local safety control not user authentication
 HTTP security,Cache-Control no-store verified,PASS,HTTP response control
@@ -23,5 +31,7 @@ HTTP security,X-Content-Type-Options nosniff verified,PASS,HTTP response control
 HTTP security,X-Frame-Options DENY verified,PASS,HTTP response control
 HTTP security,Referrer-Policy no-referrer verified,PASS,HTTP response control
 HTTP security,CSP frame-ancestors and connect-src boundary verified,PASS,Does not replace full external security assessment
+Privacy,Release Candidate contains no populated database or private runtime archive,PASS,Sanitized package inspection
+Privacy,Release Candidate contains no absolute personal path or credential file,PASS,.env.example contains placeholder only
 Provider integration,Live Gemini provider,NOT RUN,No provider credential supplied to clean runners
 Production readiness,Public production deployment,NOT CLAIMED,Authentication authorization monitoring remote backup and external security review remain outside scope
