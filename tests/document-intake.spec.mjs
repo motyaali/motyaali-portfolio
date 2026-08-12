@@ -84,7 +84,10 @@ test('reset returns the demonstration to a clean starting state', async ({ page 
 
   const classification = page.getByLabel('Choose the controlling classification');
   await classification.selectOption('General Site Documentation');
-  await page.getByRole('button', { name: 'Confirm Classification' }).click();
+  const classificationButton = page.getByRole('button', { name: 'Confirm Classification' });
+  await expect(classificationButton).toBeVisible();
+  await expect(classificationButton).toBeEnabled();
+  await classificationButton.evaluate((button) => button.click());
   await expect(page.getByText('General Site Documentation confirmed.', { exact: false })).toBeVisible();
   await expect(page.getByRole('button', { name: 'Complete Routing' })).toBeEnabled();
 
