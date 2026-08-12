@@ -19,10 +19,12 @@ The operating rule is simple:
 1. **Controlled evidence and source records** establish the factual basis.
 2. **Master Portfolio Record and project governance** determine classification, privacy, and publication eligibility.
 3. **`public-claims.json`** records the approved public wording, maturity label, evidence level, and public-safe source basis.
-4. **Public proof manifests** tie a working demonstration to its synthetic records, acceptance evidence, operating documentation, and non-claims.
-5. **Public HTML pages** implement the approved claims.
-6. **`scripts/validate_public_claims.py`** blocks copy and maturity drift in CI.
-7. **`scripts/validate_proof_packs.py`** blocks proof-pack drift when a manifest, test register, acceptance matrix, or referenced artifact is missing or inconsistent.
+4. **Public proof manifests** tie working demonstrations to synthetic records, acceptance evidence, operating documentation, and non-claims.
+5. **`offer-conversion.json`** ties AI Workflow Enablement's four engagement packages, public offer assets, pilot boundary, qualification privacy boundary, and unresolved commercial gates together.
+6. **Public HTML pages** implement the approved claims.
+7. **`scripts/validate_public_claims.py`** blocks copy and maturity drift in CI.
+8. **`scripts/validate_proof_packs.py`** blocks proof-pack drift when a manifest, test register, acceptance matrix, or referenced artifact is missing or inconsistent.
+9. **`scripts/validate_offer_conversion.py`** blocks offer drift, missing public conversion assets, weakened discovery privacy controls, or accidental removal of unresolved commercial validation gates.
 
 ## Approved core positioning
 
@@ -47,7 +49,7 @@ The operating rule is simple:
 
 | Public case | Allowed maturity label | Public evidence boundary |
 | --- | --- | --- |
-| AI Workflow Enablement | Working Demonstrations / Applied Case Study | Working browser demonstrations, tests, governance, and runbook. No production AI accuracy, client integration, measured organizational savings, or autonomous authority claim. |
+| AI Workflow Enablement | Working Demonstrations / Service Framework | Working browser demonstrations, Document Intake proof pack, tests, governance, runbooks, four engagement packages, one-page overview, and browser-local discovery worksheet. No production AI accuracy, client integration, measured organizational savings, final pricing/service economics, client testimonial, or autonomous authority claim. |
 | Intelligent Document Intake and Routing Proof Pack | Working Browser Demonstration | Six synthetic records, deterministic browser behavior, acceptance matrix, executable Playwright coverage, proof manifest, runbook, and demo script. No live Microsoft 365 integration, production AI accuracy, measured client savings, production identity controls, or autonomous consequential decisions. |
 | Construction Project Coordination Controls | Independent Applied Case Study | Synthetic project records only. No confidential client work or independent approval authority claim. |
 | Enterprise Documentation & Workflow Enablement | Professional Body of Work | Professional experience may be described; public visuals are sanitized reconstructions. Original employer and client records remain private. |
@@ -57,6 +59,41 @@ The operating rule is simple:
 | Canonical Source Synthesis | Operational System | Repeatable documented information-governance method. Public examples use synthetic sources. Organizational deployment would still require approved repositories, access controls, retention rules, and process ownership. |
 | Inventory Truth Ledger | Documented Architecture | Architecture and implementation specification. No production integrations, deployment, or validated savings claim. |
 | SmartGrocer | Working Prototype | Authenticated private-pilot foundation with implementation and automated checks. Not a public production service and not a realized-savings claim. |
+
+## AI Workflow Enablement offer-control policy
+
+The public service framework may present the four documented engagement packages:
+
+1. Workflow Diagnostic
+2. Controlled Pilot
+3. Full Implementation & Enablement
+4. Optimization & Support
+
+The recommended first engagement may be described as a Controlled Pilot for one recurring process, one team or business unit, representative approved data, and approximately 5 to 20 pilot users.
+
+The public offer must keep these unresolved commercial items visible as **not yet validated** rather than inventing or implying answers:
+
+- final pricing and payment structure;
+- estimated delivery cost and gross margin;
+- vendor and licensing cost assumptions;
+- deposit, cancellation, and change-order terms;
+- recurring support pricing and economics;
+- professional liability and cyber-risk review;
+- standard service agreement and confidentiality terms;
+- production client credential and environment separation process.
+
+A public service offer is not evidence of a paying customer, measured savings, production accuracy, regulatory approval, or client deployment.
+
+## Discovery worksheet privacy policy
+
+The public workflow-discovery worksheet is a browser-local qualification utility.
+
+- Form submission is prevented in JavaScript.
+- The page does not send form content through `fetch` or `XMLHttpRequest`.
+- The generated process brief remains in the browser unless the visitor chooses to copy it or activates the mailto action.
+- The page instructs visitors not to enter confidential, medical, legal, financial, regulated, employer-proprietary, credential, personally identifying, or other sensitive information.
+
+Any future change that sends form data to a server, analytics endpoint, CRM, database, or third-party form service is a material privacy change and requires a new review before merge.
 
 ## Professional metric policy
 
@@ -124,9 +161,9 @@ For future portfolio edits:
 1. Identify the controlled evidence supporting the proposed claim.
 2. Confirm project maturity and privacy classification.
 3. Add or update the approved claim in `evidence/governance/public-claims.json`.
-4. When the project has a public proof manifest, update the manifest and every affected evidence artifact together.
+4. When the project has a public proof or offer manifest, update the manifest and every affected evidence artifact together.
 5. Update the public page to match the approved wording and boundary.
-6. Run `python scripts/validate_public_claims.py`, `python scripts/validate_proof_packs.py`, and the normal site validation suite.
+6. Run `python scripts/validate_public_claims.py`, `python scripts/validate_proof_packs.py`, `python scripts/validate_offer_conversion.py`, and the normal site validation suite.
 7. Merge only after CI passes.
 
 If a claim cannot be supported at the requested strength, reduce the wording, label it as planned or expected, or keep it private. Do not invent a number or promote expected benefits into measured results.

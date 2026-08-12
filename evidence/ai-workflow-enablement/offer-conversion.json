@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "service_name": "AI Workflow Enablement",
+  "canonical_public_implementation": "motyaali/motyaali-portfolio@main",
+  "public_maturity": "Working demonstrations + controlled service framework",
+  "operating_principle": "Automate proposals, not decisions.",
+  "primary_first_engagement": "Controlled Pilot",
+  "engagement_packages": [
+    {
+      "name": "Workflow Diagnostic",
+      "purpose": "Clarify the process, current-state pain, risk, automation suitability, recommended future state, and implementation estimate before a build commitment."
+    },
+    {
+      "name": "Controlled Pilot",
+      "purpose": "Test one bounded recurring workflow with representative approved data, human-review gates, acceptance evidence, training, and a scale, revise, or stop recommendation."
+    },
+    {
+      "name": "Full Implementation & Enablement",
+      "purpose": "Configure the approved future state in the authorized environment with permissions, documentation, governance, training, launch support, and administrator handoff."
+    },
+    {
+      "name": "Optimization & Support",
+      "purpose": "Review performance, analyze errors, regression-test changes, refresh training, and maintain an enhancement backlog for a live workflow."
+    }
+  ],
+  "recommended_pilot_boundary": {
+    "processes": 1,
+    "business_units": 1,
+    "pilot_users": "approximately 5 to 20",
+    "data": "Representative, approved, and limited to the defined process",
+    "platform": "Use systems the organization already owns whenever practical",
+    "decision": "Scale, revise, or stop based on documented pilot evidence"
+  },
+  "public_assets": [
+    "ai-workflow-enablement/index.html",
+    "ai-workflow-enablement/overview.html",
+    "ai-workflow-enablement/discovery.html",
+    "assets/workflow-discovery.js",
+    "services.html",
+    "contact.html",
+    "projects/ai-workflow-enablement.html",
+    "evidence/ai-workflow-enablement/document-intake-proof.html",
+    "docs/AI_WORKFLOW_ENABLEMENT_OUTREACH_TOOLKIT.md",
+    "tests/offer-conversion.spec.mjs"
+  ],
+  "qualification_privacy_boundary": "The discovery worksheet runs locally in the browser and does not transmit form content by itself.",
+  "unvalidated_commercial_items": [
+    "final public or private pricing structure",
+    "estimated delivery cost and gross margin",
+    "vendor and licensing cost assumptions",
+    "deposit cancellation and change-order terms",
+    "recurring support pricing and economics",
+    "professional liability and cyber-risk review",
+    "standard service agreement and confidentiality terms",
+    "client credential and environment separation process for production work"
+  ],
+  "not_claimed": [
+    "measured organizational time or cost savings",
+    "production AI extraction or classification accuracy",
+    "live client-system integration from the public demonstration",
+    "regulatory compliance approval",
+    "client deployment or testimonial without client-approved evidence",
+    "autonomous authority over consequential decisions"
+  ]
+}
