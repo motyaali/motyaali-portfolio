@@ -1,14 +1,27 @@
 # AI Workflow Enablement Evidence Pack
 
-This folder contains inspectable evidence for the AI Workflow Enablement applied case study and its two public demonstrations.
+This folder contains inspectable evidence for the AI Workflow Enablement applied case study and its public demonstrations.
 
 ## Contents
 
 - `synthetic-meeting-notes.md`: six fictional distributed coordination inputs with one missing response, one date conflict, and one unassigned issue
 - `reference-reviewed-record.md`: expected client coordination package after three exception decisions
-- `acceptance-tests.md`: manual and automated validation matrix for the Meeting Intelligence and Document Intake demonstrations
+- `acceptance-tests.md`: manual and automated validation matrix for the broader Meeting Intelligence and Document Intake demonstration set
 - `governance-boundary.md`: preparation authority, exception-review requirements, public-data boundaries, and production-adaptation requirements
-- `administrator-runbook.md`: operation, validation, change control, release, and organizational-adaptation guidance
+- `administrator-runbook.md`: shared operation, validation, change control, release, and organizational-adaptation guidance
+
+## Document Intake Pass 4 proof pack
+
+The Document Intake demonstration now has a dedicated public proof layer under `../../evidence/ai-workflow-enablement/`:
+
+- `document-intake-proof.html`: public one-page case study, architecture, synthetic evidence, acceptance summary, handoff assets, and production boundary
+- `document-intake-proof.json`: machine-readable proof manifest tying the demonstration to its evidence artifacts
+- `document-intake-synthetic-records.csv`: canonical six-record fictional test register
+- `document-intake-acceptance.csv`: eleven documented acceptance scenarios
+
+The executable browser coverage is `../../tests/document-intake.spec.mjs`. The administrator operating document is `../../docs/DOCUMENT_INTAKE_DEMO_RUNBOOK.md`, and the short walkthrough is `../../docs/DOCUMENT_INTAKE_DEMO_SCRIPT.md`.
+
+The repository CI validates the proof manifest and referenced assets with `../../scripts/validate_proof_packs.py` in addition to the normal HTML, link, public-claims, and Playwright validation.
 
 ## Working demonstrations
 

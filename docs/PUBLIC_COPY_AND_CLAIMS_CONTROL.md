@@ -19,8 +19,10 @@ The operating rule is simple:
 1. **Controlled evidence and source records** establish the factual basis.
 2. **Master Portfolio Record and project governance** determine classification, privacy, and publication eligibility.
 3. **`public-claims.json`** records the approved public wording, maturity label, evidence level, and public-safe source basis.
-4. **Public HTML pages** implement the approved claims.
-5. **`scripts/validate_public_claims.py`** blocks claim drift in CI when approved wording disappears, a governed page is missing, or forbidden legacy wording reappears.
+4. **Public proof manifests** tie a working demonstration to its synthetic records, acceptance evidence, operating documentation, and non-claims.
+5. **Public HTML pages** implement the approved claims.
+6. **`scripts/validate_public_claims.py`** blocks copy and maturity drift in CI.
+7. **`scripts/validate_proof_packs.py`** blocks proof-pack drift when a manifest, test register, acceptance matrix, or referenced artifact is missing or inconsistent.
 
 ## Approved core positioning
 
@@ -46,6 +48,7 @@ The operating rule is simple:
 | Public case | Allowed maturity label | Public evidence boundary |
 | --- | --- | --- |
 | AI Workflow Enablement | Working Demonstrations / Applied Case Study | Working browser demonstrations, tests, governance, and runbook. No production AI accuracy, client integration, measured organizational savings, or autonomous authority claim. |
+| Intelligent Document Intake and Routing Proof Pack | Working Browser Demonstration | Six synthetic records, deterministic browser behavior, acceptance matrix, executable Playwright coverage, proof manifest, runbook, and demo script. No live Microsoft 365 integration, production AI accuracy, measured client savings, production identity controls, or autonomous consequential decisions. |
 | Construction Project Coordination Controls | Independent Applied Case Study | Synthetic project records only. No confidential client work or independent approval authority claim. |
 | Enterprise Documentation & Workflow Enablement | Professional Body of Work | Professional experience may be described; public visuals are sanitized reconstructions. Original employer and client records remain private. |
 | Retail Planning & Inventory Strategy | Professional Body of Work | Career metrics may be used when supported by controlled source records. Proprietary reports remain private. |
@@ -78,6 +81,23 @@ Approved public wording focuses on contribution:
 
 The CI validator explicitly blocks the retired exact `$10M+` public wording from HTML pages.
 
+## Demonstration metric policy
+
+Deterministic counts from a synthetic demonstration may be stated only as demonstration evidence. They are not organizational outcomes.
+
+For the Document Intake proof pack, approved statements include:
+
+- six fictional incoming records;
+- three routine records prepared for one group confirmation;
+- three targeted exception decisions;
+- four approved records shown as routed;
+- two unsafe or incomplete records shown as held;
+- eleven documented acceptance scenarios.
+
+The public page must preserve the statement:
+
+`The counts are deterministic demonstration evidence, not measured organizational savings.`
+
 ## Confidentiality rules
 
 ### Professional and employer work
@@ -95,6 +115,7 @@ The Quincy-related source material is not an approved standalone public case stu
 
 - Do not publish secrets, populated private databases, private inboxes, personal runtime paths, or private source packages merely to prove implementation.
 - Public technical claims should be supported through sanitized architecture, tests, verification records, synthetic data, and explicit maturity boundaries.
+- A proof pack must not imply that a synthetic browser demonstration is a deployed client integration.
 
 ## Change workflow
 
@@ -103,8 +124,9 @@ For future portfolio edits:
 1. Identify the controlled evidence supporting the proposed claim.
 2. Confirm project maturity and privacy classification.
 3. Add or update the approved claim in `evidence/governance/public-claims.json`.
-4. Update the public page to match the approved wording and boundary.
-5. Run `python scripts/validate_public_claims.py` and the normal site validation suite.
-6. Merge only after CI passes.
+4. When the project has a public proof manifest, update the manifest and every affected evidence artifact together.
+5. Update the public page to match the approved wording and boundary.
+6. Run `python scripts/validate_public_claims.py`, `python scripts/validate_proof_packs.py`, and the normal site validation suite.
+7. Merge only after CI passes.
 
 If a claim cannot be supported at the requested strength, reduce the wording, label it as planned or expected, or keep it private. Do not invent a number or promote expected benefits into measured results.

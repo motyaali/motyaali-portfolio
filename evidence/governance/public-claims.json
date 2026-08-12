@@ -19,6 +19,8 @@
     "projects/smartgrocer.html",
     "projects/project-coordination-controls.html",
     "ai-workflow-enablement/index.html",
+    "demos/document-intake.html",
+    "evidence/ai-workflow-enablement/document-intake-proof.html",
     "evidence/unseen-os/verification.html"
   ],
   "global_forbidden_html": [
@@ -315,6 +317,56 @@
       "maturity": "Working Demonstrations / Applied Case Study",
       "evidence_level": "Explicit non-claim",
       "source_basis": "Public case-study boundary section",
+      "status": "approved"
+    },
+    {
+      "id": "AIWE-DI-001",
+      "page": "demos/document-intake.html",
+      "category": "maturity",
+      "approved_text": "Guided value demonstration",
+      "maturity": "Working Browser Demonstration",
+      "evidence_level": "Deterministic synthetic browser behavior",
+      "source_basis": "Public Document Intake demonstration and executable browser tests",
+      "status": "approved"
+    },
+    {
+      "id": "AIWE-DI-002",
+      "page": "demos/document-intake.html",
+      "category": "boundary",
+      "approved_text": "It does not claim production model accuracy, live Microsoft 365 integration, or measured client savings.",
+      "maturity": "Working Browser Demonstration",
+      "evidence_level": "Explicit non-claim",
+      "source_basis": "Public Document Intake demonstration boundary",
+      "status": "approved"
+    },
+    {
+      "id": "AIWE-DI-003",
+      "page": "evidence/ai-workflow-enablement/document-intake-proof.html",
+      "category": "maturity",
+      "approved_text": "Working browser demonstration · synthetic public data",
+      "maturity": "Working Browser Demonstration",
+      "evidence_level": "Proof pack with synthetic records, acceptance matrix, executable tests, and operating documentation",
+      "source_basis": "Document Intake public proof pack",
+      "status": "approved"
+    },
+    {
+      "id": "AIWE-DI-004",
+      "page": "evidence/ai-workflow-enablement/document-intake-proof.html",
+      "category": "metric-boundary",
+      "approved_text": "The counts are deterministic demonstration evidence, not measured organizational savings.",
+      "maturity": "Working Browser Demonstration",
+      "evidence_level": "Explicit boundary on demonstration counts",
+      "source_basis": "Document Intake public proof pack",
+      "status": "approved"
+    },
+    {
+      "id": "AIWE-DI-005",
+      "page": "evidence/ai-workflow-enablement/document-intake-proof.html",
+      "category": "production-boundary",
+      "approved_text": "This is working proof of workflow logic, not a claim that the client implementation already exists.",
+      "maturity": "Working Browser Demonstration",
+      "evidence_level": "Explicit production boundary",
+      "source_basis": "Document Intake public proof pack",
       "status": "approved"
     }
   ]
