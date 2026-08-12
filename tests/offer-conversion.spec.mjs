@@ -16,7 +16,7 @@ test('packages the offer into four distinct engagement levels with a controlled-
   await expect(page.getByRole('heading', { name: 'Optimization & Support' })).toBeVisible();
   await expect(page.getByText('Approximately 5 to 20 pilot users')).toBeVisible();
   await expect(page.getByRole('link', { name: 'Prepare a Process Brief' })).toHaveAttribute('href', 'ai-workflow-enablement/discovery.html');
-  await expect(page.getByRole('link', { name: 'Open One-Page Overview' })).toHaveAttribute('href', 'ai-workflow-enablement/overview.html');
+  await expect(page.locator('.page-hero').getByRole('link', { name: 'Open One-Page Overview' })).toHaveAttribute('href', 'ai-workflow-enablement/overview.html');
 });
 
 test('gives employers and organizations separate evaluation paths without changing the maturity boundary', async ({ page }) => {
