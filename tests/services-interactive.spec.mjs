@@ -42,7 +42,7 @@ test('expands and switches Where I Help details without navigating away', async 
   await expect(meeting).toHaveAttribute('aria-expanded', 'false');
   await expect(documentIntake).toHaveAttribute('aria-expanded', 'true');
   await expect(panel.getByRole('heading', { name: 'Document Intake' })).toBeVisible();
-  await expect(panel.getByText('hold duplicates, incomplete records, and uncertain classifications', { exact: false })).toBeVisible();
+  await expect(panel.getByText('holding duplicates, incomplete records, and uncertain classifications', { exact: false })).toBeVisible();
   await expect(panel.getByRole('link', { name: 'Inspect the Proof Pack' })).toHaveAttribute('href', 'evidence/ai-workflow-enablement/document-intake-proof.html');
   await expect(panel.getByRole('link', { name: 'Discuss This Process' })).toHaveAttribute('href', 'ai-workflow-enablement/discovery.html');
 });
