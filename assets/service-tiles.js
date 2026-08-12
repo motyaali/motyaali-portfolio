@@ -34,9 +34,17 @@
       }
     }
 
+    function gridItemForTile(tile) {
+      if (!tile) return null;
+      if (tile.parentElement === grid) return tile;
+      const directGridChild = tile.parentElement;
+      return directGridChild?.parentElement === grid ? directGridChild : null;
+    }
+
     function placePanelForViewport(tile) {
-      if (mobileQuery.matches && tile?.parentElement === grid) {
-        tile.after(panel);
+      const gridItem = gridItemForTile(tile);
+      if (mobileQuery.matches && gridItem) {
+        gridItem.after(panel);
       } else {
         restorePanelDesktopPosition();
       }
