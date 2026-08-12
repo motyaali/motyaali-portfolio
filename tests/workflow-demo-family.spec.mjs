@@ -28,7 +28,8 @@ test('Status Reporting prepares governed facts, blocks unsupported assumptions, 
   await expect(page.getByRole('button', { name: 'Finalize Report Package' })).toBeEnabled();
   await page.getByRole('button', { name: 'Finalize Report Package' }).click();
   await expect(page.getByRole('heading', { name: 'One controlled review produces three usable reporting artifacts.' })).toBeVisible();
-  await expect(page.getByText('3 judgment calls recorded')).toBeVisible();
+  await expect(page.locator('#status-output-metrics article').nth(2)).toContainText('3');
+  await expect(page.locator('#status-output-metrics article').nth(2)).toContainText('judgment calls recorded');
   await expect(page.getByText('R-07 owner: Priya Shah · Program PMO', { exact: false })).toBeVisible();
 
   await testInfo.attach('status-reporting-controlled-outcome', { body: await page.screenshot({ fullPage: true }), contentType: 'image/png' });
@@ -63,7 +64,8 @@ test('Request Triage prepares routine assignments and requires duplicate, priori
   await expect(page.getByRole('button', { name: 'Commit Triage Queue' })).toBeEnabled();
   await page.getByRole('button', { name: 'Commit Triage Queue' }).click();
   await expect(page.getByRole('heading', { name: 'The queue finishes with visible ownership, service targets, and exception history.' })).toBeVisible();
-  await expect(page.getByText('7 controlled work items')).toBeVisible();
+  await expect(page.locator('#triage-output-metrics article').nth(1)).toContainText('7');
+  await expect(page.locator('#triage-output-metrics article').nth(1)).toContainText('controlled work items');
   await expect(page.getByText('0 sensitive records routed generally')).toBeVisible();
 
   await testInfo.attach('request-triage-controlled-outcome', { body: await page.screenshot({ fullPage: true }), contentType: 'image/png' });
@@ -98,8 +100,10 @@ test('SOP Knowledge publishes grounded answers and withholds expired or unsuppor
   await expect(page.getByRole('button', { name: 'Publish Response Pack' })).toBeEnabled();
   await page.getByRole('button', { name: 'Publish Response Pack' }).click();
   await expect(page.getByRole('heading', { name: 'The final package separates usable answers from maintenance work.' })).toBeVisible();
-  await expect(page.getByText('4 source-grounded answers')).toBeVisible();
-  await expect(page.getByText('2 answers withheld safely')).toBeVisible();
+  await expect(page.locator('#knowledge-output-metrics article').nth(1)).toContainText('4');
+  await expect(page.locator('#knowledge-output-metrics article').nth(1)).toContainText('source-grounded answers');
+  await expect(page.locator('#knowledge-output-metrics article').nth(2)).toContainText('2');
+  await expect(page.locator('#knowledge-output-metrics article').nth(2)).toContainText('answers withheld safely');
   await expect(page.getByText('0 invented policies')).toBeVisible();
   await expect(page.getByText('0 expired phone numbers published')).toBeVisible();
 
