@@ -18,7 +18,10 @@
     "projects/inventory-ledger.html",
     "projects/smartgrocer.html",
     "projects/project-coordination-controls.html",
+    "projects/ai-workflow-enablement.html",
     "ai-workflow-enablement/index.html",
+    "ai-workflow-enablement/overview.html",
+    "ai-workflow-enablement/discovery.html",
     "demos/document-intake.html",
     "evidence/ai-workflow-enablement/document-intake-proof.html",
     "evidence/unseen-os/verification.html"
@@ -67,6 +70,16 @@
       "maturity": "Service framework",
       "evidence_level": "Approved public copy",
       "source_basis": "AI Workflow Enablement operating model",
+      "status": "approved"
+    },
+    {
+      "id": "SERVICE-002",
+      "page": "services.html",
+      "category": "pilot-boundary",
+      "approved_text": "Approximately 5 to 20 pilot users",
+      "maturity": "Service framework",
+      "evidence_level": "Documented recommended pilot boundary",
+      "source_basis": "AI Workflow Enablement Service Catalog and Launch Playbook v1.0",
       "status": "approved"
     },
     {
@@ -300,13 +313,23 @@
       "status": "approved"
     },
     {
+      "id": "AIWE-PROJECT-001",
+      "page": "projects/ai-workflow-enablement.html",
+      "category": "maturity",
+      "approved_text": "Working public proof with explicit limitations.",
+      "maturity": "Working Demonstrations / Service Framework",
+      "evidence_level": "Evidence index linked to working demonstrations and public proof pack",
+      "source_basis": "AI Workflow Enablement evidence index",
+      "status": "approved"
+    },
+    {
       "id": "AIWE-001",
       "page": "ai-workflow-enablement/index.html",
       "category": "maturity",
-      "approved_text": "Independent applied case study + working demonstrations",
-      "maturity": "Working Demonstrations / Applied Case Study",
-      "evidence_level": "Browser demonstrations with tests and governance artifacts",
-      "source_basis": "Public AI Workflow Enablement evidence pack",
+      "approved_text": "Working demonstrations + controlled service framework",
+      "maturity": "Working Demonstrations / Service Framework",
+      "evidence_level": "Browser demonstrations, proof pack, tests, operating documentation, and service packaging",
+      "source_basis": "Public AI Workflow Enablement evidence and service package",
       "status": "approved"
     },
     {
@@ -314,9 +337,49 @@
       "page": "ai-workflow-enablement/index.html",
       "category": "boundary",
       "approved_text": "Production AI extraction accuracy",
-      "maturity": "Working Demonstrations / Applied Case Study",
+      "maturity": "Working Demonstrations / Service Framework",
       "evidence_level": "Explicit non-claim",
       "source_basis": "Public case-study boundary section",
+      "status": "approved"
+    },
+    {
+      "id": "AIWE-003",
+      "page": "ai-workflow-enablement/index.html",
+      "category": "commercial-boundary",
+      "approved_text": "Final pricing, licensing assumptions, service terms, and recurring-support economics",
+      "maturity": "Working Demonstrations / Service Framework",
+      "evidence_level": "Explicit validation gap",
+      "source_basis": "AI Workflow Enablement launch-readiness review and service catalog",
+      "status": "approved"
+    },
+    {
+      "id": "AIWE-OVERVIEW-001",
+      "page": "ai-workflow-enablement/overview.html",
+      "category": "operating-principle",
+      "approved_text": "Automate proposals, not decisions.",
+      "maturity": "Client-facing service overview",
+      "evidence_level": "Documented governance doctrine",
+      "source_basis": "AI Workflow Enablement Service Catalog and Launch Playbook v1.0",
+      "status": "approved"
+    },
+    {
+      "id": "AIWE-OVERVIEW-002",
+      "page": "ai-workflow-enablement/overview.html",
+      "category": "boundary",
+      "approved_text": "No live client-system integration, production AI accuracy, or measured client savings are claimed.",
+      "maturity": "Client-facing service overview",
+      "evidence_level": "Explicit public non-claim",
+      "source_basis": "Document Intake proof boundary and AI Workflow Enablement claims governance",
+      "status": "approved"
+    },
+    {
+      "id": "AIWE-DISCOVERY-001",
+      "page": "ai-workflow-enablement/discovery.html",
+      "category": "privacy-boundary",
+      "approved_text": "This worksheet runs in your browser. Nothing is transmitted by the page.",
+      "maturity": "Browser-local qualification utility",
+      "evidence_level": "Static page and local JavaScript behavior",
+      "source_basis": "workflow-discovery.js implementation",
       "status": "approved"
     },
     {
