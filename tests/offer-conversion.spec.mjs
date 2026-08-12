@@ -10,10 +10,10 @@ test('packages the offer into four distinct engagement levels with a controlled-
   await page.goto(servicePath);
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Practical workflows that reduce routine handling without weakening control.');
   await expect(page.getByRole('heading', { name: 'Enter at the level of commitment the process is ready for.' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Workflow Diagnostic' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Controlled Pilot' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Full Implementation & Enablement' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Optimization & Support' })).toBeVisible();
+  await expect(page.getByRole('button', { name: /Workflow Diagnostic/ })).toBeVisible();
+  await expect(page.getByRole('button', { name: /Controlled Pilot/ })).toBeVisible();
+  await expect(page.getByRole('button', { name: /Full Implementation & Enablement/ })).toBeVisible();
+  await expect(page.getByRole('button', { name: /Optimization & Support/ })).toBeVisible();
   await expect(page.getByText('Approximately 5 to 20 pilot users')).toBeVisible();
   await expect(page.getByRole('link', { name: 'Prepare a Process Brief' })).toHaveAttribute('href', 'ai-workflow-enablement/discovery.html');
   await expect(page.locator('.page-hero').getByRole('link', { name: 'Open One-Page Overview' })).toHaveAttribute('href', 'ai-workflow-enablement/overview.html');
