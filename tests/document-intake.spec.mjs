@@ -75,8 +75,8 @@ test('reset returns the demonstration to a clean starting state', async ({ page 
   await expect(page.locator('#processing-section')).toBeHidden();
   await expect(page.locator('#routing-section')).toBeHidden();
   await expect(page.locator('#impact-section')).toBeHidden();
-  await expect(page.getByRole('button', { name: 'Complete Routing' })).toBeDisabled();
-  await expect(page.getByRole('button', { name: 'Confirm Routine Routing' })).toBeEnabled();
+  await expect(page.locator('#complete-routing')).toBeDisabled();
+  await expect(page.locator('#confirm-routine')).toBeEnabled();
   await expect(page.locator('#incoming-grid .incoming-card')).toHaveCount(6);
 });
 
