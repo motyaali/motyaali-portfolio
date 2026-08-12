@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "proof_pack": "SOP Knowledge Assistance",
+  "project": "AI Workflow Enablement",
+  "owner": "Motya Ali",
+  "maturity": "Working browser demonstration",
+  "data_classification": "Synthetic public demonstration",
+  "canonical_public_implementation": "motyaali/motyaali-portfolio@main",
+  "purpose": "Demonstrate a governed knowledge-assistance pattern that publishes source-grounded answers, exposes source conflicts and expiration, withholds unsupported answers, and creates accountable knowledge-maintenance work.",
+  "synthetic_records": {
+    "count": 6,
+    "register": "evidence/ai-workflow-enablement/sop-knowledge-synthetic-records.csv",
+    "coverage": ["approved-source answers", "conflicting sources", "expired guidance", "missing source coverage"]
+  },
+  "verified_operating_behaviors": [
+    "six-question clean starting state",
+    "three source-ready answers separated from three knowledge exceptions",
+    "grounded answers require explicit confirmation",
+    "conflicting sources require a controlling-source decision or withheld answer",
+    "expired guidance is never published as current instruction",
+    "missing policy coverage creates a knowledge-gap review instead of an inferred answer",
+    "publication blocked until all required controls are satisfied",
+    "final output separates publishable answers from withheld answers and maintenance work",
+    "reset restores a clean starting state",
+    "public maturity and non-claim boundary remains visible"
+  ],
+  "acceptance": {
+    "matrix": "evidence/ai-workflow-enablement/sop-knowledge-acceptance.csv",
+    "browser_spec": "tests/workflow-demo-family.spec.mjs",
+    "execution": "Portfolio CI executes the Playwright suite across configured desktop, tablet, and mobile projects."
+  },
+  "public_artifacts": [
+    "demos/sop-knowledge.html",
+    "assets/sop-knowledge.js",
+    "assets/workflow-demos.css",
+    "evidence/ai-workflow-enablement/sop-knowledge-proof.html",
+    "evidence/ai-workflow-enablement/sop-knowledge-proof.json",
+    "evidence/ai-workflow-enablement/sop-knowledge-synthetic-records.csv",
+    "evidence/ai-workflow-enablement/sop-knowledge-acceptance.csv",
+    "tests/workflow-demo-family.spec.mjs"
+  ],
+  "production_adaptation_requires": [
+    "approved knowledge repositories and source owners",
+    "document status version and effective-date controls",
+    "role-based permissions and sensitive-content boundaries",
+    "source citation and answer-withholding rules",
+    "knowledge-gap ownership and maintenance workflow",
+    "baseline question volume search effort and correction measures",
+    "acceptance criteria regression tests and audit history",
+    "user training administrator ownership and content-refresh process"
+  ],
+  "not_claimed": [
+    "live enterprise knowledge-repository integration",
+    "production retrieval or answer accuracy",
+    "measured client productivity or cost savings",
+    "policy or legal interpretation authority",
+    "autonomous permission decisions or publication of unsupported answers"
+  ]
+}
