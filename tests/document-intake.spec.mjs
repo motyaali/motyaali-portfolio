@@ -64,18 +64,29 @@ test('processes six synthetic records, isolates three exceptions, and completes 
 
 test('reset returns the demonstration to a clean starting state', async ({ page }) => {
   await page.getByRole('button', { name: 'Process Intake Batch' }).click();
+  await expect(page.locator('#processing-section')).toBeVisible();
   await expect(page.locator('#exception-list .exception-card')).toHaveCount(3);
 
   await page.getByRole('button', { name: 'Confirm Routine Routing' }).click();
   await expect(page.getByRole('button', { name: 'Routine Routing Confirmed' })).toBeDisabled();
 
-  await page.getByRole('button', { name: 'Hold Duplicate' }).click();
+  const duplicateButton = page.locator('[data-exception="duplicate"] [data-resolve="duplicate"]');
+  await expect(duplicateButton).toBeVisible();
+  await expect(duplicateButton).toBeEnabled();
+  await duplicateButton.scrollIntoViewIfNeeded();
+  await duplicateButton.click();
   await expect(page.getByText('Duplicate held outside the controlled library.', { exact: false })).toBeVisible();
 
-  await page.getByRole('button', { name: 'Create Information Request' }).click();
+  const missingButton = page.locator('[data-exception="missing"] [data-resolve="missing"]');
+  await expect(missingButton).toBeVisible();
+  await expect(missingButton).toBeEnabled();
+  await missingButton.scrollIntoViewIfNeeded();
+  await missingButton.click();
   await expect(page.getByText('Information request prepared for the sender.', { exact: false })).toBeVisible();
 
-  await page.getByLabel('Choose the controlling classification').selectOption('General Site Documentation');
+  const classification = page.getByLabel('Choose the controlling classification');
+  await classification.scrollIntoViewIfNeeded();
+  await classification.selectOption('General Site Documentation');
   await page.getByRole('button', { name: 'Confirm Classification' }).click();
   await expect(page.getByText('General Site Documentation confirmed.', { exact: false })).toBeVisible();
   await expect(page.getByRole('button', { name: 'Complete Routing' })).toBeEnabled();
