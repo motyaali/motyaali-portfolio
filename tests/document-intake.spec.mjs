@@ -1,6 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 const demoPath = '/demos/document-intake.html';
+const proofPath = '/evidence/ai-workflow-enablement/document-intake-proof.html';
 
 test.beforeEach(async ({ page }) => {
   await page.goto(demoPath);
@@ -16,10 +17,11 @@ test('processes six synthetic records, isolates three exceptions, and completes 
 
   await expect(page.locator('#routine-list .routine-row')).toHaveCount(3);
   await expect(page.locator('#exception-list .exception-card')).toHaveCount(3);
-  await expect(page.getByText('3routine records prepared')).toBeVisible();
-  await expect(page.getByText('1probable duplicate detected')).toBeVisible();
-  await expect(page.getByText('1missing-information case')).toBeVisible();
-  await expect(page.getByText('1classification exception')).toBeVisible();
+  await expect(page.locator('#intake-summary article').nth(0)).toContainText('3');
+  await expect(page.locator('#intake-summary article').nth(0)).toContainText('routine records prepared');
+  await expect(page.locator('#intake-summary article').nth(1)).toContainText('probable duplicate detected');
+  await expect(page.locator('#intake-summary article').nth(2)).toContainText('missing-information case');
+  await expect(page.locator('#intake-summary article').nth(3)).toContainText('classification exception');
   await expect(page.getByRole('button', { name: 'Complete Routing' })).toBeDisabled();
 
   await page.getByRole('button', { name: 'Confirm Routine Routing' }).click();
@@ -47,9 +49,12 @@ test('processes six synthetic records, isolates three exceptions, and completes 
   await expect(page.getByText('RSR_Inspection-Record_2026-08-03.zip')).toBeVisible();
   await expect(page.getByText('Probable duplicate retained for audit, not routed')).toBeVisible();
   await expect(page.getByText('Technical submittal pending project information from sender')).toBeVisible();
-  await expect(page.getByText('6documents received')).toBeVisible();
-  await expect(page.getByText('4approved records routed')).toBeVisible();
-  await expect(page.getByText('2unsafe or incomplete records held')).toBeVisible();
+  await expect(page.locator('#impact-summary article').nth(0)).toContainText('6');
+  await expect(page.locator('#impact-summary article').nth(0)).toContainText('documents received');
+  await expect(page.locator('#impact-summary article').nth(1)).toContainText('4');
+  await expect(page.locator('#impact-summary article').nth(1)).toContainText('approved records routed');
+  await expect(page.locator('#impact-summary article').nth(2)).toContainText('2');
+  await expect(page.locator('#impact-summary article').nth(2)).toContainText('unsafe or incomplete records held');
 
   await testInfo.attach('document-intake-controlled-outcome', {
     body: await page.screenshot({ fullPage: true }),
@@ -80,6 +85,35 @@ test('makes the value proposition and public demonstration boundary explicit', a
   await expect(page.getByRole('heading', { name: 'Every document receives a full manual intake sequence.' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Routine records are prepared together. Exceptions receive focused review.' })).toBeVisible();
   await expect(page.getByText('It does not claim production model accuracy, live Microsoft 365 integration, or measured client savings.')).toBeVisible();
+});
+
+test('publishes the proof page, synthetic register, acceptance matrix, and proof manifest', async ({ page, request }) => {
+  await page.goto(proofPath);
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Intelligent Document Intake and Routing Proof Pack');
+  await expect(page.getByText('The counts are deterministic demonstration evidence, not measured organizational savings.')).toBeVisible();
+  await expect(page.locator('.evidence-table tbody tr')).toHaveCount(6);
+  await expect(page.getByRole('heading', { name: 'This is working proof of workflow logic, not a claim that the client implementation already exists.' })).toBeVisible();
+  await expect(page.getByRole('link', { name: 'Run the Working Demonstration' })).toHaveAttribute('href', '../../demos/document-intake.html');
+  await expect(page.getByRole('link', { name: 'Download Synthetic Record Register' })).toHaveAttribute('href', 'document-intake-synthetic-records.csv');
+  await expect(page.getByRole('link', { name: 'Open Acceptance Matrix' })).toHaveAttribute('href', 'document-intake-acceptance.csv');
+  await expect(page.getByRole('link', { name: 'Open Machine-Readable Proof Manifest' })).toHaveAttribute('href', 'document-intake-proof.json');
+
+  const registerResponse = await request.get('/evidence/ai-workflow-enablement/document-intake-synthetic-records.csv');
+  expect(registerResponse.ok()).toBeTruthy();
+  const registerText = await registerResponse.text();
+  expect(registerText).toContain('DOC-006,Site Photos and Notes.zip');
+
+  const matrixResponse = await request.get('/evidence/ai-workflow-enablement/document-intake-acceptance.csv');
+  expect(matrixResponse.ok()).toBeTruthy();
+  const matrixText = await matrixResponse.text();
+  expect(matrixText).toContain('DI-AT-11,Public claim boundary');
+
+  const manifestResponse = await request.get('/evidence/ai-workflow-enablement/document-intake-proof.json');
+  expect(manifestResponse.ok()).toBeTruthy();
+  const manifest = await manifestResponse.json();
+  expect(manifest.maturity).toBe('Working browser demonstration');
+  expect(manifest.synthetic_records.count).toBe(6);
+  expect(manifest.public_artifacts).toContain('tests/document-intake.spec.mjs');
 });
 
 test('fits the configured viewport and exposes accessible mobile navigation', async ({ page }) => {
