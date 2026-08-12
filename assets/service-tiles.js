@@ -5,6 +5,7 @@
   if (!groups.length) return;
 
   const mobileQuery = window.matchMedia('(max-width: 720px)');
+  let escapeCloser = null;
 
   groups.forEach((group) => {
     const grid = group.querySelector('[data-service-tile-grid]');
@@ -24,6 +25,7 @@
     const originalPanelParent = panel.parentElement;
     const originalPanelNextSibling = panel.nextSibling;
     let selectedTile = null;
+    let closeForEscape = null;
 
     function restorePanelDesktopPosition() {
       if (panel.parentElement === originalPanelParent && panel.nextSibling === originalPanelNextSibling) return;
@@ -63,8 +65,11 @@
       panelBody.replaceChildren();
       setExpandedState(null);
       restorePanelDesktopPosition();
+      if (escapeCloser === closeForEscape) escapeCloser = null;
       if (returnFocus && priorTile) priorTile.focus();
     }
+
+    closeForEscape = () => closePanel({ returnFocus: true });
 
     function openPanel(tile) {
       const detailKey = tile.dataset.serviceTile;
@@ -76,6 +81,7 @@
       panel.hidden = false;
       setExpandedState(tile);
       placePanelForViewport(tile);
+      escapeCloser = closeForEscape;
 
       const heading = panelBody.querySelector('h3');
       if (heading) {
@@ -101,12 +107,6 @@
 
     closeButton?.addEventListener('click', () => closePanel({ returnFocus: true }));
 
-    group.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape' && selectedTile && !panel.hidden) {
-        closePanel({ returnFocus: true });
-      }
-    });
-
     function handleViewportChange() {
       if (!selectedTile || panel.hidden) {
         restorePanelDesktopPosition();
@@ -119,6 +119,12 @@
       mobileQuery.addEventListener('change', handleViewportChange);
     } else if (typeof mobileQuery.addListener === 'function') {
       mobileQuery.addListener(handleViewportChange);
+    }
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && escapeCloser) {
+      escapeCloser();
     }
   });
 })();
