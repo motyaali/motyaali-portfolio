@@ -3,6 +3,7 @@
 
 from __future__ import annotations
 
+import html
 import json
 import sys
 from pathlib import Path
@@ -96,9 +97,9 @@ def main() -> None:
     if "fetch(" in discovery_js or "XMLHttpRequest" in discovery_js:
         fail("discovery utility must not transmit form data through fetch/XHR")
 
-    service_html = (ROOT / "services.html").read_text(encoding="utf-8")
-    case_html = (ROOT / "ai-workflow-enablement" / "index.html").read_text(encoding="utf-8")
-    overview_html = (ROOT / "ai-workflow-enablement" / "overview.html").read_text(encoding="utf-8")
+    service_html = html.unescape((ROOT / "services.html").read_text(encoding="utf-8"))
+    case_html = html.unescape((ROOT / "ai-workflow-enablement" / "index.html").read_text(encoding="utf-8"))
+    overview_html = html.unescape((ROOT / "ai-workflow-enablement" / "overview.html").read_text(encoding="utf-8"))
     for package in EXPECTED_PACKAGES:
         for label, text in (("services", service_html), ("case study", case_html), ("overview", overview_html)):
             if package not in text:

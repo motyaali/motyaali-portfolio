@@ -64,11 +64,20 @@ test('processes six synthetic records, isolates three exceptions, and completes 
 
 test('reset returns the demonstration to a clean starting state', async ({ page }) => {
   await page.getByRole('button', { name: 'Process Intake Batch' }).click();
+  await expect(page.locator('#exception-list .exception-card')).toHaveCount(3);
+
   await page.getByRole('button', { name: 'Confirm Routine Routing' }).click();
+  await expect(page.getByRole('button', { name: 'Routine Routing Confirmed' })).toBeDisabled();
+
   await page.getByRole('button', { name: 'Hold Duplicate' }).click();
+  await expect(page.getByText('Duplicate held outside the controlled library.', { exact: false })).toBeVisible();
+
   await page.getByRole('button', { name: 'Create Information Request' }).click();
+  await expect(page.getByText('Information request prepared for the sender.', { exact: false })).toBeVisible();
+
   await page.getByLabel('Choose the controlling classification').selectOption('General Site Documentation');
   await page.getByRole('button', { name: 'Confirm Classification' }).click();
+  await expect(page.getByText('General Site Documentation confirmed.', { exact: false })).toBeVisible();
   await expect(page.getByRole('button', { name: 'Complete Routing' })).toBeEnabled();
 
   await page.getByRole('button', { name: 'Reset' }).click();
