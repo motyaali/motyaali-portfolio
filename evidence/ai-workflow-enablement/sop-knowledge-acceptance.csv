@@ -1,0 +1,11 @@
+id,scenario,expected_result,evidence
+SK-AT-01,Clean starting state,"Six synthetic questions visible and knowledge workspace hidden","demos/sop-knowledge.html"
+SK-AT-02,Prepare responses,"Three grounded answers and three knowledge exceptions are separated","assets/sop-knowledge.js"
+SK-AT-03,Grounded-answer confirmation,"Three source-backed answers require explicit confirmation before publication","tests/workflow-demo-family.spec.mjs"
+SK-AT-04,Conflicting sources,"Q-004 cannot publish until a controlling source is selected or the answer is withheld","tests/workflow-demo-family.spec.mjs"
+SK-AT-05,Expired guidance,"Q-005 never publishes the expired escalation number and creates a source-refresh action","tests/workflow-demo-family.spec.mjs"
+SK-AT-06,Missing source coverage,"Q-006 is withheld and routed to a Privacy & Records knowledge-gap review","tests/workflow-demo-family.spec.mjs"
+SK-AT-07,Publish gate,"Publish Response Pack enables only after all four controls are satisfied","tests/workflow-demo-family.spec.mjs"
+SK-AT-08,Controlled output,"Final state separates publishable answers from withheld answers and maintenance work","demos/sop-knowledge.html"
+SK-AT-09,Reset,"Reset restores clean starting state and grounded-answer confirmation control","tests/workflow-demo-family.spec.mjs"
+SK-AT-10,Public boundary,"Synthetic-data and non-claim boundary remains visible","demos/sop-knowledge.html"
