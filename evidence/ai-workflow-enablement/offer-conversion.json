@@ -36,12 +36,15 @@
     "ai-workflow-enablement/overview.html",
     "ai-workflow-enablement/discovery.html",
     "assets/workflow-discovery.js",
+    "assets/service-tiles.css",
+    "assets/service-tiles.js",
     "services.html",
     "contact.html",
     "projects/ai-workflow-enablement.html",
     "evidence/ai-workflow-enablement/document-intake-proof.html",
     "docs/AI_WORKFLOW_ENABLEMENT_OUTREACH_TOOLKIT.md",
-    "tests/offer-conversion.spec.mjs"
+    "tests/offer-conversion.spec.mjs",
+    "tests/services-interactive.spec.mjs"
   ],
   "qualification_privacy_boundary": "The discovery worksheet runs locally in the browser and does not transmit form content by itself.",
   "unvalidated_commercial_items": [
