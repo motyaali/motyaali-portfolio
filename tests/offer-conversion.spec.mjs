@@ -35,10 +35,10 @@ test('publishes a print-ready one-page overview with proof and non-claim boundar
   await page.goto(overviewPath);
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('AI Workflow Enablement');
   await expect(page.getByText('Automate proposals, not decisions.')).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Four engagement packages' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Good pilot fit' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'What the client receives' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Proof you can inspect now' })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 2, name: 'Four engagement packages' })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 2, name: 'Good pilot fit' })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 2, name: 'What the client receives' })).toBeVisible();
+  await expect(page.getByRole('heading', { level: 2, name: 'Proof you can inspect now' })).toBeVisible();
   await expect(page.getByText('No live client-system integration, production AI accuracy, or measured client savings are claimed.')).toBeVisible();
   await expect(page.getByRole('button', { name: 'Print / Save as PDF' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Prepare a Process Brief' })).toHaveAttribute('href', 'discovery.html');
