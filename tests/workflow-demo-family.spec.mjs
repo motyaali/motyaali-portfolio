@@ -20,10 +20,15 @@ test('Status Reporting prepares governed facts, blocks unsupported assumptions, 
 
   await page.getByLabel('Working milestone date').selectOption('August 22');
   await page.getByRole('button', { name: 'Confirm Working Date' }).click();
+  await expect(page.getByText('August 22 selected as the working milestone for this report.', { exact: false })).toBeVisible();
+
   await page.getByLabel('Reporting treatment').selectOption('Report +$42,000 variance; explanation pending Finance validation');
   await page.getByRole('button', { name: 'Confirm Treatment' }).click();
+  await expect(page.getByText('Report +$42,000 variance; explanation pending Finance validation', { exact: true })).toBeVisible();
+
   await page.getByLabel('Assign reporting owner').selectOption('Priya Shah · Program PMO');
   await page.getByRole('button', { name: 'Confirm Owner' }).click();
+  await expect(page.getByText('Priya Shah · Program PMO assigned to the R-07 follow-up.', { exact: false })).toBeVisible();
 
   await expect(page.getByRole('button', { name: 'Finalize Report Package' })).toBeEnabled();
   await page.getByRole('button', { name: 'Finalize Report Package' }).click();
@@ -41,7 +46,7 @@ test('Status Reporting reset restores the clean state', async ({ page }) => {
   await page.getByRole('button', { name: 'Reset' }).click();
   await expect(page.locator('#status-workspace')).toBeHidden();
   await expect(page.locator('#status-output')).toBeHidden();
-  await expect(page.getByRole('button', { name: 'Finalize Report Package' })).toBeDisabled();
+  await expect(page.locator('#finalize-status')).toBeDisabled();
   await expect(page.locator('#status-source-grid .source-card')).toHaveCount(6);
 });
 
@@ -78,7 +83,7 @@ test('Request Triage reset restores the clean state', async ({ page }) => {
   await page.getByRole('button', { name: 'Reset' }).click();
   await expect(page.locator('#triage-workspace')).toBeHidden();
   await expect(page.locator('#triage-output')).toBeHidden();
-  await expect(page.getByRole('button', { name: 'Confirm Routine Assignments' })).toBeEnabled();
+  await expect(page.locator('#confirm-triage-routine')).toBeEnabled();
   await expect(page.locator('#triage-source-grid .source-card')).toHaveCount(8);
 });
 
@@ -117,7 +122,7 @@ test('SOP Knowledge reset restores the clean state', async ({ page }) => {
   await page.getByRole('button', { name: 'Reset' }).click();
   await expect(page.locator('#knowledge-workspace')).toBeHidden();
   await expect(page.locator('#knowledge-output')).toBeHidden();
-  await expect(page.getByRole('button', { name: 'Confirm Grounded Answers' })).toBeEnabled();
+  await expect(page.locator('#confirm-knowledge-answers')).toBeEnabled();
   await expect(page.locator('#knowledge-source-grid .source-card')).toHaveCount(6);
 });
 
@@ -148,10 +153,18 @@ test('publishes proof manifests, synthetic registers, and acceptance matrices fo
   }
 });
 
-test('new workflow demonstrations fit every configured viewport', async ({ page }) => {
-  for (const path of Object.values(paths)) {
-    await page.goto(path);
+test('new workflow demonstrations fit every configured viewport after the workspace is opened', async ({ page }) => {
+  const openActions = [
+    { path: paths.status, button: 'Prepare Weekly Report', workspace: '#status-workspace' },
+    { path: paths.triage, button: 'Triage Request Batch', workspace: '#triage-workspace' },
+    { path: paths.knowledge, button: 'Prepare Knowledge Responses', workspace: '#knowledge-workspace' }
+  ];
+
+  for (const demo of openActions) {
+    await page.goto(demo.path);
+    await page.getByRole('button', { name: demo.button }).click();
+    await expect(page.locator(demo.workspace)).toBeVisible();
     const dimensions = await page.evaluate(() => ({ viewportWidth: document.documentElement.clientWidth, documentWidth: document.documentElement.scrollWidth }));
-    expect(dimensions.documentWidth, `${path} should not overflow horizontally`).toBeLessThanOrEqual(dimensions.viewportWidth + 1);
+    expect(dimensions.documentWidth, `${demo.path} should not overflow horizontally with its workspace open`).toBeLessThanOrEqual(dimensions.viewportWidth + 1);
   }
 });
