@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "proof_pack": "Work Request Triage",
+  "project": "AI Workflow Enablement",
+  "owner": "Motya Ali",
+  "maturity": "Working browser demonstration",
+  "data_classification": "Synthetic public demonstration",
+  "canonical_public_implementation": "motyaali/motyaali-portfolio@main",
+  "purpose": "Demonstrate a governed service-queue pattern that prepares routine categorization and assignment while requiring explicit human review for duplicate, priority, and permission-sensitive cases.",
+  "synthetic_records": {
+    "count": 8,
+    "register": "evidence/ai-workflow-enablement/request-triage-synthetic-records.csv",
+    "coverage": ["routine service requests", "probable duplicate", "ambiguous urgency", "permission-sensitive request"]
+  },
+  "verified_operating_behaviors": [
+    "eight-request clean starting state",
+    "five routine assignments separated from three exceptions",
+    "routine assignments confirmed as a group",
+    "probable duplicate requires reviewer disposition",
+    "urgency language cannot set service priority without review",
+    "permission-sensitive request is held outside the general queue",
+    "queue commit blocked until all controls are satisfied",
+    "final output accounts for all originals and reviewer decisions",
+    "reset restores a clean starting state",
+    "public maturity and non-claim boundary remains visible"
+  ],
+  "acceptance": {
+    "matrix": "evidence/ai-workflow-enablement/request-triage-acceptance.csv",
+    "browser_spec": "tests/workflow-demo-family.spec.mjs",
+    "execution": "Portfolio CI executes the Playwright suite across configured desktop, tablet, and mobile projects."
+  },
+  "public_artifacts": [
+    "demos/request-triage.html",
+    "assets/request-triage.js",
+    "assets/workflow-demos.css",
+    "evidence/ai-workflow-enablement/request-triage-proof.html",
+    "evidence/ai-workflow-enablement/request-triage-proof.json",
+    "evidence/ai-workflow-enablement/request-triage-synthetic-records.csv",
+    "evidence/ai-workflow-enablement/request-triage-acceptance.csv",
+    "tests/workflow-demo-family.spec.mjs"
+  ],
+  "production_adaptation_requires": [
+    "approved request channels and service taxonomy",
+    "accountable queue owners and service targets",
+    "priority and escalation rules",
+    "role-based access and sensitive-request handling",
+    "duplicate-resolution policy",
+    "closure evidence and audit history",
+    "baseline queue volume cycle time and rework measures",
+    "acceptance criteria training and administrator handoff"
+  ],
+  "not_claimed": [
+    "live ticketing or messaging integration",
+    "production AI classification accuracy",
+    "measured client service-level improvement or savings",
+    "autonomous priority setting for consequential requests",
+    "autonomous access to permission-sensitive records"
+  ]
+}

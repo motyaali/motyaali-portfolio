@@ -5,6 +5,20 @@
   if (!groups.length) return;
 
   const mobileQuery = window.matchMedia('(max-width: 720px)');
+  const workingProofLinks = {
+    'status-reporting': {
+      demo: 'demos/status-reporting.html',
+      proof: 'evidence/ai-workflow-enablement/status-reporting-proof.html'
+    },
+    'request-triage': {
+      demo: 'demos/request-triage.html',
+      proof: 'evidence/ai-workflow-enablement/request-triage-proof.html'
+    },
+    'sop-knowledge': {
+      demo: 'demos/sop-knowledge.html',
+      proof: 'evidence/ai-workflow-enablement/sop-knowledge-proof.html'
+    }
+  };
   let escapeCloser = null;
 
   groups.forEach((group) => {
@@ -58,6 +72,31 @@
       });
     }
 
+    function addWorkingProofActions(detailKey) {
+      const links = workingProofLinks[detailKey];
+      if (!links) return;
+      const actions = panelBody.querySelector('.service-detail-actions');
+      if (!actions) return;
+
+      const existingPrimary = actions.querySelector('.button-primary');
+      if (existingPrimary) {
+        existingPrimary.classList.remove('button-primary');
+        existingPrimary.classList.add('button-secondary');
+      }
+
+      const demo = document.createElement('a');
+      demo.className = 'button button-primary';
+      demo.href = links.demo;
+      demo.textContent = 'Run the Demonstration';
+
+      const proof = document.createElement('a');
+      proof.className = 'button button-secondary';
+      proof.href = links.proof;
+      proof.textContent = 'Inspect the Proof Pack';
+
+      actions.prepend(demo, proof);
+    }
+
     function closePanel({ returnFocus = false } = {}) {
       const priorTile = selectedTile;
       selectedTile = null;
@@ -78,6 +117,7 @@
 
       selectedTile = tile;
       panelBody.replaceChildren(template.content.cloneNode(true));
+      addWorkingProofActions(detailKey);
       panel.hidden = false;
       setExpandedState(tile);
       placePanelForViewport(tile);

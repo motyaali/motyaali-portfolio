@@ -1,0 +1,9 @@
+id,requester,subject,category,proposed_owner,target,status
+REQ-101,A. Nguyen,Need access to the safety refresher course,Training access,Training Coordinator,2 business days,routine
+REQ-102,J. Patel,Where is the approved valve drawing revision?,Document lookup,Document Control,1 business day,routine
+REQ-103,M. Rivera,My department is wrong on the project roster,Data correction,Project Administrator,2 business days,routine
+REQ-104,S. Brooks,Status of invoice 10482,Invoice status,Commercial Support,1 business day,routine
+REQ-105,L. Chen,Add Noor to the weekly coordination distribution,Distribution update,Project Administrator,1 business day,routine
+REQ-106,S. Brooks,Following up again: invoice 10482 status?,Probable duplicate,Review required,Hold for review,duplicate
+REQ-107,D. Morgan,Need the program snapshot ASAP — executive asking,Status request,PMO Support,Priority unclear,priority review
+REQ-108,K. James,Please send the employee accommodation documents,Permission-sensitive records,Authorized owner required,Do not route generally,sensitive review

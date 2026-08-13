@@ -1,0 +1,11 @@
+id,scenario,expected_result,evidence
+RT-AT-01,Clean starting state,"Eight synthetic requests visible and triage workspace hidden","demos/request-triage.html"
+RT-AT-02,Triage batch,"Five routine assignments prepared and three exceptions isolated","assets/request-triage.js"
+RT-AT-03,Routine confirmation,"Routine queue requires one explicit group confirmation","tests/workflow-demo-family.spec.mjs"
+RT-AT-04,Probable duplicate,"REQ-106 is linked to REQ-104 only after reviewer action and original history is retained","tests/workflow-demo-family.spec.mjs"
+RT-AT-05,Ambiguous urgency,"REQ-107 requires an explicit P2 or P3 service priority","tests/workflow-demo-family.spec.mjs"
+RT-AT-06,Permission-sensitive request,"REQ-108 is held outside the general queue until an authorized owner is selected","tests/workflow-demo-family.spec.mjs"
+RT-AT-07,Commit gate,"Commit Triage Queue enables only after routine confirmation and all three exception decisions","tests/workflow-demo-family.spec.mjs"
+RT-AT-08,Controlled output,"Final state accounts for eight originals, seven controlled work items, and one duplicate disposition","demos/request-triage.html"
+RT-AT-09,Reset,"Reset restores clean starting state and routine confirmation control","tests/workflow-demo-family.spec.mjs"
+RT-AT-10,Public boundary,"Synthetic-data and non-claim boundary remains visible","demos/request-triage.html"
