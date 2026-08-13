@@ -3,13 +3,14 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Work Request Triage demonstration by Motya Ali: structure shared-channel requests, prepare routine assignment, and route ambiguous or sensitive cases to accountable review.">
+  <meta name="description" content="Work Request Triage demonstration by Motya Ali: structure shared-channel requests, prepare routine assignment, and route ambiguous or restricted-access cases to accountable review.">
   <meta name="theme-color" content="#17324d">
   <link rel="canonical" href="https://www.motyaali.com/demos/request-triage.html">
   <title>Work Request Triage Demonstration | Motya Ali</title>
   <link rel="stylesheet" href="../assets/styles.css">
   <link rel="stylesheet" href="../assets/proof.css">
   <link rel="stylesheet" href="../assets/workflow-demos.css">
+  <style>.exception-actions,.exception-actions label,.exception-actions select{min-width:0;max-width:100%}@media(max-width:620px){.exception-actions label,.exception-actions select{width:100%}}</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -17,14 +18,14 @@
 <main id="main" class="demo-shell operations-demo">
   <p class="eyebrow">Working service-queue demonstration | Synthetic data</p>
   <h1>Work Request Triage</h1>
-  <p class="demo-lead">See how a shared request channel can become a controlled queue with IDs, categories, proposed owners, service targets, escalation rules, and explicit handling for duplicates, ambiguous priority, and permission-sensitive work.</p>
+  <p class="demo-lead">See how a shared request channel can become a controlled queue with IDs, categories, proposed owners, service targets, escalation rules, and explicit handling for duplicates, ambiguous priority, and restricted-access work.</p>
   <p class="demo-notice"><strong>Demonstration boundary:</strong> This browser-local scenario uses eight fictional requests and deterministic routing rules. It demonstrates operating behavior and human-review boundaries. It does not claim live ticketing integration, production AI accuracy, or measured organizational savings.</p>
 
   <section class="demo-panel value-panel" aria-labelledby="triage-value-heading">
     <div class="section-heading compact-heading"><div><p class="eyebrow">Before and after</p><h2 id="triage-value-heading">Give every request a visible path without pretending every request is routine.</h2></div></div>
     <div class="before-after-grid">
-      <article class="before-card"><span class="state-label">Typical current state</span><h3>Shared messages become invisible work.</h3><ul><li>Requests arrive by email or chat</li><li>Owners are inferred informally</li><li>Priority depends on wording</li><li>Duplicates create parallel effort</li><li>Sensitive requests can enter the wrong queue</li></ul></article>
-      <article class="after-card"><span class="state-label">Designed future state</span><h3>Routine work is structured; exceptions are surfaced.</h3><ul><li>Assign a controlled request ID</li><li>Prepare category, owner, and target</li><li>Detect likely duplicates</li><li>Require judgment for priority ambiguity</li><li>Route permission-sensitive work to authorized ownership</li></ul></article>
+      <article class="before-card"><span class="state-label">Typical current state</span><h3>Shared messages become invisible work.</h3><ul><li>Requests arrive by email or chat</li><li>Owners are inferred informally</li><li>Priority depends on wording</li><li>Duplicates create parallel effort</li><li>Restricted requests can enter the wrong queue</li></ul></article>
+      <article class="after-card"><span class="state-label">Designed future state</span><h3>Routine work is structured; exceptions are surfaced.</h3><ul><li>Assign a controlled request ID</li><li>Prepare category, owner, and target</li><li>Detect likely duplicates</li><li>Require judgment for priority ambiguity</li><li>Route restricted-access work to authorized ownership</li></ul></article>
     </div>
   </section>
 
@@ -37,7 +38,7 @@
     <div class="demo-step-heading"><div><span class="step-number">2</span><div><p class="eyebrow">Prepared queue + exception review</p><h2 id="triage-workspace-heading">Routine assignments are prepared. Three requests need judgment.</h2></div></div><button id="reset-triage" type="button">Reset</button></div>
     <div id="triage-metrics" class="metric-grid"></div>
     <section aria-labelledby="routine-queue-heading"><div class="workspace-heading"><div><h3 id="routine-queue-heading">Routine queue prepared for confirmation</h3><p>Category, proposed owner, service target, and rationale are visible before the group is confirmed.</p></div><button class="primary" id="confirm-triage-routine" type="button">Confirm Routine Assignments</button></div><div class="table-scroll"><table class="demo-table"><thead><tr><th>ID</th><th>Request</th><th>Category</th><th>Proposed owner</th><th>Target</th></tr></thead><tbody id="triage-routine-body"></tbody></table></div></section>
-    <section aria-labelledby="triage-exception-heading"><div class="workspace-heading"><div><h3 id="triage-exception-heading">Exceptions requiring review</h3><p>The workflow blocks unsafe assumptions about duplication, urgency, and permissions.</p></div></div><div id="triage-exception-list" class="exception-list"></div></section>
+    <section aria-labelledby="triage-exception-heading"><div class="workspace-heading"><div><h3 id="triage-exception-heading">Exceptions requiring review</h3><p>The workflow blocks unsafe assumptions about duplication, urgency, and access controls.</p></div></div><div id="triage-exception-list" class="exception-list"></div></section>
     <div class="review-gate"><p id="triage-guidance">Confirm the routine queue and resolve all three exceptions before committing triage.</p><button id="commit-triage" type="button" disabled>Commit Triage Queue</button></div>
   </section>
 
