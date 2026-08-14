@@ -1,0 +1,10 @@
+Source,Document Family,Status,Unique Value,Control Note
+Workflow_Guide_v3.docx,Deliverable workflow,Most recent draft,"Updated role sequence and revised metadata table","Not approved; compare against signed procedure"
+PRO-0205_Approved.pdf,Deliverable workflow,Approved authority,"Formal requirements and approval date","Canonical authority for policy statements"
+Reviewer_Notes.xlsx,Implementation feedback,Working record,"Known exceptions and user confusion points","Evidence for guidance changes; not policy authority"
+Training_Deck_Final.pptx,User enablement,Published training,"Examples and screenshots not present elsewhere","Verify against current system behavior"
+Email_Clarification.msg,Decision record,Unincorporated clarification,"Approved interpretation for one ambiguous step","Route for formal incorporation and owner confirmation"
+
+Boundary,Value
+Data classification,Synthetic public example
+Purpose,Demonstrates source inventory authority recency completeness and unique-value controls

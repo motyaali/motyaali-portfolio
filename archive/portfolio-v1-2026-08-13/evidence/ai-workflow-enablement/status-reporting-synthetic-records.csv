@@ -1,0 +1,7 @@
+id,source_type,owner,updated,fact,review_condition
+SRC-001,Schedule snapshot,Project Controls,2026-08-12 09:05,"Commissioning readiness milestone is August 20; design release complete",milestone date conflicts with vendor update
+SRC-002,Field progress note,Site Coordinator,2026-08-12 09:32,"Functional testing is 80% complete; no safety stoppage open",routine
+SRC-003,Cost forecast,Cost Analyst,2026-08-12 10:10,"Forecast is $42,000 above baseline; explanatory narrative pending validation",variance explanation unvalidated
+SRC-004,Approved change log,Commercial Lead,2026-08-12 10:28,"CR-014 approved for $18,000 and included in forecast",routine
+SRC-005,Risk register,Program PMO,2026-08-12 10:51,"Risk R-07 remains High; mitigation due August 14; owner blank",missing accountable owner
+SRC-006,Vendor readiness update,Vendor Coordinator,2026-08-12 11:16,"Vendor readiness confirmed for August 22",milestone date conflicts with schedule

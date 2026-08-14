@@ -1,0 +1,12 @@
+{
+  "name": "motyaali-portfolio",
+  "version": "0.2.0",
+  "private": true,
+  "description": "Static professional portfolio and governed AI workflow evidence demonstrations.",
+  "scripts": {
+    "test:browser": "playwright test"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.62.0"
+  }
+}
