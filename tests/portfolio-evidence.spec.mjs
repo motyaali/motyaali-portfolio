@@ -4,6 +4,7 @@ const pages = [
   '/',
   '/work.html',
   '/resume.html',
+  '/services.html',
   '/projects/smartgrocer.html',
   '/projects/retail-planning.html',
   '/projects/documentation-workflow.html',
@@ -29,19 +30,27 @@ for (const path of pages) {
   });
 }
 
-test('homepage capability cards link to specific evidence', async ({ page }) => {
+test('homepage leads hiring teams into four role-specific pathways', async ({ page }) => {
   await page.goto('/');
-  const cards = page.locator('.capability-link');
-  await expect(cards).toHaveCount(5);
+  const cards = page.locator('#employer-pathways .role-pathway');
+  await expect(cards).toHaveCount(4);
 
-  const hrefs = await cards.evaluateAll((links) => links.map((link) => link.getAttribute('href')));
+  const hrefs = await cards.locator('a').evaluateAll((links) => links.map((link) => link.getAttribute('href')));
   expect(hrefs).toEqual([
-    'projects/retail-planning.html',
-    'projects/documentation-workflow.html',
-    'projects/smartgrocer.html',
-    'projects/project-coordination-controls.html',
-    'ai-workflow-enablement/'
+    'roles/project-operations.html',
+    'roles/business-systems.html',
+    'roles/planning-inventory.html',
+    'roles/human-centered-ai.html'
   ]);
+});
+
+test('homepage keeps the first decision focused on work and resume', async ({ page }) => {
+  await page.goto('/');
+  const hero = page.locator('.hero-recruiter');
+  await expect(hero.getByRole('heading', { level: 1 })).toHaveText('I turn complex work into clear systems people can run.');
+  await expect(hero.getByRole('link', { name: 'View Selected Work' })).toHaveAttribute('href', 'work.html');
+  await expect(hero.getByRole('link', { name: 'Download Résumé PDF' })).toHaveAttribute('href', 'assets/Motya-Ali-Resume.pdf');
+  await expect(page.locator('#flagship-heading')).toHaveText('Three places to start.');
 });
 
 test('resume provides a direct PDF download', async ({ page }) => {
@@ -56,23 +65,19 @@ test('resume provides a direct PDF download', async ({ page }) => {
   expect(bytes.subarray(0, 5).toString()).toBe('%PDF-');
 });
 
-test('navigation uses employer-first order', async ({ page }) => {
-  await page.goto('/projects/smartgrocer.html');
-  const labels = await page.locator('#site-nav a').allTextContents();
-  expect(labels.map((label) => label.trim())).toEqual([
-    'Home',
-    'Work',
-    'About',
-    'Résumé',
-    'Services',
-    'Contact'
-  ]);
+test('Work page is curated to six featured projects with secondary systems links', async ({ page }) => {
+  await page.goto('/work.html');
+  await expect(page.locator('#featured-work .project-card')).toHaveCount(6);
+  await expect(page.locator('.compact-link-list a')).toHaveCount(3);
+  await expect(page.getByRole('heading', { name: 'CentaurOS' })).toHaveCount(0);
+  await expect(page.getByRole('heading', { name: 'Unseen Sentry' })).toHaveCount(0);
+  await expect(page.getByRole('heading', { name: 'Blue Chip Bot' })).toHaveCount(0);
 });
 
-test('Concept Lab remains on the Work page', async ({ page }) => {
-  await page.goto('/work.html');
-  await expect(page.getByRole('heading', { name: 'Developed ideas, separated from released work.' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'CentaurOS' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Unseen Sentry' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Blue Chip Bot' })).toBeVisible();
+test('preserves the complete pre-redesign portfolio as an in-site archive snapshot', async ({ page }) => {
+  const response = await page.request.get('/archive/portfolio-v1-2026-08-13/index.html');
+  expect(response.ok()).toBeTruthy();
+  const html = await response.text();
+  expect(html).toContain('Turning complexity into clear systems and useful work.');
+  expect(html).toContain('For organizations');
 });
