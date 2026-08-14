@@ -6,28 +6,24 @@ const overviewPath = '/ai-workflow-enablement/overview.html';
 const discoveryPath = '/ai-workflow-enablement/discovery.html';
 const contactPath = '/contact.html';
 
-test('packages the offer into four distinct engagement levels with a controlled-pilot first-sale path', async ({ page }) => {
+test('uses a recruiter-secondary service funnel with a low-friction first contact', async ({ page }) => {
   await page.goto(servicePath);
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Practical workflows that reduce routine handling without weakening control.');
-  await expect(page.getByRole('heading', { name: 'Enter at the level of commitment the process is ready for.' })).toBeVisible();
-  await expect(page.getByRole('button', { name: /Workflow Diagnostic/ })).toBeVisible();
-  await expect(page.getByRole('button', { name: /Controlled Pilot/ })).toBeVisible();
-  await expect(page.getByRole('button', { name: /Full Implementation & Enablement/ })).toBeVisible();
-  await expect(page.getByRole('button', { name: /Optimization & Support/ })).toBeVisible();
-  await expect(page.getByText('Approximately 5 to 20 pilot users')).toBeVisible();
-  await expect(page.getByRole('link', { name: 'Prepare a Process Brief' })).toHaveAttribute('href', 'ai-workflow-enablement/discovery.html');
-  await expect(page.locator('.page-hero').getByRole('link', { name: 'Open One-Page Overview' })).toHaveAttribute('href', 'ai-workflow-enablement/overview.html');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Improve one recurring workflow without creating another system people hate.');
+  await expect(page.getByRole('heading', { name: 'A small start with a complete operating model.' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Workflow Diagnostic' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Controlled Pilot' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Implementation & Handoff' })).toBeVisible();
+  await expect(page.locator('.service-hero').getByRole('link', { name: 'Start a Conversation' })).toHaveAttribute('href', /mailto:motyaali@pm\.me/);
+  await expect(page.locator('.service-final-cta').getByRole('link', { name: 'Prepare a Process Brief' })).toHaveAttribute('href', 'ai-workflow-enablement/discovery.html');
 });
 
-test('gives employers and organizations separate evaluation paths without changing the maturity boundary', async ({ page }) => {
+test('keeps AI Workflow Enablement as the evidence hub for employers and organizations', async ({ page }) => {
   await page.goto(casePath);
   await expect(page.getByText('Working demonstrations + controlled service framework')).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Use the same evidence differently depending on what you need to evaluate.' })).toBeVisible();
   await expect(page.getByText('For hiring managers')).toBeVisible();
   await expect(page.getByText('For organizations')).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Four packages move from understanding the problem to operating ownership.' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'The workflow model now has working proof, not only implementation architecture.' })).toBeVisible();
-  await expect(page.getByText('Final pricing, licensing assumptions, service terms, and recurring-support economics')).toBeVisible();
   await expect(page.getByText('Production AI extraction accuracy')).toBeVisible();
 });
 
@@ -90,12 +86,12 @@ test('routes contact visitors into employer and organization-specific next actio
   await page.goto(contactPath);
   await expect(page.getByRole('heading', { name: 'Professional opportunities' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Workflow diagnostic or pilot' })).toBeVisible();
-  await expect(page.getByRole('link', { name: 'See How I Work' })).toHaveAttribute('href', 'ai-workflow-enablement/');
-  await expect(page.getByRole('link', { name: 'Prepare a Process Brief' })).toHaveAttribute('href', 'ai-workflow-enablement/discovery.html');
-  await expect(page.getByRole('link', { name: 'Open One-Page Overview' })).toHaveAttribute('href', 'ai-workflow-enablement/overview.html');
+  await expect(page.getByRole('link', { name: 'View Selected Work' })).toHaveAttribute('href', 'work.html');
+  await expect(page.getByRole('link', { name: 'Explore Services' })).toHaveAttribute('href', 'services.html');
+  await expect(page.getByRole('link', { name: 'See Working Examples' })).toHaveAttribute('href', 'ai-workflow-enablement/');
 });
 
-test('keeps Pass 5 pages within the configured viewport', async ({ page }) => {
+test('keeps conversion pages within the configured viewport', async ({ page }) => {
   for (const path of [servicePath, casePath, overviewPath, discoveryPath, contactPath]) {
     await page.goto(path);
     const dimensions = await page.evaluate(() => ({
