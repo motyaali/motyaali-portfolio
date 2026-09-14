@@ -119,3 +119,7 @@
   .demo-step-heading button, .workspace-heading button, .exception-actions button { width: 100%; }
   .exception-actions { display: grid; }
 }
+
+/* Three concise entry points for the featured case studies. */
+.case-summary { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 760px) { .case-summary { grid-template-columns: 1fr; } }

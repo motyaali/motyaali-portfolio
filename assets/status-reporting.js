@@ -93,7 +93,7 @@
     output.hidden = true;
     metrics.innerHTML = '<article><strong>6</strong><span>governed source records</span></article><article><strong>7</strong><span>routine facts prepared</span></article><article><strong>3</strong><span>exceptions isolated</span></article><article><strong>1</strong><span>draft report assembled</span></article>';
     refresh();
-    workspace.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    workspace.scrollIntoView({ behavior: 'instant', block: 'start' });
   }
 
   function resolve(event) {
@@ -135,7 +135,7 @@
     outputMetrics.innerHTML = '<article><strong>6</strong><span>source records retained</span></article><article><strong>7</strong><span>routine facts prepared</span></article><article><strong>3</strong><span>judgment calls recorded</span></article><article><strong>3</strong><span>usable outputs produced</span></article>';
     outputCards.innerHTML = `<article class="output-card"><span class="state-label">Output 1</span><h3>Reviewed weekly status report</h3><p>One concise narrative built from the governed source set.</p><div class="output-preview">Status: AMBER<br>Milestone: ${state.milestoneDate}<br>Forecast: +$42,000</div></article><article class="output-card"><span class="state-label">Output 2</span><h3>Reporting exception log</h3><p>The three items requiring judgment remain traceable with their final disposition.</p><div class="output-preview">3 exceptions resolved<br>0 silent assumptions</div></article><article class="output-card"><span class="state-label">Output 3</span><h3>Action and ownership record</h3><p>Unresolved operational follow-up stays attached to an accountable owner.</p><div class="output-preview">R-07 owner: ${state.riskOwner}<br>Mitigation due: August 14</div></article>`;
     output.hidden = false;
-    output.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    output.scrollIntoView({ behavior: 'instant', block: 'start' });
   }
 
   function download(filename, content, type) {
@@ -149,7 +149,7 @@
   function reset() {
     Object.assign(state, { prepared: false, milestoneResolved: false, varianceResolved: false, riskResolved: false, milestoneDate: '', varianceTreatment: '', riskOwner: '', finalized: false });
     workspace.hidden = true; output.hidden = true; finalizeButton.disabled = true;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    document.getElementById('start-demo')?.scrollIntoView({ behavior: 'instant', block: 'start' });
   }
 
   document.getElementById('prepare-status')?.addEventListener('click', prepare);

@@ -18,31 +18,31 @@
   <div class="header-inner">
     <a class="brand" href="../index.html" aria-label="Motya Ali home">MOTYA ALI</a>
     <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
-    <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
-      <a href="../index.html">Home</a><a href="../work.html">Work</a><a href="../services.html">Services</a><a href="../ai-workflow-enablement/" aria-current="page">AI Workflow Enablement</a><a href="../contact.html">Contact</a>
-    </nav>
+    <nav class="site-nav" id="site-nav" aria-label="Primary navigation"><a href="../work.html" aria-current="page">Work</a><a href="../resume.html">Résumé</a><a href="../about.html">About</a><a href="../services.html">Services</a><a href="../contact.html">Contact</a></nav>
   </div>
 </header>
 <main id="main" class="demo-shell operations-demo">
   <p class="eyebrow">Working reporting demonstration | Synthetic data</p>
   <h1>Project Status Reporting</h1>
+  <p><a href="../ai-workflow-enablement/#workflow-demos">← All workflow demonstrations</a> · Preloaded synthetic sample · No account required</p>
   <p class="demo-lead">See how recurring project facts can be assembled into a reviewable weekly report while conflicting dates, unsupported variance explanations, and missing ownership remain visible for accountable decisions.</p>
   <p class="demo-notice"><strong>Demonstration boundary:</strong> This browser-local scenario uses fictional project records and deterministic logic. It demonstrates workflow behavior and review design. It does not claim live client integration, production AI accuracy, or measured organizational savings.</p>
 
+
+
+  <section class="demo-panel" id="start-demo" aria-labelledby="status-inputs-heading">
+    <div class="demo-step-heading">
+      <div><span class="step-number">1</span><div><p class="eyebrow">Governed source set</p><h2 id="status-inputs-heading">A weekly program report is due at 4:00 PM.</h2><p>Six fictional records contain the current schedule, cost, field, risk, action, and governance facts.</p></div></div>
+      <button class="primary" id="prepare-status" type="button">Prepare Weekly Report</button>
+    </div>
+    <div id="status-source-grid" class="source-grid" aria-live="polite"></div>
+  </section>
   <section class="demo-panel value-panel" aria-labelledby="status-value-heading">
     <div class="section-heading compact-heading"><div><p class="eyebrow">Before and after</p><h2 id="status-value-heading">Stop rebuilding the report from scratch every cycle.</h2></div></div>
     <div class="before-after-grid">
       <article class="before-card"><span class="state-label">Typical current state</span><h3>The coordinator reconstructs status manually.</h3><ul><li>Open six separate source records</li><li>Copy milestone, cost, risk, and field facts</li><li>Reconcile contradictions by hand</li><li>Rewrite the narrative</li><li>Chase owners for unresolved items</li></ul></article>
       <article class="after-card"><span class="state-label">Designed future state</span><h3>The workflow prepares facts and isolates judgment.</h3><ul><li>Preserve source references</li><li>Prepare routine KPI and progress facts</li><li>Flag unsupported or conflicting statements</li><li>Require explicit review before release</li><li>Produce report, exception log, and action record together</li></ul></article>
     </div>
-  </section>
-
-  <section class="demo-panel" aria-labelledby="status-inputs-heading">
-    <div class="demo-step-heading">
-      <div><span class="step-number">1</span><div><p class="eyebrow">Governed source set</p><h2 id="status-inputs-heading">A weekly program report is due at 4:00 PM.</h2><p>Six fictional records contain the current schedule, cost, field, risk, action, and governance facts.</p></div></div>
-      <button class="primary" id="prepare-status" type="button">Prepare Weekly Report</button>
-    </div>
-    <div id="status-source-grid" class="source-grid" aria-live="polite"></div>
   </section>
 
   <section class="demo-panel" id="status-workspace" aria-labelledby="status-workspace-heading" hidden>
@@ -68,6 +68,7 @@
       <a class="button button-secondary" href="../evidence/ai-workflow-enablement/status-reporting-proof.html">Inspect the Proof Pack</a>
     </div>
   </section>
+<noscript><p>This interactive demonstration needs JavaScript. <a href="../projects/ai-workflow-enablement.html">Inspect the static evidence index</a> instead.</p></noscript>
 </main>
 <footer class="site-footer"><div class="footer-inner"><div>© <span id="year"></span> Motya “Ali” Ali.</div><div><a href="../evidence-standard.html">Evidence, privacy, and maturity standard</a></div></div></footer>
 <script src="../assets/site.js"></script>

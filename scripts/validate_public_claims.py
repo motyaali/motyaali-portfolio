@@ -83,7 +83,9 @@ def main() -> None:
             if not isinstance(field_value, str) or not field_value.strip():
                 fail(f"claim {claim_id} has no {field_name}")
 
-    html_files = sorted(ROOT.rglob("*.html"))
+    # Scan every public page, including V1, but not dependencies or test reports.
+    generated = {".git", "node_modules", "test-results", "playwright-report"}
+    html_files = sorted(path for path in ROOT.rglob("*.html") if not generated.intersection(path.relative_to(ROOT).parts))
     for token in forbidden:
         if not isinstance(token, str) or not token:
             fail("forbidden HTML token must be a non-empty string")

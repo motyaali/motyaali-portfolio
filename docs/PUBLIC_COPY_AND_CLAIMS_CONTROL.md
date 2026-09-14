@@ -30,8 +30,8 @@ The operating rule is simple:
 
 ### Homepage
 
-- `Turning complexity into clear systems and useful work.`
-- `I design reliable workflows, decision-ready analysis, practical documentation, and governed human-centered tools that help people and organizations move from fragmented information to coordinated action.`
+- `I turn complex work into clear systems people can run.`
+- `My work connects people, information, controls, and follow-through so teams can make decisions and keep work moving.`
 
 ### About
 
@@ -39,7 +39,7 @@ The operating rule is simple:
 
 ### Services
 
-- `Practical workflows that reduce routine handling without weakening control.`
+- `Improve one recurring workflow without creating another system people hate.`
 
 ### Contact
 

@@ -26,12 +26,12 @@ test('presents six bounded workflow starting points and five direct demonstratio
   await expect(page.getByRole('heading', { name: 'Review & approval control' })).toBeVisible();
 });
 
-test('uses a three-stage commercial path from diagnostic to handoff', async ({ page }) => {
+test('preserves four governed packages from diagnostic through ongoing support', async ({ page }) => {
   const steps = page.locator('.service-step-grid article');
-  await expect(steps).toHaveCount(3);
+  await expect(steps).toHaveCount(4);
   await expect(page.getByRole('heading', { name: 'Workflow Diagnostic' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Controlled Pilot' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Implementation & Handoff' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Full Implementation & Enablement' })).toBeVisible();
 });
 
 test('makes operating deliverables and fit boundaries explicit', async ({ page }) => {

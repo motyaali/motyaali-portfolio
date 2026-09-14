@@ -16,21 +16,25 @@
   <div class="header-inner">
     <a class="brand" href="../index.html" aria-label="Motya Ali home">MOTYA ALI</a>
     <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
-    <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
-      <a href="../index.html">Home</a>
-      <a href="../work.html">Work</a>
-      <a href="../services.html">Services</a>
-      <a href="../ai-workflow-enablement/">AI Workflow Enablement</a>
-      <a href="../contact.html">Contact</a>
-    </nav>
+    <nav class="site-nav" id="site-nav" aria-label="Primary navigation"><a href="../work.html" aria-current="page">Work</a><a href="../resume.html">Résumé</a><a href="../about.html">About</a><a href="../services.html">Services</a><a href="../contact.html">Contact</a></nav>
   </div>
 </header>
 <main id="main" class="demo-shell intake-demo">
   <p class="eyebrow">Guided value demonstration</p>
   <h1>Intelligent Document Intake and Routing</h1>
+  <p><a href="../ai-workflow-enablement/#workflow-demos">← All workflow demonstrations</a> · Preloaded synthetic sample · No account required</p>
   <p class="demo-lead">See how a shared inbox can become a controlled intake process that prepares routine documents for batch confirmation and directs staff attention to the records that actually need judgment.</p>
   <p class="demo-notice"><strong>Demonstration boundary:</strong> This uses six fictional documents and preconfigured processing results. It demonstrates the intended operating experience and value logic. It does not claim production model accuracy, live Microsoft 365 integration, or measured client savings.</p>
 
+
+
+  <section class="demo-panel" id="start-demo" aria-labelledby="inbox-heading">
+    <div class="demo-step-heading">
+      <div><span class="step-number">1</span><div><p class="eyebrow">Incoming work</p><h2 id="inbox-heading">A fictional project mailbox receives six documents.</h2></div></div>
+      <button class="primary" id="process-batch" type="button">Process Intake Batch</button>
+    </div>
+    <div id="incoming-grid" class="incoming-grid" aria-live="polite"></div>
+  </section>
   <section class="demo-panel value-panel" aria-labelledby="before-after-heading">
     <div class="section-heading compact-heading">
       <div><p class="eyebrow">Before and after</p><h2 id="before-after-heading">Move staff from processing every document to resolving the exceptions.</h2></div>
@@ -62,14 +66,6 @@
         </ol>
       </article>
     </div>
-  </section>
-
-  <section class="demo-panel" aria-labelledby="inbox-heading">
-    <div class="demo-step-heading">
-      <div><span class="step-number">1</span><div><p class="eyebrow">Incoming work</p><h2 id="inbox-heading">A fictional project mailbox receives six documents.</h2></div></div>
-      <button class="primary" id="process-batch" type="button">Process Intake Batch</button>
-    </div>
-    <div id="incoming-grid" class="incoming-grid" aria-live="polite"></div>
   </section>
 
   <section class="demo-panel" id="processing-section" aria-labelledby="processing-heading" hidden>
@@ -139,6 +135,7 @@
       <a class="button button-secondary" href="../demos/meeting-intelligence.html">Inspect the Supporting Review-Control Prototype</a>
     </div>
   </section>
+<noscript><p>This interactive demonstration needs JavaScript. <a href="../projects/ai-workflow-enablement.html">Inspect the static evidence index</a> instead.</p></noscript>
 </main>
 <footer class="site-footer">
   <div class="footer-inner">

@@ -17,21 +17,25 @@
   <div class="header-inner">
     <a class="brand" href="../index.html" aria-label="Motya Ali home">MOTYA ALI</a>
     <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
-    <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
-      <a href="../index.html">Home</a>
-      <a href="../work.html">Work</a>
-      <a href="../services.html">Services</a>
-      <a href="../ai-workflow-enablement/" aria-current="page">AI Workflow Enablement</a>
-      <a href="../contact.html">Contact</a>
-    </nav>
+    <nav class="site-nav" id="site-nav" aria-label="Primary navigation"><a href="../work.html" aria-current="page">Work</a><a href="../resume.html">Résumé</a><a href="../about.html">About</a><a href="../services.html">Services</a><a href="../contact.html">Contact</a></nav>
   </div>
 </header>
 <main id="main" class="demo-shell coordination-demo">
   <p class="eyebrow">Working coordination demonstration | Synthetic data</p>
   <h1>From scattered team updates to one client-ready brief.</h1>
+  <p><a href="../ai-workflow-enablement/#workflow-demos">← All workflow demonstrations</a> · Preloaded synthetic sample · No account required</p>
   <p class="demo-lead">Meeting Intelligence helps a coordinator gather distributed inputs, identify what is missing or inconsistent, and produce a concise status brief, action register, and targeted follow-up list without manually rebuilding the full picture from every message.</p>
   <p class="demo-notice"><strong>Demonstration boundary:</strong> This browser-local scenario uses fictional contributors and deterministic results. The comparison shows the intended operating experience and review design. It does not claim measured client savings, production AI accuracy, or live workplace integration.</p>
 
+
+
+  <section class="demo-panel" id="start-demo" aria-labelledby="inputs-heading">
+    <div class="demo-step-heading">
+      <div><span class="step-number">1</span><div><p class="eyebrow">Distributed inputs</p><h2 id="inputs-heading">A client update is due at 3:00 PM.</h2><p>Six contributors were asked for schedule, design, site, cost, vendor, and compliance updates.</p></div></div>
+      <button class="primary" id="assemble-update" type="button">Assemble Team Update</button>
+    </div>
+    <div id="contributor-grid" class="contributor-grid" aria-live="polite"></div>
+  </section>
   <section class="demo-panel value-panel" aria-labelledby="value-heading">
     <div class="section-heading compact-heading">
       <div><p class="eyebrow">The operational payoff</p><h2 id="value-heading">Review the exceptions, not every line of every update.</h2></div>
@@ -68,14 +72,6 @@
       <article><strong>3</strong><span>exceptions to review</span></article>
     </div>
     <p class="illustrative-note">These are demonstration counts, not measured organizational savings.</p>
-  </section>
-
-  <section class="demo-panel" aria-labelledby="inputs-heading">
-    <div class="demo-step-heading">
-      <div><span class="step-number">1</span><div><p class="eyebrow">Distributed inputs</p><h2 id="inputs-heading">A client update is due at 3:00 PM.</h2><p>Six contributors were asked for schedule, design, site, cost, vendor, and compliance updates.</p></div></div>
-      <button class="primary" id="assemble-update" type="button">Assemble Team Update</button>
-    </div>
-    <div id="contributor-grid" class="contributor-grid" aria-live="polite"></div>
   </section>
 
   <section class="demo-panel" id="coordination-section" aria-labelledby="coordination-heading" hidden>
@@ -121,6 +117,7 @@
       <a class="button button-secondary" href="../ai-workflow-enablement/">Return to the Case Study</a>
     </div>
   </section>
+<noscript><p>This interactive demonstration needs JavaScript. <a href="../projects/ai-workflow-enablement.html">Inspect the static evidence index</a> instead.</p></noscript>
 </main>
 <footer class="site-footer">
   <div class="footer-inner">

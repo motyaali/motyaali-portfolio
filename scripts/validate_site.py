@@ -10,7 +10,7 @@ from urllib.parse import unquote, urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 IGNORED_SCHEMES = {"http", "https", "mailto", "tel", "data", "javascript"}
-IGNORED_DIRECTORIES = {".git", ".github"}
+IGNORED_DIRECTORIES = {".git", ".github", "node_modules", "test-results", "playwright-report"}
 
 
 class PageParser(HTMLParser):

@@ -17,29 +17,6 @@ function ensureStylesheet(path, dataName) {
   document.head.appendChild(stylesheet);
 }
 
-function standardizeNavigation() {
-  if (!navigation) return;
-  const desiredOrder = ['Home', 'Work', 'About', 'Résumé', 'Services', 'Contact'];
-  const linksByLabel = new Map();
-
-  navigation.querySelectorAll('a').forEach((link) => {
-    const label = link.textContent.trim().replace('Resume', 'Résumé');
-    linksByLabel.set(label, link);
-  });
-
-  if (!linksByLabel.has('Services')) {
-    const servicesLink = document.createElement('a');
-    servicesLink.href = `${getRootPrefix()}services.html`;
-    servicesLink.textContent = 'Services';
-    linksByLabel.set('Services', servicesLink);
-  }
-
-  desiredOrder.forEach((label) => {
-    const link = linksByLabel.get(label);
-    if (link) navigation.appendChild(link);
-  });
-}
-
 const thumbnailDefinitions = [
   ['Construction Project Coordination Controls', 'project-controls', 'Project controls dashboard'],
   ['Retail Planning & Analytics at Scale', 'retail', 'Executive planning dashboard'],
@@ -183,7 +160,6 @@ function injectEvidencePack() {
   main.insertBefore(section, lastSection);
 }
 
-standardizeNavigation();
 enhanceProjectCovers();
 injectBenchmarkEvidence();
 injectEvidencePack();

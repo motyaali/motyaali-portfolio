@@ -12,19 +12,19 @@ test('uses a recruiter-secondary service funnel with a low-friction first contac
   await expect(page.getByRole('heading', { name: 'A small start with a complete operating model.' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Workflow Diagnostic' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Controlled Pilot' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Implementation & Handoff' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Full Implementation & Enablement' })).toBeVisible();
   await expect(page.locator('.service-hero').getByRole('link', { name: 'Start a Conversation' })).toHaveAttribute('href', /mailto:motyaali@pm\.me/);
   await expect(page.locator('.service-final-cta').getByRole('link', { name: 'Prepare a Process Brief' })).toHaveAttribute('href', 'ai-workflow-enablement/discovery.html');
 });
 
-test('keeps AI Workflow Enablement as the evidence hub for employers and organizations', async ({ page }) => {
+test('the workflow hub leads with evidence and preserves production and commercial limits', async ({ page }) => {
   await page.goto(casePath);
-  await expect(page.getByText('Working demonstrations + controlled service framework')).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Use the same evidence differently depending on what you need to evaluate.' })).toBeVisible();
-  await expect(page.getByText('For hiring managers')).toBeVisible();
-  await expect(page.getByText('For organizations')).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'The workflow model now has working proof, not only implementation architecture.' })).toBeVisible();
-  await expect(page.getByText('Production AI extraction accuracy')).toBeVisible();
+  await expect(page.locator('.project-detail-hero').getByRole('link', { name: 'Try Document Intake' })).toHaveAttribute('href', '../demos/document-intake.html#start-demo');
+  await expect(page.locator('#workflow-demos .proof-card')).toHaveCount(5);
+  await expect(page.locator('.project-detail-hero a[href*="discovery"]')).toHaveCount(0);
+  await expect(page.getByRole('heading', { name: 'Workflow design through testing and handoff.' })).toBeVisible();
+  await expect(page.getByText('Production AI extraction accuracy', { exact: true })).toBeVisible();
+  await expect(page.getByText('Final pricing, licensing assumptions, service terms, and recurring-support economics', { exact: true })).toBeVisible();
 });
 
 test('publishes a print-ready one-page overview with proof and non-claim boundaries', async ({ page }) => {

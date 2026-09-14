@@ -63,7 +63,7 @@
     state.prepared = true; workspace.hidden = false; output.hidden = true;
     metrics.innerHTML = '<article><strong>6</strong><span>staff questions</span></article><article><strong>3</strong><span>source-ready answers</span></article><article><strong>3</strong><span>knowledge exceptions</span></article><article><strong>0</strong><span>invented answers</span></article>';
     renderGroundedAnswers(); renderExceptions(); updateReadiness();
-    workspace.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    workspace.scrollIntoView({ behavior: 'instant', block: 'start' });
   }
 
   function confirmGrounded() { state.answersConfirmed = true; confirmAnswers.disabled = true; confirmAnswers.textContent = 'Grounded Answers Confirmed'; updateReadiness(); }
@@ -101,7 +101,7 @@
     const withheld = 6 - publishable;
     outputMetrics.innerHTML = `<article><strong>6</strong><span>questions accounted for</span></article><article><strong>${publishable}</strong><span>source-grounded answers</span></article><article><strong>${withheld}</strong><span>answers withheld safely</span></article><article><strong>3</strong><span>governance decisions recorded</span></article>`;
     outputCards.innerHTML = `<article class="output-card"><span class="state-label">Output 1</span><h3>Grounded response pack</h3><p>Publishable answers remain attached to the source or explicit source decision that supports them.</p><div class="output-preview">${publishable} answers publishable<br>${withheld} answers withheld</div></article><article class="output-card"><span class="state-label">Output 2</span><h3>Knowledge-maintenance backlog</h3><p>Expired and missing guidance becomes accountable maintenance work instead of repeated uncertainty.</p><div class="output-preview">Emergency source refresh<br>Privacy-policy gap review<br>Naming-source conflict history</div></article><article class="output-card"><span class="state-label">Output 3</span><h3>Evidence of restraint</h3><p>The workflow demonstrates where it will not answer, which is as important as showing where it can.</p><div class="output-preview">0 invented policies<br>0 expired phone numbers published<br>0 permission rules inferred</div></article>`;
-    output.hidden = false; output.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    output.hidden = false; output.scrollIntoView({ behavior: 'instant', block: 'start' });
   }
 
   function download(filename, content, type) { const blob = new Blob([content], { type }); const url = URL.createObjectURL(blob); const link = document.createElement('a'); link.href = url; link.download = filename; link.click(); setTimeout(() => URL.revokeObjectURL(url), 0); }
@@ -109,7 +109,7 @@
   function reset() {
     Object.assign(state, { prepared: false, answersConfirmed: false, conflictResolved: false, expiredResolved: false, gapResolved: false, conflictSource: '', published: false });
     workspace.hidden = true; output.hidden = true; publishButton.disabled = true; confirmAnswers.disabled = false; confirmAnswers.textContent = 'Confirm Grounded Answers';
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    document.getElementById('start-demo')?.scrollIntoView({ behavior: 'instant', block: 'start' });
   }
 
   document.getElementById('prepare-knowledge')?.addEventListener('click', prepare);

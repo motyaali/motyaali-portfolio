@@ -9,15 +9,20 @@ npm run test:browser
 The portfolio evidence tests verify:
 
 - key public pages load without failed local resources
-- all five homepage capability cards lead to specific evidence
+- four homepage role pathways lead to specific evidence
 - the résumé PDF is available as a valid PDF response
 - navigation is presented in employer-first order
-- the Concept Lab remains on the Work page
+- six featured projects and three secondary systems links keep Work curated; V1 retains the complete pre-redesign presentation
 - Meeting Intelligence assembles distributed updates, isolates exceptions, produces controlled outputs, and supports evidence downloads
 - Document Intake starts with six synthetic records, separates routine work from exceptions, enforces human-review gates, produces the controlled four-routed/two-held outcome, resets cleanly, preserves its public claim boundary, and remains usable across configured desktop, tablet, and mobile browser profiles
-- AI Workflow Enablement exposes all four engagement packages, separates employer and organization evaluation paths, publishes a print-ready one-page overview, and preserves its commercial validation gaps
+- AI Workflow Enablement leads with five direct demos, contribution, supporting evidence, and explicit limitations; Services and its print-ready overview preserve all four engagement packages and commercial validation gaps
 - the Workflow Discovery Worksheet builds a recurring-process brief locally in the browser, prevents form submission to a server, prepares an explicit mailto action only after the user builds the brief, and resets cleanly
-- the Pass 5 service, case-study, overview, discovery, and contact surfaces do not overflow the configured viewport
+- service, case-study, evidence, overview, discovery, and contact surfaces do not overflow the configured viewport
+- all active primary navigation works without JavaScript in the same order, including nested evidence pages
+- featured artifact covers render without JavaScript and visibly identify synthetic or representative evidence
+- each hub demo entry reaches its preloaded first interaction and can return to the workflow family
+
+The configured browser projects are desktop Chromium, desktop WebKit, tablet WebKit, and mobile WebKit. The WebKit mobile profiles emulate viewports and input behavior; they are not physical-device testing.
 
 ## Document Intake proof-pack gate
 

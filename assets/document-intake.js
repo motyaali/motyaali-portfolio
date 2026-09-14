@@ -214,7 +214,7 @@
     exceptionList.replaceChildren(...documents.filter((item) => item.status !== 'routine').map(exceptionCard));
     updateSummary();
     updateRoutingReadiness();
-    processingSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    processingSection.scrollIntoView({ behavior: 'instant', block: 'start' });
   }
 
   function confirmRoutine() {
@@ -285,7 +285,7 @@
     completeRoutingButton.disabled = true;
     completeRoutingButton.textContent = 'Routing Completed';
     impactSection.hidden = false;
-    impactSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    impactSection.scrollIntoView({ behavior: 'instant', block: 'start' });
   }
 
   function resetDemo() {
@@ -304,7 +304,7 @@
     completeRoutingButton.textContent = 'Complete Routing';
     document.getElementById('confirm-routine').disabled = false;
     document.getElementById('confirm-routine').textContent = 'Confirm Routine Routing';
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    document.getElementById('start-demo')?.scrollIntoView({ behavior: 'instant', block: 'start' });
   }
 
   document.getElementById('process-batch')?.addEventListener('click', processBatch);

@@ -218,7 +218,7 @@
     packageSection.hidden = true;
     summaryCards();
     refreshWorkspace();
-    coordinationSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    coordinationSection.scrollIntoView({ behavior: 'instant', block: 'start' });
   }
 
   function resolveException(event) {
@@ -319,7 +319,7 @@ This package was produced from fictional inputs. Routine facts were prepared tog
       <article class="package-card"><span class="state-label">Output 3</span><h3>Targeted follow-up request</h3><p>A specific request to the missing contributor instead of another broad status-chasing message.</p><div class="package-preview">Request: compliance status, open requirements, and dates affecting the client update.</div></article>`;
 
     packageSection.hidden = false;
-    packageSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    packageSection.scrollIntoView({ behavior: 'instant', block: 'start' });
   }
 
   function downloadFile(filename, content, mimeType) {
@@ -347,7 +347,7 @@ This package was produced from fictional inputs. Routine facts were prepared tog
     coordinationSection.hidden = true;
     packageSection.hidden = true;
     finalizeButton.disabled = true;
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    document.getElementById('start-demo')?.scrollIntoView({ behavior: 'instant', block: 'start' });
   }
 
   document.getElementById('assemble-update')?.addEventListener('click', assembleUpdate);
