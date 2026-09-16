@@ -1,0 +1,176 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Synthetic invoice and pay application routing control for a construction project coordination case study.">
+  <meta name="theme-color" content="#17324d">
+  <title>Invoice Routing Completeness Control | Motya Ali</title>
+  <link rel="stylesheet" href="../../assets/styles.css">
+  <link rel="stylesheet" href="../../assets/proof.css">
+  <link rel="stylesheet" href="../../assets/project-coordination.css">
+</head>
+<body class="artifact-document">
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../../index.html" aria-label="Motya Ali home">MOTYA ALI</a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary navigation">
+      <a href="../../index.html">Home</a>
+      <a href="../../work.html" aria-current="page">Work</a>
+      <a href="../../services.html">Services</a>
+      <a href="../../about.html">About</a>
+      <a href="../../resume.html">Résumé</a>
+      <a href="../../contact.html">Contact</a>
+    </nav>
+  </div>
+</header>
+<main id="main">
+  <section class="coordination-hero artifact-hero">
+    <div>
+      <p class="eyebrow">Inspectable evidence | Synthetic data</p>
+      <h1>Invoice Routing Completeness Control</h1>
+      <p class="demo-lead">Pay Application 002. This artifact demonstrates how a coordinator can reconcile the request to the commitment, identify missing support, and hold routing until the package is administratively complete.</p>
+      <div class="actions">
+        <a class="button button-primary" href="invoice-routing-checklist.csv">Download checklist</a>
+        <a class="button button-secondary" href="process-map.html">View the connected process</a>
+        <a class="button button-secondary" href="dashboard.html">Return to dashboard</a>
+      </div>
+    </div>
+    <aside class="coordination-boundary" aria-label="Role boundary">
+      <span>Coordinator boundary</span>
+      <strong>Confirm completeness and routing readiness, not payment approval.</strong>
+      <p>Construction, project, finance, and owner reviewers retain responsibility for validating progress, contract compliance, financial accuracy, and payment authorization.</p>
+    </aside>
+  </section>
+
+  <div class="demo-notice coordination-notice">
+    <strong>Portfolio reconstruction:</strong> PA-002, its values, dates, parties, and support records are fictional. The control demonstrates administrative review and exception handling.
+  </div>
+
+  <section class="artifact-section">
+    <div class="artifact-inner">
+      <div class="artifact-meta-grid">
+        <div><span>Pay application</span><strong>PA-002</strong></div>
+        <div><span>Gross request</span><strong>$142,500</strong></div>
+        <div><span>Retainage</span><strong>$7,125</strong></div>
+        <div><span>Net request</span><strong>$135,375</strong></div>
+        <div><span>Revised commitment</span><strong>$523,000</strong></div>
+        <div><span>Routing status</span><strong>Hold, two required records missing</strong></div>
+      </div>
+      <div class="artifact-callout">
+        <strong>Control objective:</strong> Prevent an incomplete pay application from entering the approval queue. The coordinator verifies record consistency, required attachments, arithmetic, and routing sequence, then sends substantive review to authorized personnel.
+      </div>
+    </div>
+  </section>
+
+  <section class="artifact-section section-alt" aria-labelledby="reconciliation-heading">
+    <div class="artifact-inner">
+      <div class="coordination-heading">
+        <div><p class="eyebrow">Financial reconciliation</p><h2 id="reconciliation-heading">Request-to-commitment check</h2></div>
+        <p>The values below show the administrative reconciliation performed before routing. They do not constitute certification or payment approval.</p>
+      </div>
+      <div class="financial-grid">
+        <article><span>Original commitment</span><strong>$485,000</strong></article>
+        <article><span>Approved changes</span><strong>$38,000</strong></article>
+        <article><span>Revised commitment</span><strong>$523,000</strong></article>
+        <article><span>Gross billed to date</span><strong>$260,500</strong></article>
+        <article><span>Remaining commitment</span><strong>$262,500</strong></article>
+      </div>
+      <div class="artifact-callout">
+        <strong>Important boundary:</strong> Only approved CO-001 is included in the revised commitment. Pending PCN-002 and PCN-003 are excluded from billing until authorized.
+      </div>
+    </div>
+  </section>
+
+  <section class="artifact-section" aria-labelledby="routing-heading">
+    <div class="artifact-inner">
+      <div class="coordination-heading">
+        <div><p class="eyebrow">Routing gates</p><h2 id="routing-heading">What controls the next step</h2></div>
+        <p>A complete package can advance for review. An incomplete package stays visible, with the missing requirement, owner, and due date recorded.</p>
+      </div>
+      <div class="gate-grid">
+        <article>
+          <span class="status-pill status-complete">Complete</span>
+          <h3>Identity and commitment</h3>
+          <p>The project, vendor, billing period, original commitment, approved change, and revised commitment match the source records.</p>
+        </article>
+        <article>
+          <span class="status-pill status-complete">Complete</span>
+          <h3>Billing calculation</h3>
+          <p>The schedule of values, five percent retainage, prior billing, current request, and billed-to-date total are present and arithmetically consistent.</p>
+        </article>
+        <article>
+          <span class="status-pill status-complete">Complete</span>
+          <h3>Progress support</h3>
+          <p>Progress reports, photographs, and quantity support are attached for Construction Manager review.</p>
+        </article>
+        <article>
+          <span class="status-pill status-hold">Missing</span>
+          <h3>Certified payroll</h3>
+          <p>The required payroll package is absent. The contractor owns the correction and the pay application cannot advance.</p>
+        </article>
+        <article>
+          <span class="status-pill status-hold">Missing</span>
+          <h3>Conditional lien release</h3>
+          <p>The executed release through the billing period is absent. The coordinator records the hold and requested resubmission date.</p>
+        </article>
+        <article>
+          <span class="status-pill status-planned">After completion</span>
+          <h3>Authorized routing</h3>
+          <p>Construction, project, finance, and owner reviewers receive the package only after the two missing records are verified.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="artifact-section section-alt" aria-labelledby="matrix-heading">
+    <div class="artifact-inner">
+      <div class="coordination-heading">
+        <div><p class="eyebrow">Completeness matrix</p><h2 id="matrix-heading">Evidence, gate, and ownership</h2></div>
+        <p>The matrix makes the hold reason specific and prevents a vague status such as "pending" from hiding the next required action.</p>
+      </div>
+      <div class="table-wrap" tabindex="0" aria-label="Scrollable invoice routing table">
+        <table class="coordination-table">
+          <thead>
+            <tr><th>Requirement</th><th>Evidence</th><th>Status</th><th>Routing gate</th><th>Owner and next action</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Commitment values</td><td>Commitment register and CO-001</td><td><span class="status-pill status-complete">Complete</span></td><td>Financial review</td><td>Finance Analyst to confirm revised commitment</td></tr>
+            <tr><td>Schedule of values</td><td>PA-002 billing detail</td><td><span class="status-pill status-complete">Complete</span></td><td>Project review</td><td>Construction Manager to validate progress</td></tr>
+            <tr><td>Retainage and prior billing</td><td>PA-001, invoice tracker, five percent calculation</td><td><span class="status-pill status-complete">Complete</span></td><td>Financial review</td><td>Finance Analyst to check contract terms and duplicate billing</td></tr>
+            <tr><td>Certified payroll</td><td>Required payroll package</td><td><span class="status-pill status-hold">Missing</span></td><td>Do not route</td><td>General Contractor to submit by Oct 12</td></tr>
+            <tr><td>Conditional lien release</td><td>Executed release through billing period</td><td><span class="status-pill status-hold">Missing</span></td><td>Do not route</td><td>General Contractor to submit by Oct 12</td></tr>
+            <tr><td>Approval sequence</td><td>Construction, project, finance, and owner routing map</td><td><span class="status-pill status-complete">Complete</span></td><td>Approval routing</td><td>Coordinator routes only after missing support is closed</td></tr>
+            <tr><td>Final payment record</td><td>Authorized payment confirmation</td><td><span class="status-pill status-planned">Not started</span></td><td>Post-payment control</td><td>Coordinator updates the tracker after system confirmation</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="artifact-section" aria-labelledby="control-heading">
+    <div class="artifact-inner artifact-prose">
+      <h2 id="control-heading">Controls built into the routing process</h2>
+      <ul>
+        <li><strong>Commitment reconciliation:</strong> The pay application is checked against the original commitment, approved changes, revised commitment, prior billing, and remaining balance.</li>
+        <li><strong>Pending-change exclusion:</strong> Proposed changes are not treated as billable until approved and incorporated into the commitment record.</li>
+        <li><strong>Required-document gate:</strong> Missing payroll and lien-release records stop routing rather than becoming informal follow-up items after approval begins.</li>
+        <li><strong>Specific ownership:</strong> Each missing item has one owner and one due date.</li>
+        <li><strong>Approval separation:</strong> Administrative verification does not replace field-progress validation, financial review, or owner authorization.</li>
+        <li><strong>System-of-record discipline:</strong> The tracker is marked paid only after confirmation from the authorized accounting or project platform.</li>
+      </ul>
+      <p class="artifact-download-note">The downloadable CSV contains the detailed verification record, routing gates, owners, dates, and coordinator notes.</p>
+    </div>
+  </section>
+</main>
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>© <span id="year"></span> Motya “Ali” Ali. Synthetic portfolio demonstration.</div>
+    <div><a href="../../evidence-standard.html">Evidence, privacy, and maturity standard</a></div>
+  </div>
+</footer>
+<script src="../../assets/site.js"></script>
+</body>
+</html>

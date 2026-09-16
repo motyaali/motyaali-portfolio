@@ -66,7 +66,7 @@
     output.hidden = true;
     metrics.innerHTML = '<article><strong>8</strong><span>requests received</span></article><article><strong>5</strong><span>routine assignments prepared</span></article><article><strong>3</strong><span>exceptions isolated</span></article><article><strong>0</strong><span>unsafe auto-decisions</span></article>';
     renderRoutine(); renderExceptions(); updateReadiness();
-    workspace.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    workspace.scrollIntoView({ behavior: 'instant', block: 'start' });
   }
 
   function confirmRoutineAssignments() {
@@ -107,7 +107,7 @@
     state.committed = true;
     outputMetrics.innerHTML = '<article><strong>8</strong><span>requests accounted for</span></article><article><strong>7</strong><span>controlled work items</span></article><article><strong>1</strong><span>duplicate linked and closed</span></article><article><strong>3</strong><span>review decisions recorded</span></article>';
     outputCards.innerHTML = `<article class="output-card"><span class="state-label">Output 1</span><h3>Controlled service queue</h3><p>Every active request has a category, accountable owner, and service target.</p><div class="output-preview">5 routine assignments<br>REQ-107: ${state.priority}<br>7 controlled work items</div></article><article class="output-card"><span class="state-label">Output 2</span><h3>Exception history</h3><p>Duplicate, priority, and permission-sensitive handling remain visible instead of disappearing into informal decisions.</p><div class="output-preview">REQ-106 → REQ-104<br>REQ-108 → ${state.sensitiveOwner}</div></article><article class="output-card"><span class="state-label">Output 3</span><h3>Service-control evidence</h3><p>The final queue can be audited against the original requests and the reviewer dispositions.</p><div class="output-preview">8 originals preserved<br>3 judgment calls recorded<br>0 sensitive records routed generally</div></article>`;
-    output.hidden = false; output.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    output.hidden = false; output.scrollIntoView({ behavior: 'instant', block: 'start' });
   }
 
   function download(filename, content, type) { const blob = new Blob([content], { type }); const url = URL.createObjectURL(blob); const link = document.createElement('a'); link.href = url; link.download = filename; link.click(); setTimeout(() => URL.revokeObjectURL(url), 0); }
@@ -115,7 +115,7 @@
   function reset() {
     Object.assign(state, { triaged: false, routineConfirmed: false, duplicateResolved: false, priorityResolved: false, sensitiveResolved: false, priority: '', sensitiveOwner: '', committed: false });
     workspace.hidden = true; output.hidden = true; commitButton.disabled = true; confirmRoutine.disabled = false; confirmRoutine.textContent = 'Confirm Routine Assignments';
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    document.getElementById('start-demo')?.scrollIntoView({ behavior: 'instant', block: 'start' });
   }
 
   document.getElementById('triage-batch')?.addEventListener('click', triageBatch);

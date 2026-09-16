@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "proof_pack": "Project Status Reporting",
+  "project": "AI Workflow Enablement",
+  "owner": "Motya Ali",
+  "maturity": "Working browser demonstration",
+  "data_classification": "Synthetic public demonstration",
+  "canonical_public_implementation": "motyaali/motyaali-portfolio@main",
+  "purpose": "Demonstrate a governed reporting pattern that prepares routine facts, exposes conflicting or unsupported statements, requires explicit review, and releases a report only after required controls are satisfied.",
+  "synthetic_records": {
+    "count": 6,
+    "register": "evidence/ai-workflow-enablement/status-reporting-synthetic-records.csv",
+    "coverage": ["routine project facts", "conflicting milestone dates", "unvalidated variance explanation", "missing risk owner"]
+  },
+  "verified_operating_behaviors": [
+    "six-record clean starting state",
+    "seven routine facts prepared from governed sources",
+    "three reporting exceptions isolated",
+    "milestone conflict requires explicit reviewer selection",
+    "forecast narrative is not invented when unsupported",
+    "high risk cannot finalize without an accountable owner",
+    "finalization blocked until all review controls are satisfied",
+    "reviewed report, exception log, and ownership record produced",
+    "reset restores a clean starting state",
+    "public maturity and non-claim boundary remains visible"
+  ],
+  "acceptance": {
+    "matrix": "evidence/ai-workflow-enablement/status-reporting-acceptance.csv",
+    "browser_spec": "tests/workflow-demo-family.spec.mjs",
+    "execution": "Portfolio CI executes the Playwright suite across configured desktop, tablet, and mobile projects."
+  },
+  "public_artifacts": [
+    "demos/status-reporting.html",
+    "assets/status-reporting.js",
+    "assets/workflow-demos.css",
+    "evidence/ai-workflow-enablement/status-reporting-proof.html",
+    "evidence/ai-workflow-enablement/status-reporting-proof.json",
+    "evidence/ai-workflow-enablement/status-reporting-synthetic-records.csv",
+    "evidence/ai-workflow-enablement/status-reporting-acceptance.csv",
+    "tests/workflow-demo-family.spec.mjs"
+  ],
+  "production_adaptation_requires": [
+    "approved source systems and report ownership",
+    "defined reporting calendar and controlled KPI definitions",
+    "source-of-truth rules for schedule cost risk and action data",
+    "role-based access and publication authority",
+    "exception ownership and escalation paths",
+    "baseline report effort and quality measures",
+    "acceptance criteria and regression tests",
+    "operating documentation training and administrator handoff"
+  ],
+  "not_claimed": [
+    "live client-system integration",
+    "production AI extraction or summarization accuracy",
+    "measured client time or financial savings",
+    "autonomous interpretation of material project impacts",
+    "autonomous publication authority"
+  ]
+}

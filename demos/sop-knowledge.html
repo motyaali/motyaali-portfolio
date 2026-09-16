@@ -14,24 +14,26 @@
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
-<header class="site-header"><div class="header-inner"><a class="brand" href="../index.html" aria-label="Motya Ali home">MOTYA ALI</a><button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav class="site-nav" id="site-nav" aria-label="Primary navigation"><a href="../index.html">Home</a><a href="../work.html">Work</a><a href="../services.html">Services</a><a href="../ai-workflow-enablement/" aria-current="page">AI Workflow Enablement</a><a href="../contact.html">Contact</a></nav></div></header>
+<header class="site-header"><div class="header-inner"><a class="brand" href="../index.html" aria-label="Motya Ali home">MOTYA ALI</a><button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav class="site-nav" id="site-nav" aria-label="Primary navigation"><a href="../work.html" aria-current="page">Work</a><a href="../resume.html">Résumé</a><a href="../about.html">About</a><a href="../services.html">Services</a><a href="../contact.html">Contact</a></nav></div></header>
 <main id="main" class="demo-shell operations-demo">
   <p class="eyebrow">Working knowledge-control demonstration | Synthetic data</p>
   <h1>SOP Knowledge Assistance</h1>
+  <p><a href="../ai-workflow-enablement/#workflow-demos">← All workflow demonstrations</a> · Preloaded synthetic sample · No account required</p>
   <p class="demo-lead">See how operational questions can be answered from approved sources while conflicting versions, expired guidance, and missing source coverage are surfaced instead of being filled with confident guesses.</p>
   <p class="demo-notice"><strong>Demonstration boundary:</strong> This browser-local scenario uses fictional procedures and questions. It demonstrates source-grounded answer behavior, uncertainty handling, and knowledge-maintenance controls. It does not claim production retrieval accuracy, live repository permissions, or policy approval.</p>
 
+
+
+  <section class="demo-panel" id="start-demo" aria-labelledby="knowledge-input-heading">
+    <div class="demo-step-heading"><div><span class="step-number">1</span><div><p class="eyebrow">Approved source set</p><h2 id="knowledge-input-heading">Six staff questions arrive against a fictional controlled knowledge library.</h2><p>Three can be answered directly. Three require governance or maintenance action.</p></div></div><button class="primary" id="prepare-knowledge" type="button">Prepare Knowledge Responses</button></div>
+    <div id="knowledge-source-grid" class="source-grid" aria-live="polite"></div>
+  </section>
   <section class="demo-panel value-panel" aria-labelledby="knowledge-value-heading">
     <div class="section-heading compact-heading"><div><p class="eyebrow">Before and after</p><h2 id="knowledge-value-heading">Make approved guidance easier to use without hiding what the knowledge base does not know.</h2></div></div>
     <div class="before-after-grid">
       <article class="before-card"><span class="state-label">Typical current state</span><h3>Answers depend on memory and document hunting.</h3><ul><li>Search multiple folders and versions</li><li>Ask whoever remembers the process</li><li>Reuse old guidance without noticing</li><li>Resolve conflicts informally</li><li>Leave knowledge gaps undocumented</li></ul></article>
       <article class="after-card"><span class="state-label">Designed future state</span><h3>Answers stay attached to approved sources and gaps become work.</h3><ul><li>Return source references with answers</li><li>Withhold answers when authority is unclear</li><li>Flag expired or conflicting guidance</li><li>Require source-owner review where needed</li><li>Create a knowledge-maintenance backlog</li></ul></article>
     </div>
-  </section>
-
-  <section class="demo-panel" aria-labelledby="knowledge-input-heading">
-    <div class="demo-step-heading"><div><span class="step-number">1</span><div><p class="eyebrow">Approved source set</p><h2 id="knowledge-input-heading">Six staff questions arrive against a fictional controlled knowledge library.</h2><p>Three can be answered directly. Three require governance or maintenance action.</p></div></div><button class="primary" id="prepare-knowledge" type="button">Prepare Knowledge Responses</button></div>
-    <div id="knowledge-source-grid" class="source-grid" aria-live="polite"></div>
   </section>
 
   <section class="demo-panel" id="knowledge-workspace" aria-labelledby="knowledge-workspace-heading" hidden>
@@ -48,6 +50,7 @@
     <div id="knowledge-output-cards" class="output-card-grid"></div>
     <div class="actions"><button class="button button-primary" id="download-knowledge-pack" type="button">Download Response Pack</button><button class="button button-secondary" id="download-knowledge-evidence" type="button">Download JSON Evidence</button><a class="button button-secondary" href="../evidence/ai-workflow-enablement/sop-knowledge-proof.html">Inspect the Proof Pack</a></div>
   </section>
+<noscript><p>This interactive demonstration needs JavaScript. <a href="../projects/ai-workflow-enablement.html">Inspect the static evidence index</a> instead.</p></noscript>
 </main>
 <footer class="site-footer"><div class="footer-inner"><div>© <span id="year"></span> Motya “Ali” Ali.</div><div><a href="../evidence-standard.html">Evidence, privacy, and maturity standard</a></div></div></footer>
 <script src="../assets/site.js"></script><script src="../assets/sop-knowledge.js"></script>

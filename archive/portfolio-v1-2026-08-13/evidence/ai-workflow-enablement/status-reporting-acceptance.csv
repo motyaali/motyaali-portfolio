@@ -1,0 +1,10 @@
+id,scenario,expected_result,evidence
+SR-AT-01,Clean starting state,"Six synthetic source records visible and report workspace hidden","demos/status-reporting.html"
+SR-AT-02,Prepare report,"Seven routine facts prepared and three exceptions isolated","assets/status-reporting.js"
+SR-AT-03,Milestone conflict,"Finalization remains blocked until reviewer selects a working date","tests/workflow-demo-family.spec.mjs"
+SR-AT-04,Variance treatment,"Forecast explanation is never invented and requires explicit reporting treatment","tests/workflow-demo-family.spec.mjs"
+SR-AT-05,Missing risk owner,"High risk requires explicit accountable-owner selection","tests/workflow-demo-family.spec.mjs"
+SR-AT-06,Release gate,"Finalize Report Package enables only after all three exceptions resolve","tests/workflow-demo-family.spec.mjs"
+SR-AT-07,Controlled output,"Final package displays reviewed report, exception log, and ownership record","demos/status-reporting.html"
+SR-AT-08,Reset,"Reset restores clean starting state and disables finalization","tests/workflow-demo-family.spec.mjs"
+SR-AT-09,Public boundary,"Synthetic-data and non-claim boundary remains visible","demos/status-reporting.html"

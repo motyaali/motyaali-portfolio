@@ -10,7 +10,7 @@ A static, accessible professional portfolio focused on operations, business syst
 
 This repository contains more than positioning copy. It publishes:
 
-- working AI Workflow Enablement demonstrations for Meeting Intelligence and Document Intake
+- five working AI Workflow Enablement demonstrations: Meeting Intelligence, Document Intake, Status Reporting, Request Triage, and SOP Knowledge Assistance
 - synthetic source material and reference outputs
 - acceptance tests and governance boundaries
 - project maturity labels and evidence rules
@@ -68,6 +68,12 @@ Run the repository validator:
 
 ```bash
 python scripts/validate_site.py
+python scripts/validate_public_claims.py
+python scripts/validate_proof_packs.py
+python scripts/validate_offer_conversion.py
+npm install --no-audit --no-fund
+npx playwright install chromium webkit
+npm run test:browser
 ```
 
 The validator checks:
@@ -127,4 +133,4 @@ Before a release:
 
 ## Status
 
-**Portfolio evidence and quality review active, August 2026.**
+**Recruiter-first V2, September 2026.** See [V2 review notes](docs/RECRUITER_V2_REVIEW.md) for scope, evidence boundaries, validation, and archive protection.

@@ -8,13 +8,12 @@ const cases = [
 
 test('Services exposes direct working-demo and proof-pack actions for the completed workflow family', async ({ page }) => {
   await page.goto('/services.html');
-  const group = page.locator('#where-i-help');
-  const panel = page.locator('#where-i-help-detail');
-
   for (const item of cases) {
-    await group.locator(`[data-service-tile="${item.key}"]`).click();
-    await expect(panel).toBeVisible();
-    await expect(panel.getByRole('link', { name: 'Run the Demonstration' })).toHaveAttribute('href', item.demo);
-    await expect(panel.getByRole('link', { name: 'Inspect the Proof Pack' })).toHaveAttribute('href', item.proof);
+    const card = page.locator('.service-example-grid article').filter({ has: page.locator(`a[href="${item.demo}"]`) });
+    await expect(card.getByRole('link', { name: 'Run the demo' })).toHaveAttribute('href', item.demo);
+    await expect(card.getByRole('link', { name: 'Inspect the proof pack' })).toHaveAttribute('href', item.proof);
+    await card.getByRole('link', { name: 'Run the demo' }).click();
+    await expect(page.locator('#start-demo button')).toBeVisible();
+    await page.goto('/services.html');
   }
 });

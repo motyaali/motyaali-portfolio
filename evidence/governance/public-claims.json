@@ -36,20 +36,20 @@
       "id": "BRAND-001",
       "page": "index.html",
       "category": "positioning",
-      "approved_text": "Turning complexity into clear systems and useful work.",
+      "approved_text": "I turn complex work into clear systems people can run.",
       "maturity": "Public positioning",
       "evidence_level": "Approved public copy",
-      "source_basis": "Current canonical homepage positioning and controlled master portfolio record",
+      "source_basis": "Current canonical homepage positioning and controlled master portfolio record; recruiter-first V2 positioning in PR #15 (presentation change; no new metric or maturity claim)",
       "status": "approved"
     },
     {
       "id": "BRAND-002",
       "page": "index.html",
       "category": "positioning",
-      "approved_text": "I design reliable workflows, decision-ready analysis, practical documentation, and governed human-centered tools that help people and organizations move from fragmented information to coordinated action.",
+      "approved_text": "My work connects people, information, controls, and follow-through so teams can make decisions and keep work moving.",
       "maturity": "Public positioning",
       "evidence_level": "Approved public copy",
-      "source_basis": "Current canonical homepage positioning and controlled master portfolio record",
+      "source_basis": "Current canonical homepage positioning and controlled master portfolio record; recruiter-first V2 positioning in PR #15 (presentation change; no new metric or maturity claim)",
       "status": "approved"
     },
     {
@@ -66,10 +66,10 @@
       "id": "SERVICE-001",
       "page": "services.html",
       "category": "service-positioning",
-      "approved_text": "Practical workflows that reduce routine handling without weakening control.",
+      "approved_text": "Improve one recurring workflow without creating another system people hate.",
       "maturity": "Service framework",
       "evidence_level": "Approved public copy",
-      "source_basis": "AI Workflow Enablement operating model",
+      "source_basis": "AI Workflow Enablement operating model; recruiter-first V2 positioning in PR #15 (presentation change; no new metric or maturity claim)",
       "status": "approved"
     },
     {

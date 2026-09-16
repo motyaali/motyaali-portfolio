@@ -1,0 +1,8 @@
+Change ID,Requested Update,Triggering Evidence,Prepared Disposition,Decision Owner,Decision,Publication Action
+CHG-001,Align submission-role example with approved procedure,"Approved procedure conflicts with training deck","Revise training example; preserve approved contributor responsibility",Process Owner,Pending,"Hold publication until decision"
+CHG-002,Map Project ID terminology to current interface,"Approved procedure uses Project ID; system displays Project Number","Add controlled terminology mapping without changing policy meaning",System Owner + Document Control,Pending,"Update canonical guide after approval"
+CHG-003,Document complex-package review exception,"Email clarification allows seven days for complex packages","Propose explicit exception rule while retaining five-day standard",Process Owner,Pending,"Incorporate only if clarification is formally approved"
+
+Boundary,Value
+Data classification,Synthetic public example
+Purpose,Demonstrates traceable change request evidence decision and publication history

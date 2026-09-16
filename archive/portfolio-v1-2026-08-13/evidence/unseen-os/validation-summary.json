@@ -1,0 +1,64 @@
+{
+  "project": "Unseen OS / Unseen Lifeline",
+  "version": "v0.3 Release Candidate verification",
+  "source_archive": "Unseen_Lifeline_v0.3_Working_Upgrade_Pass2.zip",
+  "source_sha256": "a2f7c4602e9cfba3c7ac272ee4bdd7718ccb20719b867d4f65246711c74651fb",
+  "final_expanded_run_id": 31544396253,
+  "validated_head_sha": "482e9d62715ac470ca27108b8c5fdd433dc775fa",
+  "release_candidate_sha256": "1da6b8513d8d8e9234e06c18cefe7d044d643a2f305202180b231a27b60ce91e",
+  "validated_environments": [
+    "GitHub-hosted Windows runner, Python 3.12",
+    "GitHub-hosted Linux runner, Python 3.12"
+  ],
+  "automated_tests": 13,
+  "synthetic_core_fixtures": 5,
+  "verified_browser_paths": [
+    "Dashboard",
+    "Five-fixture inbox processing",
+    "Life Archive",
+    "Document evidence modal",
+    "Human field confirmation",
+    "Document reprocessing",
+    "Post-reprocess modal close",
+    "Continuity Board",
+    "Notice Response",
+    "Manual action creation",
+    "Manual action New-to-Done state change",
+    "Weekly review export",
+    "Action CSV export",
+    "Document CSV export",
+    "Sample/test-only reset with non-sample record preservation",
+    "Timestamped pre-reset database backup"
+  ],
+  "verified_http_controls": [
+    "Loopback Host guard",
+    "Local mutation-header guard",
+    "Cache-Control: no-store",
+    "X-Content-Type-Options: nosniff",
+    "X-Frame-Options: DENY",
+    "Referrer-Policy: no-referrer",
+    "Content-Security-Policy frame/connect boundaries"
+  ],
+  "hardening_discovered": [
+    "Dynamic HTML output encoding",
+    "Inbox .gitkeep placeholder exclusion",
+    "UI filter-value contract alignment",
+    "Recovered UI presentation classes",
+    "Stale document identity handling after reprocessing",
+    "Content-Security-Policy-compatible browser event handling",
+    "Cross-platform acceptance timing around reprocess/modal state"
+  ],
+  "provider_validation": {
+    "gemini": "not run; no provider credential supplied"
+  },
+  "release_boundary": "Sanitized Release Candidate generated only after both expanded Windows and Linux gates passed. Private source and runtime data remain outside the public portfolio.",
+  "not_claimed": [
+    "Public production deployment",
+    "Multi-user authentication/authorization",
+    "External penetration testing",
+    "Remote backup/disaster recovery",
+    "Production monitoring",
+    "Live Gemini-provider validation",
+    "External-user outcome validation"
+  ]
+}

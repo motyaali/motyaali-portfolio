@@ -1,0 +1,7 @@
+id,question,status,source,answer_or_control
+Q-001,Where are fully executed agreements filed?,grounded,"SOP-104 v3 · Agreement Records · approved Aug 1 2026","File in the controlled Agreements repository under the governing project or program record"
+Q-002,When is the weekly status draft due to the PMO reviewer?,grounded,"OPS-210 v2 · Weekly Reporting Guide · approved Jul 15 2026","Thursday at 2:00 PM"
+Q-003,Who can approve external project-system access?,grounded,"GOV-012 v4 · Access Approval Matrix · approved Jun 28 2026","Designated system owner and accountable project manager"
+Q-004,Which file-naming rule controls project records?,conflict,"SOP-104 v3 vs QRG-019 v2","Reviewer must choose controlling source or withhold answer"
+Q-005,What is the current after-hours escalation number?,expired,"SOP-330 v1 · Emergency Escalation · expired Jul 31 2026","Withhold answer and request source refresh"
+Q-006,May contractors export employee accommodation records?,gap,"No approved source located","Withhold answer and route knowledge gap to Privacy & Records owner"

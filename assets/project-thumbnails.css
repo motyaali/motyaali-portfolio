@@ -3,6 +3,15 @@
   padding: 1.2rem;
 }
 
+.artifact-caption {
+  margin: 0;
+  padding: .6rem 1rem;
+  background: #eef3f5;
+  color: #465966;
+  font-size: .78rem;
+  line-height: 1.4;
+}
+
 .project-cover-label {
   position: absolute;
   z-index: 4;

@@ -1,0 +1,10 @@
+Exception ID,Exception,Conflicting Evidence,Decision Risk,Owner,Next Action,Status
+INV-001,ASN exceeds open PO by 240 units,"Supplier shipment: 2400; ERP open quantity: 2160","Unplanned receipt invoice mismatch or unauthorized overshipment",Buyer,"Verify approved change; receiving holds excess quantity from automatic availability",Open
+INV-002,Carrier delivered but warehouse not received,"Proof of delivery exists; no warehouse receipt after 18 hours","Planning may assume inventory is unavailable while product is physically onsite",Warehouse,"Investigate dock status and create or correct receipt event",Open
+INV-003,Receipt posted while quantity remains on quality hold,"ERP received quantity equals shipment; quality disposition unresolved","Inventory could be counted as usable before release",Quality,"Record disposition; planner view excludes held quantity from available supply",In review
+INV-004,Late milestone with unchanged ETA,"Expected departure missed; downstream estimated arrival not revised","Forecast and promotional decisions use stale timing",Logistics,"Obtain current milestone and refresh confidence and arrival date",Open
+
+Boundary,Value
+Data classification,Synthetic public architecture example
+Purpose,Demonstrates exception ownership lineage and next-action design
+Not represented,Live ERP WMS TMS supplier carrier or financial data

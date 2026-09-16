@@ -1,0 +1,8 @@
+Topic,Evidence A,Evidence B,Prepared Recommendation,Required Decision,Status
+Who submits the package?,"Approved procedure assigns the contributor","Training deck shows document control initiating submission","Retain contributor responsibility and revise the training example","Process owner confirms role assignment",Open
+Required metadata field,"Procedure lists Project ID","Current system requires Project Number","Document both terms and map the approved identifier to current interface language","System owner and document-control lead approve wording",Open
+Review turnaround,"Guide states five business days","Email clarification allows seven for complex packages","Keep five-day standard and add an approved exception rule","Process owner determines whether clarification becomes policy",Open
+
+Boundary,Value
+Data classification,Synthetic public example
+Design principle,Recommendations remain reversible until accountable human approval

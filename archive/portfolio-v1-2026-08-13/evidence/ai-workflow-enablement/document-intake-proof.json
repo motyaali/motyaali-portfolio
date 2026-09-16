@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "proof_pack": "Intelligent Document Intake and Routing",
+  "project": "AI Workflow Enablement",
+  "owner": "Motya Ali",
+  "maturity": "Working browser demonstration",
+  "data_classification": "Synthetic public demonstration",
+  "canonical_public_implementation": "motyaali/motyaali-portfolio@main",
+  "purpose": "Demonstrate a governed intake pattern that prepares routine records, isolates exceptions, requires human review where needed, and routes only records that satisfy the required controls.",
+  "synthetic_records": {
+    "count": 6,
+    "register": "evidence/ai-workflow-enablement/document-intake-synthetic-records.csv",
+    "coverage": [
+      "routine known document",
+      "probable duplicate",
+      "missing required identifier",
+      "uncertain controlling classification"
+    ]
+  },
+  "verified_operating_behaviors": [
+    "six-record clean starting state",
+    "three routine records separated from three exceptions",
+    "routine records confirmed as a group",
+    "probable duplicate held rather than routed",
+    "missing-information case held pending a specific information request",
+    "classification cannot be resolved without explicit reviewer input",
+    "final routing blocked until every required control is satisfied",
+    "four approved records displayed as routed and two records held safely",
+    "reset returns the demonstration to the clean starting state",
+    "responsive browser surface and mobile navigation",
+    "public maturity and non-claim boundary remains visible"
+  ],
+  "acceptance": {
+    "matrix": "evidence/ai-workflow-enablement/document-intake-acceptance.csv",
+    "browser_spec": "tests/document-intake.spec.mjs",
+    "execution": "Portfolio CI executes the Playwright suite across the configured desktop, tablet, and mobile projects on pull requests and main pushes.",
+    "screenshot_evidence": "The primary end-to-end test attaches a controlled-outcome screenshot to the Playwright report."
+  },
+  "public_artifacts": [
+    "demos/document-intake.html",
+    "assets/document-intake.js",
+    "evidence/ai-workflow-enablement/document-intake-proof.html",
+    "evidence/ai-workflow-enablement/document-intake-proof.json",
+    "evidence/ai-workflow-enablement/document-intake-synthetic-records.csv",
+    "evidence/ai-workflow-enablement/document-intake-acceptance.csv",
+    "docs/DOCUMENT_INTAKE_DEMO_RUNBOOK.md",
+    "docs/DOCUMENT_INTAKE_DEMO_SCRIPT.md",
+    "tests/document-intake.spec.mjs"
+  ],
+  "production_adaptation_requires": [
+    "approved repository and record ownership",
+    "document taxonomy and metadata schema",
+    "routing rules and destination permissions",
+    "role-based access",
+    "duplicate-detection method",
+    "confidence or quality thresholds",
+    "exception ownership",
+    "retention and records requirements",
+    "audit history",
+    "connector and service-account security",
+    "failure and retry behavior",
+    "monitoring and support ownership",
+    "baseline measurements",
+    "acceptance criteria",
+    "user and administrator training",
+    "scale revise or stop decision"
+  ],
+  "not_claimed": [
+    "live Microsoft 365 or client-system integration",
+    "production AI extraction or classification accuracy",
+    "measured client time savings or financial savings",
+    "production identity or authorization controls",
+    "production monitoring or support operations",
+    "autonomous consequential decision authority"
+  ]
+}

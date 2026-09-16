@@ -1,0 +1,11 @@
+Role,Primary Questions,Key Evidence,Material Exceptions,Accountable Action
+Planner,"What supply is actually usable by need date?","Available held late and uncertain quantities; demand and forecast context","Late receipts quality holds stale ETAs","Adjust forecast allocation or inventory plan"
+Buyer,"What commitment is authorized and what requires supplier action?","Open PO approved changes shipment quantities cancellations","Overshipment unauthorized changes supplier variance","Confirm commitment and coordinate supplier correction"
+Logistics,"Where is the shipment and is the timing trustworthy?","Carrier events transportation milestones ETA freshness","Missed milestone stale ETA missing carrier event","Refresh milestone and communicate timing risk"
+Warehouse,"What is physically onsite and what can be made available?","Appointment delivery receipt putaway and hold status","Delivered-not-received quantity mismatch unresolved hold","Correct receipt or route disposition"
+Finance,"What can be matched to commitment receipt acceptance and invoice?","Ordered received accepted invoiced disputed and returned quantities","Invoice mismatch duplicate billing unaccepted quantity","Hold or reconcile payment support"
+Leadership,"Which exceptions materially affect value timing or service?","Exception value age root cause owner and deadline","High-value aged or deadline-critical unresolved items","Prioritize escalation and accountability"
+
+Boundary,Value
+Data classification,Synthetic public architecture example
+Purpose,Shows role-specific use of one source-linked ledger

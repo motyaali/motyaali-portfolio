@@ -1,0 +1,7 @@
+record_id,file_name,document_type,project_or_scope,confidence,scenario,expected_control,expected_outcome,data_classification
+DOC-001,Pump Station 4 Weekly Report.pdf,Weekly Progress Report,Pump Station 4,High,Routine known document,Batch confirmation,Route to controlled Progress Reports destination,Synthetic public demonstration
+DOC-002,Invoice 10482 - North Bay Testing.pdf,Vendor Invoice,Water Quality Lab Upgrade,High,Routine known document,Batch confirmation,Route to controlled Commercial destination,Synthetic public demonstration
+DOC-003,Training Attendance - Confined Space.xlsx,Training Record,Programwide,High,Routine known document,Batch confirmation,Route to controlled Safety Training Records destination,Synthetic public demonstration
+DOC-004,Pump Station 4 Weekly Report (1).pdf,Weekly Progress Report,Pump Station 4,High,Probable duplicate,Individual exception review,Hold outside controlled library and retain intake history,Synthetic public demonstration
+DOC-005,Submittal - Valve Data.pdf,Technical Submittal,,Low,Missing required identifier,Individual exception review,Prepare information request and keep document pending,Synthetic public demonstration
+DOC-006,Site Photos and Notes.zip,Classification required,Reservoir Seismic Retrofit,Medium,Uncertain document family,Individual exception review,Require reviewer classification before routing,Synthetic public demonstration
