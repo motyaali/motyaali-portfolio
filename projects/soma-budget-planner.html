@@ -1,0 +1,246 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Case study for SOMA Budget Planner, a private-by-design progressive web application for monthly budgeting, spending pace, scenario planning, and portable local backups.">
+  <meta name="theme-color" content="#17324d">
+  <link rel="canonical" href="https://www.motyaali.com/projects/soma-budget-planner.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="SOMA Budget Planner | Motya Ali">
+  <meta property="og:description" content="A working browser application that turns monthly income and spending into an editable budget, pace guidance, projections, and portable backups without sending financial data to a server.">
+  <meta property="og:url" content="https://www.motyaali.com/projects/soma-budget-planner.html">
+  <meta property="og:image" content="https://www.motyaali.com/assets/social/motya-ali-portfolio-linkedin.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>SOMA Budget Planner | Motya Ali</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+  <link rel="stylesheet" href="../assets/proof.css">
+  <link rel="stylesheet" href="../assets/evidence-upgrade.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href="../index.html" aria-label="Motya Ali home">MOTYA ALI</a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button>
+    <nav class="site-nav" id="site-nav" aria-label="Primary navigation"><a href="../work.html" aria-current="page">Work</a><a href="../resume.html">Résumé</a><a href="../about.html">About</a><a href="../services.html">Services</a><a href="../contact.html">Contact</a></nav>
+  </div>
+</header>
+
+<main id="main">
+  <section class="project-detail-hero">
+    <div class="container">
+      <span class="badge">Working Browser Application</span>
+      <h1>SOMA Budget Planner</h1>
+      <p>A private-by-design monthly budgeting and scenario-planning application that turns editable income and expense data into clear budget status, spending pace, daily guidance, projections, and portable backups.</p>
+      <div class="actions">
+        <a class="button button-primary" href="https://motyaali.github.io/SOMA_Budget_Tool/" target="_blank" rel="noopener">Open the live application</a>
+        <a class="button button-secondary" href="https://github.com/motyaali/SOMA_Budget_Tool" target="_blank" rel="noopener">Inspect the repository</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" aria-labelledby="case-summary-heading">
+    <div class="container">
+      <h2 id="case-summary-heading">The work at a glance</h2>
+      <div class="proof-summary case-summary">
+        <article><span>My contribution</span><p>I defined the product behavior, designed the interface and budgeting logic, and built a functioning static web application with local persistence and offline support.</p></article>
+        <article><span>Start with the evidence</span><p>Use the live application, change the sample budget, switch months, test spending pace, then inspect the public source code.</p></article>
+        <article><span>Evidence boundary</span><p>The current release stores information in the browser only. It has no account system, cloud synchronization, bank connection, or server-side financial-data storage.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="proof-heading">
+    <div class="container">
+      <p class="eyebrow">Working proof</p>
+      <h2 id="proof-heading">Not a mockup. A usable application.</h2>
+      <div class="metric-grid">
+        <article class="metric-card"><strong>Monthly state</strong><span>Create separate budgets by month and copy the previous plan forward without carrying actual spending into the new month.</span></article>
+        <article class="metric-card"><strong>Local-first</strong><span>Budget data is stored in browser local storage with JSON backup and restore for portability.</span></article>
+        <article class="metric-card"><strong>Installable PWA</strong><span>A manifest and service worker support installation and offline use after the application has been loaded.</span></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" aria-labelledby="problem-heading">
+    <div class="container two-column">
+      <article class="prose">
+        <p class="eyebrow">The product problem</p>
+        <h2 id="problem-heading">A monthly budget should answer more than “how much did I spend?”</h2>
+        <p>Traditional budget tables show planned and actual amounts, but they often leave the user to interpret whether current spending is sustainable. SOMA adds an operating layer: how much flexible budget remains, how many days remain in the month, what daily spending level is still available, and what the month-end position could look like if the current pace continues.</p>
+        <p>The interface is deliberately editable and reversible. Categories, expense items, budget amounts, actual amounts, spending types, and months can all be changed without requiring an account or sending the data elsewhere.</p>
+      </article>
+      <aside class="info-panel">
+        <h2>Product requirements</h2>
+        <ul>
+          <li>Fast enough for routine monthly use</li>
+          <li>Explain calculations in ordinary language</li>
+          <li>Separate fixed and flexible spending</li>
+          <li>Preserve distinct month-by-month plans</li>
+          <li>Keep financial data local by default</li>
+          <li>Remain keyboard accessible and responsive</li>
+          <li>Provide user-controlled backup and restore</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="interface-heading">
+    <div class="container two-column">
+      <article class="prose">
+        <p class="eyebrow">Decision support</p>
+        <h2 id="interface-heading">The application translates raw entries into an operating view.</h2>
+        <p>Each edit recalculates the monthly position. The dashboard compares income, planned expenses, actual spending, remaining income, and planned balance, then adds calendar-aware guidance for flexible spending.</p>
+        <h3>Implemented now</h3>
+        <ul>
+          <li>Editable income, categories, items, budgets, and actual spending</li>
+          <li>Fixed and flexible category classification</li>
+          <li>Month switching and copy-forward planning</li>
+          <li>Budget-versus-actual category variance</li>
+          <li>Overall budget-used visualization</li>
+          <li>Days remaining, flexible budget left, and safe daily spending</li>
+          <li>Projected month-end balance based on current flexible-spending pace</li>
+          <li>JSON backup and import, CSV history export, and print view</li>
+          <li>Dark mode, keyboard navigation, responsive layout, and offline support</li>
+        </ul>
+      </article>
+      <div class="browser-frame" aria-label="Representative SOMA Budget Planner interface">
+        <div class="browser-toolbar"><div class="browser-dots"><span></span><span></span><span></span></div><span>SOMA Budget Planner · representative view</span></div>
+        <div class="browser-content">
+          <div class="preview-sidebar"><strong>SOMA</strong><span class="active">September budget</span><span>Income</span><span>Fixed expenses</span><span>Flexible expenses</span><span>Backup</span></div>
+          <div class="preview-main">
+            <p class="eyebrow">Monthly position</p>
+            <h3>Budget status at a glance</h3>
+            <div class="preview-row"><div><strong>Net income</strong><br><small>Current monthly plan</small></div><div>$4,800</div><span class="preview-status">Input</span></div>
+            <div class="preview-row"><div><strong>Flexible budget left</strong><br><small>Budget minus actual flexible spending</small></div><div>$620</div><span class="preview-status">Available</span></div>
+            <div class="preview-row"><div><strong>Safe to spend daily</strong><br><small>Remaining flexible budget ÷ days remaining</small></div><div>$47</div><span class="preview-status warn">Guidance</span></div>
+            <div class="preview-row"><div><strong>Projected month end</strong><br><small>Income minus fixed expectation and projected flexible pace</small></div><div>$310</div><span class="preview-status">Projection</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" aria-labelledby="logic-heading">
+    <div class="container">
+      <div class="section-heading">
+        <div><p class="eyebrow">Calculation logic</p><h2 id="logic-heading">Useful guidance built from inspectable rules.</h2></div>
+        <p>The application uses deterministic calculations. There is no hidden model generating financial advice.</p>
+      </div>
+      <div class="flow-grid">
+        <article class="flow-step"><span>01</span><h3>Plan</h3><p>Enter monthly income and budget amounts for fixed and flexible categories.</p></article>
+        <article class="flow-step"><span>02</span><h3>Record</h3><p>Add actual spending as the month progresses.</p></article>
+        <article class="flow-step"><span>03</span><h3>Compare</h3><p>Calculate planned-versus-actual totals and category variance.</p></article>
+        <article class="flow-step"><span>04</span><h3>Adjust for time</h3><p>Compare flexible-spending progress with the percentage of the month elapsed.</p></article>
+        <article class="flow-step"><span>05</span><h3>Project</h3><p>Estimate a month-end position using fixed obligations and the current flexible-spending pace.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="architecture-heading">
+    <div class="container">
+      <div class="section-heading">
+        <div><p class="eyebrow">Architecture</p><h2 id="architecture-heading">Intentionally small, portable, and inspectable.</h2></div>
+        <p>The first release avoids unnecessary infrastructure so the core budgeting behavior can be tested before adding synchronization or integrations.</p>
+      </div>
+      <div class="architecture-panel">
+        <div class="preview-header"><span>Current application architecture</span><span>No backend required</span></div>
+        <div class="architecture-grid">
+          <div class="architecture-node"><strong>HTML interface</strong><span>Semantic form controls, templates, summaries, and dialogs</span></div>
+          <div class="architecture-node core"><strong>JavaScript state</strong><span>Monthly budgets, calculation logic, validation, import, export, and UI updates</span></div>
+          <div class="architecture-node core"><strong>Browser storage</strong><span>Versioned local data model with migration from the earlier storage format</span></div>
+          <div class="architecture-node"><strong>PWA layer</strong><span>Web manifest and service worker for installability and offline access</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" aria-labelledby="evidence-heading">
+    <div class="container">
+      <div class="section-heading">
+        <div><p class="eyebrow">Implementation evidence</p><h2 id="evidence-heading">Product decisions are visible in the code.</h2></div>
+        <p>The public repository makes the application behavior inspectable rather than asking a reviewer to rely on screenshots alone.</p>
+      </div>
+      <div class="evidence-table-wrap">
+        <table class="evidence-table">
+          <thead><tr><th>Area</th><th>Implemented evidence</th><th>Why it matters</th></tr></thead>
+          <tbody>
+            <tr><td>Data model</td><td>Versioned store with up to 240 month records, normalized categories and items, and migration from the earlier local format</td><td>Shows state design and backward-compatible thinking</td></tr>
+            <tr><td>Planning</td><td>Copy-forward duplicates the prior plan with fresh identifiers while resetting actual spending to zero</td><td>Preserves a usable monthly workflow instead of copying stale actuals</td></tr>
+            <tr><td>Decision support</td><td>Flexible-spending pace, daily available spending, calendar progress, and projected month-end balance</td><td>Turns entries into actionable context</td></tr>
+            <tr><td>Input safety</td><td>Numeric amounts are normalized to nonnegative values; imported data is validated and size-limited</td><td>Reduces malformed local state and unsafe assumptions</td></tr>
+            <tr><td>Portability</td><td>JSON backup and restore plus CSV history export</td><td>Gives the user control over local data and reduces browser lock-in</td></tr>
+            <tr><td>Accessibility</td><td>Semantic labels, live status announcements, keyboard movement between amount fields, responsive layouts, and print support</td><td>Makes routine use more practical across input methods and devices</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="decisions-heading">
+    <div class="container two-column">
+      <article class="prose">
+        <p class="eyebrow">Selected design decisions</p>
+        <h2 id="decisions-heading">Build the smallest useful system before adding infrastructure.</h2>
+        <ul>
+          <li><strong>Local first:</strong> prove the budgeting workflow without requiring users to create an account or send private financial entries to a backend.</li>
+          <li><strong>Separate plan from actual:</strong> copying a month carries forward structure and budget amounts but intentionally resets actual spending.</li>
+          <li><strong>Make the calendar part of the calculation:</strong> spending pace is more useful when compared with how much of the month has elapsed.</li>
+          <li><strong>Keep the projection explainable:</strong> month-end guidance is derived from fixed expectations and observed flexible spending, not a black-box prediction.</li>
+          <li><strong>Design an exit:</strong> backup, import, CSV export, and print reduce dependence on one browser session.</li>
+        </ul>
+      </article>
+      <aside class="info-panel">
+        <h2>Capabilities demonstrated</h2>
+        <ul class="tag-list"><li>Product Requirements</li><li>Business Logic</li><li>JavaScript</li><li>State Design</li><li>Data Validation</li><li>Progressive Web Apps</li><li>Privacy by Design</li><li>Accessibility</li><li>Responsive UI</li><li>Scenario Planning</li></ul>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section section-alt" aria-labelledby="signal-heading">
+    <div class="container two-column">
+      <article class="prose">
+        <p class="eyebrow">What this demonstrates</p>
+        <h2 id="signal-heading">I can move from an operational problem to a working tool.</h2>
+        <p>SOMA complements my enterprise implementation work. The SFPUC case shows how I operate inside a large controlled environment. SOMA shows that I can independently define requirements, model the workflow, implement the logic, design the user experience, and publish software another person can actually use.</p>
+      </article>
+      <aside class="info-panel">
+        <h2>Best fit with roles such as</h2>
+        <ul>
+          <li>Business Systems Analyst</li>
+          <li>Operations Systems Analyst</li>
+          <li>Implementation Specialist</li>
+          <li>Product Operations</li>
+          <li>Technical Project Support</li>
+          <li>Workflow and Automation Specialist</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="boundary-note">
+        <h2>Current maturity and limits</h2>
+        <p>SOMA Budget Planner is a working static web application and an applied product case study, not a banking product or personalized financial-advice service. It does not connect to financial institutions, move money, synchronize across devices, authenticate users, or store data on a server. A companion spreadsheet and optional synchronization are potential future extensions after the core interaction model is validated.</p>
+      </div>
+      <div class="actions">
+        <a class="button button-primary" href="https://motyaali.github.io/SOMA_Budget_Tool/" target="_blank" rel="noopener">Try SOMA Budget Planner</a>
+        <a class="button button-secondary" href="https://github.com/motyaali/SOMA_Budget_Tool" target="_blank" rel="noopener">View source on GitHub</a>
+        <a class="button button-secondary" href="../work.html">← Back to Work</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <div>© <span id="year"></span> Motya “Ali” Ali.</div>
+    <div><a href="../evidence-standard.html">Evidence, privacy, and maturity standard</a></div>
+  </div>
+</footer>
+<script src="../assets/site.js"></script>
+<script src="../assets/related-evidence.js"></script>
+</body>
+</html>
