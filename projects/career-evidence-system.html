@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Career Evidence System case study: a governed source-of-truth workflow connecting verified achievements, evidence, skills, job requirements, and editable career materials.">
+  <meta name="theme-color" content="#17324d">
+  <link rel="canonical" href="https://www.motyaali.com/projects/career-evidence-system.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Career Evidence System | Motya Ali">
+  <meta property="og:description" content="A working information system for turning verified career evidence into role-specific resumes, portfolio stories, and interview material without inventing claims.">
+  <meta property="og:url" content="https://www.motyaali.com/projects/career-evidence-system.html">
+  <meta property="og:image" content="https://www.motyaali.com/assets/social/motya-ali-portfolio-linkedin.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <title>Career Evidence System | Motya Ali</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+  <link rel="stylesheet" href="../assets/evidence-upgrade.css">
+  <link rel="stylesheet" href="../assets/proof.css">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header"><div class="header-inner"><a class="brand" href="../index.html" aria-label="Motya Ali home">MOTYA ALI</a><button class="menu-button" type="button" aria-expanded="false" aria-controls="site-nav">Menu</button><nav class="site-nav" id="site-nav" aria-label="Primary navigation"><a href="../work.html" aria-current="page">Work</a><a href="../resume.html">Résumé</a><a href="../about.html">About</a><a href="../services.html">Services</a><a href="../contact.html">Contact</a></nav></div></header>
+
+<main id="main">
+  <section class="project-detail-hero">
+    <div class="container">
+      <span class="badge">Operational Information System</span>
+      <h1>Career Evidence System</h1>
+      <p>A governed source-of-truth workflow that connects verified achievements, supporting evidence, skills, job requirements, and editable career materials so each application can be tailored without rebuilding the facts from memory.</p>
+      <div class="actions"><a class="button button-primary" href="#workflow">See the workflow</a><a class="button button-secondary" href="#walkthrough">Inspect a synthetic walkthrough</a></div>
+    </div>
+  </section>
+
+  <section class="section section-alt" aria-labelledby="summary-heading">
+    <div class="container">
+      <h2 id="summary-heading">What this system demonstrates</h2>
+      <div class="proof-summary case-summary">
+        <article><span>Governed evidence</span><p>Claims are separated from source evidence, confidence, role relevance, and public-share readiness instead of being copied between disconnected resume files.</p></article>
+        <article><span>Requirements translation</span><p>A job description becomes a structured evidence-selection problem: identify the lane, match requirements to defensible proof, then build the output around the strongest supported evidence.</p></article>
+        <article><span>Human review</span><p>The system produces editable drafts and review guidance. It does not enforce approval, auto-submit applications, or treat keyword matching as proof of qualification.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="problem-heading">
+    <div class="container two-column">
+      <article class="prose">
+        <p class="eyebrow">The operating problem</p>
+        <h2 id="problem-heading">A career history becomes unreliable when every resume becomes its own database.</h2>
+        <p>Years of roles, metrics, projects, systems, training, and work samples can scatter across dozens of resumes and folders. That creates three risks: strong evidence becomes hard to find, inconsistent versions of the same claim survive, and tailoring a new application becomes a manual search-and-rewrite exercise.</p>
+        <p>I designed the Career Evidence System around a different rule: maintain one controlled evidence layer, then generate many role-specific outputs from it.</p>
+      </article>
+      <aside class="info-panel">
+        <h2>Design requirements</h2>
+        <ul>
+          <li>Keep factual career claims separate from presentation copy</li>
+          <li>Connect every reusable claim to evidence or a confidence status</li>
+          <li>Tag achievements by career lane and skill</li>
+          <li>Distinguish safe, contextual, and verify-before-use material</li>
+          <li>Support resume, portfolio, LinkedIn, and interview outputs</li>
+          <li>Keep final review with the human user</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section section-alt" aria-labelledby="architecture-heading">
+    <div class="container">
+      <div class="section-heading">
+        <div><p class="eyebrow">Information architecture</p><h2 id="architecture-heading">One source of truth. Multiple controlled outputs.</h2></div>
+        <p>The working system is organized as a structured spreadsheet plus an AI-assisted drafting workflow. The underlying personal records remain private.</p>
+      </div>
+      <div class="architecture-panel">
+        <div class="preview-header"><span>Career evidence architecture</span><span>Private source system · public reconstruction</span></div>
+        <div class="architecture-grid">
+          <div class="architecture-node"><strong>Achievement Bank</strong><span>Role, timeframe, claim, metric, competencies, evidence source, confidence, strength</span></div>
+          <div class="architecture-node"><strong>Evidence Library</strong><span>Work samples, documents, case studies, what each proves, and public-share readiness</span></div>
+          <div class="architecture-node"><strong>Skills Map</strong><span>Skills and ATS language connected back to actual evidence rather than free-floating keywords</span></div>
+          <div class="architecture-node core"><strong>Job Intake + Evidence Selection</strong><span>Role requirements are mapped to the strongest relevant, defensible records</span></div>
+          <div class="architecture-node core"><strong>Editable Outputs</strong><span>Resume, cover letter, LinkedIn, portfolio case, and interview material</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="workflow" aria-labelledby="workflow-heading">
+    <div class="container">
+      <div class="section-heading">
+        <div><p class="eyebrow">Operating workflow</p><h2 id="workflow-heading">Evidence first, narrative second.</h2></div>
+        <p>The process reduces the temptation to start with polished wording and search for support afterward.</p>
+      </div>
+      <div class="flow-grid">
+        <article class="flow-step"><span>01</span><h3>Intake</h3><p>Capture the target role, employer, job description, priority, and requested output.</p></article>
+        <article class="flow-step"><span>02</span><h3>Classify</h3><p>Identify the career lane and the requirements that need evidence.</p></article>
+        <article class="flow-step"><span>03</span><h3>Retrieve</h3><p>Pull relevant achievements, skills, metrics, and artifacts from the controlled source layer.</p></article>
+        <article class="flow-step"><span>04</span><h3>Screen</h3><p>Exclude weak, unverified, outdated, or context-specific claims unless they are appropriate and defensible.</p></article>
+        <article class="flow-step"><span>05</span><h3>Draft</h3><p>Generate role-specific career material from the selected evidence, not from a blank page.</p></article>
+        <article class="flow-step"><span>06</span><h3>Review</h3><p>The user checks truth, tone, and fit before the material is submitted or published.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-alt" id="walkthrough" aria-labelledby="walkthrough-heading">
+    <div class="container">
+      <div class="section-heading">
+        <div><p class="eyebrow">Synthetic walkthrough</p><h2 id="walkthrough-heading">How a requirement becomes defensible application material.</h2></div>
+        <p>This example uses fictional job text and sanitized evidence patterns. It does not expose the private career database.</p>
+      </div>
+      <div class="evidence-table-wrap">
+        <table class="evidence-table">
+          <thead><tr><th>Job requirement</th><th>Evidence query</th><th>Matched evidence pattern</th><th>Draft direction</th></tr></thead>
+          <tbody>
+            <tr><td>“Support enterprise workflow implementation”</td><td>Systems implementation + workflow + adoption</td><td>Professional system rollout, role-based workflow documentation, user enablement</td><td>Lead with implementation responsibilities and the operating problem solved</td></tr>
+            <tr><td>“Manage access and controlled information”</td><td>Permissions + governance + document control</td><td>Role-based access, metadata, versioning, controlled handoffs</td><td>Use a precise evidence-backed bullet rather than a generic “SharePoint expert” claim</td></tr>
+            <tr><td>“Translate requirements for nontechnical users”</td><td>Requirements + documentation + training</td><td>User guides, process maps, training, business-SME work</td><td>Build a short case showing requirement → artifact → adoption</td></tr>
+            <tr><td>“Experience with AI workflows preferred”</td><td>AI systems + human review + evidence control</td><td>Working demonstrations and governed workflow cases</td><td>Include only the maturity level and capabilities that the public evidence supports</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="governance-heading">
+    <div class="container two-column">
+      <article class="prose">
+        <p class="eyebrow">Governance</p>
+        <h2 id="governance-heading">The useful feature is not keyword matching. It is claim control.</h2>
+        <p>Keyword matching helps retrieve relevant material, but the system treats that as navigation rather than validation. Each reusable career statement can carry a source, confidence level, strength, role tags, skill tags, and use guidance.</p>
+        <p>That makes the system useful for more than résumé tailoring. The same controlled records can support portfolio case studies, interview stories, LinkedIn updates, and application forms while reducing factual drift between them.</p>
+      </article>
+      <aside class="info-panel">
+        <h2>Control rules</h2>
+        <ul>
+          <li>Do not invent employers, dates, titles, credentials, or metrics</li>
+          <li>Prefer verified records for standard applications</li>
+          <li>Flag stronger claims that need review before reuse</li>
+          <li>Treat AI-generated language as editable presentation, not new evidence</li>
+          <li>Keep private evidence private unless a sanitized public version is intentionally created</li>
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section section-alt" aria-labelledby="signal-heading">
+    <div class="container two-column">
+      <article class="prose">
+        <p class="eyebrow">Why it belongs in this portfolio</p>
+        <h2 id="signal-heading">It is a small information-governance problem solved as an operating system.</h2>
+        <p>The domain is career management, but the transferable work is broader: source control, taxonomy, requirements matching, evidence quality, exception handling, reusable outputs, and human review. Those are the same operating disciplines that appear in document control, implementation, knowledge systems, and governed AI workflows.</p>
+      </article>
+      <aside class="info-panel">
+        <h2>Capabilities demonstrated</h2>
+        <ul class="tag-list"><li>Information Architecture</li><li>Data Governance</li><li>Requirements Mapping</li><li>Evidence Management</li><li>Taxonomy Design</li><li>Human-in-the-Loop AI</li><li>Knowledge Management</li><li>Workflow Design</li><li>Quality Control</li><li>Career Operations</li></ul>
+      </aside>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="boundary-note">
+        <h2>Current maturity and limits</h2>
+        <p>This is an operational information system used to organize and generate career materials from structured evidence. It is not an autonomous recruiting platform, an ATS, or a guaranteed qualification detector. Matching identifies potentially relevant evidence; it does not determine whether a person is qualified. Drafts remain editable, and human review is part of the operating method rather than a technically enforced approval gate.</p>
+      </div>
+      <div class="actions"><a class="button button-secondary" href="../work.html">← Back to Work</a><a class="button button-primary" href="../contact.html?subject=Career%20Evidence%20System">Discuss the system</a></div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer"><div class="footer-inner"><div>© <span id="year"></span> Motya “Ali” Ali.</div><div><a href="../evidence-standard.html">Evidence, privacy, and maturity standard</a></div></div></footer>
+<script src="../assets/site.js"></script>
+<script src="../assets/related-evidence.js"></script>
+</body>
+</html>
