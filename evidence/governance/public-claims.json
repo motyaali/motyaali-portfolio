@@ -24,7 +24,9 @@
     "ai-workflow-enablement/discovery.html",
     "demos/document-intake.html",
     "evidence/ai-workflow-enablement/document-intake-proof.html",
-    "evidence/unseen-os/verification.html"
+    "evidence/unseen-os/verification.html",
+    "projects/soma-budget-planner.html",
+    "projects/career-evidence-system.html"
   ],
   "global_forbidden_html": [
     "helped generate $10M+ in new revenue",
@@ -176,30 +178,30 @@
       "id": "DOC-001",
       "page": "projects/documentation-workflow.html",
       "category": "professional-scope",
-      "approved_text": "5 stages",
-      "maturity": "Professional Body of Work",
-      "evidence_level": "Verified workflow structure",
-      "source_basis": "Controlled role-based workflow guide set",
+      "approved_text": "5 role guides",
+      "maturity": "Professional Enterprise Implementation",
+      "evidence_level": "Verified role-based workflow structure",
+      "source_basis": "Controlled DQR workflow and five role-specific user guides",
       "status": "approved"
     },
     {
       "id": "DOC-002",
       "page": "projects/documentation-workflow.html",
       "category": "metric",
-      "approved_text": "250+ users",
-      "maturity": "Professional Body of Work",
-      "evidence_level": "Conservative public expression of verified 268-user scope",
-      "source_basis": "Controlled career achievement bank and permissions record",
+      "approved_text": "268+ users",
+      "maturity": "Professional Enterprise Implementation",
+      "evidence_level": "Verified professional scope",
+      "source_basis": "Controlled career achievement bank, permissions records, and SFPUC source documents",
       "status": "approved"
     },
     {
       "id": "DOC-003",
       "page": "projects/documentation-workflow.html",
       "category": "privacy-boundary",
-      "approved_text": "This sanitized reconstruction shows how role guidance can connect process steps without publishing employer or client records.",
-      "maturity": "Professional Body of Work",
-      "evidence_level": "Sanitized reconstruction",
-      "source_basis": "Professional work with confidential source records withheld",
+      "approved_text": "Public visuals are sanitized reconstructions that preserve the workflow logic and implementation pattern without releasing confidential materials.",
+      "maturity": "Professional Enterprise Implementation",
+      "evidence_level": "Sanitized reconstruction boundary",
+      "source_basis": "Professional work with employer and client source records withheld",
       "status": "approved"
     },
     {
@@ -430,6 +432,66 @@
       "maturity": "Working Browser Demonstration",
       "evidence_level": "Explicit production boundary",
       "source_basis": "Document Intake public proof pack",
+      "status": "approved"
+    },
+    {
+      "id": "RET-009",
+      "page": "projects/retail-planning.html",
+      "category": "implementation-scale",
+      "approved_text": "500+ users",
+      "maturity": "Professional Body of Work",
+      "evidence_level": "Verified professional implementation scope",
+      "source_basis": "Controlled Master Achievement Bank and Gymboree Oracle Retail implementation records",
+      "status": "approved"
+    },
+    {
+      "id": "RET-010",
+      "page": "projects/retail-planning.html",
+      "category": "enablement-scale",
+      "approved_text": "800+ store managers",
+      "maturity": "Professional Body of Work",
+      "evidence_level": "Verified professional enablement scope",
+      "source_basis": "Controlled Master Achievement Bank and Gymboree omnichannel implementation records",
+      "status": "approved"
+    },
+    {
+      "id": "SOMA-001",
+      "page": "projects/soma-budget-planner.html",
+      "category": "maturity",
+      "approved_text": "Working Browser Application",
+      "maturity": "Working Browser Application",
+      "evidence_level": "Public GitHub Pages implementation and source repository",
+      "source_basis": "motyaali/SOMA_Budget_Tool public repository",
+      "status": "approved"
+    },
+    {
+      "id": "SOMA-002",
+      "page": "projects/soma-budget-planner.html",
+      "category": "boundary",
+      "approved_text": "It does not connect to financial institutions, move money, synchronize across devices, authenticate users, or store data on a server.",
+      "maturity": "Working Browser Application",
+      "evidence_level": "Implementation boundary",
+      "source_basis": "SOMA Budget Planner source code and README",
+      "status": "approved"
+    },
+    {
+      "id": "CES-001",
+      "page": "projects/career-evidence-system.html",
+      "category": "maturity",
+      "approved_text": "Operational Information System",
+      "maturity": "Operational Information System",
+      "evidence_level": "Working private source-of-truth workflow with sanitized public reconstruction",
+      "source_basis": "OFFICIAL - Motya_Ali_Career_System_Controlled_v1",
+      "status": "approved"
+    },
+    {
+      "id": "CES-002",
+      "page": "projects/career-evidence-system.html",
+      "category": "boundary",
+      "approved_text": "It is not an autonomous recruiting platform, an ATS, or a guaranteed qualification detector.",
+      "maturity": "Operational Information System",
+      "evidence_level": "Explicit public boundary",
+      "source_basis": "Career Evidence System operating rules and public case-study boundary",
       "status": "approved"
     }
   ]
