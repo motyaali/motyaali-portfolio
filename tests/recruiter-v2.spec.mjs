@@ -21,24 +21,25 @@ test('all active pages have the same usable primary navigation without JavaScrip
   for (const route of await navigationPages()) {
     await page.goto('http://127.0.0.1:8000' + route);
     const links = page.locator('#site-nav a');
-    await expect(links).toHaveText(['Work', 'Résumé', 'About', 'Services', 'Contact']);
+    await expect(links).toHaveText(['Work', 'Résumé', 'Credentials', 'About', 'Contact']);
     const destinations = await links.evaluateAll(nodes => nodes.map(node => new URL(node.href).pathname));
-    expect(destinations, route).toEqual(['/work.html', '/resume.html', '/about.html', '/services.html', '/contact.html']);
+    expect(destinations, route).toEqual(['/work.html', '/resume.html', '/credentials.html', '/about.html', '/contact.html']);
     expect(await page.locator('#site-nav [aria-current="page"]').count()).toBeLessThanOrEqual(1);
     await expect(page.locator('.brand')).toHaveAttribute('href', /index\.html$/);
   }
   await context.close();
 });
 
-test('featured covers render as labeled artifacts without JavaScript', async ({ browser }) => {
+test('featured work renders as labeled evidence without JavaScript', async ({ browser }) => {
   const context = await browser.newContext({ javaScriptEnabled: false });
   const page = await context.newPage();
   for (const [route, count] of [['/', 3], ['/work.html', 6]]) {
     await page.goto('http://127.0.0.1:8000' + route);
-    await expect(page.locator('.project-cover.artifact-cover')).toHaveCount(count);
+    await expect(page.locator('.project-card')).toHaveCount(count);
+    await expect(page.locator('.project-cover')).toHaveCount(count);
     await expect(page.locator('.artifact-caption')).toHaveCount(count);
     await expect(page.locator('.project-symbol')).toHaveCount(0);
-    await expect(page.locator('.artifact-thumb').first()).toBeVisible();
+    await expect(page.locator('.project-cover').first()).toBeVisible();
   }
   await context.close();
 });
@@ -59,14 +60,14 @@ test('hub entries reach preloaded interactive samples and return to the evidence
 });
 
 test('V2 recruiter pages fit the viewport and keep mobile navigation usable', async ({ page }, testInfo) => {
-  for (const route of ['/', '/work.html', '/ai-workflow-enablement/', '/projects/project-coordination-controls.html', '/projects/documentation-workflow.html', '/projects/retail-planning.html', '/projects/canonical-synthesis.html', '/projects/smartgrocer.html', '/evidence/ai-workflow-enablement/document-intake-proof.html', '/evidence/ai-workflow-enablement/status-reporting-proof.html', '/evidence/ai-workflow-enablement/request-triage-proof.html', '/evidence/ai-workflow-enablement/sop-knowledge-proof.html', '/evidence/ai-workflow-enablement/benchmark-methodology.html', '/evidence/documentation-workflow/role-based-workflow-guide.html', '/evidence/canonical-synthesis/evidence-pack.html', '/evidence/inventory-ledger/evidence-pack.html']) {
+  for (const route of ['/', '/work.html', '/resume.html', '/credentials.html', '/about.html', '/projects/ccsf-ai-interview-coach.html', '/methodology/automate-proposals-not-decisions.html', '/ai-workflow-enablement/', '/projects/project-coordination-controls.html', '/projects/documentation-workflow.html', '/projects/retail-planning.html', '/projects/canonical-synthesis.html', '/projects/smartgrocer.html', '/evidence/ai-workflow-enablement/document-intake-proof.html', '/evidence/ai-workflow-enablement/status-reporting-proof.html', '/evidence/ai-workflow-enablement/request-triage-proof.html', '/evidence/ai-workflow-enablement/sop-knowledge-proof.html', '/evidence/ai-workflow-enablement/benchmark-methodology.html', '/evidence/documentation-workflow/role-based-workflow-guide.html', '/evidence/canonical-synthesis/evidence-pack.html', '/evidence/inventory-ledger/evidence-pack.html']) {
     await page.goto(route);
     const sizes = await page.evaluate(() => [document.documentElement.scrollWidth, document.documentElement.clientWidth]);
     expect(sizes[0], route).toBeLessThanOrEqual(sizes[1] + 1);
     const menu = page.getByRole('button', { name: 'Menu', exact: true });
     if (await menu.isVisible()) {
       await menu.click();
-      await expect(page.locator('#site-nav a')).toHaveText(['Work', 'Résumé', 'About', 'Services', 'Contact']);
+      await expect(page.locator('#site-nav a')).toHaveText(['Work', 'Résumé', 'Credentials', 'About', 'Contact']);
       await expect(page.locator('#site-nav a').last()).toBeVisible();
       await page.keyboard.press('Escape');
       await expect(menu).toHaveAttribute('aria-expanded', 'false');

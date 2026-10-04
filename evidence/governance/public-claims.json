@@ -10,6 +10,8 @@
     "contact.html",
     "resume.html",
     "resume-print.html",
+    "credentials.html",
+    "methodology/automate-proposals-not-decisions.html",
     "projects/retail-planning.html",
     "projects/documentation-workflow.html",
     "projects/unseen-os.html",
@@ -26,7 +28,8 @@
     "evidence/ai-workflow-enablement/document-intake-proof.html",
     "evidence/unseen-os/verification.html",
     "projects/soma-budget-planner.html",
-    "projects/career-evidence-system.html"
+    "projects/career-evidence-system.html",
+    "projects/ccsf-ai-interview-coach.html"
   ],
   "global_forbidden_html": [
     "helped generate $10M+ in new revenue",
@@ -38,20 +41,20 @@
       "id": "BRAND-001",
       "page": "index.html",
       "category": "positioning",
-      "approved_text": "I turn complex work into clear systems people can run.",
+      "approved_text": "I build the structure that keeps complex work moving.",
       "maturity": "Public positioning",
       "evidence_level": "Approved public copy",
-      "source_basis": "Current canonical homepage positioning and controlled master portfolio record; recruiter-first V2 positioning in PR #15 (presentation change; no new metric or maturity claim)",
+      "source_basis": "Approved October 2026 portfolio positioning and controlled professional record",
       "status": "approved"
     },
     {
       "id": "BRAND-002",
       "page": "index.html",
       "category": "positioning",
-      "approved_text": "My work connects people, information, controls, and follow-through so teams can make decisions and keep work moving.",
+      "approved_text": "I turn fragmented information into clear workflows, usable systems, and decision-ready work.",
       "maturity": "Public positioning",
       "evidence_level": "Approved public copy",
-      "source_basis": "Current canonical homepage positioning and controlled master portfolio record; recruiter-first V2 positioning in PR #15 (presentation change; no new metric or maturity claim)",
+      "source_basis": "Approved October 2026 portfolio positioning and controlled professional record",
       "status": "approved"
     },
     {
@@ -492,6 +495,36 @@
       "maturity": "Operational Information System",
       "evidence_level": "Explicit public boundary",
       "source_basis": "Career Evidence System operating rules and public case-study boundary",
+      "status": "approved"
+    },
+    {
+      "id": "COACH-001",
+      "page": "projects/ccsf-ai-interview-coach.html",
+      "category": "maturity",
+      "approved_text": "Deployed public prototype · Active validation",
+      "maturity": "Public prototype under active validation",
+      "evidence_level": "Publicly accessible implementation",
+      "source_basis": "CCSF AI Interview Coach public deployment and controlled project record",
+      "status": "approved"
+    },
+    {
+      "id": "COACH-002",
+      "page": "projects/ccsf-ai-interview-coach.html",
+      "category": "boundary",
+      "approved_text": "It does not claim institutional adoption, measured learning outcomes, production service levels, or automated hiring authority.",
+      "maturity": "Public prototype under active validation",
+      "evidence_level": "Explicit public boundary",
+      "source_basis": "CCSF AI Interview Coach public case-study boundary",
+      "status": "approved"
+    },
+    {
+      "id": "METHOD-001",
+      "page": "methodology/automate-proposals-not-decisions.html",
+      "category": "responsible-ai-method",
+      "approved_text": "Automate proposals, not decisions.",
+      "maturity": "Documented operating method",
+      "evidence_level": "Applied across portfolio workflow demonstrations",
+      "source_basis": "Controlled responsible-AI operating principle and public demonstration architecture",
       "status": "approved"
     }
   ]

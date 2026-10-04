@@ -10,8 +10,8 @@
     :root { font-family: Arial, Helvetica, sans-serif; color: #111; background: #f2f4f5; }
     * { box-sizing: border-box; }
     body { margin: 0; }
-    .toolbar { position: sticky; top: 0; z-index: 2; display: flex; justify-content: center; gap: .75rem; padding: .8rem; background: #17324d; }
-    .toolbar button, .toolbar a { border: 1px solid #fff; border-radius: .4rem; padding: .65rem .9rem; background: #fff; color: #17324d; text-decoration: none; font: inherit; font-weight: 700; cursor: pointer; }
+    .toolbar { display: none; }
+    .toolbar button, .toolbar a { border: 1px solid #fff; border-radius: 0; padding: .65rem .9rem; background: #fff; color: #242321; text-decoration: none; font: inherit; font-weight: 700; cursor: pointer; }
     .resume { width: min(8.5in, calc(100% - 2rem)); min-height: 11in; margin: 1.5rem auto; padding: .55in .62in; background: #fff; box-shadow: 0 10px 35px rgba(0,0,0,.12); font-size: 10.3pt; line-height: 1.28; }
     h1 { margin: 0; text-align: center; font-size: 24pt; letter-spacing: .03em; }
     .contact, .headline { text-align: center; }
@@ -25,6 +25,9 @@
     .skills li { margin-bottom: .12rem; }
     .role { break-inside: avoid; }
     .project-list strong { display: inline; }
+    @media screen {
+      .toolbar { position: sticky; top: 0; z-index: 2; display: flex; justify-content: center; gap: .75rem; padding: .8rem; background: #242321; }
+    }
     @media print {
       @page { size: Letter; margin: .45in .55in; }
       :root { background: #fff; }
@@ -44,10 +47,10 @@
   <main class="resume">
     <h1>MOTYA ALI</h1>
     <p class="contact">San Francisco, CA | (415) 295-2945 | <a href="mailto:motyaali@pm.me">motyaali@pm.me</a> | <a href="https://www.linkedin.com/in/motyaali/">linkedin.com/in/motyaali</a></p>
-    <p class="headline">OPERATIONS & BUSINESS SYSTEMS | INVENTORY PLANNING | FORECASTING | PROCESS IMPROVEMENT</p>
+    <p class="headline">OPERATIONS &amp; BUSINESS SYSTEMS | PLANNING | IMPLEMENTATION | APPLIED AI</p>
 
     <h2>PROFESSIONAL SUMMARY</h2>
-    <p>Operations, inventory planning, and business systems professional with 15+ years of experience forecasting demand, optimizing inventory flow, translating complex data into scalable operating processes, and supporting implementation across retail, eCommerce, distribution, project administration, and cross-functional environments. Combines inventory discipline, systems adoption, documentation, process improvement, and human-centered AI workflow design.</p>
+    <p>Operations and business systems professional with 15+ years of experience translating complex data, requirements, and workflows into organized execution across retail planning, project administration, documentation, systems implementation, and applied AI.</p>
 
     <h2>SELECTED VALUE</h2>
     <ul>
@@ -78,7 +81,14 @@
 
     <h2>PROFESSIONAL EXPERIENCE</h2>
     <section class="role">
-      <h3>Project Administrator | Chaves & Associates, SFPUC Water Capital Program | San Francisco, CA | 2025 - Present</h3>
+      <h3>Computer Science Office Aide | City College of San Francisco | San Francisco, CA | 2026 - Present</h3>
+      <ul>
+        <li>Support department operations, student-facing communications, and coordination for Information Technology and Computer Science activities.</li>
+        <li>Developed the CCSF AI Interview Coach with the department's Employment and Training Specialist to support contextual interview practice.</li>
+      </ul>
+    </section>
+    <section class="role">
+      <h3>Project Administrator | Chaves &amp; Associates, SFPUC Water Capital Program | San Francisco, CA | 2025 - 2026</h3>
       <ul>
         <li>Support SharePoint migration, document control, permissions, metadata, and workflow documentation for a multidisciplinary public-infrastructure program.</li>
         <li>Translate operational requirements into user guides, process maps, training materials, and decision-ready status updates.</li>
@@ -128,9 +138,10 @@
 
     <h2>SELECTED SYSTEMS PROJECTS</h2>
     <ul class="project-list">
-      <li><strong>AI Workflow Enablement:</strong> Built a governed public MVP for converting meeting material into human-reviewed decisions, actions, owners, dates, risks, questions, and exportable evidence.</li>
+      <li><strong>CCSF AI Interview Coach:</strong> Developed a deployed public prototype using résumé and job-description context for conversational voice interview practice and grounded feedback.</li>
+      <li><strong>AI Workflow Enablement:</strong> Built five working demonstrations for meeting intelligence, document intake, status reporting, request triage, and governed knowledge assistance.</li>
       <li><strong>Inventory Truth Ledger:</strong> Designed an ERP/WMS/TMS reconciliation architecture that normalizes PO, ASN, receipt, QC, RTV, and milestone signals into auditable states and exception queues.</li>
-      <li><strong>SmartGrocer:</strong> Developed a mobile-first grocery-planning demo with purchase history, replenishment forecasting, mock retailer comparisons, and optimized shopping lists.</li>
+      <li><strong>SmartGrocer:</strong> Developed an authenticated full-stack prototype with household data isolation, purchase records, replenishment forecasts, review controls, and automated tests.</li>
       <li><strong>AliOS / Unseen Lifeline:</strong> Designed structured protocols separating source evidence, reasoning, human review, execution, and continuity for high-stakes administrative workflows.</li>
     </ul>
 
@@ -138,7 +149,9 @@
     <ul>
       <li>AS Degree in Computer Science, in progress | City College of San Francisco | Expected 2027</li>
       <li>Certificate of Achievement, Construction Administration | City College of San Francisco | 2025</li>
-      <li>IBM SkillsBuild: Leading the Future of AI | 2026</li>
+      <li>Responsible AI Foundations Professional Certificate | All Tech Is Human | 2026</li>
+      <li>Selected IBM SkillsBuild credentials: Make Agentic AI Work for You; Team Essentials for Designing AI Solutions; Enterprise Design Thinking Practitioner</li>
+      <li>Google AI Essentials | Google</li>
     </ul>
   </main>
 </body>
