@@ -41,20 +41,20 @@ test('homepage presents one identity through three capability pillars and separa
     'Implement usable systems',
     'Improve operational decisions'
   ]);
-  await expect(page.getByRole('link', { name: 'View AI Implementation Evidence' })).toHaveAttribute('href', 'roles/human-centered-ai.html');
+  await expect(page.getByRole('link', { name: 'Inspect the AI Case' })).toHaveAttribute('href', 'projects/ai-workflow-enablement.html');
 });
 
 test('homepage keeps the first decision focused on work and resume', async ({ page }) => {
   await page.goto('/');
   const hero = page.locator('.hero-recruiter');
-  await expect(hero.getByRole('heading', { level: 1 })).toHaveText('I turn complex work into clear systems people can run.');
-  await expect(hero.getByRole('link', { name: 'View Selected Work' })).toHaveAttribute('href', 'work.html');
-  await expect(hero.getByRole('link', { name: 'Download Résumé PDF' })).toHaveAttribute('href', 'assets/Motya-Ali-Resume.pdf');
-  await expect(page.locator('#flagship-heading')).toHaveText('Three places to start.');
+  await expect(hero.getByRole('heading', { level: 1 })).toHaveText('I build the structure that keeps complex work moving.');
+  await expect(hero.getByRole('link', { name: 'Inspect Selected Work' })).toHaveAttribute('href', 'work.html');
+  await expect(hero.getByRole('link', { name: 'Read the Résumé' })).toHaveAttribute('href', 'resume.html');
+  await expect(page.locator('#flagship-heading')).toHaveText('Professional scale. Working systems. Clear boundaries.');
   await expect(page.locator('[aria-labelledby="flagship-heading"] .project-card h3')).toHaveText([
     'Enterprise SharePoint & Workflow Implementation',
-    'Retail Planning & Analytics at Scale',
-    'AI Workflow Enablement'
+    'CCSF AI Interview Coach',
+    'Retail Planning & Analytics at Scale'
   ]);
 });
 
@@ -73,9 +73,9 @@ test('resume provides a direct PDF download', async ({ page }) => {
 test('Work page is curated to six featured projects with secondary systems links', async ({ page }) => {
   await page.goto('/work.html');
   await expect(page.locator('#featured-work .project-card')).toHaveCount(6);
-  await expect(page.locator('.compact-link-list a')).toHaveCount(5);
+  await expect(page.locator('.compact-link-list a')).toHaveCount(7);
   await expect(page.locator('#featured-work')).toContainText('Enterprise SharePoint & Workflow Implementation');
-  await expect(page.locator('#featured-work')).toContainText('SOMA Budget Planner');
+  await expect(page.locator('#featured-work')).toContainText('CCSF AI Interview Coach');
   await expect(page.locator('#featured-work')).toContainText('AI Workflow Enablement');
   await expect(page.locator('.compact-link-list')).toContainText('Canonical Source Synthesis');
   await expect(page.locator('.compact-link-list')).toContainText('Career Evidence System');
