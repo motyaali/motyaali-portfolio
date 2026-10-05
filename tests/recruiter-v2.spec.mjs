@@ -72,6 +72,6 @@ test('V2 recruiter pages fit the viewport and keep mobile navigation usable', as
       await page.keyboard.press('Escape');
       await expect(menu).toHaveAttribute('aria-expanded', 'false');
     }
-    if (['/', '/work.html', '/ai-workflow-enablement/'].includes(route)) await testInfo.attach(route === '/' ? 'home' : route.replaceAll('/', '_'), { body: await page.screenshot({ fullPage: true }), contentType: 'image/png' });
+    if (['/', '/work.html', '/ai-workflow-enablement/'].includes(route)) await testInfo.attach(route === '/' ? 'home' : route.replaceAll('/', '_'), { body: await page.screenshot({ fullPage: true, type: 'jpeg', quality: 75 }), contentType: 'image/jpeg' });
   }
 });

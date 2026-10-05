@@ -1,0 +1,114 @@
+/* Shared presentation for portfolio pages, evidence records, and demos. */
+:root {
+  --paper: #f8f5ee;
+  --surface: #eeeadf;
+  --ink: #242321;
+  --muted: #625f57;
+  --line: #c9c3b7;
+  --accent: #a43f2c;
+  --navy: var(--ink);
+  --navy-2: var(--ink);
+  --teal: var(--accent);
+}
+body { background: var(--paper); color: var(--ink); }
+main h1 { font-size: clamp(2.1rem, 4.5vw, 3.4rem); line-height: 1.08; letter-spacing: -.025em; }
+main h2 { font-size: clamp(1.65rem, 3vw, 2.5rem); line-height: 1.15; }
+main h3 { line-height: 1.25; }
+.section { padding: clamp(2.75rem, 5vw, 4.5rem) 0; }
+.hero-inner { padding-top: 4rem; padding-bottom: 3.5rem; }
+.hero-copy h1 { max-width: 18ch; }
+.hero-copy > p { max-width: 62ch; font-size: 1.03rem; }
+.hero-copy .eyebrow { font-size: .72rem; color: var(--accent); }
+.hero-copy .identity-note { margin: .6rem 0 1.3rem; font-size: .88rem; color: var(--muted); }
+.hero-copy .availability-note { font-size: .87rem; }
+.page-hero, .project-detail-hero, .artifact-page-hero, .verification-hero {
+  background: var(--paper);
+  color: var(--ink);
+  border-bottom: 1px solid var(--line);
+}
+.page-hero::before, .project-detail-hero::before { display: none; }
+.artifact-page-hero, .verification-hero { padding: 3.5rem 0; }
+.page-hero .container, .project-detail-hero .container { padding-top: 3.5rem; padding-bottom: 3rem; }
+.artifact-page-hero h1, .verification-hero h1 { color: var(--ink); font-size: clamp(2.1rem, 4.5vw, 3.4rem); }
+.artifact-page-hero p, .verification-hero p { color: var(--muted); }
+.artifact-page-hero .eyebrow, .verification-hero .eyebrow { color: var(--accent) !important; }
+.artifact-meta > div { background: var(--surface); border: 1px solid var(--line); border-radius: 0; }
+.artifact-meta strong, .artifact-meta span { color: var(--ink); }
+.section-heading h2, .editorial-callout h2 { font-size: clamp(1.65rem, 3vw, 2.5rem); }
+.section-heading { gap: clamp(1.5rem, 4vw, 4rem); }
+.project-grid > .project-card:first-child .project-cover { min-height: 280px; }
+.project-cover { min-height: 220px; }
+.file-cover strong { font-size: clamp(1.65rem, 3vw, 2.7rem); line-height: 1.08; }
+.project-card h3 { font-size: clamp(1.4rem, 2vw, 1.85rem); }
+.project-body { padding: 1.25rem 1.5rem; }
+.project-body > p { max-width: 65ch; }
+.case-grid, .artifact-grid, .evidence-pack-grid, .check-grid, .issue-grid { gap: 1rem; }
+.case-card, .artifact-card, .proof-card, .evidence-pack-card, .verification-card,
+.check-item, .issue-card, .boundary-box, .benchmark-note, .boundary-note,
+.detail-aside .info-panel, .related-evidence-card, .demo-notice, .browser-frame,
+.method-table-wrap, .architecture-panel, .architecture-node, .overview-card {
+  border-radius: 0;
+  box-shadow: none;
+}
+.case-card, .artifact-card, .proof-card, .evidence-pack-card, .verification-card,
+.check-item, .issue-card, .related-evidence-card, .overview-card {
+  background: var(--paper);
+  border: 1px solid var(--line);
+}
+.case-card h3, .artifact-card h3, .proof-card h3, .evidence-pack-card h3 { color: var(--ink); }
+.case-card p, .artifact-card p, .proof-card p { color: var(--muted); }
+.proof-summary { background: transparent; border: 0; border-radius: 0; box-shadow: none; }
+.proof-summary article { background: transparent; padding: 1rem; border: 0; border-top: 2px solid var(--ink); }
+.proof-summary span { color: var(--accent); }
+.proof-summary strong { color: var(--ink); font-size: 1.25rem; }
+.case-summary p { font-size: .95rem; }
+.case-summary article { border-top: 1px solid var(--line); }
+.boundary-note, .boundary-box, .benchmark-note {
+  padding: 1rem 1.25rem;
+  background: var(--surface);
+  border: 0;
+  border-left: 2px solid var(--accent);
+  color: var(--muted);
+}
+.boundary-note h2, .boundary-box h2 { font-size: 1.2rem; }
+.boundary-note p, .boundary-box p, .benchmark-note { font-size: .9rem; }
+.architecture-node.core { background: var(--surface); color: var(--ink); border-color: var(--accent); }
+.architecture-node.core strong, .architecture-node.core span { color: var(--ink); }
+.browser-toolbar, .preview-header { background: var(--surface); color: var(--ink); border-bottom: 1px solid var(--line); }
+.preview-sidebar { background: var(--ink); }
+.preview-sidebar .active { background: #49443b; }
+.preview-main { background: var(--paper); }
+.preview-row { border-radius: 0; }
+.role-hero, .role-metric-strip { background: var(--paper); color: var(--ink); }
+.role-metrics strong, .role-metrics span { color: var(--ink); }
+.role-metric-strip { border-bottom: 1px solid var(--line); }
+.related-evidence-heading, .related-evidence-card h3 { color: var(--ink); }
+.contact-card { border-radius: 0; background: transparent; }
+.contact-card h2 { font-size: 1.65rem; }
+.service-summary-link { display: block; margin-top: 1.5rem; font-size: .9rem; }
+.compact-link-list a { min-width: 0; }
+.compact-link-list strong { display: block; line-height: 1.25; }
+.compact-link-list span { display: block; font-size: .9rem; line-height: 1.5; }
+.project-status { max-width: 80ch; margin-top: 2rem; }
+.project-status h2 { font-size: 1.2rem; }
+.site-footer a { font-size: .8rem; }
+.brand::after { content: 'BUSINESS SYSTEMS / APPLIED AI'; }
+@media (max-width: 980px) {
+  .proof-summary { grid-template-columns: repeat(2, minmax(0,1fr)); }
+  .compact-link-list { grid-template-columns: repeat(2, minmax(0,1fr)); }
+}
+@media (max-width: 720px) {
+  .hero-inner { padding-top: 2.5rem; padding-bottom: 2.5rem; }
+  .hero-copy h1, .page-hero h1, .project-detail-hero h1,
+  .artifact-page-hero h1, .verification-hero h1 { font-size: clamp(2rem, 8vw, 2.7rem); }
+  .hero-copy h1 { max-width: none; }
+  .section-heading h2, .editorial-callout h2 { font-size: 1.9rem; }
+  .page-hero .container, .project-detail-hero .container { padding-top: 2.5rem; padding-bottom: 2rem; }
+  .artifact-page-hero, .verification-hero { padding: 2.5rem 0; }
+  .proof-summary, .compact-link-list { grid-template-columns: minmax(0,1fr); }
+  .architecture-grid { grid-template-columns: minmax(0,1fr); }
+  .project-grid > .project-card:first-child .project-cover { min-height: 220px; }
+  .case-card, .artifact-card { min-width: 0; }
+  .project-body { padding: 1.25rem; }
+  .brand::after { display: none; }
+}

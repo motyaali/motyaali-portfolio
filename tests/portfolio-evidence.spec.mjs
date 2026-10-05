@@ -41,7 +41,7 @@ test('homepage presents one identity through three capability pillars and separa
     'Implement usable systems',
     'Improve operational decisions'
   ]);
-  await expect(page.getByRole('link', { name: 'Inspect the AI Case' })).toHaveAttribute('href', 'projects/ai-workflow-enablement.html');
+  await expect(page.getByRole('link', { name: 'Explore SmartGrocer’s implementation →' })).toHaveAttribute('href', 'projects/smartgrocer.html');
 });
 
 test('homepage keeps the first decision focused on work and resume', async ({ page }) => {

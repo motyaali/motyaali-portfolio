@@ -68,6 +68,15 @@ jobs:
           if-no-files-found: ignore
           retention-days: 14
 
+      - name: Upload portfolio review captures
+        if: ${{ !cancelled() && steps.browser_validation.outcome != 'skipped' }}
+        uses: actions/upload-artifact@v5
+        with:
+          name: portfolio-review
+          path: review-captures/
+          if-no-files-found: ignore
+          retention-days: 14
+
       - name: Publish validation commit statuses
         if: always() && github.event_name == 'push'
         uses: actions/github-script@v7

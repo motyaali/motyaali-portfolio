@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="../assets/styles.css">
   <link rel="stylesheet" href="../assets/proof.css">
   <link rel="stylesheet" href="../assets/evidence-upgrade.css">
+  <link rel="stylesheet" href="../assets/editorial.css">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -44,7 +45,7 @@
       </div>
     </div>
   </section>
-<section class="section section-alt" aria-labelledby="case-summary-heading"><div class="container"><h2 id="case-summary-heading">The work at a glance</h2><div class="proof-summary case-summary"><article><span>My contribution</span><p>I built an authenticated replenishment prototype with explainable forecasts and user review controls.</p></article><article><span>Start with the evidence</span><p>Inspect the representative interface and implementation evidence below; this public case needs no login.</p></article><article><span>Evidence boundary</span><p>The application is a private-pilot foundation, not a public production service. The interface preview uses synthetic data.</p></article></div></div></section>
+<section class="section section-alt" aria-labelledby="case-summary-heading"><div class="container"><h2 id="case-summary-heading">Contribution and result</h2><div class="proof-summary case-summary"><article><span>My contribution</span><p>I built an authenticated replenishment prototype with explainable forecasts and user review controls.</p></article><article><span>Selected artifact</span><p>Inspect the representative interface and implementation evidence below; this public case needs no login.</p></article><article><span>Public example</span><p>Authenticated prototype with automated checks for membership, data isolation, and replenishment behavior.</p></article></div></div></section>
 
   <section class="section section-alt" aria-labelledby="summary-heading">
     <div class="container">
@@ -93,7 +94,7 @@
     <div class="container">
       <div class="section-heading">
         <div><p class="eyebrow">Product flow</p><h2 id="flow-heading">A transparent forecasting baseline with human control.</h2></div>
-        <p>The forecasting method is intentionally inspectable. It is a statistical baseline, not an unsupported machine-learning claim.</p>
+        <p>Forecasts use observed purchase intervals and variation. Each recommendation shows the observations and confidence behind it.</p>
       </div>
       <div class="flow-grid">
         <article class="flow-step"><span>01</span><h3>Record</h3><p>Capture a manual purchase or parse structured receipt text.</p></article>
@@ -170,8 +171,8 @@
     </div>
     <div class="container">
       <div class="boundary-note">
-        <h2>Current maturity and limits</h2>
-        <p>The authenticated boundary supports a small private engineering pilot, not a public production launch. Image and PDF OCR, live retailer pricing, payments, push notifications, shared-household invitations, verified email, password recovery, account export and deletion, production monitoring, rate limiting, secret-rotation procedures, and independent security review remain future work. SmartGrocer does not place orders, and stored price comparisons are not verified realized savings.</p>
+        <h2>Project status</h2>
+        <p>The authenticated boundary supports a small private engineering pilot, not a public production launch. Automated checks cover frontend, backend, authentication, and household isolation. The interface preview uses synthetic data; production operations and live retailer integrations are outside the pilot scope.</p>
       </div>
       <div class="actions"><a class="button button-secondary" href="../work.html">← Back to Work</a><a class="button button-primary" href="../contact.html?subject=SmartGrocer%20Case%20Study">Discuss the implementation</a></div>
     </div>
@@ -179,8 +180,8 @@
 </main>
 <footer class="site-footer">
   <div class="footer-inner">
-    <div>© <span id="year"></span> Motya “Ali” Ali.</div>
-    <div><a href="../evidence-standard.html">Evidence, privacy, and maturity standard</a></div>
+    <div>© <span id="year"></span> Motya Ali.</div>
+    <div><a href="../evidence-standard.html">Project status &amp; privacy</a></div>
   </div>
 </footer>
 <script src="../assets/site.js"></script>

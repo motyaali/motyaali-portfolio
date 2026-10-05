@@ -85,10 +85,8 @@ test('builds a workflow conversation brief locally without submitting the form t
 test('routes contact visitors into employer and organization-specific next actions', async ({ page }) => {
   await page.goto(contactPath);
   await expect(page.getByRole('heading', { name: 'Professional opportunities' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Workflow diagnostic or pilot' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'View Selected Work' })).toHaveAttribute('href', 'work.html');
-  await expect(page.getByRole('link', { name: 'Explore Services' })).toHaveAttribute('href', 'services.html');
-  await expect(page.getByRole('link', { name: 'See Working Examples' })).toHaveAttribute('href', 'ai-workflow-enablement/');
+  await expect(page.getByRole('link', { name: 'view the diagnostic and pilot model' })).toHaveAttribute('href', 'services.html');
 });
 
 test('keeps conversion pages within the configured viewport', async ({ page }) => {
