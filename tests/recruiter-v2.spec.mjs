@@ -30,14 +30,15 @@ test('all active pages have the same usable primary navigation without JavaScrip
   await context.close();
 });
 
-test('featured work renders as labeled evidence without JavaScript', async ({ browser }) => {
+test('featured work renders as clearly named projects without JavaScript', async ({ browser }) => {
   const context = await browser.newContext({ javaScriptEnabled: false });
   const page = await context.newPage();
   for (const [route, count] of [['/', 3], ['/work.html', 6]]) {
     await page.goto('http://127.0.0.1:8000' + route);
     await expect(page.locator('.project-card')).toHaveCount(count);
     await expect(page.locator('.project-cover')).toHaveCount(count);
-    await expect(page.locator('.artifact-caption')).toHaveCount(count);
+    await expect(page.locator('.artifact-caption')).toHaveCount(0);
+    await expect(page.locator('.project-card h3')).toHaveCount(count);
     await expect(page.locator('.project-symbol')).toHaveCount(0);
     await expect(page.locator('.project-cover').first()).toBeVisible();
   }

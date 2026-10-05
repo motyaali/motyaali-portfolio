@@ -20,13 +20,12 @@ test('editorial pages remain readable and provide desktop and mobile review capt
   await mkdir(folder, { recursive: true });
   const errors = [];
   page.on('pageerror', error => errors.push(error.message));
-  const fullPages = new Set(['/index.html', '/work.html', '/resume.html', '/credentials.html', '/about.html', '/contact.html', '/projects/documentation-workflow.html', '/projects/retail-planning.html', '/projects/ccsf-ai-interview-coach.html', '/projects/smartgrocer.html', '/projects/project-coordination-controls.html', '/projects/ai-workflow-enablement.html']);
   for (const route of await activePages()) {
     await page.goto(route);
     await expect(page.locator('main')).toBeVisible();
     const size = await page.evaluate(() => [document.documentElement.scrollWidth, document.documentElement.clientWidth]);
     expect(size[0], route).toBeLessThanOrEqual(size[1] + 1);
-    const contrasts = await page.locator('.metric-card strong, .metric-card span, .proof-button-secondary').evaluateAll(nodes => {
+    const contrasts = await page.locator('.metric-card strong, .metric-card span, .impact-item strong, .impact-item span, .proof-button-secondary').evaluateAll(nodes => {
       const rgb = value => value.match(/[\d.]+/g).map(Number);
       const luminance = color => rgb(color).slice(0, 3).map(value => {
         const channel = value / 255;
@@ -45,7 +44,9 @@ test('editorial pages remain readable and provide desktop and mobile review capt
     if (await hero.count()) {
       expect(await hero.evaluate(node => getComputedStyle(node).backgroundImage), route).toBe('none');
     }
-    await page.screenshot({ path: path.join(folder, route.slice(1).replaceAll('/', '_') + '.jpg'), fullPage: fullPages.has(route), scale: 'css', type: 'jpeg', quality: 75 });
+    await expect(page.locator('body')).not.toContainText('The career evolution is deliberate.');
+    await expect(page.locator('body')).not.toContainText('Computer Science Office Aide');
+    await page.screenshot({ path: path.join(folder, route.slice(1).replaceAll('/', '_') + '.jpg'), fullPage: true, scale: 'css', type: 'jpeg', quality: 75 });
   }
   await page.goto('/work.html');
   const cards = page.locator('#featured-work .project-card h3');
@@ -56,10 +57,26 @@ test('editorial pages remain readable and provide desktop and mobile review capt
   for (const link of await supporting.locator('a').all()) {
     const boxes = await link.evaluate(node => {
       const title = node.querySelector('strong').getBoundingClientRect();
-      const description = node.querySelector('span').getBoundingClientRect();
+      const description = node.querySelector('.system-description').getBoundingClientRect();
       return { titleBottom: title.bottom, descriptionTop: description.top };
     });
     expect(boxes.descriptionTop).toBeGreaterThanOrEqual(boxes.titleBottom);
+  }
+  await page.goto('/resume.html');
+  await expect(page.locator('.role-title').first()).toHaveText('Computer Science Dept Aid');
+  for (const route of ['/index.html', '/work.html']) {
+    await page.goto(route);
+    const cards = page.locator('.project-card');
+    for (const card of await cards.all()) await expect(card).not.toContainText(/Sanitized|Synthetic public proof/);
+    if (testInfo.project.name === 'desktop-chromium') {
+      const covers = await cards.locator('.project-cover').evaluateAll(nodes => nodes.slice(1, 3).map(node => {
+        const box = node.getBoundingClientRect(); return { top: box.top, height: box.height };
+      }));
+      expect(Math.abs(covers[0].top - covers[1].top), route).toBeLessThanOrEqual(1);
+      expect(Math.abs(covers[0].height - covers[1].height), route).toBeLessThanOrEqual(1);
+      const titles = await cards.locator('h3').evaluateAll(nodes => nodes.slice(1, 3).map(node => node.getBoundingClientRect().top));
+      expect(Math.abs(titles[0] - titles[1]), route).toBeLessThanOrEqual(1);
+    }
   }
   await page.goto('/');
   await expect(page.locator('main a[href="services.html"]')).toHaveCount(0);
