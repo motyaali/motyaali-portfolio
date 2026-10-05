@@ -8,7 +8,7 @@ const contactPath = '/contact.html';
 
 test('uses a recruiter-secondary service funnel with a low-friction first contact', async ({ page }) => {
   await page.goto(servicePath);
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Improve one recurring workflow without creating another system people hate.');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Practical workflow automation, from assessment to handoff.');
   await expect(page.getByRole('heading', { name: 'A small start with a complete operating model.' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Workflow Diagnostic' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Controlled Pilot' })).toBeVisible();

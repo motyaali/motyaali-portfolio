@@ -113,19 +113,13 @@ test('invoice routing control holds incomplete support before approval routing',
   await expectNoHorizontalOverflow(page);
 });
 
-test('unlisted interview walkthrough is permission-based, timed, and employer-neutral', async ({ page }) => {
+test('project walkthrough connects status, change completeness, and invoice holds', async ({ page }) => {
   await page.goto('/proof/project-coordination-controls/interview-walkthrough.html');
-
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Project Coordination Walkthrough');
-  await expect(page.getByRole('heading', { name: 'Permission request' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'The three-minute walkthrough' })).toBeVisible();
-  await expect(page.getByText('Ask permission, show three controls, stop on time.')).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Three connected control examples' })).toBeVisible();
+  await expect(page.locator('.walkthrough-steps > li')).toHaveCount(3);
+  expect(await page.locator('.walkthrough-steps a').evaluateAll(nodes => nodes.map(node => node.getAttribute('href')))).toEqual(['dashboard.html', 'change-package-control.html', 'invoice-routing-control.html']);
   await expect(page.getByText('independent case study using synthetic project data', { exact: false })).toBeVisible();
-  await expect(page.getByText('reconstructed academic case')).toHaveCount(0);
-  await expect(page.getByText('0:00 to 0:25')).toBeVisible();
-  await expect(page.getByText('2:35 to 3:00')).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Questions the walkthrough may invite' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'What not to do' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Thirty-second version' })).toBeVisible();
+  await expect(page.locator('main')).not.toContainText('interviewer');
   await expectNoHorizontalOverflow(page);
 });
