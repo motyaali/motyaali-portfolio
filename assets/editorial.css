@@ -66,9 +66,10 @@ main h3 { line-height: 1.25; }
 .before-card, .after-card, .benchmark-card, .artifact-sheet { background: var(--paper); border-color: var(--line); }
 .after-card { border-top: 2px solid var(--accent); }
 .demo-notice { background: var(--surface); color: var(--muted); border-color: var(--line); }
-.metric-card, .metric-callout .metric-card { background: var(--ink); border-color: var(--ink); }
-.metric-card strong { color: var(--paper); }
-.metric-card span { color: #d9d2c6; }
+.metric-callout { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.metric-card, .metric-callout .metric-card { padding: 1.1rem; background: var(--ink); border: 1px solid var(--ink); border-radius: 0; }
+.metric-card strong { display: block; color: var(--paper); font-size: clamp(1.4rem, 2.8vw, 1.85rem); line-height: 1.15; }
+.metric-card span { display: block; margin-top: .5rem; color: #d9d2c6; font-size: .9rem; line-height: 1.5; }
 .button-primary.proof-button { background: var(--ink); color: var(--paper); }
 .button-secondary.proof-button-secondary { border-color: var(--ink); color: var(--ink); }
 .button-secondary.proof-button-secondary:hover, .button-secondary.proof-button-secondary:focus-visible { background: var(--surface); border-color: var(--accent); }
@@ -106,6 +107,7 @@ main h3 { line-height: 1.25; }
 .contact-card h2 { font-size: 1.65rem; }
 .service-summary-link { display: block; margin-top: 1.5rem; font-size: .9rem; }
 .compact-link-list a { min-width: 0; }
+.compact-link-list a:last-child:nth-child(3n+1) { grid-column: 1 / -1; }
 .compact-link-list strong { display: block; line-height: 1.25; }
 .compact-link-list span { display: block; font-size: .9rem; line-height: 1.5; }
 .project-status { max-width: 80ch; margin-top: 2rem; }
@@ -126,6 +128,7 @@ main h3 { line-height: 1.25; }
   .page-hero .container, .project-detail-hero .container { padding-top: 2.5rem; padding-bottom: 2rem; }
   .artifact-page-hero, .verification-hero, .proof-hero { padding: 2.5rem 0; }
   .proof-summary, .compact-link-list { grid-template-columns: minmax(0,1fr); }
+  .metric-callout { grid-template-columns: minmax(0,1fr); }
   .architecture-grid { grid-template-columns: minmax(0,1fr); }
   .project-grid > .project-card:first-child .project-cover { min-height: 220px; }
   .case-card, .artifact-card { min-width: 0; }
