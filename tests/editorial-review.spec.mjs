@@ -26,11 +26,11 @@ test('editorial pages remain readable and provide desktop and mobile review capt
     await expect(page.locator('main')).toBeVisible();
     const size = await page.evaluate(() => [document.documentElement.scrollWidth, document.documentElement.clientWidth]);
     expect(size[0], route).toBeLessThanOrEqual(size[1] + 1);
-    const hero = page.locator('.hero, .page-hero, .project-detail-hero, .artifact-page-hero, .verification-hero').first();
+    const hero = page.locator('.hero, .page-hero, .project-detail-hero, .artifact-page-hero, .verification-hero, .proof-hero').first();
     if (await hero.count()) {
       expect(await hero.evaluate(node => getComputedStyle(node).backgroundImage), route).toBe('none');
     }
-    await page.screenshot({ path: path.join(folder, route.slice(1).replaceAll('/', '_') + '.jpg'), fullPage: fullPages.has(route), type: 'jpeg', quality: 75 });
+    await page.screenshot({ path: path.join(folder, route.slice(1).replaceAll('/', '_') + '.jpg'), fullPage: fullPages.has(route), scale: 'css', type: 'jpeg', quality: 75 });
   }
   await page.goto('/work.html');
   const cards = page.locator('#featured-work .project-card h3');

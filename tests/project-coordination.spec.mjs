@@ -13,7 +13,7 @@ test('case study exposes employer-neutral inspectable evidence', async ({ page }
 
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Construction Project Coordination Controls');
   await expect(page.getByText('Independent Applied Case Study | Synthetic Project Data')).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'What the evidence demonstrates' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Contribution and result' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'View the connected process' })).toHaveAttribute(
     'href',
     '../proof/project-coordination-controls/process-map.html'
