@@ -26,6 +26,21 @@ test('editorial pages remain readable and provide desktop and mobile review capt
     await expect(page.locator('main')).toBeVisible();
     const size = await page.evaluate(() => [document.documentElement.scrollWidth, document.documentElement.clientWidth]);
     expect(size[0], route).toBeLessThanOrEqual(size[1] + 1);
+    const contrasts = await page.locator('.metric-card strong, .metric-card span, .proof-button-secondary').evaluateAll(nodes => {
+      const rgb = value => value.match(/[\d.]+/g).map(Number);
+      const luminance = color => rgb(color).slice(0, 3).map(value => {
+        const channel = value / 255;
+        return channel <= .04045 ? channel / 12.92 : ((channel + .055) / 1.055) ** 2.4;
+      }).reduce((total, channel, i) => total + channel * [.2126, .7152, .0722][i], 0);
+      return nodes.filter(node => node.getClientRects().length).map(node => {
+        let parent = node;
+        while (parent.parentElement && (rgb(getComputedStyle(parent).backgroundColor)[3] ?? 1) === 0) parent = parent.parentElement;
+        const foreground = luminance(getComputedStyle(node).color);
+        const background = luminance(getComputedStyle(parent).backgroundColor);
+        return { text: node.textContent.trim(), ratio: (Math.max(foreground, background) + .05) / (Math.min(foreground, background) + .05) };
+      });
+    });
+    for (const item of contrasts) expect(item.ratio, `${route}: ${item.text}`).toBeGreaterThanOrEqual(4.5);
     const hero = page.locator('.hero, .page-hero, .project-detail-hero, .artifact-page-hero, .verification-hero, .proof-hero').first();
     if (await hero.count()) {
       expect(await hero.evaluate(node => getComputedStyle(node).backgroundImage), route).toBe('none');

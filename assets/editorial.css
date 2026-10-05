@@ -66,6 +66,14 @@ main h3 { line-height: 1.25; }
 .before-card, .after-card, .benchmark-card, .artifact-sheet { background: var(--paper); border-color: var(--line); }
 .after-card { border-top: 2px solid var(--accent); }
 .demo-notice { background: var(--surface); color: var(--muted); border-color: var(--line); }
+.metric-card, .metric-callout .metric-card { background: var(--ink); border-color: var(--ink); }
+.metric-card strong { color: var(--paper); }
+.metric-card span { color: #d9d2c6; }
+.button-primary.proof-button { background: var(--ink); color: var(--paper); }
+.button-secondary.proof-button-secondary { border-color: var(--ink); color: var(--ink); }
+.button-secondary.proof-button-secondary:hover, .button-secondary.proof-button-secondary:focus-visible { background: var(--surface); border-color: var(--accent); }
+.coordination-boundary, .artifact-callout { border-radius: 0; background: var(--surface); color: var(--muted); border-color: var(--line); }
+.readiness-bar span { background: var(--accent); }
 .proof-summary { background: transparent; border: 0; border-radius: 0; box-shadow: none; }
 .proof-summary article { background: transparent; padding: 1rem; border: 0; border-top: 2px solid var(--ink); }
 .proof-summary span { color: var(--accent); }
