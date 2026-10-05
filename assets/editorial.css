@@ -40,6 +40,7 @@ main h3 { line-height: 1.25; }
 .section-heading h2, .editorial-callout h2 { font-size: clamp(1.65rem, 3vw, 2.5rem); }
 .section-heading { gap: clamp(1.5rem, 4vw, 4rem); }
 .project-grid > .project-card:first-child .project-cover { min-height: 280px; }
+#featured-work .project-grid > .project-card:last-child { grid-column: 1 / -1; }
 .project-cover { min-height: 220px; }
 .file-cover strong { font-size: clamp(1.65rem, 3vw, 2.7rem); line-height: 1.08; }
 .project-card h3 { font-size: clamp(1.4rem, 2vw, 1.85rem); }
