@@ -104,7 +104,7 @@ test('makes the value proposition and public demonstration boundary explicit', a
   await expect(page.getByRole('heading', { name: 'Move staff from processing every document to resolving the exceptions.' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Every document receives a full manual intake sequence.' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Routine records are prepared together. Exceptions receive focused review.' })).toBeVisible();
-  await expect(page.getByText('It does not claim production model accuracy, live Microsoft 365 integration, or measured client savings.')).toBeVisible();
+  await expect(page.getByText('The demo runs locally with preconfigured results; a connected pilot would validate AI accuracy, Microsoft 365 integration, and operational outcomes.')).toBeVisible();
 });
 
 test('publishes the proof page, synthetic register, acceptance matrix, and proof manifest', async ({ page, request }) => {
@@ -112,7 +112,7 @@ test('publishes the proof page, synthetic register, acceptance matrix, and proof
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Intelligent Document Intake and Routing Proof Pack');
   await expect(page.getByText('The counts are deterministic demonstration evidence, not measured organizational savings.')).toBeVisible();
   await expect(page.locator('.evidence-table tbody tr')).toHaveCount(6);
-  await expect(page.getByRole('heading', { name: 'This is working proof of workflow logic, not a claim that the client implementation already exists.' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Tested workflow logic and a defined pilot plan.' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Run the Working Demonstration' })).toHaveAttribute('href', '../../demos/document-intake.html');
   await expect(page.getByRole('link', { name: 'Download Synthetic Record Register' })).toHaveAttribute('href', 'document-intake-synthetic-records.csv');
   await expect(page.getByRole('link', { name: 'Open Acceptance Matrix' })).toHaveAttribute('href', 'document-intake-acceptance.csv');

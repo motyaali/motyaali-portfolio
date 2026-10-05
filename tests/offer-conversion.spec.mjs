@@ -35,7 +35,7 @@ test('publishes a print-ready one-page overview with proof and non-claim boundar
   await expect(page.getByRole('heading', { level: 2, name: 'Good pilot fit' })).toBeVisible();
   await expect(page.getByRole('heading', { level: 2, name: 'What the client receives' })).toBeVisible();
   await expect(page.getByRole('heading', { level: 2, name: 'Proof you can inspect now' })).toBeVisible();
-  await expect(page.getByText('No live client-system integration, production AI accuracy, or measured client savings are claimed.')).toBeVisible();
+  await expect(page.getByText('Pilot validation will assess client-system integration, AI accuracy, and measured operational outcomes.')).toBeVisible();
   await expect(page.getByRole('button', { name: 'Print / Save as PDF' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Prepare a Process Brief' })).toHaveAttribute('href', 'discovery.html');
 });

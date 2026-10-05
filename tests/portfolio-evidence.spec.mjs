@@ -50,7 +50,7 @@ test('homepage keeps the first decision focused on work and resume', async ({ pa
   await expect(hero.getByRole('heading', { level: 1 })).toHaveText('I build the structure that keeps complex work moving.');
   await expect(hero.getByRole('link', { name: 'Inspect Selected Work' })).toHaveAttribute('href', 'work.html');
   await expect(hero.getByRole('link', { name: 'Read the Résumé' })).toHaveAttribute('href', 'resume.html');
-  await expect(page.locator('#flagship-heading')).toHaveText('Professional scale. Working systems. Clear boundaries.');
+  await expect(page.locator('#flagship-heading')).toHaveText('Professional scale. Working systems. Applied AI.');
   await expect(page.locator('[aria-labelledby="flagship-heading"] .project-card h3')).toHaveText([
     'Enterprise SharePoint & Workflow Implementation',
     'CCSF AI Interview Coach',
