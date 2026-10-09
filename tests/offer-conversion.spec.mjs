@@ -8,7 +8,7 @@ const contactPath = '/contact.html';
 
 test('uses a recruiter-secondary service funnel with a low-friction first contact', async ({ page }) => {
   await page.goto(servicePath);
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Improve one recurring workflow without creating another system people hate.');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Practical workflow automation, from assessment to handoff.');
   await expect(page.getByRole('heading', { name: 'A small start with a complete operating model.' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Workflow Diagnostic' })).toBeVisible();
   await expect(page.getByRole('heading', { name: 'Controlled Pilot' })).toBeVisible();
@@ -22,9 +22,9 @@ test('the workflow hub leads with evidence and preserves production and commerci
   await expect(page.locator('.project-detail-hero').getByRole('link', { name: 'Try Document Intake' })).toHaveAttribute('href', '../demos/document-intake.html#start-demo');
   await expect(page.locator('#workflow-demos .proof-card')).toHaveCount(5);
   await expect(page.locator('.project-detail-hero a[href*="discovery"]')).toHaveCount(0);
-  await expect(page.getByRole('heading', { name: 'Workflow design through testing and handoff.' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Requirements, interactions, tests, and guidance.' })).toBeVisible();
   await expect(page.getByText('Production AI extraction accuracy', { exact: true })).toBeVisible();
-  await expect(page.getByText('Final pricing, licensing assumptions, service terms, and recurring-support economics', { exact: true })).toBeVisible();
+  await expect(page.getByText('Final pricing, licensing assumptions, service terms, and recurring-support economics are agreed separately for any engagement.')).toBeVisible();
 });
 
 test('publishes a print-ready one-page overview with proof and non-claim boundaries', async ({ page }) => {
@@ -35,7 +35,7 @@ test('publishes a print-ready one-page overview with proof and non-claim boundar
   await expect(page.getByRole('heading', { level: 2, name: 'Good pilot fit' })).toBeVisible();
   await expect(page.getByRole('heading', { level: 2, name: 'What the client receives' })).toBeVisible();
   await expect(page.getByRole('heading', { level: 2, name: 'Proof you can inspect now' })).toBeVisible();
-  await expect(page.getByText('No live client-system integration, production AI accuracy, or measured client savings are claimed.')).toBeVisible();
+  await expect(page.getByText('Pilot validation will assess client-system integration, AI accuracy, and measured operational outcomes.')).toBeVisible();
   await expect(page.getByRole('button', { name: 'Print / Save as PDF' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'Prepare a Process Brief' })).toHaveAttribute('href', 'discovery.html');
 });
@@ -85,10 +85,8 @@ test('builds a workflow conversation brief locally without submitting the form t
 test('routes contact visitors into employer and organization-specific next actions', async ({ page }) => {
   await page.goto(contactPath);
   await expect(page.getByRole('heading', { name: 'Professional opportunities' })).toBeVisible();
-  await expect(page.getByRole('heading', { name: 'Workflow diagnostic or pilot' })).toBeVisible();
   await expect(page.getByRole('link', { name: 'View Selected Work' })).toHaveAttribute('href', 'work.html');
-  await expect(page.getByRole('link', { name: 'Explore Services' })).toHaveAttribute('href', 'services.html');
-  await expect(page.getByRole('link', { name: 'See Working Examples' })).toHaveAttribute('href', 'ai-workflow-enablement/');
+  await expect(page.getByRole('link', { name: 'view the diagnostic and pilot model' })).toHaveAttribute('href', 'services.html');
 });
 
 test('keeps conversion pages within the configured viewport', async ({ page }) => {

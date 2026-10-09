@@ -4,7 +4,7 @@ const servicePath = '/services.html';
 
 test.beforeEach(async ({ page }) => {
   await page.goto(servicePath);
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Improve one recurring workflow without creating another system people hate.');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Practical workflow automation, from assessment to handoff.');
 });
 
 test('leads with a low-friction conversation and working examples', async ({ page }) => {

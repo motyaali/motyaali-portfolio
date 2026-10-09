@@ -30,14 +30,15 @@ test('all active pages have the same usable primary navigation without JavaScrip
   await context.close();
 });
 
-test('featured work renders as labeled evidence without JavaScript', async ({ browser }) => {
+test('featured work renders as clearly named projects without JavaScript', async ({ browser }) => {
   const context = await browser.newContext({ javaScriptEnabled: false });
   const page = await context.newPage();
   for (const [route, count] of [['/', 3], ['/work.html', 6]]) {
     await page.goto('http://127.0.0.1:8000' + route);
     await expect(page.locator('.project-card')).toHaveCount(count);
     await expect(page.locator('.project-cover')).toHaveCount(count);
-    await expect(page.locator('.artifact-caption')).toHaveCount(count);
+    await expect(page.locator('.artifact-caption')).toHaveCount(0);
+    await expect(page.locator('.project-card h3')).toHaveCount(count);
     await expect(page.locator('.project-symbol')).toHaveCount(0);
     await expect(page.locator('.project-cover').first()).toBeVisible();
   }
@@ -72,6 +73,6 @@ test('V2 recruiter pages fit the viewport and keep mobile navigation usable', as
       await page.keyboard.press('Escape');
       await expect(menu).toHaveAttribute('aria-expanded', 'false');
     }
-    if (['/', '/work.html', '/ai-workflow-enablement/'].includes(route)) await testInfo.attach(route === '/' ? 'home' : route.replaceAll('/', '_'), { body: await page.screenshot({ fullPage: true }), contentType: 'image/png' });
+    if (['/', '/work.html', '/ai-workflow-enablement/'].includes(route)) await testInfo.attach(route === '/' ? 'home' : route.replaceAll('/', '_'), { body: await page.screenshot({ fullPage: true, type: 'jpeg', quality: 75 }), contentType: 'image/jpeg' });
   }
 });

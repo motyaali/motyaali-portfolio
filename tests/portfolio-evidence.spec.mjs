@@ -41,16 +41,16 @@ test('homepage presents one identity through three capability pillars and separa
     'Implement usable systems',
     'Improve operational decisions'
   ]);
-  await expect(page.getByRole('link', { name: 'Inspect the AI Case' })).toHaveAttribute('href', 'projects/ai-workflow-enablement.html');
+  await expect(page.getByRole('link', { name: 'View my experience →' })).toHaveAttribute('href', 'resume.html');
 });
 
 test('homepage keeps the first decision focused on work and resume', async ({ page }) => {
   await page.goto('/');
   const hero = page.locator('.hero-recruiter');
-  await expect(hero.getByRole('heading', { level: 1 })).toHaveText('I build the structure that keeps complex work moving.');
+  await expect(hero.getByRole('heading', { level: 1 })).toHaveText('Business systems implementation. Practical AI applications.');
   await expect(hero.getByRole('link', { name: 'Inspect Selected Work' })).toHaveAttribute('href', 'work.html');
   await expect(hero.getByRole('link', { name: 'Read the Résumé' })).toHaveAttribute('href', 'resume.html');
-  await expect(page.locator('#flagship-heading')).toHaveText('Professional scale. Working systems. Clear boundaries.');
+  await expect(page.locator('#flagship-heading')).toHaveText('Enterprise implementation, planning, and applied AI.');
   await expect(page.locator('[aria-labelledby="flagship-heading"] .project-card h3')).toHaveText([
     'Enterprise SharePoint & Workflow Implementation',
     'CCSF AI Interview Coach',
