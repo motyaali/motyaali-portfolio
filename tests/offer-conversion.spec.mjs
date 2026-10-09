@@ -22,7 +22,7 @@ test('the workflow hub leads with evidence and preserves production and commerci
   await expect(page.locator('.project-detail-hero').getByRole('link', { name: 'Try Document Intake' })).toHaveAttribute('href', '../demos/document-intake.html#start-demo');
   await expect(page.locator('#workflow-demos .proof-card')).toHaveCount(5);
   await expect(page.locator('.project-detail-hero a[href*="discovery"]')).toHaveCount(0);
-  await expect(page.getByRole('heading', { name: 'Workflow design through testing and handoff.' })).toBeVisible();
+  await expect(page.getByRole('heading', { name: 'Requirements, interactions, tests, and guidance.' })).toBeVisible();
   await expect(page.getByText('Production AI extraction accuracy', { exact: true })).toBeVisible();
   await expect(page.getByText('Final pricing, licensing assumptions, service terms, and recurring-support economics are agreed separately for any engagement.')).toBeVisible();
 });
