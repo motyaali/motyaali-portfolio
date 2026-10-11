@@ -11,7 +11,7 @@ test('Services exposes direct working-demo and proof-pack actions for the comple
   for (const item of cases) {
     const card = page.locator('.service-example-grid article').filter({ has: page.locator(`a[href="${item.demo}"]`) });
     await expect(card.getByRole('link', { name: 'Run the demo' })).toHaveAttribute('href', item.demo);
-    await expect(card.getByRole('link', { name: 'Inspect the proof pack' })).toHaveAttribute('href', item.proof);
+    await expect(card.getByRole('link', { name: 'View the proof pack' })).toHaveAttribute('href', item.proof);
     await card.getByRole('link', { name: 'Run the demo' }).click();
     await expect(page.locator('#start-demo button')).toBeVisible();
     await page.goto('/services.html');

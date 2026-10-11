@@ -22,7 +22,8 @@ This repository contains more than positioning copy. It publishes:
 
 | Area | Purpose |
 |---|---|
-| [`index.html`](index.html) | Employer and organization pathways, flagship proof, and professional foundation |
+| [`index.html`](index.html) | Unified professional identity, featured work, and professional foundation |
+| [`evidence.html`](evidence.html) | Direct access to applications, public code, implementation walkthroughs, and downloadable samples |
 | [`work.html`](work.html) | Project library organized by evidence strength and maturity |
 | [`services.html`](services.html) | AI Workflow Enablement service and controlled-pilot boundary |
 | [`ai-workflow-enablement/index.html`](ai-workflow-enablement/index.html) | Employer-facing applied case study |

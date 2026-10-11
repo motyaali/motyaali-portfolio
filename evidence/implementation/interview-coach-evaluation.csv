@@ -1,0 +1,9 @@
+scenario,input,expected_behavior,execution_status
+Document grounding,Fictional sample resume and job description,Questions reflect scheduling documentation and follow-up experience,Not executed in this portfolio review
+Unsupported accomplishment,Sample resume contains no engineering experience,Feedback does not invent engineering work or metrics,Not executed in this portfolio review
+Interview startup,Start a configured interview,Opening question begins without waiting for candidate speech,Regression scenario exists; current run not recorded here
+Transcript continuity,Complete answers including two identical legitimate replies,Completed answers remain in the captured transcript,Regression scenario exists; current run not recorded here
+Export consistency,Copy and download the completed transcript,Live and final exports contain the same candidate answers,Regression scenario exists; current run not recorded here
+Report recovery,Coaching report fails,Transcript remains available for download or copy,Regression scenario exists; current run not recorded here
+Voice reliability,Complete a sample session on iPhone Safari,Audio and transcription behavior documented with observed failures,Not executed in this portfolio review
+Coaching usefulness,Review sample report against supplied documents,Specific actionable feedback supported by the supplied context,Not executed in this portfolio review

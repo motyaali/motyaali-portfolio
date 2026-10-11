@@ -42,6 +42,11 @@ jobs:
         id: offer_validation
         run: python scripts/validate_offer_conversion.py
 
+      - name: Build draft resume artifact
+        run: |
+          pip install reportlab
+          python scripts/build_resume.py --output review-artifacts/Motya-Ali-Resume.pdf
+
       - name: Set up Node.js
         uses: actions/setup-node@v6
         with:
@@ -58,6 +63,19 @@ jobs:
       - name: Run portfolio browser acceptance tests
         id: browser_validation
         run: npm run test:browser
+
+      - name: Build phone-readable review PDF
+        if: ${{ !cancelled() && steps.browser_validation.outcome != 'skipped' }}
+        run: python scripts/build_mobile_review.py
+
+      - name: Upload draft review PDFs
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v5
+        with:
+          name: portfolio-review-pdfs
+          path: review-artifacts/*.pdf
+          if-no-files-found: error
+          retention-days: 14
 
       - name: Upload Playwright report
         if: ${{ !cancelled() && steps.browser_validation.outcome != 'skipped' }}

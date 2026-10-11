@@ -1,0 +1,9 @@
+scenario,expected_behavior,evidence_type
+Unauthenticated data access,401 response for household item list,Source-defined automated test
+Invalid invite,403 response during registration,Source-defined automated test
+Missing CSRF header,403 response for cookie-authenticated mutation,Source-defined automated test
+Cross-household read,404 response for another household item,Source-defined automated test
+Cross-household change,404 response for another household item action,Source-defined automated test
+Isolated reset,Other household records remain present,Source-defined automated test
+Logout revocation,Authenticated user endpoint returns 401 after logout,Source-defined automated test
+Seven-day purchase pattern,Oct 1 Oct 8 Oct 15 yields next estimate Oct 22,Worked example of median-interval forecast

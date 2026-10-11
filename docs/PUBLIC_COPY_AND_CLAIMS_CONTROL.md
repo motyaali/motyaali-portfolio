@@ -30,16 +30,16 @@ The operating rule is simple:
 
 ### Homepage
 
-- `I turn complex work into clear systems people can run.`
-- `My work connects people, information, controls, and follow-through so teams can make decisions and keep work moving.`
+- `Business systems implementation. Practical AI applications.`
+- `My work connects requirements, software, documentation, and the people who use them.`
 
 ### About
 
-- `I make complex systems easier to understand, operate, and improve.`
+- `Retail planning, enterprise systems, and applied AI.`
 
 ### Services
 
-- `Improve one recurring workflow without creating another system people hate.`
+- `Practical workflow automation, from assessment to handoff.`
 
 ### Contact
 
@@ -106,7 +106,7 @@ Current approved examples include:
 - `650+ stores` Burlington allocation scope
 - `40%` forecast-accuracy improvement and `30%` stockout reduction in the documented Gymboree system-migration case
 - `45+ openings` West Elm expansion support
-- `250+ users` on the public documentation page as a conservative expression of a controlled 268-user access and documentation scope
+- `268+ users` on the public documentation page, matching the controlled access and documentation scope
 
 ### Levi's / Amazon wording control
 
