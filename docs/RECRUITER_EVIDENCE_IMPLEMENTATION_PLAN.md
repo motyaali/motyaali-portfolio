@@ -10,10 +10,10 @@ One professional identity: business systems and applied AI implementation, suppo
 ## Recommendation and concern coverage
 | Recommendation or recruiter question | Draft action | Remaining evidence or decision |
 | --- | --- | --- |
-| Preferred career direction | Align homepage, résumé, About, and Contact around systems and applied AI implementation | Ali can refine role level and responsibility |
+| Preferred career direction | Align homepage, résumé, About, and Contact around systems and applied AI implementation | Confirmed by Ali on October 12 |
 | Seniority versus recent job titles | Describe desired responsibilities; retain accurate historical titles | Confirm preferred role level without rewriting titles |
 | Career coherence | Connect planning, enterprise systems, and current applications through implementation work | Final copy review |
-| Employment overlap | Preserve existing dates without guessing | Confirm Salida arrangement and exact dates |
+| Employment overlap | Label Salida as concurrent part-time in onsite and print résumés | Arrangement confirmed by Ali; existing dates retained |
 | Recent enterprise contribution | Add source-supported 6+ guides, five role guides, and 268+ user scope | Specific observed before/after outcome if available |
 | Recent CCSF contribution | Explain document setup, voice practice, transcript, and report workflow | Confirm personal ownership and collaborator scope |
 | Professional outcome metrics | Preserve existing governed metrics | Confirm baseline, measurement period, and attribution for 40% and 30% |
@@ -32,8 +32,8 @@ One professional identity: business systems and applied AI implementation, suppo
 | Earlier unfinished PR | PR #16 changed files are all represented in later main work | No merge of the older PR; reconcile any distinct evidence separately |
 
 ## Evidence work queue
-1. Employment context: validate concurrent roles and dates.
-2. Enterprise result: one source-supported before/after example.
+1. Employment context: concurrent part-time arrangement confirmed; retain existing dates unless corrected.
+2. Enterprise result: one source-supported before/after example. Use observable, verifiable outcomes. Do not infer percentages from informal observations or imply a survey was conducted.
 3. Coach result: completed session, grounded feedback example, and user evaluation.
 4. SmartGrocer result: current test execution and a sanitized product recording or approved demo.
 5. Credential links: issuer verification URLs, exact credential names, and completion dates.
@@ -55,3 +55,9 @@ One professional identity: business systems and applied AI implementation, suppo
 - Required validation checks pass on the final commit.
 - Ali approves that exact revision.
 - Only then merge, publish, and verify the live release.
+
+## October 12 factual clarification
+- Ali confirmed business systems and applied AI implementation as the lead direction.
+- Salida Home Market was concurrent part-time work.
+- Recent outcomes should use concrete resolved problems, observed workflow improvements, and attributable feedback. Numeric outcomes require a defined measure and supporting records; a formal survey is not required for a record-based operational metric.
+- Current scope counts (guides and users supported) remain separate from adoption, accuracy, ease, or satisfaction outcomes.
