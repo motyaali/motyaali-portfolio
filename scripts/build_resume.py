@@ -40,7 +40,7 @@ class ResumeParser(HTMLParser):
         if tag == 'main':
             self.inside = False
 
-def build():
+def build(output_path=None):
     font_root = Path(reportlab.__file__).parent / 'fonts'
     pdfmetrics.registerFont(TTFont('ResumeSans', str(font_root / 'Vera.ttf')))
     pdfmetrics.registerFont(TTFont('ResumeSansBold', str(font_root / 'VeraBd.ttf')))
@@ -59,7 +59,9 @@ def build():
         'p': body,
         'li': ParagraphStyle('Bullet', parent=body, leftIndent=10, bulletIndent=0, spaceAfter=3)
     }
-    doc = SimpleDocTemplate(str(ROOT / 'assets/Motya-Ali-Resume.pdf'), pagesize=(8.5*inch,11*inch),
+    destination = Path(output_path) if output_path else ROOT / 'assets/Motya-Ali-Resume.pdf'
+    destination.parent.mkdir(parents=True, exist_ok=True)
+    doc = SimpleDocTemplate(str(destination), pagesize=(8.5*inch,11*inch),
                             leftMargin=.55*inch, rightMargin=.55*inch,
                             topMargin=.45*inch, bottomMargin=.45*inch,
                             title='Motya Ali Resume', author='Motya Ali')
@@ -94,6 +96,11 @@ def build():
         canvas.drawRightString(7.95*inch,.24*inch,str(document.page))
         canvas.restoreState()
     doc.build(story,onFirstPage=footer,onLaterPages=footer)
+    print(f'Built resume: {destination} ({doc.page} pages)')
 
 if __name__ == '__main__':
-    build()
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--output', help='Optional draft artifact path; defaults to the public resume PDF')
+    arguments = parser.parse_args()
+    build(arguments.output)

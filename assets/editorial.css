@@ -233,3 +233,16 @@ main h3 { line-height: 1.25; }
   .project-body { padding: 1.25rem; }
   .brand::after { display: none; }
 }
+
+/* Evidence access and progressive project browsing. */
+.project-library summary { cursor: pointer; padding: 1rem 0; font-weight: 650; font-size: 1.05rem; color: var(--ink); }
+.project-library[open] summary { margin-bottom: 1rem; }
+.project-library summary:focus-visible, .evidence-card a:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+.evidence-grid { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 1.5rem; }
+.evidence-card { min-width: 0; padding: 1.5rem; border: 1px solid var(--line); background: var(--paper); }
+.evidence-card h2 { font-size: 1.6rem; margin-top: 0; }
+.evidence-card .actions { gap: .75rem 1rem; margin-top: 1.25rem; }
+.evidence-card a { min-height: 44px; display: inline-flex; align-items: center; }
+.evidence-card p, .evidence-card li { overflow-wrap: anywhere; }
+.evidence-checklist { max-width: 75ch; }
+@media (max-width: 720px) { .evidence-grid { grid-template-columns: minmax(0,1fr); } .evidence-card { padding: 1.25rem; } .project-library summary { min-height: 44px; } }
