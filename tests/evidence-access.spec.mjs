@@ -5,6 +5,9 @@ test('applications and samples remain accessible without JavaScript', async ({ b
   const page = await context.newPage();
   await page.goto('http://127.0.0.1:8000/evidence.html');
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Demos, code, and work samples.');
+  await expect(page.locator('.page-hero .evidence-card')).toHaveCount(0);
+  await expect(page.locator('.evidence-grid > .evidence-card')).toHaveCount(12);
+  await expect(page.locator('.evidence-grid > .evidence-card h2').first()).toHaveText('CCSF AI Interview Coach');
   const localLinks = await page.locator('main a').evaluateAll(nodes => nodes.map(node => node.href).filter(url => new URL(url).origin === location.origin));
   for (const url of localLinks) {
     const response = await page.request.get(url);
