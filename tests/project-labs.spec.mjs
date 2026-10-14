@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 import inventory from '../evidence/governance/demo-inventory.json' with { type: 'json' };
 
 for (const demo of inventory) {
-  test(`${demo.project}: run, review, export, and invalidate a changed scenario`, async ({ page }) => {
+  test(`${demo.project}: run, review, export, and invalidate a changed scenario`, async ({ page }, testInfo) => {
     const errors=[]; page.on('pageerror',e=>errors.push(e.message));
     await page.goto('/'+demo.demo);
     await expect(page.locator('h1')).toBeVisible();
@@ -36,6 +36,9 @@ for (const demo of inventory) {
     const sizes=await page.evaluate(()=>[document.documentElement.scrollWidth,document.documentElement.clientWidth]);
     expect(sizes[0]).toBeLessThanOrEqual(sizes[1]+1);
     expect(errors).toEqual([]);
+    if (['desktop-chromium', 'mobile-webkit'].includes(testInfo.project.name)) {
+      await page.screenshot({path: `review-captures/${testInfo.project.name}/demos_${demo.project}.jpg`,fullPage:true,type:'jpeg',quality:80});
+    }
   });
 }
 
