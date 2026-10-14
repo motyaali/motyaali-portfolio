@@ -1,0 +1,28 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Match a role description to a fictional evidence bank and inspect the source behind each suggestion."><title>Career Evidence System Demo | Motya Ali</title><link rel="canonical" href="https://www.motyaali.com/demos/career-evidence-system.html"><link rel="stylesheet" href="../assets/styles.css"><link rel="stylesheet" href="../assets/editorial.css"><link rel="stylesheet" href="../assets/project-lab.css"></head><body><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="header-inner"><a class="brand" href="../index.html">MOTYA ALI</a><nav aria-label="Demo navigation"><a href="../evidence.html">All demos</a> · <a href="../projects/career-evidence-system.html">Project case</a></nav></div></header><main id="main" data-lab="career-evidence-system"><section class="page-hero"><div class="container"><p class="eyebrow">Interactive browser prototype · fictional example</p><h1>Career Evidence System</h1><p>Match a role description to a fictional evidence bank and inspect the source behind each suggestion.</p><p class="lab-boundary">Deterministic tag matching supports retrieval. It does not assess qualification, invent accomplishments, or access Ali’s private career database.</p></div></section><section class="section"><div class="container lab-layout"><div><h2>1. Inspect and change the inputs</h2><p>Runs in this tab. Inputs stay in memory and clear when you reload; exports create a file on your device. Use fictional examples.</p><form id="lab-form"><div class="lab-field"><label for="job">Role description</label><textarea id="job" name="job" rows="7" required spellcheck="false">Seeking workflow implementation, documentation, stakeholder training, and Python experience.</textarea></div><div class="lab-field"><label for="bank">Fictional evidence bank · JSON array</label><textarea id="bank" name="bank" rows="7" required spellcheck="false">[
+  {
+    &quot;id&quot;: &quot;E-101&quot;,
+    &quot;claim&quot;: &quot;Created a fictional review guide and trained a demonstration team.&quot;,
+    &quot;tags&quot;: [
+      &quot;documentation&quot;,
+      &quot;training&quot;
+    ],
+    &quot;status&quot;: &quot;verified&quot;
+  },
+  {
+    &quot;id&quot;: &quot;E-102&quot;,
+    &quot;claim&quot;: &quot;Mapped a fictional workflow and tested its handoffs.&quot;,
+    &quot;tags&quot;: [
+      &quot;workflow&quot;,
+      &quot;implementation&quot;
+    ],
+    &quot;status&quot;: &quot;verified&quot;
+  },
+  {
+    &quot;id&quot;: &quot;E-103&quot;,
+    &quot;claim&quot;: &quot;Proposed a Python parser, not yet built.&quot;,
+    &quot;tags&quot;: [
+      &quot;python&quot;
+    ],
+    &quot;status&quot;: &quot;draft&quot;
+  }
+]</textarea></div><div class="actions"><button class="button button-primary" type="submit">Run scenario</button><button class="button button-secondary" type="reset">Reset example</button></div></form><p class="lab-hint"><strong>Try this:</strong> Remove documentation from the role description; that tag stops matching. Draft Python evidence remains excluded.</p><noscript><p>Enable JavaScript to run this interactive scenario. The inputs and project case remain available without it.</p></noscript></div><div><h2>2. Inspect the result</h2><p id="lab-message" role="status" aria-live="polite">Run the example to inspect the proposed result.</p><div id="lab-result"></div><section id="lab-review" hidden><h2>3. Record your review</h2><p>Review applies only to this demo record. Any input change invalidates it.</p><label for="review-note">Review note · required</label><textarea id="review-note" rows="3" placeholder="What did you verify or leave unresolved?"></textarea><label class="lab-check"><input id="review-confirm" type="checkbox"> I reviewed the inputs, exceptions, and limitations.</label><button id="export-result" class="button button-secondary" type="button" disabled>Export reviewed JSON</button></section></div></div></section></main><footer class="site-footer"><div class="footer-inner"><a href="../projects/career-evidence-system.html">Read the project case</a><a href="../evidence-standard.html">Evidence and privacy standard</a><a href="https://github.com/motyaali/motyaali-portfolio/blob/main/assets/project-lab.js">Inspect demo source</a></div></footer><script src="../assets/project-lab.js" defer></script></body></html>

@@ -39,7 +39,7 @@
       <span class="badge">Authenticated Full-Stack Prototype</span>
       <h1>SmartGrocer</h1>
       <p>A mobile-first household replenishment and grocery-savings prototype that converts purchase history into explainable forecasts, keeps recommendations under user control, and protects household data through authenticated membership boundaries.</p>
-      <div class="actions">
+      <div class="actions"><a class="button button-primary" href="../demos/smartgrocer.html">Try the browser demo</a>
         <a class="button button-primary" href="#working-proof">View the working proof</a>
         <a class="button button-secondary" href="#architecture">Review the architecture</a>
       </div>
@@ -178,6 +178,7 @@
     </div>
   </section>
 <section class="section" aria-labelledby="implementation-walkthrough"><div class="container"><h2 id="implementation-walkthrough">Follow one purchase through the system</h2><p>A recorded purchase updates the household’s product history. The forecasting service uses the median interval between observed purchase dates, then returns the next need date, supporting observations, and a confidence indicator. The user reviews the proposal before adding an item to the shopping list.</p><div class="actions"><a class="button button-secondary" href="../evidence/implementation/smartgrocer.html">Read the technical walkthrough</a><a class="project-link" href="../evidence/implementation/smartgrocer-scenarios.csv">Download test scenarios</a></div></div></section>
+<section class="section section-alt" aria-labelledby="public-demo-heading"><div class="container"><h2 id="public-demo-heading">What you can test here</h2><p>This public browser prototype demonstrates forecasting and review using manual inputs. The private authenticated implementation, household isolation, retailer prices, and receipt parsing are separate.</p><p>Change the fictional inputs, run the scenario, inspect its exceptions and source references, and export a review record. Added October 14, 2026. This public demo is a separate artifact from any earlier private implementation or historical professional work.</p><div class="actions"><a class="button button-primary" href="../demos/smartgrocer.html">Run the interactive example</a><a href="../evidence/governance/demo-inventory.json">Inspect demo scope and version</a></div></div></section>
 </main>
 <footer class="site-footer">
   <div class="footer-inner">

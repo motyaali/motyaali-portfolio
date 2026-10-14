@@ -30,6 +30,9 @@ This repository contains more than positioning copy. It publishes:
 | [`projects/ai-workflow-enablement.html`](projects/ai-workflow-enablement.html) | Full evidence index |
 | [`demos/meeting-intelligence.html`](demos/meeting-intelligence.html) | Source-preserving meeting-record review, correction, approval, rejection, and export |
 | [`demos/document-intake.html`](demos/document-intake.html) | Guided routine-confirmation and exception-routing demonstration |
+| [`demos/status-reporting.html`](demos/status-reporting.html) | Source-grounded project reporting |
+| [`demos/request-triage.html`](demos/request-triage.html) | Work request classification and routing |
+| [`demos/sop-knowledge.html`](demos/sop-knowledge.html) | Approved-source knowledge review |
 | [`proof/ai-workflow-enablement/`](proof/ai-workflow-enablement/) | Synthetic source, reference output, tests, governance, and runbook |
 | [`evidence-standard.html`](evidence-standard.html) | Public maturity, claim, evidence, and privacy standard |
 | [`resume-print.html`](resume-print.html) | Full print-ready résumé with Save as PDF support |
@@ -42,7 +45,9 @@ The site intentionally uses a small static stack:
 - shared CSS in `assets/styles.css`
 - proof and demonstration CSS in `assets/proof.css`
 - shared navigation and contact behavior in `assets/site.js`
-- browser-local demonstration logic in `assets/meeting-intelligence.js` and `assets/document-intake.js`
+- five workflow scripts: `assets/meeting-intelligence.js`, `assets/document-intake.js`, `assets/status-reporting.js`, `assets/request-triage.js`, and `assets/sop-knowledge.js`
+- ten project-specific browser prototypes in `demos/`, with shared input/review/export UI and distinct domain rules in `assets/project-lab.js`
+- machine-readable scope and version inventory in `evidence/governance/demo-inventory.json`
 - GitHub Pages deployment with the `www.motyaali.com` custom domain
 
 The public demonstrations do not require a server, account, database, or external AI request. This makes the governance interaction inspectable and keeps all public demonstration data synthetic.
@@ -133,5 +138,7 @@ Before a release:
 6. Confirm the custom domain and HTTPS deployment are healthy.
 
 ## Status
+
+**October 14, 2026 evidence reconciliation.** See [audit and scope record](docs/PORTFOLIO_RECONCILIATION_2026-10-14.md). Ten new browser prototypes supplement the five existing workflow demos and the external applications. Browser examples do not establish private-system integration or historical business outcomes.
 
 **Recruiter-first V2, September 2026.** See [V2 review notes](docs/RECRUITER_V2_REVIEW.md) for scope, evidence boundaries, validation, and archive protection.

@@ -29,7 +29,17 @@
     "evidence/unseen-os/verification.html",
     "projects/soma-budget-planner.html",
     "projects/career-evidence-system.html",
-    "projects/ccsf-ai-interview-coach.html"
+    "projects/ccsf-ai-interview-coach.html",
+    "demos/canonical-synthesis.html",
+    "demos/career-evidence-system.html",
+    "demos/inventory-ledger.html",
+    "demos/smartgrocer.html",
+    "demos/unseen-lifeline.html",
+    "demos/unseen-os.html",
+    "demos/documentation-workflow.html",
+    "demos/project-coordination-controls.html",
+    "demos/retail-planning.html",
+    "demos/interview-coach.html"
   ],
   "global_forbidden_html": [
     "helped generate $10M+ in new revenue",
@@ -525,6 +535,106 @@
       "maturity": "Documented operating method",
       "evidence_level": "Applied across portfolio workflow demonstrations",
       "source_basis": "Controlled responsible-AI operating principle and public demonstration architecture",
+      "status": "approved"
+    },
+    {
+      "id": "DEMO-20261014-01",
+      "page": "demos/canonical-synthesis.html",
+      "category": "implementation boundary",
+      "approved_text": "This browser prototype compares structured JSON fields. It does not read repositories, infer document authority, or publish a canonical source.",
+      "maturity": "Interactive browser prototype",
+      "evidence_level": "Public executable source and acceptance scenarios",
+      "source_basis": "October 14 user-authorized portfolio reconciliation; assets/project-lab.js and tests/project-labs.spec.mjs",
+      "status": "approved"
+    },
+    {
+      "id": "DEMO-20261014-02",
+      "page": "demos/career-evidence-system.html",
+      "category": "implementation boundary",
+      "approved_text": "Deterministic tag matching supports retrieval. It does not assess qualification, invent accomplishments, or access Ali’s private career database.",
+      "maturity": "Interactive browser prototype",
+      "evidence_level": "Public executable source and acceptance scenarios",
+      "source_basis": "October 14 user-authorized portfolio reconciliation; assets/project-lab.js and tests/project-labs.spec.mjs",
+      "status": "approved"
+    },
+    {
+      "id": "DEMO-20261014-03",
+      "page": "demos/inventory-ledger.html",
+      "category": "implementation boundary",
+      "approved_text": "A new browser prototype of the reconciliation rules. Quantities are manually supplied; no ERP, WMS, carrier, or quality system is connected.",
+      "maturity": "Interactive browser prototype",
+      "evidence_level": "Public executable source and acceptance scenarios",
+      "source_basis": "October 14 user-authorized portfolio reconciliation; assets/project-lab.js and tests/project-labs.spec.mjs",
+      "status": "approved"
+    },
+    {
+      "id": "DEMO-20261014-04",
+      "page": "demos/smartgrocer.html",
+      "category": "implementation boundary",
+      "approved_text": "This public browser prototype demonstrates forecasting and review using manual inputs. The private authenticated implementation, household isolation, retailer prices, and receipt parsing are separate.",
+      "maturity": "Interactive browser prototype",
+      "evidence_level": "Public executable source and acceptance scenarios",
+      "source_basis": "October 14 user-authorized portfolio reconciliation; assets/project-lab.js and tests/project-labs.spec.mjs",
+      "status": "approved"
+    },
+    {
+      "id": "DEMO-20261014-05",
+      "page": "demos/unseen-lifeline.html",
+      "category": "implementation boundary",
+      "approved_text": "A new browser prototype of the notice-review pattern. It recognizes explicitly written ISO dates only. It does not interpret eligibility, calculate legal deadlines, contact agencies, or submit a response.",
+      "maturity": "Interactive browser prototype",
+      "evidence_level": "Public executable source and acceptance scenarios",
+      "source_basis": "October 14 user-authorized portfolio reconciliation; assets/project-lab.js and tests/project-labs.spec.mjs",
+      "status": "approved"
+    },
+    {
+      "id": "DEMO-20261014-06",
+      "page": "demos/unseen-os.html",
+      "category": "implementation boundary",
+      "approved_text": "A new browser prototype of continuity review with editable fictional records. It does not ingest documents, synchronize inboxes, send reminders, or reproduce the separate local v0.3 implementation.",
+      "maturity": "Interactive browser prototype",
+      "evidence_level": "Public executable source and acceptance scenarios",
+      "source_basis": "October 14 user-authorized portfolio reconciliation; assets/project-lab.js and tests/project-labs.spec.mjs",
+      "status": "approved"
+    },
+    {
+      "id": "DEMO-20261014-07",
+      "page": "demos/documentation-workflow.html",
+      "category": "implementation boundary",
+      "approved_text": "An interactive reconstruction using fictional records. It demonstrates routing gates, without accessing employer records or granting SharePoint permissions.",
+      "maturity": "Interactive browser prototype",
+      "evidence_level": "Public executable source and acceptance scenarios",
+      "source_basis": "October 14 user-authorized portfolio reconciliation; assets/project-lab.js and tests/project-labs.spec.mjs",
+      "status": "approved"
+    },
+    {
+      "id": "DEMO-20261014-08",
+      "page": "demos/project-coordination-controls.html",
+      "category": "implementation boundary",
+      "approved_text": "An interactive reconstruction using fictional amounts and records. Readiness is an administrative check; it cannot approve contracts, authorize payment, or update a financial system.",
+      "maturity": "Interactive browser prototype",
+      "evidence_level": "Public executable source and acceptance scenarios",
+      "source_basis": "October 14 user-authorized portfolio reconciliation; assets/project-lab.js and tests/project-labs.spec.mjs",
+      "status": "approved"
+    },
+    {
+      "id": "DEMO-20261014-09",
+      "page": "demos/retail-planning.html",
+      "category": "implementation boundary",
+      "approved_text": "A reconstructed planning calculator using fictional inputs. It illustrates an operating method, not a historical employer forecast or verified business result. Demand is assumed constant.",
+      "maturity": "Interactive browser prototype",
+      "evidence_level": "Public executable source and acceptance scenarios",
+      "source_basis": "October 14 user-authorized portfolio reconciliation; assets/project-lab.js and tests/project-labs.spec.mjs",
+      "status": "approved"
+    },
+    {
+      "id": "DEMO-20261014-10",
+      "page": "demos/interview-coach.html",
+      "category": "implementation boundary",
+      "approved_text": "A new text-only browser companion using deterministic prompts and a self-review checklist. It does not call Gemini, conduct a voice interview, score candidates, or verify the externally hosted application.",
+      "maturity": "Interactive browser prototype",
+      "evidence_level": "Public executable source and acceptance scenarios",
+      "source_basis": "October 14 user-authorized portfolio reconciliation; assets/project-lab.js and tests/project-labs.spec.mjs",
       "status": "approved"
     }
   ]
