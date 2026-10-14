@@ -1,0 +1,29 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="description" content="Resume interrupted work from source-linked tasks, missing completion evidence, and a visible next action."><title>Unseen OS Continuity Review Demo | Motya Ali</title><link rel="canonical" href="https://www.motyaali.com/demos/unseen-os.html"><link rel="stylesheet" href="../assets/styles.css"><link rel="stylesheet" href="../assets/editorial.css"><link rel="stylesheet" href="../assets/project-lab.css"></head><body><a class="skip-link" href="#main">Skip to content</a><header class="site-header"><div class="header-inner"><a class="brand" href="../index.html">MOTYA ALI</a><nav aria-label="Demo navigation"><a href="../evidence.html">All demos</a> · <a href="../projects/unseen-os.html">Project case</a></nav></div></header><main id="main" data-lab="unseen-os"><section class="page-hero"><div class="container"><p class="eyebrow">Interactive browser prototype · fictional example</p><h1>Unseen OS Continuity Review</h1><p>Resume interrupted work from source-linked tasks, missing completion evidence, and a visible next action.</p><p class="lab-boundary">A new browser prototype of continuity review with editable fictional records. It does not ingest documents, synchronize inboxes, send reminders, or reproduce the separate local v0.3 implementation.</p></div></section><section class="section"><div class="container lab-layout"><div><h2>1. Inspect and change the inputs</h2><p>Runs in this tab. Inputs stay in memory and clear when you reload; exports create a file on your device. Use fictional examples.</p><form id="lab-form"><div class="lab-field"><label for="asof">Review date</label><input id="asof" name="asof" type="date" value="2026-10-14" required></div><div class="lab-field"><label for="tasks">Fictional task register · JSON array</label><textarea id="tasks" name="tasks" rows="7" required spellcheck="false">[
+  {
+    &quot;id&quot;: &quot;T-01&quot;,
+    &quot;task&quot;: &quot;Request enrollment record&quot;,
+    &quot;source&quot;: &quot;Notice N-104&quot;,
+    &quot;due&quot;: &quot;2026-10-13&quot;,
+    &quot;status&quot;: &quot;open&quot;,
+    &quot;evidence&quot;: &quot;&quot;,
+    &quot;next&quot;: &quot;Open the student portal&quot;
+  },
+  {
+    &quot;id&quot;: &quot;T-02&quot;,
+    &quot;task&quot;: &quot;Send revised draft&quot;,
+    &quot;source&quot;: &quot;Review R-22&quot;,
+    &quot;due&quot;: &quot;2026-10-16&quot;,
+    &quot;status&quot;: &quot;blocked&quot;,
+    &quot;evidence&quot;: &quot;&quot;,
+    &quot;next&quot;: &quot;Ask reviewer for missing approval&quot;
+  },
+  {
+    &quot;id&quot;: &quot;T-03&quot;,
+    &quot;task&quot;: &quot;Archive confirmation&quot;,
+    &quot;source&quot;: &quot;Receipt C-08&quot;,
+    &quot;due&quot;: &quot;2026-10-12&quot;,
+    &quot;status&quot;: &quot;complete&quot;,
+    &quot;evidence&quot;: &quot;&quot;,
+    &quot;next&quot;: &quot;Attach a receipt to verify completion&quot;
+  }
+]</textarea></div><div class="actions"><button class="button button-primary" type="submit">Run scenario</button><button class="button button-secondary" type="reset">Reset example</button></div></form><p class="lab-hint"><strong>Try this:</strong> Add a receipt identifier to T-03 evidence. Its completion changes from unverified to evidenced.</p><noscript><p>Enable JavaScript to run this interactive scenario. The inputs and project case remain available without it.</p></noscript></div><div><h2>2. Inspect the result</h2><p id="lab-message" role="status" aria-live="polite">Run the example to inspect the proposed result.</p><div id="lab-result"></div><section id="lab-review" hidden><h2>3. Record your review</h2><p>Review applies only to this demo record. Any input change invalidates it.</p><label for="review-note">Review note · required</label><textarea id="review-note" rows="3" placeholder="What did you verify or leave unresolved?"></textarea><label class="lab-check"><input id="review-confirm" type="checkbox"> I reviewed the inputs, exceptions, and limitations.</label><button id="export-result" class="button button-secondary" type="button" disabled>Export reviewed JSON</button></section></div></div></section></main><footer class="site-footer"><div class="footer-inner"><a href="../projects/unseen-os.html">Read the project case</a><a href="../evidence-standard.html">Evidence and privacy standard</a><a href="https://github.com/motyaali/motyaali-portfolio/blob/main/assets/project-lab.js">Inspect demo source</a></div></footer><script src="../assets/project-lab.js" defer></script></body></html>

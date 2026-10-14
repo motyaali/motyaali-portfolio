@@ -1,0 +1,82 @@
+[
+  {
+    "project": "canonical-synthesis",
+    "demo": "demos/canonical-synthesis.html",
+    "title": "Canonical Source Synthesis",
+    "boundary": "This browser prototype compares structured JSON fields. It does not read repositories, infer document authority, or publish a canonical source.",
+    "introduced": "2026-10-14",
+    "maturity": "Interactive browser prototype"
+  },
+  {
+    "project": "career-evidence-system",
+    "demo": "demos/career-evidence-system.html",
+    "title": "Career Evidence System",
+    "boundary": "Deterministic tag matching supports retrieval. It does not assess qualification, invent accomplishments, or access Ali\u2019s private career database.",
+    "introduced": "2026-10-14",
+    "maturity": "Interactive browser prototype"
+  },
+  {
+    "project": "inventory-ledger",
+    "demo": "demos/inventory-ledger.html",
+    "title": "Inventory Truth Ledger",
+    "boundary": "A new browser prototype of the reconciliation rules. Quantities are manually supplied; no ERP, WMS, carrier, or quality system is connected.",
+    "introduced": "2026-10-14",
+    "maturity": "Interactive browser prototype"
+  },
+  {
+    "project": "smartgrocer",
+    "demo": "demos/smartgrocer.html",
+    "title": "SmartGrocer Forecast",
+    "boundary": "This public browser prototype demonstrates forecasting and review using manual inputs. The private authenticated implementation, household isolation, retailer prices, and receipt parsing are separate.",
+    "introduced": "2026-10-14",
+    "maturity": "Interactive browser prototype"
+  },
+  {
+    "project": "unseen-lifeline",
+    "demo": "demos/unseen-lifeline.html",
+    "title": "Unseen Lifeline",
+    "boundary": "A new browser prototype of the notice-review pattern. It recognizes explicitly written ISO dates only. It does not interpret eligibility, calculate legal deadlines, contact agencies, or submit a response.",
+    "introduced": "2026-10-14",
+    "maturity": "Interactive browser prototype"
+  },
+  {
+    "project": "unseen-os",
+    "demo": "demos/unseen-os.html",
+    "title": "Unseen OS Continuity Review",
+    "boundary": "A new browser prototype of continuity review with editable fictional records. It does not ingest documents, synchronize inboxes, send reminders, or reproduce the separate local v0.3 implementation.",
+    "introduced": "2026-10-14",
+    "maturity": "Interactive browser prototype"
+  },
+  {
+    "project": "documentation-workflow",
+    "demo": "demos/documentation-workflow.html",
+    "title": "Role-Based Document Review",
+    "boundary": "An interactive reconstruction using fictional records. It demonstrates routing gates, without accessing employer records or granting SharePoint permissions.",
+    "introduced": "2026-10-14",
+    "maturity": "Interactive browser prototype"
+  },
+  {
+    "project": "project-coordination-controls",
+    "demo": "demos/project-coordination-controls.html",
+    "title": "Project Coordination Package Check",
+    "boundary": "An interactive reconstruction using fictional amounts and records. Readiness is an administrative check; it cannot approve contracts, authorize payment, or update a financial system.",
+    "introduced": "2026-10-14",
+    "maturity": "Interactive browser prototype"
+  },
+  {
+    "project": "retail-planning",
+    "demo": "demos/retail-planning.html",
+    "title": "Retail Planning Scenario",
+    "boundary": "A reconstructed planning calculator using fictional inputs. It illustrates an operating method, not a historical employer forecast or verified business result. Demand is assumed constant.",
+    "introduced": "2026-10-14",
+    "maturity": "Interactive browser prototype"
+  },
+  {
+    "project": "ccsf-ai-interview-coach",
+    "demo": "demos/interview-coach.html",
+    "title": "Interview Preparation Workbench",
+    "boundary": "A new text-only browser companion using deterministic prompts and a self-review checklist. It does not call Gemini, conduct a voice interview, score candidates, or verify the externally hosted application.",
+    "introduced": "2026-10-14",
+    "maturity": "Interactive browser prototype"
+  }
+]
