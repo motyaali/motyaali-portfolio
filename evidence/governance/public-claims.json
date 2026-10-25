@@ -636,6 +636,46 @@
       "evidence_level": "Public executable source and acceptance scenarios",
       "source_basis": "October 14 user-authorized portfolio reconciliation; assets/project-lab.js and tests/project-labs.spec.mjs",
       "status": "approved"
+    },
+    {
+      "id": "DOC-004",
+      "page": "projects/documentation-workflow.html",
+      "category": "professional-contribution",
+      "approved_text": "sole day-to-day SharePoint site administrator",
+      "maturity": "Professional Enterprise Implementation",
+      "evidence_level": "User-attested site-level responsibility; tenant-wide administration excluded",
+      "source_basis": "Ali's October 16, 2026 firsthand clarification; supporting employer materials remain private",
+      "status": "approved"
+    },
+    {
+      "id": "DOC-005",
+      "page": "projects/documentation-workflow.html",
+      "category": "professional-contribution",
+      "approved_text": "personally migrated legacy records",
+      "maturity": "Professional Enterprise Implementation",
+      "evidence_level": "User-attested document migration and reconciliation; original employer records withheld",
+      "source_basis": "Ali's October 16, 2026 firsthand clarification; supporting employer materials remain private",
+      "status": "approved"
+    },
+    {
+      "id": "DOC-006",
+      "page": "projects/documentation-workflow.html",
+      "category": "scope-boundary",
+      "approved_text": "Broader Microsoft 365 tenant administration remained with IT.",
+      "maturity": "Professional Enterprise Implementation",
+      "evidence_level": "Explicit site-versus-tenant administration boundary",
+      "source_basis": "Ali's October 16, 2026 firsthand clarification; supporting employer materials remain private",
+      "status": "approved"
+    },
+    {
+      "id": "DOC-007",
+      "page": "projects/documentation-workflow.html",
+      "category": "program-boundary",
+      "approved_text": "SFPUC Water Capital Program",
+      "maturity": "Professional Enterprise Implementation",
+      "evidence_level": "User-attested program scope; separate Wastewater materials excluded",
+      "source_basis": "Ali's October 16, 2026 firsthand clarification; supporting employer materials remain private",
+      "status": "approved"
     }
   ]
 }
