@@ -1,4 +1,6 @@
 import { test, expect } from '@playwright/test';
+import { mkdir } from 'node:fs/promises';
+import path from 'node:path';
 
 test('career file claims expose working public evidence links', async ({ page }) => {
   await page.goto('/');
@@ -80,5 +82,18 @@ test('mobile interview-coach preview shows all three steps without clipping', as
     const rect = await step.boundingBox();
     expect(rect.y).toBeGreaterThanOrEqual(cover.y);
     expect(rect.y + rect.height).toBeLessThanOrEqual(cover.y + cover.height + 1);
+  }
+});
+
+
+test('save comparison screenshots at the reported desktop width', async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== 'desktop-chromium', 'One desktop capture set is enough.');
+  await page.setViewportSize({ width: 1600, height: 900 });
+  const folder = path.join('review-captures', 'desktop-chromium');
+  await mkdir(folder, { recursive: true });
+  for (const [route, label] of [['/', 'home-1600'], ['/work.html', 'work-1600']]) {
+    await page.goto(route);
+    await expect(page.locator('main')).toBeVisible();
+    await page.screenshot({ path: path.join(folder, label + '.jpg'), fullPage: true, type: 'jpeg', quality: 85 });
   }
 });
