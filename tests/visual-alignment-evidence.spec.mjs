@@ -55,5 +55,5 @@ test('Work introduction leads directly into the featured cases', async ({ page }
   const heading = await page.locator('#featured-work .section-heading').boundingBox();
   expect(heading.y - (hero.y + hero.height)).toBeGreaterThanOrEqual(0);
   expect(heading.y - (hero.y + hero.height)).toBeLessThanOrEqual(70);
-  await expect(page.locator('#featured-work .section-heading p')).toContainText('Start with six featured cases');
+  await expect(page.locator('#featured-work .section-heading > p:not(.eyebrow)')).toContainText('Start with six featured cases');
 });
