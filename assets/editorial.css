@@ -281,3 +281,22 @@ main h3 { line-height: 1.25; }
 @media (max-width: 540px) {
   .field-note-row { grid-template-columns: minmax(0,1fr); gap: .4rem; }
 }
+
+
+/* Keep the workflow sheet at its natural height; the surrounding cover provides the frame. */
+.project-grid .project-cover .thumb-docs { height: auto; }
+
+/* A thumbnail is not a full mobile form. Preserve all three coach steps in view. */
+@media (max-width: 720px) {
+  .project-grid .coach-preview-head { padding: .55rem .6rem; font-size: .6rem; }
+  .project-grid .coach-preview-body { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .project-grid .coach-preview-body > div {
+    min-height: 105px;
+    padding: .55rem;
+    border-right: 1px solid var(--line);
+    border-bottom: 0;
+  }
+  .project-grid .coach-preview-body > div:last-child { border-right: 0; }
+  .project-grid .coach-preview-body strong { margin-top: .4rem; font-size: .85rem; }
+  .project-grid .coach-preview-body span { font-size: .65rem; }
+}
