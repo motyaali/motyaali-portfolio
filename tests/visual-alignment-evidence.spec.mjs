@@ -17,6 +17,10 @@ test('career file claims expose working public evidence links', async ({ page })
       expect(target.origin).toBe(new URL(page.url()).origin);
       const response = await page.request.get(target.href);
       expect(response.ok(), target.href).toBeTruthy();
+      if (target.hash) {
+        const fragment = decodeURIComponent(target.hash.slice(1));
+        expect(await response.text(), target.href).toContain(`id="${fragment}"`);
+      }
     }
   }
   await expect(page.locator('.field-note-disclosure')).toContainText('Confidential employer records');
