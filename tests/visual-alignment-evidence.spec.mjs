@@ -57,3 +57,28 @@ test('Work introduction leads directly into the featured cases', async ({ page }
   expect(heading.y - (hero.y + hero.height)).toBeLessThanOrEqual(70);
   await expect(page.locator('#featured-work .section-heading > p:not(.eyebrow)')).toContainText('Start with six featured cases');
 });
+
+
+test('SharePoint thumbnail uses a framed document rather than a blank stretched panel', async ({ page }, testInfo) => {
+  test.skip(!testInfo.project.name.startsWith('desktop-'), 'Check full-width desktop card.');
+  await page.goto('/');
+  const cover = await page.locator('.project-grid .project-card').first().locator('.project-cover').boundingBox();
+  const sheet = await page.locator('.project-grid .project-card').first().locator('.thumb-docs').boundingBox();
+  expect(sheet.height).toBeLessThan(cover.height - 20);
+  expect(sheet.y).toBeGreaterThan(cover.y + 10);
+  expect(cover.y + cover.height - (sheet.y + sheet.height)).toBeGreaterThan(10);
+});
+
+test('mobile interview-coach preview shows all three steps without clipping', async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== 'mobile-webkit', 'Mobile visual regression.');
+  await page.goto('/');
+  const card = page.locator('.project-card').filter({ has: page.getByRole('heading', { name: 'CCSF AI Interview Coach' }) });
+  const cover = await card.locator('.project-cover').boundingBox();
+  const steps = card.locator('.coach-preview-body > div');
+  await expect(steps).toHaveCount(3);
+  for (const step of await steps.all()) {
+    const rect = await step.boundingBox();
+    expect(rect.y).toBeGreaterThanOrEqual(cover.y);
+    expect(rect.y + rect.height).toBeLessThanOrEqual(cover.y + cover.height + 1);
+  }
+});
