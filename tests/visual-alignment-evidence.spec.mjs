@@ -25,7 +25,7 @@ test('career file claims expose working public evidence links', async ({ page })
       }
     }
   }
-  await expect(page.locator('.field-note-disclosure')).toContainText('Confidential employer records');
+  await expect(page.locator('.field-note-disclosure')).toContainText('not original employer records');
 });
 
 test('featured split cards align with the two-column grid on desktop', async ({ page }, testInfo) => {
