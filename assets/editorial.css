@@ -288,15 +288,40 @@ main h3 { line-height: 1.25; }
 
 /* A thumbnail is not a full mobile form. Preserve all three coach steps in view. */
 @media (max-width: 720px) {
-  .project-grid .coach-preview-head { padding: .55rem .6rem; font-size: .6rem; }
-  .project-grid .coach-preview-body { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .project-grid .interview-coach-cover { height: auto; max-height: none; }
+  .project-grid .coach-preview-head { padding: .75rem; font-size: .8rem; flex-wrap: wrap; gap: .5rem; }
+  .project-grid .coach-preview-body { grid-template-columns: minmax(0, 1fr); }
   .project-grid .coach-preview-body > div {
-    min-height: 105px;
-    padding: .55rem;
-    border-right: 1px solid var(--line);
-    border-bottom: 0;
+    min-height: 0;
+    padding: .75rem;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
   }
   .project-grid .coach-preview-body > div:last-child { border-right: 0; }
-  .project-grid .coach-preview-body strong { margin-top: .4rem; font-size: .85rem; }
-  .project-grid .coach-preview-body span { font-size: .65rem; }
+  .project-grid .coach-preview-body > div:last-child { border-bottom: 0; }
+  .project-grid .coach-preview-body small { font-size: .8rem; }
+  .project-grid .coach-preview-body strong { margin-top: .3rem; font-size: 1.05rem; }
+  .project-grid .coach-preview-body span { font-size: .9rem; }
+}
+
+/* Two contrasting edges keep keyboard focus visible on paper and charcoal. */
+html body :is(a, button, input, select, textarea, summary, [tabindex]):focus-visible:focus {
+  outline: 3px solid var(--ink);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 3px var(--paper);
+}
+@media (forced-colors: active) {
+  html body :focus-visible { outline: 3px solid Highlight; }
+}
+
+/* Keep the full evidence file and all five scope figures in a shorter mobile introduction. */
+@media (max-width: 720px) {
+  .hero-recruiter .hero-inner { padding-top: 1.75rem; padding-bottom: 1.5rem; }
+  .hero-recruiter .field-note-row { padding: .6rem 0; gap: .3rem; }
+  .hero-recruiter .field-note-links { gap: 0 .75rem; margin-top: .15rem; }
+  .hero-recruiter .field-note-disclosure { margin: .5rem 0; }
+  .hero-recruiter + .impact-strip .impact-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .hero-recruiter + .impact-strip .impact-item { padding: .75rem; border-bottom: 1px solid var(--line); }
+  .hero-recruiter + .impact-strip .impact-item:last-child { grid-column: 1 / -1; border-bottom: 0; }
+  .hero-recruiter + .impact-strip .impact-item span { margin-top: .3rem; }
 }
