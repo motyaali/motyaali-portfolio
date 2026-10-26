@@ -1,6 +1,14 @@
 const menuButton = document.querySelector('.menu-button');
 const navigation = document.querySelector('.site-nav');
 
+// Move keyboard focus with the skip link, including browsers that only scroll to fragments.
+document.querySelector('.skip-link')?.addEventListener('click', () => {
+  const main = document.querySelector('main');
+  if (!main) return;
+  main.setAttribute('tabindex', '-1');
+  main.focus();
+});
+
 function getRootPrefix() {
   const homeLink = navigation?.querySelector('a[href$="index.html"]');
   const brandLink = document.querySelector('.brand[href$="index.html"]');
